@@ -1,2 +1,8 @@
 ### Mac OS
 .DS_Store
+
+### vim
+.netrwhist
+.vim/autoload/plug.vim
+.vim/tmp/*
+!.gitkeep
