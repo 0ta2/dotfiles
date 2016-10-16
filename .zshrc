@@ -7,8 +7,11 @@ do
   source $zfile
 done
 
-# 自作関数読み込み
-fpath=(${zdir}/function(N-/) $fpath)
+# functionファイルを読み込む
+for func in ${zdir}/functions/*
+do
+  source $func
+done
 
 # 自作補完関数読み込み
 fpath=(${zdir}/Completion(N-/) $fpath)
