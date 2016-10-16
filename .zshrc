@@ -8,7 +8,7 @@ do
 done
 
 # 自作関数読み込み
-fpath=(${zdir}/function(N-/) $fpath)
+fpath=(${zdir}/functions(N-/) $fpath)
 
 # 自作補完関数読み込み
 fpath=(${zdir}/Completion(N-/) $fpath)
