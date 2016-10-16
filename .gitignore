@@ -3,6 +3,7 @@
 
 ### vim
 .netrwhist
+.vim/plugged/*
 .vim/autoload/plug.vim
 .vim/tmp/*
 !.gitkeep
