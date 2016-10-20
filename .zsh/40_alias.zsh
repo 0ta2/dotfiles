@@ -4,7 +4,7 @@ setopt complete_aliases
 # OS毎にaliasを変更
 case "${OSTYPE}" in
 freebsd*|darwin*)
-    alias ls="ls -G -w"
+    alias ls="gls --color=auto"
     ;;
 linux*)
     alias ls="ls --color"
