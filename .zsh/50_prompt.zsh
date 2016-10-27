@@ -1,18 +1,29 @@
-# 補完でカラー使用
-autoload colors
+#色の定義
+autoload -Uz colors
 colors
 
+local DEFAULT=$'%{\e[1;m%}'
+local RED=$'%{\e[31m%}'
+local GREEN=$'%{\e[32m%}'
+local YELLOW=$'%{\e[33m%}'
+local BLUE=$'%{\e[34m%}'
+local PURPLE=$'%{\e[35m%}'
+local CYAN=$'%{\e[36m%}'
+local WHITE=$'%{\e[1;37m%}'
+
 # git情報を表示
+autoload -Uz vcs_info
 setopt prompt_subst
 zstyle ':vcs_info:git:*' check-for-changes true
-zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"
-zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
-zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
-zstyle ':vcs_info:*' actionformats '[%b|%a]'
+zstyle ':vcs_info:git:*' stagedstr         "%F!"
+zstyle ':vcs_info:git:*' unstagedstr       "%F+"
+zstyle ':vcs_info:*'     formats           "%F%c%u[%b]%f"
+zstyle ':vcs_info:*'     actionformats     "[%b|%a]"
 precmd () {
-    LANG=en_US.UTF-8 vcs_info
-    [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
+  LANG=en_US.UTF-8 vcs_info
+  [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
 }
+
 
 # 補完を見やすくする
 zstyle ':completion:*' verbose true
@@ -31,79 +42,24 @@ zstyle ':completion:*:*:-subscript-:*' tag-order indexes parameters
 # 補完候補を上下右左で選択できるようにする
 zstyle ':completion:*' menu select=2
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
-zstyle :compinstall filename '${HOME}/.zshrc'
 
-# UIDでプロンプトの色を分ける
-case ${UID} in
-  0)
-    # rootユーザ
-    PROMPT="%{${fg[red]}%}%/%%%{${reset_color}%} "
-    PROMPT2="%{${fg[red]}%}%_%%%{${reset_color}%} "
-    SPROMPT="%{${fg[red]}%}%r is correct? [n,y,a,e]:%{${reset_color}%} "
-    [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
-    PROMPT="%{${fg[cyan]}%}$(echo ${HOST%%.*} | tr '[a-z]' '[A-Z]') ${PROMPT}"
-  ;;
-  *)
-    # 一般ユーザ
-    # 通常プロンプト
-    PROMPT="%{${fg[cyan]}%}$(echo ${HOST%%.*} | tr '[a-z]' '[A-Z]') %B%{${fg[blue]}%}%/#%{${reset_color}%}%b "$'\n'
-    # 右プロンプト
-    RPROMPT=[%*]$RPROMPT'${vcs_info_msg_0_}'
-    # 2行以上入力する際のプロンプト
-    PROMPT2="%B%{${fg[red]}%}%_#%{${reset_color}%}%b "
-    # コマンド入力ミスの時に表示するプロンプト
-    SPROMPT="%B%{${fg[red]}%}%r is correct? [n,y,a,e]:%{${reset_color}%}%b "
-    # SSH接続時のプロンプト
-    [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && 
-        PROMPT="%{${fg[cyan]}%}$(echo ${HOST%%.*} | tr '[a-z]' '[A-Z]') ${PROMPT}"
-  ;;
-esac
+# カラー設定ファイルを読み込み
+eval $(gdircolors $HOME/.zsh/dircolors/dircolors.256dark)
+#eval $(gdircolors $HOME/.zsh/dircolors/dircolors.ansi-dark)
 
-# lsのカラー表示
-case "${TERM}" in
-screen)
-    TERM=xterm
-    ;;
-esac
-
-# TERM毎に分岐
-case "${TERM}" in
-  xterm|xterm-color)
-    export LSCOLORS=exfxcxdxbxegedabagacad
-    export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-    zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
-  ;;
-  kterm-color)
-    stty erase '^H'
-    export LSCOLORS=exfxcxdxbxegedabagacad
-    export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-    zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
-  ;;
-  kterm)
-    stty erase '^H'
-  ;;
-  cons25)
-    unset LANG
-    export LSCOLORS=ExFxCxdxBxegedabagacad
-    export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-    zstyle ':completion:*' list-colors 'di=;34;1' 'ln=;35;1' 'so=;32;1' 'ex=31;1' 'bd=46;34' 'cd=43;34'
-  ;;
-  jfbterm-color)
-    export LSCOLORS=gxFxCxdxBxegedabagacad
-    export LS_COLORS='di=01;36:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-    zstyle ':completion:*' list-colors 'di=;36;1' 'ln=;35;1' 'so=;32;1' 'ex=31;1' 'bd=46;34' 'cd=43;34'
-  ;;
-  xterm-256color)
-   # eval $(gdircolors $HOME/dotfiles/zsh/color/dircolors.ansi-dark)
+# 補完後方にもカラー設定を適用
+if [ -n "$LS_COLORS" ]; then
     zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-  ;;
-esac
+fi
 
-# ターミナルタブの表示名変更
-case "${TERM}" in
-  xterm|xterm-color|kterm|kterm-color)
-    precmd() {
-        echo -ne "\033]0;${USER}@${HOST%%.*}:${PWD}\007"
-    }
-  ;;
-esac
+# 通常のプロンプト
+PROMPT='[%n@%m] ${vcs_info_msg_0_}%#
+%T >>> '
+
+# 右プロンプト
+RPROMPT="[%d]"
+# コマンドを間違えた時のプロンプト
+SPROMPT="correct: %R -> %r ? [No/Yes/Abort/Edit]"
+
+# 自動的に右プロンプトを非表示
+setopt transient_rprompt
