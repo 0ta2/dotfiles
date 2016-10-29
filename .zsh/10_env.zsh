@@ -2,7 +2,7 @@
 export LANG=ja_JP.UTF-8
 
 # 基本PATH設定
-export PATH=/usr/local/bin:/usr/bin:$PATH
+export PATH=/usr/local/bin:/usr/bin:${PATH}
 
 # Edita設定
 if [ -e /usr/local/bin/vim ]; then
@@ -13,6 +13,12 @@ fi
 if [ -e /usr/local/bin/vimpager ]; then
   export PAGER=/usr/local/bin/vimpager
   export MANPAGER=/usr/local/bin/vimpager
+fi
+
+# Go設定
+if [ `which go` ]; then
+ export GOPATH=${HOME}/.go
+ export PATH=${GOPATH}/bin:$PATH
 fi
 
 # 重複環境パス削除
