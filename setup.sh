@@ -88,11 +88,11 @@ fi
 
 ####################################
 #
-# brw setup
+# brew setup
 #
 ####################################
 # brewでインストールするものリスト
-brewinstall=(
+brew_package=(
   zsh-completions
   zsh
   vim
@@ -125,7 +125,7 @@ else
 fi
 
 # Homebrewをインストール
-if  - e-  /usr/local/bin/brew ]; then
+if [ ! -e /usr/local/bin/brew ]; then
   echo "===> Homebrew Install"
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   echo "==> brew doctorを実行します。"
@@ -150,11 +150,33 @@ else
 fi
 
 # brew installを実行
-for install in ${brewinstall[@]}; do
-  if  ! `brew list ${install} >/dev/null 2>&1`; then
-    echo "===> ${install}をインストールします。"
-    brew install ${install}
+for brew_install in ${brew_package[@]}; do
+  if [ `brew list ${brew_install} >/dev/null 2>&1` ]; then
+    echo "===> ${brew_install}をインストールします。"
+    brew install ${brew_install}
   else
-    echo "===>${install}は、すでにインストールされています。"
+    echo "===>${brew_install}は、すでにインストールされています。"
+  fi
+done
+
+####################################
+#
+# Go setup
+#
+####################################
+gopackage=(
+  github.com/motemen/ghq
+  github.com/peco/peco/cmd/peco
+)
+
+# go installを実行
+for go_install in ${gopackage[@]}; do
+  go_package_name=`basename ${go_install}`
+  if [ `find ${HOME}/.go/bin -name ${go_package_name}` ]; then
+    echo "===> ${go_install}をインストールします。"
+    go get ${go_install}
+  else
+    echo "===>${go_install}は、すでにインストールされています。"
+    go get ${go_install}
   fi
 done
