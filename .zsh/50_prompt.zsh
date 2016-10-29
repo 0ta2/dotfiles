@@ -1,29 +1,27 @@
 #色の定義
 autoload -Uz colors
 colors
-
-local DEFAULT=$'%{\e[1;m%}'
-local RED=$'%{\e[31m%}'
-local GREEN=$'%{\e[32m%}'
-local YELLOW=$'%{\e[33m%}'
-local BLUE=$'%{\e[34m%}'
-local PURPLE=$'%{\e[35m%}'
-local CYAN=$'%{\e[36m%}'
-local WHITE=$'%{\e[1;37m%}'
+local DEFAULT=%{$reset_color%}
+local RED=%{$fg[red]%}
+local GREEN=%{$fg[green]%}
+local YELLOW=%{$fg[yellow]%}
+local BLUE=%{$fg[blue]%}
+local PURPLE=%{$fg[purple]%}
+local CYAN=%{$fg[cyan]%}
+local WHITE=%{$fg[white]%}
 
 # git情報を表示
 autoload -Uz vcs_info
 setopt prompt_subst
 zstyle ':vcs_info:git:*' check-for-changes true
-zstyle ':vcs_info:git:*' stagedstr         "%F!"
-zstyle ':vcs_info:git:*' unstagedstr       "%F+"
-zstyle ':vcs_info:*'     formats           "%F%c%u[%b]%f"
-zstyle ':vcs_info:*'     actionformats     "[%b|%a]"
+zstyle ':vcs_info:git:*' stagedstr         "%F${YELLOW}!"
+zstyle ':vcs_info:git:*' unstagedstr       "%F${RED}+"
+zstyle ':vcs_info:*'     formats           "%F${GREEN}%c%u%b%f"
+zstyle ':vcs_info:*'     actionformats     "%b|%a"
 precmd () {
   LANG=en_US.UTF-8 vcs_info
   [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
 }
-
 
 # 補完を見やすくする
 zstyle ':completion:*' verbose true
@@ -53,11 +51,12 @@ if [ -n "$LS_COLORS" ]; then
 fi
 
 # 通常のプロンプト
-PROMPT='[%n@%m] ${vcs_info_msg_0_}%#
-%T >>> '
+PROMPT='[${GREEN}%n@%m${DEFAULT}] %#
+${BLUE}%T >>> ${DEFAULT}'
 
 # 右プロンプト
-RPROMPT="[%d]"
+RPROMPT='[${vcs_info_msg_0_} ${CYAN}%d${DEFAULT}]'
+
 # コマンドを間違えた時のプロンプト
 SPROMPT="correct: %R -> %r ? [No/Yes/Abort/Edit]"
 
