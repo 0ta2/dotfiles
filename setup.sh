@@ -26,7 +26,6 @@ tmux.conf
 ddot='
 vim
 zsh
-tmux
 '
 
 # logoを表示させる
