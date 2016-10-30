@@ -1,7 +1,7 @@
 "----------------------------------
 "" 基本設定
 "----------------------------------
- 
+
 " 文字コード指定
 set encoding=utf-8
 
@@ -32,7 +32,9 @@ syntax enable
 " カラーテーマを指定
 " japanesque
 " molokai
-colorscheme molokai
+" lucario
+" hybrid
+colorscheme lucario
 
 " バッファを保存しなくても他のバッファを表示できるようにする
 set hidden
