@@ -1,9 +1,5 @@
-" <C-e>でNERDTreeをオンオフ いつでもどこでも
-nmap <silent> <Leader>e      :NERDTreeToggle<CR>
-vmap <silent> <Leader>e <Esc>:NERDTreeToggle<CR>
-omap <silent> <Leader>e      :NERDTreeToggle<CR>
-imap <silent> <Leader>e <Esc>:NERDTreeToggle<CR>
-cmap <silent> <Leader>e <C-u>:NERDTreeToggle<CR>
+" <C-e>でNERDTreeをオンオフ
+nnoremap <silent> <Leader>e      :NERDTreeToggle<CR>
 
 " 他のバッファをすべて閉じた時にNERDTreeが開いていたらNERDTreeも一緒に閉じる
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
