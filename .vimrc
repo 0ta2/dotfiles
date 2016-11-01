@@ -14,6 +14,7 @@ Plug 'aereal/vim-colors-japanesque'
 Plug 'tomasr/molokai'
 Plug 'raphamorim/lucario'
 Plug 'w0ng/vim-hybrid'
+Plug 'ctrlpvim/ctrlp.vim'
 
 call plug#end()
 
