@@ -33,8 +33,9 @@ syntax enable
 " japanesque
 " molokai
 " lucario
-" hybrid
-colorscheme lucario
+" hybrid (set background=dark)
+colorscheme hybrid
+set background=dark
 
 " バッファを保存しなくても他のバッファを表示できるようにする
 set hidden
