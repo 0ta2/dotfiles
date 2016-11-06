@@ -42,8 +42,16 @@ zstyle ':completion:*' menu select=2
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
 
 # カラー設定ファイルを読み込み
-eval $(gdircolors $HOME/.zsh/dircolors/dircolors.256dark)
-#eval $(gdircolors $HOME/.zsh/dircolors/dircolors.ansi-dark)
+case ${OSTYPE} in
+  darwin*)
+    eval $(gdircolors $HOME/.zsh/dircolors/dircolors.256dark)
+    #eval $(gdircolors $HOME/.zsh/dircolors/dircolors.ansi-dark)
+  ;;
+  linux*)
+    eval $(dircolors $HOME/.zsh/dircolors/dircolors.256dark)
+    #eval $(dircolors $HOME/.zsh/dircolors/dircolors.ansi-dark)
+  ;;
+esac
 
 # 補完後方にもカラー設定を適用
 if [ -n "$LS_COLORS" ]; then
