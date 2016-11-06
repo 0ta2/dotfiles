@@ -58,30 +58,9 @@ autocmd FileType xml           setlocal omnifunc=xmlcomplete#CompleteTags
 if !exists('g:neocomplete#force_omni_input_patterns')
   let g:neocomplete#force_omni_input_patterns = {}
 endif
-
-" rubyのomni補完設定 
-let g:neocomplete#force_omni_input_patterns.ruby =
-\ '[^. *\t]\.\w*\|\h\w*::'
-
-" pythonのomni補完設定
-let g:neocomplete#force_omni_input_patterns.python = 
-\ '\h\w*\|[^. \t]\.\w*'
-
-" phpのomni補完設定 
-let g:neocomplete#force_omni_input_patterns.php =
-\ '[^. \t]->\h\w*\|\h\w*::'
-
-" cのomni補完設定
-let g:neocomplete#force_omni_input_patterns.c = 
-\ '[^.[:digit:] *\t]\%(\.\|->\)'
-
-" cppのomni補完設定
-let g:neocomplete#force_omni_input_patterns.cpp =
-\ '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
-
-
-let g:neocomplete#force_omni_input_patterns.perl =
-\ '\h\w*->\h\w*\|\h\w*::'
-
-let g:neocomplete#force_omni_input_patterns.go =
-\ '\h\w\.\w*'
+let g:neocomplete#sources#omni#input_patterns.python = '\h\w*\|[^. \t]\.\w*'
+let g:neocomplete#sources#omni#input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+let g:neocomplete#sources#omni#input_patterns.go = '\h\w\.\w*'
