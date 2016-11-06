@@ -15,6 +15,7 @@ Plug 'tomasr/molokai'
 Plug 'raphamorim/lucario'
 Plug 'w0ng/vim-hybrid'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'Shougo/neocomplete.vim'
 
 call plug#end()
 
