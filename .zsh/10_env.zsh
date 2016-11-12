@@ -2,7 +2,7 @@
 export LANG=ja_JP.UTF-8
 
 # 基本PATH設定
-export PATH=/usr/local/bin:/usr/bin:${PATH}
+export PATH=/usr/local/bin:/usr/bin:$HOME/.zsh/bin:${PATH}
 
 # Edita設定
 if [ -e /usr/local/bin/vim ]; then
