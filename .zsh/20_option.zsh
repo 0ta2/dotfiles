@@ -7,6 +7,9 @@ setopt pushd_ignore_dups
 ## コマンド間違い修正
 setopt correct
 
+# ワイルドカードによるファイル名生成のパターンにマッチするものがなかった場合エラーにしない
+setopt nonomatch
+
 # 補完を詰めて表示
 setopt list_packed
 
