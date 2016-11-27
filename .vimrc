@@ -3,6 +3,9 @@
 "--------------
 call plug#begin('~/.vim/plugged')
 
+" helpの日本語訳
+Plug 'vim-jp/vimdoc-ja'
+
 " ファイルツリー表示
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
