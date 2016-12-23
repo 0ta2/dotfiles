@@ -21,6 +21,9 @@ if [ `which go` ]; then
  export PATH=${GOPATH}/bin:$PATH
 fi
 
+# TERM設定
+export TERM=xterm-256color
+
 # 重複環境パス削除
 typeset -U path cdpath fpath manpath
 path=(
