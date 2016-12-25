@@ -28,6 +28,9 @@ Plug 'ctrlpvim/ctrlp.vim'
 " 補完
 Plug 'Shougo/neocomplete.vim'
 
+" preview
+Plug 'kannokanno/previm'
+
 call plug#end()
 
 " load vimfiles
