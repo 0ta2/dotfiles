@@ -7,3 +7,6 @@
 .vim/autoload/plug.vim
 .vim/tmp/*
 !.gitkeep
+
+### tmux
+.tmux/plugins/*
