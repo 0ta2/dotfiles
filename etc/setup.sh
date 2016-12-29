@@ -21,3 +21,4 @@ setupdir=$(cd $(dirname $0) && pwd)
 ${setupdir}/symlink.sh
 ${setupdir}/vim-plug.sh
 ${setupdir}/go.sh
+${setupdir}/zplug.sh
