@@ -22,3 +22,4 @@ ${setupdir}/symlink.sh
 ${setupdir}/vim-plug.sh
 ${setupdir}/go.sh
 ${setupdir}/zplug.sh
+${setupdir}tpm.sh

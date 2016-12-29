@@ -26,6 +26,9 @@ brew:
 zplug:
 	./etc/zplug.sh
 
+tpm:
+	./etc/tpm.sh
+
 clean:
 	unlink ~/.vim
 	unlink ~/.vimrc
