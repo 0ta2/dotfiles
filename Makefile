@@ -23,6 +23,9 @@ git:
 brew:
 	./etc/brew.sh
 
+zplug:
+	./etc/zplug.sh
+
 clean:
 	unlink ~/.vim
 	unlink ~/.vimrc
