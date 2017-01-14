@@ -33,5 +33,11 @@ Plug 'kannokanno/previm'
 
 call plug#end()
 
+" OS判定
+let OSTYPE = system('uname')
+
+"--------------
+" Load vim files
+"--------------
 " load vimfiles
 runtime! vimrc.d/*.vim
