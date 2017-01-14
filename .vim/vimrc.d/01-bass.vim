@@ -9,7 +9,12 @@ set encoding=utf-8
 set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis
 
 " クリイプボード共有
-set clipboard+=unnamed,autoselect
+if OSTYPE == "Darwin\n"
+  set clipboard+=unnamed,autoselect
+elseif OSTYPE == "Linux\n"
+  set clipboard=unnamedplus
+endif
+
 
 " swpファイルの保存場所
 set directory=~/.vim/tmp
