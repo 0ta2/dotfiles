@@ -28,6 +28,10 @@ Plug 'ctrlpvim/ctrlp.vim'
 " 補完
 Plug 'Shougo/neocomplete.vim'
 
+" スニペット
+Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet-snippets'
+
 " preview
 Plug 'kannokanno/previm'
 
