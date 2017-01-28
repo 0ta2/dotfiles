@@ -1,10 +1,17 @@
-#
+#-------------------
 # dotfiles setup
-#
+#-------------------
 
-.PHONY: install
-.PHONY: uninstall
+.PHONY: instal.
+.PHONY: symlink
+.PHONY: vim
+.PHONY: go
+.PHONY: git
+.PHONY: brew
+.PHONY: zlug
+.PHONY: tpm
 .PHONY: clean
+.PHONY: update
 
 install:
 	./etc/setup.sh
