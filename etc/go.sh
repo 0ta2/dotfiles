@@ -13,6 +13,11 @@ github.com/motemen/ghq
 github.com/peco/peco/cmd/peco
 '
 
+if [ -d "${HOME}/.go" ]; then
+  echo "===> mkdir ${HOME}/.go"
+  mkdir -p ${HOME}/.go/bin
+fi
+
 # go installを実行
 for go_install in ${gopackage}; do
   go_package_name=`basename ${go_install}`
