@@ -42,3 +42,5 @@ clean:
 	unlink ~/.zsh
 	unlink ~/.zshrc
 	unlink ~/.tmux.conf
+	unlink ~/.tmux
+	rm -fr ~/.vim/autolad/plug.vim
