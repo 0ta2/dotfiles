@@ -7,8 +7,8 @@
 
 echo "===> tpmをインストールします"
 if [ ! -d "$HOME/.tmux/plugins" ]; then
-  echo "===> mkdir $HOME/.tmux/plugins"
-  mkdir "$HOME/.tmux/plugins"
+  echo "===> mkdir -p $HOME/.tmux/plugins"
+  mkdir -p "$HOME/.tmux/plugins"
 else
   echo "===> すでにpluginディレクトリがあるのでスキップします"
 fi
