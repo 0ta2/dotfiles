@@ -9,4 +9,5 @@
 !.gitkeep
 
 ### tmux
-.tmux/plugins/*
+.tmux/*
+!.gitkeep
