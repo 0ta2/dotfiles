@@ -9,3 +9,10 @@ git config --global alias.gr "log --graph --date=short --decorate=short --pretty
 git config --global alias.st status
 git config --global alias.cm commit
 git config --global alias.ch checkout
+git config --global push.default simple
+git config --global fetch.prune true
+git config --global core.quotepath false
+git config --global core.safecrlf true
+git config --global core.autocrlf false
+git config --global credential.helper wincred
+
