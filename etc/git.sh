@@ -14,5 +14,6 @@ git config --global fetch.prune true
 git config --global core.quotepath false
 git config --global core.safecrlf true
 git config --global core.autocrlf false
+git config --global color.ui auto
 git config --global credential.helper wincred
 
