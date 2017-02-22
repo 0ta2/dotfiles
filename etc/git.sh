@@ -9,6 +9,7 @@ git config --global alias.gr "log --graph --date=short --decorate=short --pretty
 git config --global alias.st status
 git config --global alias.cm commit
 git config --global alias.ch checkout
+git config --global alias.br branch
 git config --global push.default simple
 git config --global fetch.prune true
 git config --global core.quotepath false
