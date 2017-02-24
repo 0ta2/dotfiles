@@ -8,19 +8,29 @@ Plug 'vim-jp/vimdoc-ja'
 
 " ファイルツリー表示
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+" タブ米に変わっていまうツリー状態をタブ間で共有する
+Plug 'jistr/vim-nerdtree-tabs'
+" ファイルに変更があった場合に､｢+｣､｢-｣ で表示する
+Plug 'airblade/vim-gitgutter'
 
 " 高速カーソル移動
 Plug 'rhysd/accelerated-jk'
 
-" git
+" Git関連
 Plug 'cohama/agit.vim'
 Plug 'tpope/vim-fugitive'
 
-" vimカラー変更
+" vimカラー
 Plug 'aereal/vim-colors-japanesque'
 Plug 'tomasr/molokai'
 Plug 'raphamorim/lucario'
 Plug 'w0ng/vim-hybrid'
+
+" インデントの深さを可視化してくれる
+Plug 'nathanaelkane/vim-indent-guides'
+
+" フィあるに末尾にあるスペースを可視化する
+Plug 'bronson/vim-trailing-whitespace'
 
 " ファイル検索
 Plug 'ctrlpvim/ctrlp.vim'
@@ -28,11 +38,14 @@ Plug 'ctrlpvim/ctrlp.vim'
 " 補完
 Plug 'Shougo/neocomplete.vim'
 
+" 選択中のテキストを括弧で囲う
+Plug 'kana/vim-smartinput'
+
 " スニペット
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 
-" preview
+" markdown preview
 Plug 'kannokanno/previm'
 
 call plug#end()
