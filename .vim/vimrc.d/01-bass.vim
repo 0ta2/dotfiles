@@ -131,26 +131,3 @@ set hlsearch
 " 検索時に大文字・小文字を区別しない。ただし、検索後に大文字小文字が混在しているときは区別する
 set ignorecase
 set smartcase
-
-"---------------------------
-" 便利機能
-"---------------------------
-"タブ/空白/改行の可視化
-set list
-set listchars=tab:>.,trail:_,eol:↲,extends:>,precedes:<,nbsp:%
-" tab/trail のハイライトグループを変更
-highlight SpecialKey term=bold ctermfg=9
-
-"全角スペースをハイライト表示
-function! ZenkakuSpace()
-  highlight ZenkakuSpace cterm=reverse ctermfg=DarkMagenta gui=reverse guifg=DarkMagenta
-endfunction
-
-if has('syntax')
-  augroup ZenkakuSpace
-    autocmd!
-    autocmd ColorScheme       * call ZenkakuSpace()
-    autocmd VimEnter,WinEnter * match ZenkakuSpace /　/
-  augroup END
-  call ZenkakuSpace()
-endif
