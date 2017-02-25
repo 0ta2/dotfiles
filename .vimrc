@@ -37,6 +37,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 
 " 補完
 Plug 'Shougo/neocomplete.vim'
+Plug 'davidhalter/jedi-vim'
 
 " 選択中のテキストを括弧で囲う
 Plug 'kana/vim-smartinput'
