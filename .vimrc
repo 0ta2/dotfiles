@@ -39,7 +39,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'Shougo/neocomplete.vim'
 Plug 'davidhalter/jedi-vim'
 
-" 選択中のテキストを括弧で囲う
+" 対応する括弧を入力
 Plug 'kana/vim-smartinput'
 
 " スニペット
