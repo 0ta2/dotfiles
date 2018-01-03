@@ -16,7 +16,7 @@ if [ -e /usr/local/bin/vimpager ]; then
 fi
 
 # Go設定
-if [ `which go` ]; then
+if [ "`which go`" ]; then
  export GOPATH=${HOME}/.go
  export PATH=${GOPATH}/bin:$PATH
 fi
