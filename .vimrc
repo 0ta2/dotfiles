@@ -49,6 +49,9 @@ Plug 'Shougo/neosnippet-snippets'
 " markdown preview
 Plug 'kannokanno/previm'
 
+" vim-json
+Plug 'elzr/vim-json'
+
 call plug#end()
 
 " OS判定
