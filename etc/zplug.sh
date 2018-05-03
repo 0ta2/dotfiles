@@ -7,8 +7,8 @@
 
 echo "===> zplugをインストールします"
 if [ ! -d "$HOME/.zplug" ]; then
-  echo "===> curl -sL zplug.sh/installer | zsh"
-  curl -sL zplug.sh/installer | zsh
+  echo "curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh| zsh"
+  curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh| zsh
 else
   echo "===> すでにzplugがインストールされています"
 fi
