@@ -1,5 +1,5 @@
 " ブラウザを指定
-let g:previm_open_cmd = '/usr/bin/chromium-browser'
+let g:previm_open_cmd = 'open -a Google\ Chrome'
 
 " markdown と拡張子を紐付ける
 augroup PrevimSettings
