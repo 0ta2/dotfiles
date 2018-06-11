@@ -6,7 +6,6 @@
 ####################################
 # brewでインストールするものリスト
 brew_package=(
-  zsh-completions
   zsh
   vim
   tmux
