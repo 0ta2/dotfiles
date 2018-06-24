@@ -8,7 +8,7 @@ Plug 'vim-jp/vimdoc-ja'
 
 " ファイルツリー表示
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-" タブ米に変わっていまうツリー状態をタブ間で共有する
+" タブ毎に変わっていまうツリー状態をタブ間で共有する
 Plug 'jistr/vim-nerdtree-tabs'
 " ファイルに変更があった場合に､｢+｣､｢-｣ で表示する
 Plug 'airblade/vim-gitgutter'
@@ -51,6 +51,10 @@ Plug 'kannokanno/previm'
 
 " vim-json
 Plug 'elzr/vim-json'
+
+" fzf
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
