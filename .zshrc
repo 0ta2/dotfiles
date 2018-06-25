@@ -21,6 +21,12 @@ if [ -e /usr/local/share/zsh-completions ]; then
   fpath=(/usr/local/share/zsh-completions $fpath)
 fi
 
+# fzf設定
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_TMUX=1
+export FZF_TMUX_HEIGHT=30
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+
 # 補完強化機能有効化
 autoload -Uz compinit
 compinit -u

@@ -10,7 +10,6 @@ export GOPATH=${HOME}/.go
 
 gopackage='
 github.com/motemen/ghq
-github.com/peco/peco/cmd/peco
 '
 
 if [ -d "${HOME}/.go" ]; then

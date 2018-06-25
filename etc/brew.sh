@@ -22,6 +22,8 @@ brew_package=(
   packer
   ssh-copy-id
   pyenv
+  fzf
+  ag
 )
 
 # オプション付きでインストールしようとすると空白ができてしまうため、セパレータを変更
@@ -70,4 +72,3 @@ for brew_install in ${brew_package[@]}; do
     echo "===>${brew_install}は、すでにインストールされています。"
   fi
 done
-
