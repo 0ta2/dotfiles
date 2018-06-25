@@ -64,5 +64,4 @@ let OSTYPE = system('uname')
 "--------------
 " Load vim files
 "--------------
-" load vimfiles
 runtime! vimrc.d/*.vim
