@@ -1,4 +1,7 @@
-#文字コード指定
+#--------------
+# ENV設定
+#--------------
+# 文字コード指定
 export LANG=ja_JP.UTF-8
 
 # 基本PATH設定
@@ -23,6 +26,16 @@ fi
 
 # TERM設定
 export TERM=xterm-256color
+
+#--------------
+# fzf設定
+#--------------
+if [ -f ~/.fzf.zsh ]; then
+  source ~/.fzf.zsh
+  export FZF_TMUX=1
+  export FZF_TMUX_HEIGHT=30
+  export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+fi
 
 # 重複環境パス削除
 typeset -U path cdpath fpath manpath
