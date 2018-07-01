@@ -25,7 +25,29 @@ let howm_fileencoding    = 'utf-8'
 let howm_fileformat      = 'dos'
 
 " 外部grep 設定
-let mygrepprg = 'ag'
+if executable('rg')
+    set grepprg=rg\ --vimgrep\ --no-heading
+    set grepformat=%f:%l:%c:%m,%f:%l:%m
+endif
+
+" ripgrepを使う（PATHは通してある前提）
+let mygrepprg = 'rg'
+let myjpgrepprg = 'rg'
+" マルチエンコーディングgrepを使用する
+let MyGrep_MultiEncoding = 1
+" マルチエンコーディングgrepで使用するエンコーディングリスト
+let MyGrep_MultiEncodingList = ['utf-8', 'cp932']
+" 外部grep(shell)のエンコーディング(Windows)
+let MyGrep_ShellEncoding = 'utf-8'
+" 実行時のオプションをripgrep用に変更（GNU Grepと同じ出力になるように）
+let MyGrepcmd_useropt='-nH --no-heading --color never'
+let MyGrepcmd_regexp=''
+let MyGrepcmd_regexp_ignore='-i'
+let MyGrepcmd_fix='-F'
+let MyGrepcmd_fix_ignore='-F -i'
+let MyGrepcmd_recursive=''
+" gipgrepにファイルパターンとして「*」「*.*」を渡したらエラーになったのでその対策
+let MyGrep_GrepFilePattern='.'
 
 " キーコードやマッピングされたキー列が完了するのを待つ時間(ミリ秒)
 set timeout timeoutlen=3000 ttimeoutlen=100
