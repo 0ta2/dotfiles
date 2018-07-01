@@ -3,21 +3,24 @@
 " 設定方法の公式ドキュメントは下記
 " https://sites.google.com/site/fudist/Home/qfixhowm/install
 "--------------
-
 " キーマップリーダー
 let QFixHowm_Key = 'g'
 
 " howm_dirはファイルを保存したいディレクトリを設定
 if has("mac")
   " Max用設定
-  let howm_dir = '~/Desktop/test/'
+  let howm_dir = '~/.ghq/gitlab.com/0ta2/howm'
+  " 休日定義ファイル定義
+  let QFixHowm_HolidayFile = '~/.vim/plugged/qfixhowm/misc/holiday/Sche-Hd-0000-00-00-000000.utf8'
 elseif has("unix")
-    " unix用設定
+  " unix用設定
 elseif has("win64")
-    " 64bit_windows用設定
+  " 64bit_windows用設定
+  let howm_dir = 'C:\Dev\howm'
+  let QFixHowm_HolidayFile = 'C:\Dev\Git\qfixhowm\misc\holiday\Sche-Hd-0000-00-00-000000.utf8''
 endif
 
-let howm_filename        = '%Y/%m/%Y-%m-%d-%H%M%S.txt'
+let howm_filename        = '%Y/%m/%Y-%m-%d-%H%M%S.md'
 let howm_fileencoding    = 'utf-8'
 let howm_fileformat      = 'dos'
 
@@ -42,14 +45,24 @@ let QFixWin_EnableMode = 1
 " QFixHowm/QFixGrepの結果表示にロケーションリストを使用する
 let QFix_UseLocationList = 1
 
+"Quickfixウィンドウの高さ
+let QFix_Height = 10
+
 set shellslash
 
 " textwidthの再設定
 au Filetype qfix_memo setlocal textwidth=0
 
-" 休日定義ファイル
-" 休日定義ファイルは qfixhowm-master 内にあります
-let QFixHowm_HolidayFile = '~/.vim/plugged/qfixhowm/misc/holiday/Sche-Hd-0000-00-00-000000.utf8'
-
 " オートリンクでファイルを開く
 let QFixHowm_Wiki = 1
+
+"--------------
+" MRUリスト設定
+"--------------
+" MRU表示数
+let QFixMRU_Entries      = 30
+" MRUの保存ファイル名
+let QFixMRU_Filename     = '~/.qfixmru'
+
+" MRU内部のエントリ最大保持数
+let QFixMRU_EntryMax     = 300
