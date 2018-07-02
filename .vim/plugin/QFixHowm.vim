@@ -17,7 +17,7 @@ elseif has("unix")
 elseif has("win64")
   " 64bit_windows用設定
   let howm_dir = 'C:\Dev\howm'
-  let QFixHowm_HolidayFile = 'C:\Dev\Git\qfixhowm\misc\holiday\Sche-Hd-0000-00-00-000000.utf8''
+  let QFixHowm_HolidayFile = 'C:\Dev\Git\qfixhowm\misc\holiday\Sche-Hd-0000-00-00-000000.utf8'
 endif
 
 let howm_filename        = '%Y/%m/%Y-%m-%d-%H%M%S.md'
