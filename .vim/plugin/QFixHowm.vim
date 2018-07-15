@@ -1,6 +1,4 @@
 "--------------
-" QFixHomw 設定
-" 設定方法の公式ドキュメントは下記
 " https://sites.google.com/site/fudist/Home/qfixhowm/install
 "--------------
 "--------------
@@ -391,9 +389,9 @@ let QFixHowm_HolidayFile              = 'Sche-Hd-0000-00-00-000000.*'
 " 休日名
 let QFixHowm_ReminderHolidayName      = '元日\|成人の日\|建国記念の日\|昭和の日\|憲法記念日\|みどりの日\|こどもの日\|海の日\|敬老の日\|体育の日\|文化の日\|勤労感謝の日\|天皇誕生日\|春分の日\|秋分の日\|振替休日\|国民の休日\|日曜日'
 " ユーザー定義の休日
-let QFixHowm_UserHolidayName          = ''
+"let QFixHowm_UserHolidayName          = ''
 " ユーザー定義の強調表示日
-let QFixHowm_UserSpecialdayName       = ''
+"let QFixHowm_UserSpecialdayName       = ''
 
 " 今日の日付/時刻表示行の表示指定
 let QFixHowm_ShowTodayLine            = 3
