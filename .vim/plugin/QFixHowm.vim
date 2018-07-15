@@ -398,7 +398,7 @@ let QFixHowm_ShowTodayLine            = 3
 " 今日の時刻表示行のタイプ指定
 let QFixHowm_TodayLineType            = '@'
 " 曜日表示を日本語にする
-let QFixHowm_JpDayOfWeek              = 0
+let QFixHowm_JpDayOfWeek              = 1
 
 " GMTとの時差
 let QFixHowm_ST                       = -9
