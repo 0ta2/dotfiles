@@ -15,7 +15,6 @@ elseif OSTYPE == "Linux\n"
   set clipboard=unnamedplus
 endif
 
-
 " swpファイルの保存場所
 set directory=~/.vim/tmp
 
@@ -106,6 +105,12 @@ set cursorcolumn
 " ctermfg: カラー端末での文字色
 " ctermbg: カラー端末での背景色
 highlight CursorColumn ctermfg=NONE ctermbg=darkblue
+
+" □ or ○ の文字があってもコンソール位置がずれないようにする
+set ambiwidth=double
+
+" 画面最後の行をできる限り表示する
+set display+=lastline
 
 "---------------------------
 " インデント関連のオプション
