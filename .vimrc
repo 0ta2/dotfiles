@@ -65,3 +65,8 @@ let OSTYPE = system('uname')
 " Load vim files
 "--------------
 runtime! vimrc.d/*.vim
+
+"--------------
+" QfixHowm の設定ファイル読み込み
+"--------------
+set runtimepath+=~/.vim/plugged/qfixhowm
