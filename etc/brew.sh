@@ -23,7 +23,6 @@ brew_package=(
   ssh-copy-id
   pyenv
   fzf
-  ag
   ripgrep
 )
 

@@ -18,7 +18,7 @@ nnoremap <Leader>b :Buffers<CR>
 nnoremap <Leader>c :Commands<CR>
 nnoremap <Leader>g :GFiles<CR>
 nnoremap <Leader>f :Files<CR>
-nnoremap <Leader>a :Ag<CR>
+nnoremap <Leader>r :Rg<CR>
 
 "--------------
 " コマンド設定
@@ -31,9 +31,9 @@ command! -bang -nargs=? -complete=dir Files
 command! -bang -nargs=? -complete=dir GFiles
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 
-" :Ag コマンド時に ? を入力するとプレビューを表示する
-command! -bang -nargs=* Ag
-  \ call fzf#vim#ag(<q-args>,
-  \                 <bang>0 ? fzf#vim#with_preview('up:60%')
-  \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
-  \                 <bang>0)
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 0,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   <bang>0)
