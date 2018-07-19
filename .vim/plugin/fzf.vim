@@ -19,7 +19,6 @@ nnoremap <Leader>c :Commands<CR>
 nnoremap <Leader>g :GFiles<CR>
 nnoremap <Leader>f :Files<CR>
 nnoremap <Leader>a :Ag<CR>
-nnoremap <Leader>k :bd<CR>
 
 "--------------
 " コマンド設定
