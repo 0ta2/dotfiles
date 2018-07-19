@@ -35,8 +35,7 @@ let QFixHowm_FileType = 'markdown'
 "--------------
 " Keymap Settings
 "--------------
-nnoremap <Leader>w :call QFixToggleWin()<CR>
-nnoremap <silent><Leader>w :<C-u>call QFixToggleWin()<CR>
+nnoremap <silent><Leader>w :call QFixToggleWin()<CR>
 
 "--------------
 " QuickFix Settings
