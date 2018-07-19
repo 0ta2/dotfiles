@@ -207,7 +207,7 @@ let QFixHowm_FilenameLen = 17
 " リストスイッチアクション
 let QFixHowm_SwitchListActionLock  = ['{ }', '{-}', '{*}', '{_}']
 " ユーザースイッチアクション
-let QFixHowm_UserSwActionLock      = ''
+"let QFixHowm_UserSwActionLock      = ''
 
 "--------------
 " keyword Link Settings
