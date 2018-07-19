@@ -34,6 +34,8 @@ Plug 'bronson/vim-trailing-whitespace'
 
 " ファイル検索
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 " 補完
 Plug 'Shougo/neocomplete.vim'
@@ -51,10 +53,6 @@ Plug 'kannokanno/previm'
 
 " vim-json
 Plug 'elzr/vim-json'
-
-" fzf
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
 
 call plug#end()
 

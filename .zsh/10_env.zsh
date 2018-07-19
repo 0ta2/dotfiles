@@ -34,7 +34,7 @@ if [ -f ~/.fzf.zsh ]; then
   source ~/.fzf.zsh
   export FZF_TMUX=1
   export FZF_TMUX_HEIGHT=30
-  export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+  export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 fi
 
 # 重複環境パス削除
