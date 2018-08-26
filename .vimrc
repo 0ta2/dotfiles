@@ -57,6 +57,9 @@ Plug 'elzr/vim-json'
 " Qfixhowm
 Plug 'fuenor/qfixhowm'
 
+" todo.txt-vim
+Plug 'dbeniamine/todo.txt-vim'
+
 call plug#end()
 
 " OS判定
