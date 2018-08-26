@@ -309,13 +309,13 @@ let QFixHowm_RandomWalkExclude = ''
 " Auto Todo Check
 "--------------
 " 起動時にコマンド実行
-let QFixHowm_VimEnterCmd  = 'y'
+" let QFixHowm_VimEnterCmd  = 'y'
 " 起動時コマンドメッセージ
-let QFixHowm_VimEnterMsg  = 'Todo check!!'
+" let QFixHowm_VimEnterMsg  = 'Todo check!!'
 " 起動時コマンド基準時間
-let QFixHowm_VimEnterTime = '09:00'
+" let QFixHowm_VimEnterTime = '09:00'
 " 起動時間チェック用ファイル
-let QFixHowm_VimEnterFile = '~/.vimenter.qf'
+" let QFixHowm_VimEnterFile = '~/.vimenter.qf'
 
 "--------------
 " MRU Settings
