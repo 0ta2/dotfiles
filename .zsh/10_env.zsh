@@ -24,6 +24,9 @@ if [ "`which go`" ]; then
  export PATH=${GOPATH}/bin:$PATH
 fi
 
+# gvm設定
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+
 # TERM設定
 export TERM=xterm-256color
 
