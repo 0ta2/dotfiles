@@ -54,6 +54,9 @@ Plug 'kannokanno/previm'
 " vim-json
 Plug 'elzr/vim-json'
 
+" Qfixhowm
+Plug 'fuenor/qfixhowm'
+
 call plug#end()
 
 " OS判定
