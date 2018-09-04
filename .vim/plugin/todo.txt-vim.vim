@@ -5,5 +5,5 @@ au filetype todo setlocal omnifunc=todo#Complete
 au filetype todo imap <buffer> + +<C-X><C-O>
 au filetype todo imap <buffer> @ @<C-X><C-O>
 
-" 保管時にプレビューウインドウを表示させないようにする
+" 補完時にプレビューウインドウを表示させないようにする
 au filetype todo setlocal completeopt-=preview
