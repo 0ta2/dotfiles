@@ -48,8 +48,10 @@ Plug 'kana/vim-smartinput'
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 
-" markdown preview
+" markdown
+Plug 'plasticboy/vim-markdown'
 Plug 'kannokanno/previm'
+Plug 'tyru/open-browser.vim'
 
 " vim-json
 Plug 'elzr/vim-json'
