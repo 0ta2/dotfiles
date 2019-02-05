@@ -24,6 +24,7 @@ brew_package=(
   pyenv
   fzf
   ripgrep
+  mas
 )
 
 # オプション付きでインストールしようとすると空白ができてしまうため、セパレータを変更
