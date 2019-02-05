@@ -4,14 +4,13 @@
 
 .PHONY: instal.
 .PHONY: symlink
-.PHONY: vim
+.PHONY: vim-plug
 .PHONY: go
 .PHONY: git
 .PHONY: brew
 .PHONY: zlug
 .PHONY: tpm
 .PHONY: clean
-.PHONY: update
 
 install:
 	./etc/setup.sh
@@ -19,7 +18,7 @@ install:
 symlink:
 	./etc/symlink.sh
 
-vim:
+vim-plug:
 	./etc/vim-plug.sh
 
 go:
@@ -27,6 +26,7 @@ go:
 
 git:
 	./etc/git.sh
+
 brew:
 	./etc/brew.sh
 
@@ -43,4 +43,3 @@ clean:
 	unlink ~/.zshrc
 	unlink ~/.tmux.conf
 	unlink ~/.tmux
-	rm -fr ~/.vim/autolad/plug.vim
