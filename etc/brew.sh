@@ -41,35 +41,33 @@ fi
 
 # Homebrewをインストール
 if [ ! -e /usr/local/bin/brew ]; then
-  echo "===> Homebrew Install"
+  echo "==> Homebrew Install"
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   echo "==> brew doctorを実行します。"
   brew doctor
   exit 0
 else
-  echo "===> すでにHomebrewはインストールされています。"
+  echo "==> すでにHomebrewはインストールされています。"
   # brew doctorを再度実行するか
-  echo "===> brew doctorを実行しますか？[Y/n]:"
+  echo "==> brew doctorを実行しますか？[Y/n]:"
   read ANSWER
-
   # y or nを判定
   case `echo $ANSWER | tr y Y` in
     Y )
-      echo "===> brew doctorを実行します。"
+      echo "==> brew doctorを実行します。"
       brew doctor
       ;;
     * )
-      echo "===> brew doctorを実行しませんでした。"
+      echo "==> brew doctorを実行しませんでした。"
       ;;
   esac
 fi
 
-# brew installを実行
 for brew_install in ${brew_package[@]}; do
-  if [ `brew list ${brew_install} >/dev/null 2>&1` ]; then
-    echo "===> ${brew_install}をインストールします。"
+  if [ ! -d /usr/local/Cellar/${brew_install} ]; then
+    echo "==> ${brew_install}をインストールします。"
     brew install ${brew_install}
   else
-    echo "===>${brew_install}は、すでにインストールされています。"
+    echo "==> ${brew_install}は、すでにインストールされています。"
   fi
 done
