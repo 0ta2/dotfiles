@@ -1,45 +1,38 @@
-#-------------------
-# dotfiles setup
-#-------------------
+DOTPATH    := $(realpath $(dir $(lastword $(MAKEFILE_LIST))))
+CANDIDATES := $(wildcard .??*)
+EXCLUSIONS := .DS_Store .git .gitmodules .gitignore
+DOTFILES   := $(filter-out $(EXCLUSIONS), $(CANDIDATES))
 
-.PHONY: instal.
-.PHONY: symlink
-.PHONY: vim-plug
-.PHONY: go
-.PHONY: git
-.PHONY: brew
-.PHONY: zlug
-.PHONY: tpm
-.PHONY: clean
+.DEFAULT_GOAL := help
 
-install:
-	./etc/setup.sh
+all:
 
-symlink:
-	./etc/symlink.sh
+list: ## Show dot files in this repo
+	@$(foreach val, $(DOTFILES), /bin/ls -dF $(val);)
 
-vim-plug:
-	./etc/vim-plug.sh
+deploy: ## Create symlink to home directory
+	@echo '==> Start to deploy dotfiles to home directory.'
+	@echo ''
+	@$(foreach val, $(DOTFILES), ln -sfnv $(abspath $(val)) $(HOME)/$(val);)
 
-go:
-	./etc/go.sh
+init: ## Setup environment settings
+	@DOTPATH=$(DOTPATH) bash $(DOTPATH)/etc/install
 
-git:
-	./etc/git.sh
+update: ## Fetch changes for this repo
+	git pull origin master
+	git submodule init
+	git submodule update
+	git submodule foreach git pull origin master
 
-brew:
-	./etc/brew.sh
+install: update deploy init ## Run make update, deploy, init
+	@exec $$SHELL
 
-zplug:
-	./etc/zplug.sh
+clean: ## Remove the dot files and this repo
+	@echo 'Remove dot files in your home directory...'
+	@-$(foreach val, $(DOTFILES), rm -vrf $(HOME)/$(val);)
+	-rm -rf $(DOTPATH)
 
-tpm:
-	./etc/tpm.sh
-
-clean:
-	unlink ~/.vim
-	unlink ~/.vimrc
-	unlink ~/.zsh
-	unlink ~/.zshrc
-	unlink ~/.tmux.conf
-	unlink ~/.tmux
+help: ## Self-documented Makefile
+	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) \
+		| sort \
+		| awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
