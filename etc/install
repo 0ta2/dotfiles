@@ -1,4 +1,23 @@
 #!/bin/bash
+print_error() {
+    printf "\033[31m    [×] $1\033[m\n"
+}
+
+print_success() {
+    printf "\033[32m    [✓] $1\033[m\n"
+}
+
+print_warning() {
+    printf "\033[33m    [!] $1\033[m\n"
+}
+
+print_title() {
+    printf "\n\n\033[35m$1\033[m\n\n"
+}
+
+print_message() {
+    printf "    $1\n"
+}
 
 dotfiles_logo='
       | |     | |  / _(_) |
@@ -14,8 +33,64 @@ dotfiles_logo='
   Licensed under the MIT license.
 '
 
-# logoを表示させる
-echo "${dotfiles_logo}"
+DOTFILES_PATH="${HOME}/.ghq/github.com/0ta2/dotfiles"
+DOTFILES_GITHUB="https://github.com/0ta2/dotfiles.git"
 
-# setup.sh実行しているPATH取得
-setupdir=$(cd $(dirname $0) && pwd)
+# ostype returns the lowercase OS nmae.
+ostype() {
+  uname | tr [:upper:] [:lower:]
+}
+
+# os_detect export the PLATFORM variable as you see fit.
+os_detect() {
+    export PLATFORM
+    case "$(ostype)" in
+        *'linux'*)  PLATFORM='linux'   ;;
+        *'darwin'*) PLATFORM='osx'     ;;
+        *'bsd'*)    PLATFORM='bsd'     ;;
+        *)          PLATFORM='unknown' ;;
+    esac
+}
+
+# is_exists returns true if executable $1 exsts in $PATH
+is_exists() {
+  which "$1" >/dev/null 2>&1
+  return $?
+}
+
+# dotfiles download
+download_dotfiles() {
+  print_title "Download dotfiles"
+  if [ -d ${DOTFILES_PATH} ]; then
+    print_warning "dotfiles: already exists"
+    exit 1
+  else
+    if is_exists "git"; then
+      print_message "git clone dotfiles.."
+      mkdir -p `dirname ${DOTFILES_PATH}` 
+      git clone ${DOTFILES_GITHUB} ${DOTFILES_PATH}
+      print_success "successfully downloaded"
+    else
+      print_message "Downloading dotfiles.."
+      curl -sL https://github.com/0ta2/dotfiles/archive/master.zip | tar xz
+      mv dotfiles-master dotfiles
+      print_success "successfully clone"
+    fi
+  fi
+}
+
+# dotfiles deploy
+deploy_dotfiles() {
+  if [ ! -d ${DOTPATH} ]; then
+    print_error "${DOTPATH}: not found"
+    exit 1
+  fi
+}
+
+main() {
+  print_title "${dotfiles_logo}"
+
+  download_dotfiles
+}
+
+main
