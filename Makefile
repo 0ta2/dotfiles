@@ -41,9 +41,7 @@ init: ## Setup environment settings
 update: ## Fetch changes for this repo
 	@$(call print_title, Start to update dotfiles)
 	git pull origin master
-	git submodule init
-	git submodule update
-	git submodule foreach git pull origin master
+	git submodule update --init --recursive
 
 install: update deploy init ## Run make update, deploy, init
 	@exec $$SHELL
