@@ -45,7 +45,7 @@ install_packages() {
   print_title "Homebrew packages"
   print_message "Install packages..."
 
-  brew bundle --file "${DOTFILES_PATH}/Brewfile"
+  brew bundle --file="${DOTFILES_PATH}/Brewfile"
 }
 
 main() {
