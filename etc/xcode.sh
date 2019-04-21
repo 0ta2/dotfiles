@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Load utils
-. utils
+. $(dirname $(greadlink -f $0))/utils
 
 print_title "Install Xcode"
 
