@@ -3,7 +3,7 @@
 # Git の初期設定
 
 # Load utils
-. utils
+. $(dirname $(greadlink -f $0))/utils
 
 # git config
 # alias の場合は、第一カラムを空にする
