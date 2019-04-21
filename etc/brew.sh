@@ -19,7 +19,7 @@ install_homebrew() {
 
 # update homebrew
 update_homebrew() {
-  print_message "Update homebrew"
+  print_message "Update homebrew..."
 
   if brew update > /dev/null 2>&1; then
     print_success "Successfully updated"
@@ -30,7 +30,7 @@ update_homebrew() {
 
 # check homebrew system
 doctor_homebrew() {
-  print_message "Doctor homebrew"
+  print_message "Doctor homebrew..."
 
   if brew doctor > /dev/null 2>&1; then
     print_success "Ready to brew"

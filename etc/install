@@ -26,7 +26,7 @@ download_dotfiles() {
   else
     if is_exists "git"; then
       print_message "Git clone dotfiles..."
-      mkdir -p `dirname ${DOTFILES_PATH}` 
+      mkdir -p `dirname ${DOTFILES_PATH}`
       git clone -q ${DOTFILES_GITHUB} ${DOTFILES_PATH}
       git clone --recursive -q ${DOTFILES_GITHUB} ${DOTFILES_PATH}
       print_success "Successfully downloaded"
