@@ -1,43 +1,51 @@
 #!/bin/bash
-####################################
 #
-# Git setup
-#
-####################################
+# Git の初期設定
 
-echo "==>gitconfigに追加します"
-git config --global alias.gr "log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cd %Cblue%cn %Cred%d %Creset%s'"
-echo git config --global alias.gr "log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cd %Cblue%cn %Cred%d %Creset%s'"
+# Load utils
+. utils
 
-git config --global alias.st status
-echo git config --global alias.st status
+# git config
+# alias の場合は、第一カラムを空にする
+GIT_CONFIGS=(
+  "alias,st,status"
+  "alias,cm,commit"
+  "alias,ch,checkout"
+  "alias,br,branch"
+  "alias,gr,log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cd %Cblue%cn %Cred%d %Creset%s'"
+  "alias,gbr,git branch --merged | grep -vE '^\\*|master$' | xargs -I % git branch -d %"
+  "push,default,simple"
+  "fetch,prune,true"
+  "core,quotepath,false"
+  "core,safecrlf,true"
+  "core,autocrlf,false"
+  "color,ui,auto"
+  "credential,helper,wincred"
+)
 
-git config --global alias.cm commit
-echo git config --global alias.cm commit
+# Set an alias in an associative array.
+git_add_config() {
+  print_title "Git setting"
 
-git config --global alias.ch checkout
-echo git config --global alias.ch checkout
+  for git_config in "${GIT_CONFIGS[@]}"
+  do
+    git_type=$(echo ${git_config} | cut -d "," -f 1)
+    git_item=$(echo ${git_config} | cut -d "," -f 2)
+    git_value=$(echo ${git_config} | cut -d "," -f 3)
 
-git config --global alias.br branch
-echo git config --global alias.br branch
+    git config ${git_type}.${git_item} > /dev/null 2>&1
 
-git config --global push.default simple
-echo git config --global push.default simple
+    if [ $? == 0 ]; then
+      print_warning "${git_type}.${git_item}: Already exists"
+    else
+      git config --global ${git_type}.${git_item} ${git_value}
+      print_success ${git_type}.${git_item}: Successfully Git config
+    fi
+  done
+}
 
-git config --global fetch.prune true
-echo git config --global fetch.prune true
+main() {
+  git_add_config
+}
 
-git config --global core.quotepath false
-echo git config --global core.quotepath false
-
-git config --global core.safecrlf true
-echo git config --global core.safecrlf true
-
-git config --global core.autocrlf false
-echo git config --global core.autocrlf false
-
-git config --global color.ui auto
-echo git config --global color.ui auto
-
-git config --global credential.helper wincred
-echo git config --global credential.helper wincred
+main
