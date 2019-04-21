@@ -1,0 +1,86 @@
+#!/bin/bash
+
+# Load utils
+. $(dirname $(greadlink -f $0))/utils
+
+DOTFILES_LOGO='
+      | |     | |  / _(_) |
+    __| | ___ | |_| |_ _| | ___  __
+   / _` |/ _ \| __|  _| | |/ _ \/ __|
+  | (_| | (_) | |_| | | | |  __/\__ \ 
+   \__,_|\___/ \__|_| |_|_|\___||___/
+  ====================================
+  1. Download https://github.com/0ta2/dotfiles.git
+  2. Symlinking dot files to your home directory
+
+  Copyright (c) 2016 0ta2
+  Licensed under the MIT license.
+'
+
+# dotfiles download
+download_dotfiles() {
+  print_title "Download dotfiles"
+  if [ -d ${DOTFILES_PATH} ]; then
+    print_warning "Already exists"
+    exit 1
+  else
+    if is_exists "git"; then
+      print_message "Git clone dotfiles..."
+      mkdir -p `dirname ${DOTFILES_PATH}`
+      git clone -q ${DOTFILES_GITHUB} ${DOTFILES_PATH}
+      git clone --recursive -q ${DOTFILES_GITHUB} ${DOTFILES_PATH}
+      print_success "Successfully downloaded"
+    else
+      print_message "Downloading dotfiles..."
+      curl -sL https://github.com/0ta2/dotfiles/archive/master.zip | tar xz
+      mv dotfiles-master dotfiles
+      print_success "Successfully downloading"
+    fi
+  fi
+}
+
+# dotfiles deploy
+deploy_dotfiles() {
+  if [ ! -d ${DOTFILES_PATH} ]; then
+    print_error "${DOTPATH}: Not found"
+    exit 1
+  fi
+  cd ${DOTFILES_PATH}
+
+  make deploy
+
+  if [ $? == 0 ]; then
+    print_success "Sccessfully deploy"
+  else
+    print_error "Unsuccessfully deploy"
+  fi
+}
+
+# dotfiles initialize
+dotfiles_initialize() {
+  print_title "Initializing dotfiles"
+
+  if [ -e Makefile ]; then
+    make init
+  else
+    print_error "Makefile Not found"
+}
+
+# Main
+main() {
+  # print logo
+  ${DOTFILES_LOGO}
+
+  # download dotfiles
+  # priority git -> curl
+  download_dotfiles
+
+  # make deploy to create symlink
+  # create symlink
+  deploy_dotfiles
+
+  # execute shell files
+  dotfiles_initalize
+}
+
+main
