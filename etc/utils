@@ -1,0 +1,84 @@
+#!/bin/bash
+#
+# よく使う変数と関数
+
+# dotfiles でよく使うであろう変数
+DOTFILES_PATH="${HOME}/.ghq/github.com/0ta2/dotfiles"
+DOTFILES_GITHUB="https://github.com/0ta2/dotfiles.git"
+
+############################################################
+# [error|success|warning|title|message] message
+# Arguments:
+#   message
+# Returns:
+#   Printf Message
+############################################################
+print_error() {
+    printf "\033[31m    [×] $1\033[m\n"
+}
+
+print_success() {
+    printf "\033[32m    [✓] $1\033[m\n"
+}
+
+print_warning() {
+    printf "\033[33m    [!] $1\033[m\n"
+}
+
+print_title() {
+    printf "\n\n\033[35m$1\033[m\n\n"
+}
+
+print_message() {
+    printf "    $1\n"
+}
+
+############################################################
+# ostype returns the lowercase OS nmae.
+# Arguments:
+#   None
+# Returns:
+#   [darwin|linux\]
+############################################################
+ostype() {
+  uname | tr [:upper:] [:lower:]
+}
+
+############################################################
+# os_detect export the PLATFORM variable as you see fit.
+# Arguments:
+#  None
+# Returns:
+#  None
+############################################################
+os_detect() {
+    export PLATFORM
+    case "$(ostype)" in
+        *'linux'*)  PLATFORM='linux'   ;;
+        *'darwin'*) PLATFORM='osx'     ;;
+        *'bsd'*)    PLATFORM='bsd'     ;;
+        *)          PLATFORM='unknown' ;;
+    esac
+}
+
+############################################################
+# is_exists returns true if executable $1 exsts in $PATH
+# Arguments:
+#   Command
+# Returns:
+#   Retun code
+############################################################
+is_exists() {
+  which "$1" >/dev/null 2>&1
+  return $?
+}
+
+############################################################
+# return_value return false if not execution status.
+############################################################
+return_value() {
+  local ret=$1
+  if [ ! ${ret} == "0" ]; then
+    return $?
+  fi
+}

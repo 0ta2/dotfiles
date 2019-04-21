@@ -1,73 +1,60 @@
 #!/bin/bash
-####################################
-#
-# brew setup
-#
-####################################
-# brewでインストールするものリスト
-brew_package=(
-  zsh
-  vim
-  tmux
-  git
-  wget
-  go
-  reattach-to-user-namespace
-  rbenv
-  ruby-build
-  coreutils
-  python
-  ansible
-  tree
-  packer
-  ssh-copy-id
-  pyenv
-  fzf
-  ripgrep
-  mas
-)
 
-# オプション付きでインストールしようとすると空白ができてしまうため、セパレータを変更
-IFS=$'\n'
+# Load utils
+. $(dirname $(greadlink -f $0))/utils
 
-# xcode-selectがインストールされているか判定
-if [ ! -e /usr/bin/xcode-select ]; then
-  echo "==> xcode-selectインストール"
-  xcode-select --install
-  exit 0
-else
-  echo "==> xcode-selectは、インストールされています。"
-fi
+# install homebrew
+install_homebrew() {
+  print_title "Homebrew"
+  print_message "Install homebrew..."
 
-# Homebrewをインストール
-if [ ! -e /usr/local/bin/brew ]; then
-  echo "==> Homebrew Install"
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  echo "==> brew doctorを実行します。"
-  brew doctor
-  exit 0
-else
-  echo "==> すでにHomebrewはインストールされています。"
-  # brew doctorを再度実行するか
-  echo "==> brew doctorを実行しますか？[Y/n]:"
-  read ANSWER
-  # y or nを判定
-  case `echo $ANSWER | tr y Y` in
-    Y )
-      echo "==> brew doctorを実行します。"
-      brew doctor
-      ;;
-    * )
-      echo "==> brew doctorを実行しませんでした。"
-      ;;
-  esac
-fi
-
-for brew_install in ${brew_package[@]}; do
-  if [ ! -d /usr/local/Cellar/${brew_install} ]; then
-    echo "==> ${brew_install}をインストールします。"
-    brew install ${brew_install}
+  if is_exists "brew"; then
+    print_warning "brew already installed"
   else
-    echo "==> ${brew_install}は、すでにインストールされています。"
+    print_message "Installing homebrew..."
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    print_success "Successfully Installed"
   fi
-done
+}
+
+# update homebrew
+update_homebrew() {
+  print_message "Update homebrew..."
+
+  if brew update > /dev/null 2>&1; then
+    print_success "Successfully updated"
+  else
+    print_error "Unsuccessfully update"
+  fi
+}
+
+# check homebrew system
+doctor_homebrew() {
+  print_message "Doctor homebrew..."
+
+  if brew doctor > /dev/null 2>&1; then
+    print_success "Ready to brew"
+  else
+    print_error "Not ready not brew"
+  fi
+
+}
+
+# brew bundle install from Brewfile.
+install_packages() {
+  print_title "Homebrew packages"
+  print_message "Install packages..."
+
+  brew bundle --file="${DOTFILES_PATH}/Brewfile"
+
+  print_success "Successfully install package"
+}
+
+main() {
+  install_homebrew
+  update_homebrew
+  doctor_homebrew
+  install_packages
+}
+
+main
