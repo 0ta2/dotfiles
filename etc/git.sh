@@ -20,7 +20,7 @@ GIT_CONFIGS=(
   "core,safecrlf,true"
   "core,autocrlf,false"
   "color,ui,auto"
-  "credential,helper,wincred"
+  "credential,helper,cache"
 )
 
 # Set an alias in an associative array.
