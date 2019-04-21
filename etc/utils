@@ -49,7 +49,7 @@ ostype() {
 # Arguments:
 #  None
 # Returns:
-#  None 
+#  None
 ############################################################
 os_detect() {
     export PLATFORM
