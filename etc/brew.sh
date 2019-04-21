@@ -46,6 +46,8 @@ install_packages() {
   print_message "Install packages..."
 
   brew bundle --file="${DOTFILES_PATH}/Brewfile"
+
+  print_success "Successfully install package"
 }
 
 main() {
