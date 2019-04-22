@@ -10,7 +10,7 @@ set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis
 
 " クリイプボード共有
 if OSTYPE == "Darwin\n"
-  set clipboard+=unnamed,autoselect
+  set clipboard+=unnamed
 elseif OSTYPE == "Linux\n"
   set clipboard=unnamedplus
 endif
