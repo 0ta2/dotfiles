@@ -1,0 +1,1 @@
+/Users/0ta2/.vimrc

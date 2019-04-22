@@ -33,6 +33,8 @@ list: ## Show dot files in this repo
 deploy: ## Create symlink to home directory
 	@$(call print_title, Start to deploy dotfiles to home directory)
 	@$(foreach val, $(DOTFILES), $(call print_success, `ln -sfnv $(abspath $(val)) $(HOME)/$(val)`);)
+	@$(call print_success, `ln -sfnv $(HOME)/.vim ~/.config/nvim`)
+	@$(call print_success, `ln -sfnv $(HOME)/.vimrc ~/.config/nvim/init.vim`)
 
 init: ## Setup environment settings
 	@$(call print_title, Start to init dotofiles)
