@@ -1,7 +1,6 @@
 "----------------------------------
 "" 基本設定
 "----------------------------------
-
 " 文字コード指定
 set encoding=utf-8
 
@@ -14,6 +13,20 @@ if OSTYPE == "Darwin\n"
 elseif OSTYPE == "Linux\n"
   set clipboard=unnamedplus
 endif
+
+" tmux のClipboardを共有
+let g:clipboard = {
+          \   'name': 'myClipboard',
+          \   'copy': {
+          \      '+': 'tmux load-buffer -',
+          \      '*': 'tmux load-buffer -',
+          \    },
+          \   'paste': {
+          \      '+': 'tmux save-buffer -',
+          \      '*': 'tmux save-buffer -',
+          \   },
+          \   'cache_enabled': 1,
+          \ }
 
 " swpファイルの保存場所
 set directory=~/.vim/tmp
