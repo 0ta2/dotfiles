@@ -3,20 +3,32 @@
 "--------------
 call plug#begin('~/.vim/plugged')
 
+"--------------
+" Other
+"--------------
 " helpの日本語訳
 Plug 'vim-jp/vimdoc-ja'
-
-" ファイルツリー表示
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-" タブ毎に変わっていまうツリー状態をタブ間で共有する
-Plug 'jistr/vim-nerdtree-tabs'
-" ファイルに変更があった場合に､｢+｣､｢-｣ で表示する
-Plug 'airblade/vim-gitgutter'
-
-" 高速カーソル移動
 Plug 'rhysd/accelerated-jk'
 
+"--------------
+" ファイルツリー関連
+"--------------
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+" タブ毎に変わっていまうツリー状態をタブ間で共有
+Plug 'jistr/vim-nerdtree-tabs'
+" ファイルに変更があた場合に、ツリーに表示
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
+"--------------
+" ファイル関連
+"--------------
+" ファイルに変更があった場合に､｢+｣､｢-｣ で表示
+Plug 'airblade/vim-gitgutter'
+
+"--------------
 " Git関連
+"--------------
+" リポジトリビューア
 Plug 'cohama/agit.vim'
 Plug 'tpope/vim-fugitive'
 
