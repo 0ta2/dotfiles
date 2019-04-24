@@ -40,6 +40,7 @@ set viminfo+=n$HOME/viminfo.txt
 " undofileの出力先 .un~
 set undodir=~/.vim/tmp
 
+" カラーテーマ指定
 colorscheme iceberg
 
 " バッファを保存しなくても他のバッファを表示できるようにする
