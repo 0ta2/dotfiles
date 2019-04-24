@@ -49,9 +49,6 @@ set hidden
 " EXコマンドの補完方法設定
 set wildmode=longest,full
 
-" オートインデント、改行、インサートモード開始直後にバックスペースキーで削除できるようにする。
-set backspace=indent,eol,start
-
 " カーソルが何行目の何列目に置かれているかを表示する。(有効:ruler/無効:noruler)
 set ruler
 
