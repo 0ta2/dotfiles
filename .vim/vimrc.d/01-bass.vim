@@ -81,8 +81,6 @@ set display+=lastline
 "---------------------------
 " インデント関連のオプション
 "---------------------------
-" オートインデント
-set autoindent
 
 " タブ文字の代わりにスペースを使う(有効:expandtab/noexpandtab)
 set expandtab
