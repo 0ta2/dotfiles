@@ -40,9 +40,6 @@ set viminfo+=n$HOME/viminfo.txt
 " undofileの出力先 .un~
 set undodir=~/.vim/tmp
 
-" Vi互換モードをオフ（Vimの拡張機能を有効）
-set nocompatible
-
 " 構文ハイライトを有効化
 syntax enable
 
