@@ -68,19 +68,9 @@ set ttimeoutlen=100 " 100 ミリ秒後にタイムアウトする
 
 " 横線を表示
 set cursorline
-" アンダーラインを引く
-" cterm  : カラー端末での属性
-" ctermfg: カラー端末での文字色
-" ctermbg: カラー端末での背景色
-highlight CursorLine cterm=underline ctermfg=NONE ctermbg=NONE
 
 " 縦線の表示
 set cursorcolumn
-" 縦に線を引く
-" cterm  : カラー端末での属性
-" ctermfg: カラー端末での文字色
-" ctermbg: カラー端末での背景色
-highlight CursorColumn ctermfg=NONE ctermbg=darkblue
 
 " □ or ○ の文字があってもコンソール位置がずれないようにする
 set ambiwidth=double
