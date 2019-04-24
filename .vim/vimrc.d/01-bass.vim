@@ -8,10 +8,10 @@ set encoding=utf-8
 set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis
 
 " クリイプボード共有
-if OSTYPE == "Darwin\n"
-  set clipboard+=unnamed
-elseif OSTYPE == "Linux\n"
+if has('unnamedplus')
   set clipboard=unnamedplus
+else
+  set clipboard+=unnamed
 endif
 
 " tmux のClipboardを共有
@@ -46,7 +46,7 @@ colorscheme iceberg
 " バッファを保存しなくても他のバッファを表示できるようにする
 set hidden
 
-" コマンドライン補完を便利に
+" EXコマンドの補完方法設定
 set wildmode=longest,full
 
 " タイプ途中のコマンドを画面最下行に表示
