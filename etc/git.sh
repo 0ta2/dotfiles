@@ -13,7 +13,6 @@ GIT_CONFIGS=(
   "alias,ch,checkout"
   "alias,br,branch"
   "alias,gr,log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cd %Cblue%cn %Cred%d %Creset%s'"
-  "alias,gbr,git branch --merged | grep -vE '^\\*|master$' | xargs -I % git branch -d %"
   "push,default,simple"
   "fetch,prune,true"
   "core,quotepath,false"

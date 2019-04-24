@@ -22,7 +22,7 @@ alias lf="ls -F"
 alias ll="ls -la"
 
 # Git系
-alias gbr="git branch --merged | grep -vE '^\*|master$' | xargs -I % git branch -d %"
+alias gbr="git branch --merged | grep -vE '^\*|master$|develop$' | xargs -I % git branch -d %"
 
 # 便利系
 alias vimtmp="vim /tmp/tmp_`date '+%Y%m%d_%H%M%S'`.txt"
