@@ -81,12 +81,14 @@ set display+=lastline
 "---------------------------
 " インデント関連のオプション
 "---------------------------
-
 " タブ文字の代わりにスペースを使う(有効:expandtab/noexpandtab)
 set expandtab
-set tabstop=2     " <TAB>を含むファイルを開いた際、<TAB>を何文字の空白に変換するかを設定
-set softtabstop=2 " キーボードで<TAB>を入力した際、<TAB>を何文字の空白に変換するかを設定
-set shiftwidth=2  " vimが自動でインデントを行った際、設定する空白数
+" <TAB>を含むファイルを開いた際、<TAB>を何文字の空白に変換するかを設定(default 8)
+set tabstop=2
+" キーボードで<TAB>を入力した際、<TAB>を何文字の空白に変換するかを設定
+set softtabstop=2
+" vimが自動でインデントを行った際、設定する空白数(default 8)
+set shiftwidth=2
 
 "---------------------------
 " 検索関連のオプション
@@ -97,6 +99,7 @@ set incsearch
 " 検索語を強調表示
 set hlsearch
 
-" 検索時に大文字・小文字を区別しない。ただし、検索後に大文字小文字が混在しているときは区別する
+" 検索時に大文字・小文字を区別しない。
 set ignorecase
+" 検索後に大文字小文字が混在しているときは区別する
 set smartcase
