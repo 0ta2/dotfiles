@@ -49,9 +49,6 @@ set hidden
 " EXコマンドの補完方法設定
 set wildmode=longest,full
 
-" タイプ途中のコマンドを画面最下行に表示
-set showcmd
-
 " オートインデント、改行、インサートモード開始直後にバックスペースキーで削除できるようにする。
 set backspace=indent,eol,start
 
