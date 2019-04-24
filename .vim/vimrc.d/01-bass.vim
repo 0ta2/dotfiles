@@ -40,9 +40,6 @@ set viminfo+=n$HOME/viminfo.txt
 " undofileの出力先 .un~
 set undodir=~/.vim/tmp
 
-" 構文ハイライトを有効化
-syntax enable
-
 colorscheme iceberg
 
 " バッファを保存しなくても他のバッファを表示できるようにする
