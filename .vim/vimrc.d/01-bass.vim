@@ -55,7 +55,7 @@ set confirm
 " ビープの代わりにビジュアルベル(画面フラッシュ)を使う
 set visualbell
 
-" コマンドラインに使われる画面上の行数
+" コマンドラインに使われる画面上の行数(default 1)
 set cmdheight=2
 
 " 毎行の前に行番号を表示する。(有効:number/無効:nonumber)
