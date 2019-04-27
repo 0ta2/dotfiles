@@ -27,6 +27,12 @@ fi
 # gvm設定
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 
+# WSL を使っている場合の PATH 設定
+if [[ $(uname -a) =~Linnux && $(uname -a) =~Microsoft ]]; then
+  export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS="1"
+  export PATH="$PATH:/mnt/c/Program Files/Oracle/VirtualBox"
+fi
+
 # TERM設定
 export TERM=xterm-256color
 
