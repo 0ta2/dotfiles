@@ -26,3 +26,6 @@ alias gbr="git branch --merged | grep -vE '^\*|master$|develop$' | xargs -I % gi
 
 # 便利系
 alias vimtmp="vim /tmp/tmp_`date '+%Y%m%d_%H%M%S'`.txt"
+
+# nvim
+alias vim="nvim"
