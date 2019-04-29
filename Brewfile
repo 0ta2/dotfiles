@@ -23,6 +23,7 @@ brew "neovim"
 brew "wget"
 brew "zsh"
 brew "zplug"
+brew "grep"
 brew "brew-cask-completion"
 brew "sanemat/font/ricty"
 mas "", id: 445189367
