@@ -27,6 +27,11 @@ fi
 # gvm設定
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 
+# powerline
+if ["`which python`"];then
+  export PATH="$HOME/Library/Python/2.7/bin:$PATH"
+fi
+
 # WSL を使っている場合の PATH 設定
 if [[ $(uname -a) =~ Linnux && $(uname -a) =~ Microsoft ]]; then
   export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS="1"

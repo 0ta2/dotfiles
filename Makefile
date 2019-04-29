@@ -35,6 +35,7 @@ deploy: ## Create symlink to home directory
 	@$(foreach val, $(DOTFILES), $(call print_success, `ln -sfnv $(abspath $(val)) $(HOME)/$(val)`);)
 	@$(call print_success, `ln -sfnv $(HOME)/.vim ~/.config/nvim`)
 	@$(call print_success, `ln -sfnv $(HOME)/.vimrc ~/.config/nvim/init.vim`)
+	@$(call print_success, `mkdir -p $(HOME)/.config && ln -sfnv $(DOTPATH)/powerline ~/.config/powerline`)
 
 init: ## Setup environment settings
 	@$(call print_title, Start to init dotofiles)
