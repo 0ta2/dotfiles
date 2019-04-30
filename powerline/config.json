@@ -1,6 +1,8 @@
 {
 	"common": {
-		"term_truecolor": false
+		"term_truecolor": false,
+    "ambiwidth": 2,
+    "default_top_theme": "powerline_unicode7"
 	},
 	"ext": {
 		"ipython": {
