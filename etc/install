@@ -97,7 +97,7 @@ dotfiles_initialize() {
 # Main
 main() {
   # print logo
-  echo ${DOTFILES_LOGO}
+  echo "${DOTFILES_LOGO}"
 
   # download dotfiles
   # priority git -> curl
