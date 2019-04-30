@@ -26,7 +26,7 @@ brew "wget"
 brew "zsh"
 brew "zplug"
 brew "grep"
-brew "ricty", args: [with-powerline]
+brew "ricty", args: ["with-powerline"]
 brew "brew-cask-completion"
 # App のインストール
 cask "google-chrome"
