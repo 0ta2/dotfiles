@@ -37,6 +37,9 @@ Plug 'bronson/vim-trailing-whitespace'
 " ファイル検索
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+
+Plug 'elzr/vim-json'
+
 "--------------
 " Git関連
 "--------------
