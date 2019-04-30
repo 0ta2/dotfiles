@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Load utils
-. $(dirname $(greadlink -f $0))/utils
+. $(cd $(dirname $0) && pwd)/utils
 
 # install homebrew
 install_homebrew() {
