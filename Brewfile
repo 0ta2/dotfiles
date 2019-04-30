@@ -24,6 +24,7 @@ brew "wget"
 brew "zsh"
 brew "zplug"
 brew "grep"
+brew "ricty", args: [with-powerline]
 brew "brew-cask-completion"
 brew "sanemat/font/ricty"
 mas "", id: 445189367
