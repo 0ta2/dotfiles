@@ -1,7 +1,34 @@
 #!/bin/bash
 
-# Load utils
-. $(dirname $(greadlink -f $0))/utils
+DOTFILES_PATH="${HOME}/.ghq/github.com/0ta2/dotfiles"
+DOTFILES_GITHUB="https://github.com/0ta2/dotfiles.git"
+
+
+print_error() {
+    printf "\033[31m    [×] $1\033[m\n"
+}
+
+print_success() {
+    printf "\033[32m    [✓] $1\033[m\n"
+}
+
+print_warning() {
+    printf "\033[33m    [!] $1\033[m\n"
+}
+
+print_title() {
+    printf "\n\n\033[35m$1\033[m\n\n"
+}
+
+print_message() {
+    printf "    $1\n"
+}
+
+
+is_exists() {
+  which "$1" >/dev/null 2>&1
+  return $?
+}
 
 DOTFILES_LOGO='
       | |     | |  / _(_) |
@@ -64,6 +91,7 @@ dotfiles_initialize() {
     make init
   else
     print_error "Makefile Not found"
+  fi
 }
 
 # Main
