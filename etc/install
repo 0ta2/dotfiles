@@ -54,14 +54,13 @@ download_dotfiles() {
     if is_exists "git"; then
       print_message "Git clone dotfiles..."
       mkdir -p `dirname ${DOTFILES_PATH}`
-      git clone -q ${DOTFILES_GITHUB} ${DOTFILES_PATH}
       git clone --recursive -q ${DOTFILES_GITHUB} ${DOTFILES_PATH}
       print_success "Successfully downloaded"
     else
       print_message "Downloading dotfiles..."
       curl -sL https://github.com/0ta2/dotfiles/archive/master.zip | tar xz
       mv dotfiles-master dotfiles
-      print_success "Successfully downloading"
+      print_success "Successfully downloaded"
     fi
   fi
 }
