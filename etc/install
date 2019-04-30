@@ -69,7 +69,7 @@ download_dotfiles() {
 # dotfiles deploy
 deploy_dotfiles() {
   if [ ! -d ${DOTFILES_PATH} ]; then
-    print_error "${DOTPATH}: Not found"
+    print_error "${DOTFILES_PATH}: Not found"
     exit 1
   fi
   cd ${DOTFILES_PATH}
@@ -108,7 +108,7 @@ main() {
   deploy_dotfiles
 
   # execute shell files
-  dotfiles_initalize
+  dotfiles_initialize
 }
 
 main
