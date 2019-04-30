@@ -38,7 +38,7 @@ git_add_config() {
     if [ $? == 0 ]; then
       print_warning "${git_type}.${git_item}: Already exists"
     else
-      git config --global ${git_type}.${git_item} ${git_value}
+      git config --global ${git_type}.${git_item} "${git_value}"
       print_success ${git_type}.${git_item}: Successfully Git config
     fi
   done
