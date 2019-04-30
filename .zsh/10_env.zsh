@@ -28,7 +28,7 @@ fi
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 
 # powerline
-if ["`which python`"];then
+if [ "`which python`" ];then
   export PATH="$HOME/Library/Python/2.7/bin:$PATH"
 fi
 
