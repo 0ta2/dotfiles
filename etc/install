@@ -98,7 +98,22 @@ dotfiles_initialize() {
 main() {
   # print logo
   echo "${DOTFILES_LOGO}"
+  
+  print_message "xcode-select --install を実行します。"
+  print_message "xcode-select のインストールが完了したら、OK を入力してください。"
 
+  xcode-select --install
+
+  while :
+  do
+    read key
+    if [ "${key}" = "OK" ]; then
+      break
+    else
+      print_message "完了したら 'OK' と入力してください。"
+    fi
+  done
+ 
   # download dotfiles
   # priority git -> curl
   download_dotfiles
