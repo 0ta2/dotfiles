@@ -105,15 +105,8 @@ main() {
 
   xcode-select --install
   
-  sleep 30
+  sleep 120
 
-  read -p "完了したら 'OK' と入力してください。(y/n)" -n 1 -r
-  if [[ $REPLY =~ ^[Yy]$ ]]; then
-      break
-    else
-      print_message "処理を続行します"
-  fi
- 
   # download dotfiles
   # priority git -> curl
   download_dotfiles
