@@ -100,14 +100,14 @@ main() {
   # print logo
   echo "${DOTFILES_LOGO}"
   
-  print_message "xcode-select --install を実行します。"
+  print_message "xcode-select --install..."
   
   xcode-select --install >/dev/null 2>&1
   while :
   do
     xcode-select -p >/dev/null 2>&1
     if [ $? == 0 ]; then
-      exit 0
+      print_success "Sccessfully xcode-select --install"
     fi
     sleep 30
   done
