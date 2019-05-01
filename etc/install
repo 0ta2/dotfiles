@@ -105,8 +105,8 @@ main() {
 
   xcode-select --install
 
-  read -p "完了したら 'OK' と入力してください。(y/n)" answer
-  if [[ $answer =~ ^[Yy]$ ]]; then
+  read -p "完了したら 'OK' と入力してください。(y/n)" -n 1 -r
+  if [[ $REPLY =~ ^[Yy]$ ]]; then
       break
     else
       print_message "処理を続行します"
