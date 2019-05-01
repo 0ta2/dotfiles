@@ -104,6 +104,8 @@ main() {
   print_message "xcode-select のインストールが完了したら、OK を入力してください。"
 
   xcode-select --install
+  
+  sleep 30
 
   read -p "完了したら 'OK' と入力してください。(y/n)" -n 1 -r
   if [[ $REPLY =~ ^[Yy]$ ]]; then
