@@ -96,11 +96,13 @@ deploy_dotfiles() {
 
     make deploy
 
-     if [ $? == 0 ]; then
-       print_success "Sccessfully deploy"
-     else
-       print_error "Unsuccessfully deploy"
-     fi  
+    if [ $? == 0 ]; then
+      print_success "Sccessfully deploy"
+      exit 0
+    else
+      print_error "Unsuccessfully deploy"
+      exit 1
+    fi
   fi
     print_error "${DOTFILES_PATH}: Not found"
 }
@@ -110,6 +112,7 @@ dotfiles_initialize() {
   print_title "Initializing dotfiles"
 
   if [ -e Makefile ]; then
+    print_message "make init"
     make init
   else
     print_error "Makefile Not found"
