@@ -50,7 +50,7 @@ xcode_select_install() {
   
   xcode-select -p >/dev/null 2>&1
   
-  if [ $? == 0]; then
+  if [ $? == 0 ]; then
     print_warning "Already exist"
     exit 0
   else
