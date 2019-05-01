@@ -105,15 +105,12 @@ main() {
 
   xcode-select --install
 
-  while :
-  do
-    read key
-    if [ "${key}" = "OK" ]; then
+  read -p "完了したら 'OK' と入力してください。(y/n)" answer
+  if [[ $answer =~ ^[Yy]$ ]]; then
       break
     else
-      print_message "完了したら 'OK' と入力してください。"
-    fi
-  done
+      print_message "処理を続行します"
+  fi
  
   # download dotfiles
   # priority git -> curl
