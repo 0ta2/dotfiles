@@ -45,6 +45,20 @@ DOTFILES_LOGO='
   Licensed under the MIT license.
 '
 
+xcode_select_install() {
+  print_message "xcode-select --install..."
+  
+  xcode-select --install >/dev/null 2>&1
+  while :
+  do
+    xcode-select -p >/dev/null 2>&1
+    if [ $? == 0 ]; then
+      print_success "Sccessfully xcode-select --install"
+    fi
+    sleep 30
+  done
+}
+  
 # dotfiles download
 download_dotfiles() {
   print_title "Download dotfiles"
@@ -79,9 +93,7 @@ deploy_dotfiles() {
        print_error "Unsuccessfully deploy"
      fi  
   fi
-
     print_error "${DOTFILES_PATH}: Not found"
-
 }
 
 # dotfiles initialize
@@ -100,18 +112,9 @@ main() {
   # print logo
   echo "${DOTFILES_LOGO}"
   
-  print_message "xcode-select --install..."
+  # xcode-select install
+  xcode_select_install
   
-  xcode-select --install >/dev/null 2>&1
-  while :
-  do
-    xcode-select -p >/dev/null 2>&1
-    if [ $? == 0 ]; then
-      print_success "Sccessfully xcode-select --install"
-    fi
-    sleep 30
-  done
-
   # download dotfiles
   # priority git -> curl
   download_dotfiles
