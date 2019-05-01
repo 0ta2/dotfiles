@@ -98,7 +98,6 @@ deploy_dotfiles() {
 
     if [ $? == 0 ]; then
       print_success "Sccessfully deploy"
-      exit 0
     else
       print_error "Unsuccessfully deploy"
       exit 1
