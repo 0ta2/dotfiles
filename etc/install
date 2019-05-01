@@ -101,11 +101,16 @@ main() {
   echo "${DOTFILES_LOGO}"
   
   print_message "xcode-select --install を実行します。"
-  print_message "xcode-select のインストールが完了したら、OK を入力してください。"
-
-  xcode-select --install
   
-  sleep 120
+  xcode-select --install >/dev/null 2>&1
+  while :
+  do
+    xcode-select -p >/dev/null 2>&1
+    if [ $? == 0 ]; then
+      exit 0
+    fi
+    sleep 30
+  done
 
   # download dotfiles
   # priority git -> curl
