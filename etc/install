@@ -68,19 +68,20 @@ download_dotfiles() {
 
 # dotfiles deploy
 deploy_dotfiles() {
-  if [ ! -d ${DOTFILES_PATH} ]; then
+  if [ -d ${DOTFILES_PATH} ]; then
+    cd ${DOTFILES_PATH}
+
+    make deploy
+
+     if [ $? == 0 ]; then
+       print_success "Sccessfully deploy"
+     else
+       print_error "Unsuccessfully deploy"
+     fi  
+  fi
+
     print_error "${DOTFILES_PATH}: Not found"
-    exit 1
-  fi
-  cd ${DOTFILES_PATH}
 
-  make deploy
-
-  if [ $? == 0 ]; then
-    print_success "Sccessfully deploy"
-  else
-    print_error "Unsuccessfully deploy"
-  fi
 }
 
 # dotfiles initialize
