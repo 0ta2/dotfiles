@@ -47,6 +47,7 @@ cask "visual-studio-code"
 cask "vlc"
 cask "vagrant"
 cask "station"
+cask "1password"
 # App Storeからインストール
 mas "Xcode", id: 497799835
 mas "PopClip", id: 445189367
