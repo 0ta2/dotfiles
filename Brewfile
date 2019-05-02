@@ -59,3 +59,4 @@ mas "LINE", id: 539883307
 mas "Spark - Email App by Readdle", id: 1176895641
 mas "Translate Tab", id: 458887729
 mas "MindNode", id: 1289197285
+mas "Slack", id: 803453959
