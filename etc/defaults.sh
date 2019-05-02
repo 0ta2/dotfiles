@@ -128,8 +128,8 @@ defaults write com.apple.HIToolbox AppleSelectedInputSources -array \
 # トラックパッド
 #------------------------------
 # ポイントとクリック -> タップでクリック にチェック
-defaults write com.apple.AppleMultitouchTrackpad Clicking -int 0
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -int 0
+defaults write com.apple.AppleMultitouchTrackpad Clicking -int 1
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -int 1
 
 # ポイントとクリック -> 軌跡の速さ
 defaults write -g com.apple.trackpad.scaling -int 3
