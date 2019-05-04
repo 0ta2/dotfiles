@@ -10,8 +10,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'vim-jp/vimdoc-ja'
 " vimのカラー設定
 Plug 'cocopon/iceberg.vim'
-" jk 高速移動
-Plug 'rhysd/accelerated-jk'
 
 "--------------
 " ファイルツリー関連
