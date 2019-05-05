@@ -1,6 +1,13 @@
 " <C-e>でNERDTreeをオンオフ
 nnoremap <silent> <Leader>e :NERDTreeToggle<CR>
 
+" NERDTree の起動時にファイルをフォーカスする
+augroup NERD
+    au!
+    autocmd VimEnter * NERDTree
+    autocmd VimEnter * wincmd p
+augroup END
+
 " 他のバッファをすべて閉じた時にNERDTreeが開いていたらNERDTreeも一緒に閉じる
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
