@@ -16,7 +16,7 @@ let g:fzf_layout = { 'down': '~40%' }
 
 "--------------
 " キーバインド
-"-------------
+"--------------
 nnoremap <Leader>b :Buffers<CR>
 nnoremap <Leader>c :Commands<CR>
 nnoremap <Leader>g :GFiles<CR>
