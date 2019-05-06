@@ -27,7 +27,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
 
 " インデントの深さの可視化
-Plug 'nathanaelkane/vim-indent-guides'
+Plug 'Yggdroot/indentLine'
 
 " ファイルにあるに末尾にあるスペースを可視化
 Plug 'bronson/vim-trailing-whitespace'
