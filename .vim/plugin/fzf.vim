@@ -2,9 +2,12 @@
 " グローバル設定
 "--------------
 " 検索結果をどのように表示するか
+" ctrl-t タブで表示
+" ctrl-s 画面を横に分割
+" ctrl-v 画面を立てに分割
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
-  \ 'ctrl-x': 'split',
+  \ 'ctrl-s': 'split',
   \ 'ctrl-v': 'vsplit' }
 
 " 検索画面をどこに表示するか
