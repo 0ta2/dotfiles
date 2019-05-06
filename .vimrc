@@ -14,6 +14,7 @@ Plug 'cocopon/iceberg.vim'
 "--------------
 " ファイルツリー関連
 "--------------
+" ファイルツリーを表示
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 " タブ毎に変わっていまうツリー状態をタブ間で共有
 Plug 'jistr/vim-nerdtree-tabs'
