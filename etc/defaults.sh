@@ -147,3 +147,9 @@ defaults write com.apple.menuextra.clock DateFormat -string "M\u6708d\u65e5(EEE)
 # マウスとトラックパッド -> トラックパッドオプション -> ドラックを有効にする
 defaults write com.apple.AppleMultitouchTrackpad Dragging -int 1
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Dragging -int 1
+
+#------------------------------
+# バッテリー
+#------------------------------
+# バッテリーの使用状況を割合(%)で表示する
+defaults write com.apple.menuextra.battery ShowPercent -string YES
