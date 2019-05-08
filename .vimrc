@@ -52,10 +52,19 @@ Plug 'tpope/vim-fugitive'
 "--------------
 " 補完フレームワーク
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" PHP補完
+
+" filetype の syntaxファイルから補完候補を追加
+Plug 'Shougo/neco-syntax'
+
+" Vimスクリプトの補完
+Plug 'Shougo/neco-vim'
+
+" PHPの補完
 Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
-" Python補完
+
+" Pythonの補完
 Plug 'deoplete-plugins/deoplete-jedi'
+
 " 対応する括弧を入力
 Plug 'kana/vim-smartinput'
 
