@@ -78,7 +78,7 @@ defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 60 "
           <array>
             <integer>32</integer>
             <integer>49</integer>
-            <integer>262144</integer>
+            <integer>1048576</integer>
           </array>
           <key>type</key>
           <string>standard</string>
@@ -97,7 +97,7 @@ defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 61 "
           <array>
             <integer>32</integer>
             <integer>49</integer>
-            <integer>393216</integer>
+            <integer>1572864</integer>
           </array>
           <key>type</key>
           <string>standard</string>
