@@ -1,27 +1,20 @@
-" Plugin key-mappings.
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-imap <C-i>     <Plug>(neosnippet_expand_or_jump)
-smap <C-i>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-i>     <Plug>(neosnippet_expand_target)
+" キーマップ設定
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
 
-imap <C-i>     <Plug>(neosnippet_expand_or_jump)
-smap <C-i>     <Plug>(neosnippet_expand_or_jump)
-
-
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
- \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+" インサートモード中にTABで選択できるように
 imap <expr><TAB>
  \ pumvisible() ? "\<C-n>" :
  \ neosnippet#expandable_or_jumpable() ?
  \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
-" For conceal markers.
-if has('conceal')
-  set conceallevel=2 concealcursor=niv
-endif
+" 選択中にTABで選択できるように
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
-" Enable snipMate compatibility feature.
+" snipMate互換機能を有効にする
 let g:neosnippet#enable_snipmate_compatibility = 1
-"
-" Tell Neosnippet about the other snippets
+
+" snippetsのディレクトリを指定する
 let g:neosnippet#snippets_directory='~/.vim/snippets'
