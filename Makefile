@@ -36,6 +36,7 @@ deploy: ## Create symlink to home directory
 	@$(call print_success, `ln -sfnv $(HOME)/.vim ~/.config/nvim`)
 	@$(call print_success, `ln -sfnv $(HOME)/.vimrc ~/.config/nvim/init.vim`)
 	@$(call print_success, `mkdir -p $(HOME)/.config && ln -sfnv $(DOTPATH)/powerline ~/.config/powerline`)
+	@$(call print_success, `mkdir -p $(HOME)/.config && ln -sfnv $(DOTPATH)/karabiner ~/.config/karabiner`)
 
 init: ## Setup environment settings
 	@$(call print_title, Start to init dotofiles)
