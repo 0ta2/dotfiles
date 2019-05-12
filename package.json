@@ -1,0 +1,22 @@
+{
+  "name": "dotfiles",
+  "version": "1.0.0",
+  "description": "## Setup インストールするときは､ `curl` を叩けばOK",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0ta2/dotfiles.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/0ta2/dotfiles/issues"
+  },
+  "homepage": "https://github.com/0ta2/dotfiles#readme",
+  "dependencies": {
+    "neovim": "^4.5.0"
+  }
+}

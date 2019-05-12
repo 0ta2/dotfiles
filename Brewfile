@@ -13,8 +13,12 @@ brew "mas"
 brew "mercurial"
 brew "packer"
 brew "pyenv"
+brew "pyenv-virtualenv"
+brew "readline" # pyenv の依存関係で必要
+brew "xz" # pyenv の依存関係で必要
 brew "pipenv"
 brew "rbenv"
+brew "nodenv"
 brew "reattach-to-user-namespace"
 brew "ripgrep"
 brew "ssh-copy-id"

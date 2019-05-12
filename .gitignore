@@ -6,6 +6,7 @@
 .vim/plugged/*
 .vim/tmp/*
 !.gitkeep
+node_modules/*
 
 ### tmux
 .tmux/*
