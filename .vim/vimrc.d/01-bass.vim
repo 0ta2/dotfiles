@@ -79,6 +79,25 @@ set ambiwidth=double
 set display+=lastline
 
 "---------------------------
+" Neovim用 Python設定
+" pyenv でインストールしたPATHを指定
+"---------------------------
+let g:python_host_prog = expand('~/.pyenv/versions/py2neovim/bin/python')
+let g:python3_host_prog = expand('~/.pyenv/versions/py3neovim/bin/python')
+
+"---------------------------
+" Neovim用 Ruby設定
+" rbenv でインストールしたPATHを指定
+"---------------------------
+let g:ruby_host_prog = "$HOME/.rbenv/versions/2.6.3/bin/neovim-ruby-host"
+
+"---------------------------
+" Neovim用 Node.js設定
+" nodenv でインストールしたPATHを指定
+"---------------------------
+let g:node_host_prog = "$DOTFILES_PATH/node_modules/.bin/neovim-node-host"
+
+"---------------------------
 " インデント関連のオプション
 "---------------------------
 " タブ文字の代わりにスペースを使う(有効:expandtab/noexpandtab)
