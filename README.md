@@ -8,16 +8,33 @@ $ curl -fsSL https://raw.githubusercontent.com/0ta2/dotfiles/master/etc/install
 ```
 
 ## install shell で実装できていない箇所は手動でセットアップ
-
-```bash
 ### ログインシェルを変更
+```bash
 $ sudo sh -c "echo '/usr/local/bin/zsh' >> /etc/shells"
 $ chsh -s /usr/local/bin/zsh
+```
 
 ### フォントを追加
+```
 $ cp -f /usr/local/opt/ricty/share/fonts/Ricty*.ttf ~/Library/Fonts/
 $ fc-cache -vf
 $ pipenv install
+```
+
+### pyenv 設定
+```bash
+$ pyenv init
+$ sudo installer -pkg /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg -target /
+```
+
+### rbenv 設定
+```bash
+$ rbenv init
+```
+
+### nodenv 設定
+```bash
+$ nodenv init
 ```
 
 - システム環境設定
