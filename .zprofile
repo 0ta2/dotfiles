@@ -40,9 +40,6 @@ export DOTFILES_PATH="${HOME}/.ghq/github.com/0ta2/dotfiles"
 # TERM設定
 export TERM=xterm-256color
 
-# pipenv の Pipfile のファイルがある場所に .venv 配下に仮想環境を作るように設定
-export PIPENV_VENV_IN_PROJECT=1
-
 # 文字コード指定
 export LANG=ja_JP.UTF-8
 
