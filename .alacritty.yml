@@ -476,6 +476,7 @@ alt_send_esc: true
 #   - ~AppKeypad
 #   - AppKeypad
 key_bindings:
+  - { key: Space,    mods: Control, chars: "\x00"                   }
   # (Windows/Linux only)
   #- { key: V,        mods: Control|Shift, action: Paste            }
   #- { key: C,        mods: Control|Shift, action: Copy             }
