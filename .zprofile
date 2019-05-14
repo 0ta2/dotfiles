@@ -60,9 +60,6 @@ if [ "`which go`" ]; then
  export PATH=${GOPATH}/bin:$PATH
 fi
 
-# gvm設定
-[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
-
 if [ -e /Applications/Alacritty.app/Contents/MacOS/alacritty ];then
 	export PATH=/Applications/Alacritty.app/Contents/MacOS:${PATH}
 fi
