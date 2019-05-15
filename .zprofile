@@ -6,7 +6,7 @@
 #   -U 重複パスを登録しない
 #   -x export も同時に行う
 #   -T環境変数へ紐づけ
-#typeset -U path cdpath fpath manpath
+typeset -U path cdpath fpath manpath
 
 #   path=xxxx(N-/)
 #     (N-/): 存在しないディレクトリは登録しない
@@ -18,7 +18,6 @@
 #        .: 通常のファイルのみ残す
 # 基本PATH設定
 # ${path} は､大文字の PATH と紐付いている
-export PATH=/usr/local/bin:$PATH
 path=(
   /usr/local/bin(N-/)
   /usr/local/sbin(N-/)
