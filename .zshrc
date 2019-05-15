@@ -5,15 +5,15 @@
 zdir=${HOME}/.zsh
 
 # zshファイルを読み込む
-for zfile in ${zdir}/[0-9]*.zsh
+for zfiles in ${zdir}/[0-9]*.zsh
 do
-  source $zfile
+  source $zfiles
 done
 
 # functionファイルを読み込む
-for func in ${zdir}/functions/*
+for funcs in ${zdir}/functions/*
 do
-  source $func
+  source $funcs
 done
 
 # 自作補完関数読み込み
