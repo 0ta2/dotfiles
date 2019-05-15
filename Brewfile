@@ -52,6 +52,7 @@ cask "vlc"
 cask "vagrant"
 cask "station"
 cask "1password"
+cask "iTerm2"
 # App Storeからインストール
 mas "Xcode", id: 497799835
 mas "PopClip", id: 445189367
