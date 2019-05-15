@@ -19,6 +19,7 @@ GIT_CONFIGS=(
   "core,quotepath,false"
   "core,safecrlf,true"
   "core,autocrlf,false"
+  "core,editor,nvim"
   "color,ui,auto"
   "credential,helper,cache"
 )
