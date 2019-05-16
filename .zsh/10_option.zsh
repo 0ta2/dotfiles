@@ -58,5 +58,5 @@ setopt hist_ignore_dups
 # コマンド履歴をターミナル間で共有する
 setopt share_history
 
-# PROMPT変数内で変数参照する    
-setopt prompt_subst   
+# PROMPT変数内で変数参照する
+setopt prompt_subst
