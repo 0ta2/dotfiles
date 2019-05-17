@@ -71,6 +71,9 @@ Plug 'deoplete-plugins/deoplete-jedi'
 " 対応する括弧を入力
 Plug 'kana/vim-smartinput'
 
+" 言語パック(syntac/indent)
+Plug 'sheerun/vim-polyglot'
+
 "--------------
 " スニペット関連
 "--------------
