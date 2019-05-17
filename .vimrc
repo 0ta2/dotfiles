@@ -21,6 +21,9 @@ Plug 'jistr/vim-nerdtree-tabs'
 " ファイルに変更があた場合に、ツリーに表示
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
+" スクリプトの構造表示(universal-ctagsが必須)
+Plug 'majutsushi/tagbar'
+
 "--------------
 " ファイル関連
 "--------------
