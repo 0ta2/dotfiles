@@ -32,6 +32,7 @@ brew "grep"
 brew "ricty", args: ["with-powerline"]
 brew "brew-cask-completion"
 brew "composer"
+brew "universal-ctags/universal-ctags/universal-ctags", args: ["HEAD"]
 # App のインストール
 cask "google-chrome"
 cask "google-photos-backup-and-sync"
