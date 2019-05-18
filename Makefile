@@ -18,7 +18,7 @@ define print_warning
 endef
 
 define print_title
-    printf "\n\n\033[35m$1\033[m\n\n"
+    printf "\n\n\033[35m$1\033[m\n\n "
 endef
 
 define print_list
@@ -27,16 +27,16 @@ endef
 
 all:
 
-list: ## Show dot files in this repo
-	@$(foreach val, $(DOTFILES), $(call print_list,`/bin/ls -dF $(val)`);)
-
 deploy: ## Create symlink to home directory
 	@$(call print_title, Start to deploy dotfiles to home directory)
 	@$(foreach val, $(DOTFILES), $(call print_success, `ln -sfnv $(abspath $(val)) $(HOME)/$(val)`);)
 	@$(call print_success, `ln -sfnv $(HOME)/.vim ~/.config/nvim`)
 	@$(call print_success, `ln -sfnv $(HOME)/.vimrc ~/.config/nvim/init.vim`)
-	@$(call print_success, `mkdir -p $(HOME)/.config && ln -sfnv $(DOTPATH)/powerline ~/.config/powerline`)
-	@$(call print_success, `mkdir -p $(HOME)/.config && ln -sfnv $(DOTPATH)/karabiner ~/.config/karabiner`)
+	@$(call print_success, `ln -sfnv $(DOTPATH)/zsh ~/.config/zsh`)
+	@$(call print_success, `ln -sfnv $(DOTPATH)/zsh/ ~/.config/zsh`)
+	@$(call print_success, `ln -sfnv $(DOTPATH)/zsh/.zshenv ~/.zshenv`)
+	@$(call print_success, `ln -sfnv $(DOTPATH)/powerline ~/.config/powerline`)
+	@$(call print_success, `ln -sfnv $(DOTPATH)/karabiner ~/.config/karabiner`)
 
 init: ## Setup environment settings
 	@$(call print_title, Start to init dotofiles)
@@ -53,6 +53,9 @@ install: update deploy init ## Run make update, deploy, init
 clean: ## Remove the dot files and this repo
 	@$(call print_title, Remove dot files in your home directory...)
 	@-$(foreach val, $(DOTFILES), $(call print_success, `rm -vrf $(HOME)/$(val)`);)
+	@-$(call print_success, `rm -fr $(HOME)/.config/powerline`)
+	@-$(call print_success, `rm -fr $(HOME)/.config/karabiner`)
+	@-$(call print_success, `rm -fr $(HOME)/.config/zimfw`)
 	@-$(call print_success, `rm -rf $(DOTPATH)`)
 
 help: ## Self-documented Makefile
