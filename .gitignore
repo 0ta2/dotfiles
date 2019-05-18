@@ -4,7 +4,8 @@
 ### zsh
 zsh/.zcompdump*
 zsh/.zhistory
-zsh/.zshrc.zwc
+zsh/*.zwc
+zsh/*.old
 
 ### vim
 .netrwhist
