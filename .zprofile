@@ -42,6 +42,10 @@ export TERM=xterm-256color
 # 文字コード指定
 export LANG=ja_JP.UTF-8
 
+# zplug の環境を変数設定
+export ZPLUG_HOME=/usr/local/opt/zplug
+source $ZPLUG_HOME/init.zsh
+
 # Edita設定
 if [ -e /usr/local/bin/vim ]; then
   export EDITOR=/usr/local/bin/vim
