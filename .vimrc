@@ -10,6 +10,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'vim-jp/vimdoc-ja'
 " vimのカラー設定
 Plug 'cocopon/iceberg.vim'
+" 移動強化
+Plug 'easymotion/vim-easymotion'
 
 "--------------
 " ファイルツリー関連
@@ -20,6 +22,9 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'jistr/vim-nerdtree-tabs'
 " ファイルに変更があた場合に、ツリーに表示
 Plug 'Xuyuanp/nerdtree-git-plugin'
+
+" スクリプトの構造表示(universal-ctagsが必須)
+Plug 'majutsushi/tagbar'
 
 "--------------
 " ファイル関連
@@ -67,6 +72,9 @@ Plug 'deoplete-plugins/deoplete-jedi'
 
 " 対応する括弧を入力
 Plug 'kana/vim-smartinput'
+
+" 言語パック(syntac/indent)
+Plug 'sheerun/vim-polyglot'
 
 "--------------
 " スニペット関連
