@@ -1,6 +1,9 @@
 " <C-e>でNERDTreeをオンオフ
 nnoremap <silent> <Leader>e :NERDTreeToggle<CR>
 
+" 親ディレクトリに移動
+let g:NERDTreeMapUpdir="<C-u>"
+
 " NERDTree の起動時にファイルをフォーカスする
 augroup NERD
     au!
@@ -12,7 +15,7 @@ augroup END
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " 無視するファイルを設定する
-let g:NERDTreeIgnore=['\.clean$', '\.swp$', '\.bak$', '\~$']
+let g:NERDTreeIgnore=['\.git$', '\.clean$', '\.swp$', '\.bak$', '\~$']
 
 " 隠しファイルを表示するか
 " 0 : 表示しない

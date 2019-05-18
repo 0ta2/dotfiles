@@ -3,29 +3,21 @@ setopt complete_aliases
 
 # OS毎にaliasを変更
 case "${OSTYPE}" in
-freebsd*|darwin*)
+darwin*)
+    # Mac向け
     alias ls="gls --color=auto"
     ;;
 linux*)
+    # Linux向け
     alias ls="ls --color"
     ;;
 esac
 
-# システム系
-alias where="command -v"
-alias j="jobs -l"
-alias su="su -l"
-
-# ls系
-alias la="ls -a"
-alias lf="ls -F"
+# ls関連
 alias ll="ls -la"
 
-# Git系
+# Git関連
 alias gbr="git branch --merged | grep -vE '^\*|master$|develop$' | xargs -I % git branch -d %"
-
-# 便利系
-alias vimtmp="vim /tmp/tmp_`date '+%Y%m%d_%H%M%S'`.txt"
 
 # nvim
 alias vim="nvim"
