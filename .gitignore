@@ -1,6 +1,12 @@
 ### Mac OS
 .DS_Store
 
+### zsh
+zsh/.zcompdump*
+zsh/.zhistory
+zsh/*.zwc
+zsh/*.old
+
 ### vim
 .netrwhist
 .vim/plugged/*
