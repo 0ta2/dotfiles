@@ -6,4 +6,4 @@
 	url = https://github.com/zimfw/zimfw.git
 [submodule "zsh/dircolors"]
 	path = zsh/dircolors
-	url = https://github.com/0ta2/dircolors-solarized.git
+  url = https://github.com/0ta2/dircolors-solarized.git
