@@ -1,6 +1,0 @@
-#!/bin/bash
-
-QDRIVE=`echo "$1" | sed -e 's/https.*id=//'`
-
-echo '![example](http://drive.google.com/uc?export=view&id='"$QDRIVE"')'
-

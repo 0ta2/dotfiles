@@ -1,4 +1,0 @@
-function ftmuxls () {
-  local ftmuxls
-  ftmuxls=$(tmux ls | fzf --query "$LBUFFER" | awk '{print $1}' | sed 's/://') && tmux attach -t $ftmuxls
-}
