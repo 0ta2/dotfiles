@@ -35,6 +35,7 @@ deploy: ## Create symlink to home directory
 	@$(call print_success, `ln -sfnv $(DOTPATH)/zsh ~/.config/zsh`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/zsh/ ~/.config/zsh`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/zsh/.zshenv ~/.zshenv`)
+	@$(call print_success, `ln -sfnv $(DOTPATH)/zsh/dircolors/dircolors.256dark ~/.dir_colors`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/powerline ~/.config/powerline`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/karabiner ~/.config/karabiner`)
 
