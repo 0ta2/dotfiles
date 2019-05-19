@@ -1,4 +1,4 @@
-# brew インストール
+#1password-cli brew インストール
 tap "homebrew/bundle"
 tap "homebrew/core"
 tap "sanemat/font"
@@ -34,6 +34,7 @@ brew "ricty", args: ["with-powerline"]
 brew "brew-cask-completion"
 brew "composer"
 brew "universal-ctags", args: ["HEAD"]
+brew "gnupg" # 1Password CLI のバイナリ確認のため
 # App のインストール
 cask "google-chrome"
 cask "google-photos-backup-and-sync"
@@ -54,6 +55,7 @@ cask "vlc"
 cask "vagrant"
 cask "station"
 cask "1password"
+cask "1password-cli" # 1password の CLI ツール
 cask "iTerm2"
 # App Storeからインストール
 mas "Xcode", id: 497799835
