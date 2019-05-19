@@ -18,33 +18,6 @@ do
   source $funcs
 done
 
-### PATH 設定
-
-# typeset
-#   -U 重複パスを登録しない
-#   -x export も同時に行う
-#   -T環境変数へ紐づけ
-typeset -U path cdpath fpath manpath
-
-#   path=xxxx(N-/)
-#     (N-/): 存在しないディレクトリは登録しない
-#     パス(...): ...という条件にマッチするパスのみ残す
-#        N: NULL_GLOBオプションを設定。
-#           globがマッチしなかったり存在しないパスを無視する
-#        -: シンボリックリンク先のパスを評価
-#        /: ディレクトリのみ残す
-#        .: 通常のファイルのみ残す
-# 基本PATH設定
-# ${path} は､大文字の PATH と紐付いている
-path=(
-  /usr/local/bin(N-/)
-  /usr/local/sbin(N-/)
-  /usr/bin(N-/)
-  ${ZDOTDIR}/bin(N-/)
-  $HOME/.fzf/bin(N-/)
-  ${path}
-  )
-
 ### 環境変数設定
 
 # 独自関数
@@ -58,6 +31,8 @@ export TERM=xterm-256color
 
 # 文字コード指定
 export LANG=ja_JP.UTF-8
+
+### PATH 設定
 
 # WSL を使っている場合の PATH 設定
 if [[ $(uname -a) =~ Linnux && $(uname -a) =~ Microsoft ]]; then
@@ -78,6 +53,24 @@ if [ -f ~/.fzf.zsh ]; then
   export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 fi
 
+#   path=xxxx(N-/)
+#     (N-/): 存在しないディレクトリは登録しない
+#     パス(...): ...という条件にマッチするパスのみ残す
+#        N: NULL_GLOBオプションを設定。
+#           globがマッチしなかったり存在しないパスを無視する
+#        -: シンボリックリンク先のパスを評価
+#        /: ディレクトリのみ残す
+#        .: 通常のファイルのみ残す
+# 基本PATH設定
+# ${path} は､大文字の PATH と紐付いている
+path=(
+  /usr/local/bin(N-/)
+  /usr/local/sbin(N-/)
+  /usr/bin(N-/)
+  ${ZDOTDIR}/bin(N-/)
+  $HOME/.fzf/bin(N-/)
+  ${path}
+)
 
 ### Env系
 # macの場合は､ /etc/zprofile で上書きされてしまう｡
