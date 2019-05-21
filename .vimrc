@@ -89,6 +89,7 @@ Plug 'Shougo/neosnippet'
 "--------------
 " markdown
 Plug 'plasticboy/vim-markdown'
+Plug 'godlygeek/tabular'      " Markdownの表整形に必要
 Plug 'kannokanno/previm'
 Plug 'tyru/open-browser.vim'
 

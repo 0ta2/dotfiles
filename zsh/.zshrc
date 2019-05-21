@@ -172,6 +172,10 @@ alias gbr="git branch --merged | grep -vE '^\*|master$|develop$' | xargs -I % gi
 # nvim
 alias vim="nvim"
 
+# cd 系
+alias ..2='cd ../../'
+alias ..3='cd ../../..'
+
 ### Prompt
 # 変数の添字を保管する
 zstyle ':completion:*:*:-subscript-:*' tag-order indexes parameters
