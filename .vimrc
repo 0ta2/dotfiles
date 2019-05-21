@@ -78,6 +78,14 @@ Plug 'kana/vim-smartinput'
 " 言語パック(syntac/indent)
 Plug 'sheerun/vim-polyglot'
 
+" vim-lsp
+Plug 'prabirshrestha/vim-lsp'
+Plug 'prabirshrestha/async.vim'        " vim-lsp を使うために必要
+Plug 'lighttiger2505/deoplete-vim-lsp' " deoplete-vim で vim-lsp を使えるようにする
+
+" PHP Lunguage Server
+Plug 'felixfbecker/php-language-server', {'do': 'composer install && composer run-script parse-stubs'}
+
 "--------------
 " スニペット関連
 "--------------
