@@ -10,6 +10,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'vim-jp/vimdoc-ja'
 " vimのカラー設定
 Plug 'cocopon/iceberg.vim'
+" 起動時の表示画面変更
+Plug 'mhinz/vim-startify'
 " 移動強化
 Plug 'easymotion/vim-easymotion'
 
