@@ -71,6 +71,7 @@ Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
 
 " Pythonの補完
 Plug 'deoplete-plugins/deoplete-jedi'
+Plug 'ryanolsonx/vim-lsp-python'
 
 " 対応する括弧を入力
 Plug 'kana/vim-smartinput'
