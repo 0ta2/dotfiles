@@ -73,6 +73,9 @@ Plug 'Shougo/neco-vim'
 " Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'ryanolsonx/vim-lsp-python'
 
+" requirements.txt からpip を自動インストールする
+Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
+
 " 対応する括弧を入力
 Plug 'kana/vim-smartinput'
 
@@ -86,6 +89,14 @@ Plug 'lighttiger2505/deoplete-vim-lsp' " deoplete-vim で vim-lsp を使える�
 
 " PHP Lunguage Server
 Plug 'felixfbecker/php-language-server', {'do': 'composer install && composer run-script parse-stubs'}
+
+" コメントアウト
+" gc{motion}
+Plug 'tpope/vim-commentary'
+
+" 括弧を簡単にできるようにする
+" ds['"({[]
+Plug 'tpope/vim-surround'
 
 "--------------
 " スニペット関連
