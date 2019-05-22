@@ -14,6 +14,9 @@ Plug 'cocopon/iceberg.vim'
 Plug 'mhinz/vim-startify'
 " 移動強化
 Plug 'easymotion/vim-easymotion'
+" 整形
+" command: ga
+Plug 'junegunn/vim-easy-align'
 
 "--------------
 " ファイルツリー関連
