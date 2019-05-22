@@ -1,5 +1,5 @@
 " <C-e>でNERDTreeをオンオフ
-nnoremap <silent> <Leader>e :NERDTreeToggle<CR>
+nnoremap <silent> <Leader>dir :NERDTreeToggle<CR>
 
 " 親ディレクトリに移動
 let g:NERDTreeMapUpdir="<C-u>"
@@ -16,6 +16,9 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " 無視するファイルを設定する
 let g:NERDTreeIgnore=['\.git$', '\.clean$', '\.swp$', '\.bak$', '\~$']
+
+" 表示する順序
+let g:NERDTreeSortOrder=['\.vim$', '\.c$', '\.h$', '*', 'foobar']
 
 " 隠しファイルを表示するか
 " 0 : 表示しない
