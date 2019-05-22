@@ -1,1 +1,2 @@
-nnoremap <silent> <Leader>t :<C-u>TagbarToggle<CR>
+" タグバーの設定
+nnoremap <silent> <Leader>T :<C-u>TagbarToggle<CR>
