@@ -47,7 +47,11 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
+" json の表示
 Plug 'elzr/vim-json'
+
+" 統合ユーザインターフェース
+Plug 'Shougo/denite.nvim'
 
 "--------------
 " Git関連
