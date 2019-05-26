@@ -11,7 +11,8 @@ zsh/.zcompcache
 ### vim
 .netrwhist
 .vim/plugged/*
-.vim/tmp/*
+viminfo.txt
+tags
 !.gitkeep
 node_modules/*
 
