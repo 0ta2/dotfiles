@@ -78,6 +78,9 @@ set ambiwidth=double
 " 画面最後の行をできる限り表示する
 set display+=lastline
 
+" 矩形選択で､矩形の行の行末にテキストがない場合､操作が困難なので回避するための設定
+set virtualedit=all
+
 "---------------------------
 " Neovim用 Python設定
 " pyenv でインストールしたPATHを指定
