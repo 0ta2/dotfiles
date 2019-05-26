@@ -47,9 +47,9 @@ DOTFILES_LOGO='
 
 xcode_select_install() {
   print_message "xcode-select --install..."
-  
+
   xcode-select -p >/dev/null 2>&1
-  
+
   if [ $? == 0 ]; then
     print_warning "Already exist"
     exit 0
@@ -64,10 +64,10 @@ xcode_select_install() {
         break
       fi
         sleep 30
-    done    
+      done
   fi
 }
-  
+
 # dotfiles download
 download_dotfiles() {
   print_title "Download dotfiles"
@@ -122,10 +122,10 @@ dotfiles_initialize() {
 main() {
   # print logo
   echo "${DOTFILES_LOGO}"
-  
+
   # xcode-select install
   xcode_select_install
-  
+
   # download dotfiles
   # priority git -> curl
   download_dotfiles
