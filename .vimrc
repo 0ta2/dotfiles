@@ -50,9 +50,6 @@ Plug 'junegunn/fzf.vim'
 " json の表示
 Plug 'elzr/vim-json'
 
-" 統合ユーザインターフェース
-Plug 'Shougo/denite.nvim'
-
 "--------------
 " Git関連
 "--------------
@@ -79,9 +76,6 @@ Plug 'Shougo/neco-vim'
 " Pythonの補完
 " Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'ryanolsonx/vim-lsp-python'
-
-" requirements.txt からpip を自動インストールする
-Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 
 " 対応する括弧を入力
 Plug 'kana/vim-smartinput'
