@@ -29,16 +29,16 @@ let g:clipboard = {
           \ }
 
 " swpファイルの保存場所
-set directory=~/.vim/tmp
+set directory=~/.vim/tmp/swap
 
 " バックアップフィアルの出力先
-set backupdir=~/.vim/tmp
+set backupdir=~/.vim/tmp/backup
 
 " viminfoファイルの出力先
-set viminfo+=n$HOME/viminfo.txt
+set viminfo+=n$HOME/.vim/tmp/viminfo.txt
 
 " undofileの出力先 .un~
-set undodir=~/.vim/tmp
+set undodir=~/.vim/tmp/undo
 
 " カラーテーマ指定
 colorscheme iceberg
