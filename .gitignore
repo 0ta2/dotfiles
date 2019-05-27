@@ -10,13 +10,15 @@ zsh/.zcompcache
 
 ### vim
 .netrwhist
+*.swp
 .vim/plugged/*
 viminfo.txt
 tags
 !.gitkeep
 node_modules/*
+.bundle/*
+.venv/*
 
 ### tmux
 .tmux/*
 !.gitkeep
-.venv/*
