@@ -19,6 +19,8 @@ Plug 'easymotion/vim-easymotion'
 Plug 'junegunn/vim-easy-align'
 " 画面分割した際のサイズ変更を便利にする
 Plug 'kana/vim-submode'
+" シンタックチェック
+Plug 'w0rp/ale'
 
 "--------------
 " ファイルツリー関連
