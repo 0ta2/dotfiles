@@ -81,6 +81,9 @@ set display+=lastline
 " 矩形選択で､矩形の行の行末にテキストがない場合､操作が困難なので回避するための設定
 set virtualedit=all
 
+" ダブルクォーテーションが隠れてしまう問題の対応
+set conceallevel=0
+
 "---------------------------
 " Neovim用 Python設定
 " pyenv でインストールしたPATHを指定
