@@ -15,6 +15,12 @@ let g:fzf_action = {
 let g:fzf_layout = { 'down': '~40%' }
 
 "--------------
+" fzf の設定
+"--------------
+" すでにタブとかで開いていいた場合は、該当のタブへジャンプする
+let g:fzf_buffers_jump = 1
+
+"--------------
 " キーバインド
 "--------------
 nnoremap <Leader>b :Buffers<CR>
