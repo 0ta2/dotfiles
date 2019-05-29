@@ -120,6 +120,12 @@ Plug 'godlygeek/tabular'      " Markdownの表整形に必要
 Plug 'kannokanno/previm'
 Plug 'tyru/open-browser.vim'
 
+"--------------
+" Tmux関連
+"--------------
+" Tmux のpain移動とvimの分割画面の移動をシームレスに行う
+Plug 'christoomey/vim-tmux-navigator'
+
 call plug#end()
 
 " OS判定
