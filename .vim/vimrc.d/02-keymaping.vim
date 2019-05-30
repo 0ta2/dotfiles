@@ -19,6 +19,12 @@ nnoremap <leader>w :w<cr>
 " カーソル下の単語を置換の対象にする
 nnoremap <leader>* :%s/\<<c-r><c-w>\>//g<left><left>
 
+" 行の移動
+nnoremap <leader>k :m-2<cr>==
+nnoremap <leader>j :m+<cr>==
+xnoremap <leader>k :m-2<cr>gv=gv
+xnoremap <leader>j :m'>+<cr>gv=gv
+
 " 分割したウインドウを HJKL で場所を移動
 nnoremap <Leader>J <C-w>J
 nnoremap <Leader>K <C-w>K
