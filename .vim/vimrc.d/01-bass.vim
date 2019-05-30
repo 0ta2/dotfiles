@@ -81,6 +81,9 @@ set display+=lastline
 " 矩形選択で､矩形の行の行末にテキストがない場合､操作が困難なので回避するための設定
 set virtualedit=block
 
+" ctag の設定
+set tags+=.git/tags
+
 "---------------------------
 " Neovim用 Python設定
 " pyenv でインストールしたPATHを指定
