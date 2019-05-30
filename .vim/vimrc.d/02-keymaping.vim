@@ -13,6 +13,9 @@ noremap ; :
 " mapleader を <Space> に指定
 let mapleader = "\<Space>"
 
+" ファイル保存
+nnoremap <leader>w :w<cr>
+
 " 分割したウインドウを HJKL で場所を移動
 nnoremap <Leader>J <C-w>J
 nnoremap <Leader>K <C-w>K
