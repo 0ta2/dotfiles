@@ -13,12 +13,6 @@ noremap ; :
 " mapleader を <Space> に指定
 let mapleader = "\<Space>"
 
-" 分割したウインドウ間を hjkl で移動
-nnoremap <Leader>j <C-w>j
-nnoremap <Leader>k <C-w>k
-nnoremap <Leader>l <C-w>l
-nnoremap <Leader>h <C-w>h
-
 " 分割したウインドウを HJKL で場所を移動
 nnoremap <Leader>J <C-w>J
 nnoremap <Leader>K <C-w>K
