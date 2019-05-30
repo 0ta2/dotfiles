@@ -37,30 +37,26 @@ nnoremap <Leader>s :<C-u>sp<CR>
 nnoremap <Leader>v :<C-u>vs<CR>
 
 " 新しいタブを開く
-nnoremap <Leader>t :<C-u>tabnew<CR>
+nnoremap <Leader>tw :<C-u>tabnew<CR>
 
 " 次のタブに移動
 nnoremap <Leader>n gt
 " 前のタブに移動
 nnoremap <Leader>p gT
 
+" tagファイル生成のショートカット
+nnoremap <leader>tc :!ctags -Rf .git/tags<cr><cr>
 " カーソルの単語の定義先にジャンプ（複数候補はリスト表示）
-nnoremap tj :exe("tjump ".expand('<cword>'))<CR>
-
+nnoremap <leader>tj :exe("tjump ".expand('<cword>'))<CR>
 " tag stack を戻る
-nnoremap tp :pop<CR>
-
+nnoremap <leader>tp :pop<CR>
 " tag stack を進む
-nnoremap tn :tag<CR>
-
+nnoremap <leader>tn :tag<CR>
 " 縦にウィンドウを分割してジャンプ
-nnoremap tv :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
-
+nnoremap <leader>tv :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
 " 横にウィンドウを分割してジャンプ
-nnoremap ts :split<CR> :exe("tjump ".expand('<cword>'))<CR>
-
+nnoremap <leader>ts :split<CR> :exe("tjump ".expand('<cword>'))<CR>
 " 新しいタブでジャンプ
-nnoremap tt :tab sp<CR> :exe("tjump ".expand('<cword>'))<CR>
-
+nnoremap <leader>tt :tab sp<CR> :exe("tjump ".expand('<cword>'))<CR>
 " tag list を表示
-nnoremap tl :ts<CR>
+nnoremap <leader>tl :ts<CR>
