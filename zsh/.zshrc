@@ -53,6 +53,12 @@ if [ -f ~/.fzf.zsh ]; then
   export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 fi
 
+### Joplin
+if [ -f /usr/local/Cellar/joplin/*/bin/joplin ]; then
+  joplin_path=`dirname /usr/local/Cellar/joplin/*/bin/joplin`
+  export PATH=${joplin_path}:${PATH}
+fi
+
 #   path=xxxx(N-/)
 #     (N-/): 存在しないディレクトリは登録しない
 #     パス(...): ...という条件にマッチするパスのみ残す

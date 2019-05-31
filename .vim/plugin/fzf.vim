@@ -25,9 +25,12 @@ let g:fzf_buffers_jump = 1
 "--------------
 nnoremap <Leader>b :Buffers<CR>
 nnoremap <Leader>c :Commands<CR>
-nnoremap <Leader>g :GFiles?<CR>
+nnoremap <Leader>g :GFiles<CR>
 nnoremap <Leader>f :Files<CR>
 nnoremap <Leader>r :Rg<CR>
+nnoremap <Leader>h :History<CR>
+nnoremap <Leader>; :History:<CR>
+nnoremap <Leader>/ :History/<CR>
 
 "--------------
 " コマンド設定
