@@ -79,7 +79,10 @@ set ambiwidth=double
 set display+=lastline
 
 " 矩形選択で､矩形の行の行末にテキストがない場合､操作が困難なので回避するための設定
-set virtualedit=all
+set virtualedit=block
+
+" ctag の設定
+set tags+=.git/tags
 
 " ダブルクォーテーションが隠れてしまう問題の対応
 set conceallevel=0

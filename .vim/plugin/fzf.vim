@@ -28,7 +28,6 @@ nnoremap <Leader>c :Commands<CR>
 nnoremap <Leader>g :GFiles?<CR>
 nnoremap <Leader>f :Files<CR>
 nnoremap <Leader>r :Rg<CR>
-nnoremap <Leader>w :Windows<CR>
 
 "--------------
 " コマンド設定
