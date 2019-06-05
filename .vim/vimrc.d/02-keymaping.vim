@@ -46,6 +46,28 @@ nnoremap <Leader>p gT
 
 " tagファイル生成のショートカット
 nnoremap <leader>tc :!ctags -Rf .git/tags<cr><cr>
+
+let g:pid = getpid()
+let g:tag_file_path = "/tmp/" . g:pid . "_tags"
+function! _CtagsUpdate()
+    exe '!ctags -R -f '.g:tag_file_path.' `pwd` &'
+    exe 'set tags='.g:tag_file_path
+endfunction
+command! CtagsUpdate call _CtagsUpdate()
+
+function! _CtagsRemove()
+    exe '!rm '.g:tag_file_path
+endfunction
+command! CtagsRemove call _CtagsRemove()
+
+let current_path = expand("%:p")
+let match_idx = match(current_path, ".git")
+if match_idx != -1
+    autocmd VimEnter * silent! :CtagsUpdate
+    autocmd BufWrite * silent! :CtagsUpdate
+    autocmd VimLeave * silent! :CtagsRemove
+endif
+
 " カーソルの単語の定義先にジャンプ（複数候補はリスト表示）
 nnoremap <leader>tj :exe("tjump ".expand('<cword>'))<CR>
 " tag stack を戻る

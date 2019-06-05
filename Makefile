@@ -38,6 +38,7 @@ deploy: ## Create symlink to home directory
 	@$(call print_success, `ln -sfnv $(DOTPATH)/zsh/dircolors/dircolors.256dark ~/.dir_colors`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/powerline ~/.config/powerline`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/karabiner ~/.config/karabiner`)
+	@$(call print_success, 'ln -sfnv $(DOTPATH)/.ctags.d ~/.ctags.d/config.ctags')
 
 init: ## Setup environment settings
 	@$(call print_title, Start to init dotofiles)
@@ -57,6 +58,7 @@ clean: ## Remove the dot files and this repo
 	@-$(call print_success, `rm -fr $(HOME)/.config/powerline`)
 	@-$(call print_success, `rm -fr $(HOME)/.config/karabiner`)
 	@-$(call print_success, `rm -fr $(HOME)/.config/zimfw`)
+	@-$(call print_success, `rm -fr $(HOME)/.ctags.d/config.ctags`)
 	@-$(call print_success, `rm -rf $(DOTPATH)`)
 
 help: ## Self-documented Makefile
