@@ -36,8 +36,13 @@ nnoremap <Leader>s :<C-u>sp<CR>
 " 画面を縦に分割
 nnoremap <Leader>v :<C-u>vs<CR>
 
-" 新しいタブを開く
-nnoremap <Leader>tw :<C-u>tabnew<CR>
+" create a new buffer (save it with :w ./path/to/FILENAME)
+nnoremap <leader>t :enew<cr>
+
+" close current buffer
+nnoremap <leader>bq :bp <bar> bd! #<cr>
+"close all open buffers
+nnoremap <leader>ba :bufdo bd!<cr>
 
 " 次のタブに移動
 nnoremap <Leader>n gt
