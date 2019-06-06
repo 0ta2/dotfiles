@@ -37,17 +37,18 @@ nnoremap <Leader>s :<C-u>sp<CR>
 nnoremap <Leader>v :<C-u>vs<CR>
 
 " create a new buffer (save it with :w ./path/to/FILENAME)
-nnoremap <leader>t :enew<cr>
-
+nnoremap <leader>B :enew<cr>
 " close current buffer
 nnoremap <leader>bq :bp <bar> bd! #<cr>
 "close all open buffers
 nnoremap <leader>ba :bufdo bd!<cr>
 
-" 次のタブに移動
-nnoremap <Leader>n gt
-" 前のタブに移動
-nnoremap <Leader>p gT
+" Tab to switch to next open buffer
+nnoremap <Tab> :bnext<cr>
+" Shift + Tab to switch to previous open buffer
+nnoremap <S-Tab> :bprevious<cr>
+" leader key twice to cycle between last two open buffers
+nnoremap <leader><leader> <c-^>
 
 " tagファイル生成のショートカット
 nnoremap <leader>tc :!ctags -Rf .git/tags<cr><cr>

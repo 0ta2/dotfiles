@@ -34,6 +34,7 @@ brew "ricty", args: ["with-powerline"]
 brew "brew-cask-completion"
 brew "composer"
 brew "universal-ctags", args: ["HEAD"]
+brew "global"
 brew "gnupg" # 1Password CLI のバイナリ確認のため
 # App のインストール
 cask "google-chrome"
