@@ -26,15 +26,15 @@ xnoremap <leader>k :m-2<cr>gv=gv
 xnoremap <leader>j :m'>+<cr>gv=gv
 
 " 分割したウインドウを HJKL で場所を移動
-nnoremap <Leader>J <C-w>J
-nnoremap <Leader>K <C-w>K
-nnoremap <Leader>L <C-w>L
-nnoremap <Leader>H <C-w>H
+nnoremap <leader>J <C-w>J
+nnoremap <leader>K <C-w>K
+nnoremap <leader>L <C-w>L
+nnoremap <leader>H <C-w>H
 
 " 画面を横に分割
-nnoremap <Leader>s :<C-u>sp<CR>
+nnoremap <leader>s :<C-u>sp<CR>
 " 画面を縦に分割
-nnoremap <Leader>v :<C-u>vs<CR>
+nnoremap <leader>v :<C-u>vs<CR>
 
 " create a new buffer (save it with :w ./path/to/FILENAME)
 nnoremap <leader>B :enew<cr>
