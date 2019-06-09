@@ -31,7 +31,7 @@ deploy: ## Create symlink to home directory
 	@$(call print_title, Start to deploy dotfiles to home directory)
 	@$(foreach val, $(DOTFILES), $(call print_success, `ln -sfnv $(abspath $(val)) $(HOME)/$(val)`);)
 	@$(call print_success, `ln -sfnv $(HOME)/.vim ~/.config/nvim`)
-	@$(call print_success, `ln -sfnv $(HOME)/.vimrc ~/.config/nvim/init.vim`)
+	@$(call print_success, `ln -sfnv $(DOTPATH)/.vim ~/.config/nvim`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/zsh ~/.config/zsh`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/zsh/ ~/.config/zsh`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/zsh/.zshenv ~/.zshenv`)
@@ -55,6 +55,7 @@ install: update deploy init ## Run make update, deploy, init
 clean: ## Remove the dot files and this repo
 	@$(call print_title, Remove dot files in your home directory...)
 	@-$(foreach val, $(DOTFILES), $(call print_success, `rm -vrf $(HOME)/$(val)`);)
+	@-$(call print_success, `rm -fr $(HOME)/.config/nvim`)
 	@-$(call print_success, `rm -fr $(HOME)/.config/powerline`)
 	@-$(call print_success, `rm -fr $(HOME)/.config/karabiner`)
 	@-$(call print_success, `rm -fr $(HOME)/.config/zimfw`)
