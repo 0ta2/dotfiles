@@ -22,7 +22,7 @@ nnoremap <leader>* :%s/\<<c-r><c-w>\>//g<left><left>
 " 行の移動
 nnoremap <leader>k :m-2<cr>==
 nnoremap <leader>j :m+<cr>==
-xnoremap <leader>k :m-2<cr>gv=gv
+noremap <leader>k :m-2<cr>gv=gv
 xnoremap <leader>j :m'>+<cr>gv=gv
 
 " 分割したウインドウを HJKL で場所を移動
@@ -35,6 +35,11 @@ nnoremap <leader>H <C-w>H
 nnoremap <leader>s :<C-u>sp<CR>
 " 画面を縦に分割
 nnoremap <leader>v :<C-u>vs<CR>
+
+" 縦横に最大化
+nnoremap <leader>o <C-w>_<C-w>\|
+" 幅を揃える
+nnoremap <leader>= <C-w>=
 
 " create a new buffer (save it with :w ./path/to/FILENAME)
 nnoremap <leader>B :enew<cr>
