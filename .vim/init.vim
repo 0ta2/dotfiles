@@ -26,6 +26,8 @@ Plug 'w0rp/ale'
 Plug 'ap/vim-buftabline'
 " gtacs
 Plug 'jsfaint/gen_tags.vim'
+" QFixHowm
+Plug 'fuenor/qfixhowm'
 
 "--------------
 " ファイルツリー関連
@@ -140,3 +142,9 @@ let OSTYPE = system('uname')
 " Load vim files
 "--------------
 runtime! vimrc.d/*.vim
+
+"--------------
+" QfixHowm の設定ファイル読み込み
+"--------------
+set runtimepath+=$HOME/.vim/plugged/qfixhowm
+
