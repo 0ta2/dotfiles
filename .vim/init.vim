@@ -28,6 +28,8 @@ Plug 'ap/vim-buftabline'
 Plug 'jsfaint/gen_tags.vim'
 " QFixHowm
 Plug 'fuenor/qfixhowm'
+" cheatsheet
+Plug 'reireias/vim-cheatsheet'
 
 "--------------
 " ファイルツリー関連
@@ -133,6 +135,11 @@ Plug 'tyru/open-browser.vim'
 " Tmux のpain移動とvimの分割画面の移動をシームレスに行う
 Plug 'christoomey/vim-tmux-navigator'
 
+"--------------
+" Window関連
+"--------------
+Plug 'simeji/winresizer'
+
 call plug#end()
 
 " OS判定
@@ -147,4 +154,3 @@ runtime! vimrc.d/*.vim
 " QfixHowm の設定ファイル読み込み
 "--------------
 set runtimepath+=$HOME/.vim/plugged/qfixhowm
-
