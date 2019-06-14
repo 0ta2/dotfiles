@@ -14,49 +14,47 @@ noremap ; :
 let mapleader = "\<Space>"
 
 " ファイル保存
-nnoremap <leader>w :w<cr>
+nnoremap <Leader>w :w<cr>
 
 " カーソル下の単語を置換の対象にする
-nnoremap <leader>* :%s/\<<c-r><c-w>\>//g<left><left>
+nnoremap <Leader>* :%s/\<<c-r><c-w>\>//g<left><left>
 
 " 行の移動
-nnoremap <leader>k :m-2<cr>==
-nnoremap <leader>j :m+<cr>==
-noremap <leader>k :m-2<cr>gv=gv
-xnoremap <leader>j :m'>+<cr>gv=gv
+nnoremap <Leader>k :m-2<cr>==
+nnoremap <Leader>j :m+<cr>==
+noremap <Leader>k :m-2<cr>gv=gv
+xnoremap <Leader>j :m'>+<cr>gv=gv
 
 " 分割したウインドウを HJKL で場所を移動
-nnoremap <leader>J <C-w>J
-nnoremap <leader>K <C-w>K
-nnoremap <leader>L <C-w>L
-nnoremap <leader>H <C-w>H
+nnoremap <Leader>J <C-w>J
+nnoremap <Leader>K <C-w>K
+nnoremap <Leader>L <C-w>L
+nnoremap <Leader>H <C-w>H
 
 " 画面を横に分割
-nnoremap <leader>s :<C-u>sp<CR>
+nnoremap <Leader>s :<C-u>sp<CR>
 " 画面を縦に分割
-nnoremap <leader>v :<C-u>vs<CR>
+nnoremap <Leader>v :<C-u>vs<CR>
 
 " 縦横に最大化
-nnoremap <leader>o <C-w>_<C-w>\|
+nnoremap <Leader>o <C-w>_<C-w>\|
 " 幅を揃える
-nnoremap <leader>= <C-w>=
+nnoremap <Leader>= <C-w>=
 
 " create a new buffer (save it with :w ./path/to/FILENAME)
-nnoremap <leader>B :enew<cr>
+nnoremap <Leader>B :enew<cr>
 " close current buffer
-nnoremap <leader>bq :bp <bar> bd! #<cr>
-"close all open buffers
-nnoremap <leader>ba :bufdo bd!<cr>
+nnoremap <Leader>q :bp <bar> bd! #<cr>
 
 " Tab to switch to next open buffer
-nnoremap <Tab> :bnext<cr>
+nnoremap <Leader>n :bnext<cr>
 " Shift + Tab to switch to previous open buffer
-nnoremap <S-Tab> :bprevious<cr>
+nnoremap <Leader>p :bprevious<cr>
 " leader key twice to cycle between last two open buffers
-nnoremap <leader><leader> <c-^>
+nnoremap <Leader><Leader> <c-^>
 
 " tagファイル生成のショートカット
-nnoremap <leader>tc :!ctags -Rf .git/tags<cr><cr>
+nnoremap <Leader>tc :!ctags -Rf .git/tags<cr><cr>
 
 let g:pid = getpid()
 let g:tag_file_path = "/tmp/" . g:pid . "_tags"
@@ -80,16 +78,16 @@ if match_idx != -1
 endif
 
 " カーソルの単語の定義先にジャンプ（複数候補はリスト表示）
-nnoremap <leader>tj :exe("tjump ".expand('<cword>'))<CR>
+nnoremap <Leader>tj :exe("tjump ".expand('<cword>'))<CR>
 " tag stack を戻る
-nnoremap <leader>tp :pop<CR>
+nnoremap <Leader>tp :pop<CR>
 " tag stack を進む
-nnoremap <leader>tn :tag<CR>
+nnoremap <Leader>tn :tag<CR>
 " 縦にウィンドウを分割してジャンプ
-nnoremap <leader>tv :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
+nnoremap <Leader>tv :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
 " 横にウィンドウを分割してジャンプ
-nnoremap <leader>ts :split<CR> :exe("tjump ".expand('<cword>'))<CR>
+nnoremap <Leader>ts :split<CR> :exe("tjump ".expand('<cword>'))<CR>
 " 新しいタブでジャンプ
-nnoremap <leader>tt :tab sp<CR> :exe("tjump ".expand('<cword>'))<CR>
+nnoremap <Leader>tt :tab sp<CR> :exe("tjump ".expand('<cword>'))<CR>
 " tag list を表示
-nnoremap <leader>tl :ts<CR>
+nnoremap <Leader>tl :ts<CR>
