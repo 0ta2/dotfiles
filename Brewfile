@@ -59,6 +59,7 @@ cask "1password"
 cask "1password-cli"  # 1password の CLI ツール
 cask "iTerm2"
 cask "xmind"          # マインドマップ
+cask "docker"         # Docker
 # App Storeからインストール
 mas "Xcode", id: 497799835
 mas "PopClip", id: 445189367
