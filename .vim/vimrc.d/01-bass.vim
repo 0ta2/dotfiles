@@ -29,16 +29,16 @@ let g:clipboard = {
           \ }
 
 " swpファイルの保存場所
-set directory=~/.vim/tmp
+set directory=~/.vim/tmp/swap
 
 " バックアップフィアルの出力先
-set backupdir=~/.vim/tmp
+set backupdir=~/.vim/tmp/backup
 
 " viminfoファイルの出力先
-set viminfo+=n$HOME/viminfo.txt
+set viminfo+=n$HOME/.vim/tmp/viminfo.txt
 
 " undofileの出力先 .un~
-set undodir=~/.vim/tmp
+set undodir=~/.vim/tmp/undo
 
 " カラーテーマ指定
 colorscheme iceberg
@@ -77,6 +77,15 @@ set ambiwidth=double
 
 " 画面最後の行をできる限り表示する
 set display+=lastline
+
+" 矩形選択で､矩形の行の行末にテキストがない場合､操作が困難なので回避するための設定
+set virtualedit=block
+
+" ctag の設定
+set tags+=.git/tags
+
+" ダブルクォーテーションが隠れてしまう問題の対応
+set conceallevel=0
 
 "---------------------------
 " Neovim用 Python設定

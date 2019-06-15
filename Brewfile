@@ -34,6 +34,7 @@ brew "ricty", args: ["with-powerline"]
 brew "brew-cask-completion"
 brew "composer"
 brew "universal-ctags", args: ["HEAD"]
+brew "global"
 brew "gnupg" # 1Password CLI のバイナリ確認のため
 # App のインストール
 cask "google-chrome"
@@ -55,8 +56,10 @@ cask "vlc"
 cask "vagrant"
 cask "station"
 cask "1password"
-cask "1password-cli" # 1password の CLI ツール
+cask "1password-cli"  # 1password の CLI ツール
 cask "iTerm2"
+cask "xmind"          # マインドマップ
+cask "docker"         # Docker
 # App Storeからインストール
 mas "Xcode", id: 497799835
 mas "PopClip", id: 445189367
