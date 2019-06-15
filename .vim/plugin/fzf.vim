@@ -15,14 +15,22 @@ let g:fzf_action = {
 let g:fzf_layout = { 'down': '~40%' }
 
 "--------------
+" fzf の設定
+"--------------
+" すでにタブとかで開いていいた場合は、該当のタブへジャンプする
+let g:fzf_buffers_jump = 1
+
+"--------------
 " キーバインド
 "--------------
 nnoremap <Leader>b :Buffers<CR>
 nnoremap <Leader>c :Commands<CR>
-nnoremap <Leader>g :GFiles?<CR>
+nnoremap <Leader>g :GFiles<CR>
 nnoremap <Leader>f :Files<CR>
 nnoremap <Leader>r :Rg<CR>
-nnoremap <Leader>w :Windows<CR>
+nnoremap <Leader>hi :History<CR>
+nnoremap <Leader>; :History:<CR>
+nnoremap <Leader>/ :History/<CR>
 
 "--------------
 " コマンド設定
@@ -33,7 +41,7 @@ command! -bang -nargs=? -complete=dir Files
 
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
-  \   'rg --column --line-number --no-heading --color=always --hidden '.shellescape(<q-args>), 0,
+  \   'rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 0,
   \   <bang>0 ? fzf#vim#with_preview('up:60%')
   \           : fzf#vim#with_preview('right:50%:hidden', '?'),
   \   <bang>0)
@@ -55,3 +63,30 @@ let g:fzf_colors =
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
+
+function! s:tags_sink(line)
+  let parts = split(a:line, '\t\zs')
+  let excmd = matchstr(parts[2:], '^.*\ze;"\t')
+  execute 'silent e' parts[1][:-2]
+  let [magic, &magic] = [&magic, 0]
+  execute excmd
+  let &magic = magic
+endfunction
+
+function! s:tags()
+  if empty(tagfiles())
+    echohl WarningMsg
+    echom 'Preparing tags'
+    echohl None
+    call system('ctags -R')
+  endif
+
+  call fzf#run({
+  \ 'source':  'cat '.join(map(tagfiles(), 'fnamemodify(v:val, ":S")')).
+  \            '| grep -v -a ^!',
+  \ 'options': '+m -d "\t" --with-nth 1,4.. -n 1 --tiebreak=index',
+  \ 'down':    '40%',
+  \ 'sink':    function('s:tags_sink')})
+endfunction
+
+command! Tags call s:tags()
