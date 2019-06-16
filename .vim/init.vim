@@ -32,6 +32,8 @@ Plug 'fuenor/qfixhowm'
 Plug 'reireias/vim-cheatsheet'
 " 文字列検索
 Plug 'osyo-manga/vim-anzu'
+" 16進数の色を表示する
+Plug 'gko/vim-coloresque'
 
 "--------------
 " ファイルツリー関連
