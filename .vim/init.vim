@@ -40,6 +40,8 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'jistr/vim-nerdtree-tabs'
 " ファイルに変更があた場合に、ツリーに表示
 Plug 'Xuyuanp/nerdtree-git-plugin'
+" NERDtree にファイルタイプごとにアイコンを表示
+Plug 'ryanoasis/vim-devicons'
 
 " スクリプトの構造表示(universal-ctagsが必須)
 Plug 'majutsushi/tagbar'
@@ -105,11 +107,9 @@ Plug 'lighttiger2505/deoplete-vim-lsp' " deoplete-vim で vim-lsp を使える�
 Plug 'felixfbecker/php-language-server', {'do': 'composer install && composer run-script parse-stubs'}
 
 " コメントアウト
-" gc{motion}
 Plug 'tpope/vim-commentary'
 
 " 括弧を簡単にできるようにする
-" ds['"({[]
 Plug 'tpope/vim-surround'
 
 "--------------
