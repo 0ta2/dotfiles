@@ -30,6 +30,8 @@ Plug 'jsfaint/gen_tags.vim'
 Plug 'fuenor/qfixhowm'
 " cheatsheet
 Plug 'reireias/vim-cheatsheet'
+" 文字列検索
+Plug 'osyo-manga/vim-anzu'
 
 "--------------
 " ファイルツリー関連
