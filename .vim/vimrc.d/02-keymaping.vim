@@ -16,14 +16,17 @@ let mapleader = "\<Space>"
 " ファイル保存
 nnoremap <Leader>w :w<cr>
 
-" カーソル下の単語を置換の対象にする
-nnoremap <Leader>* :%s/\<<c-r><c-w>\>//g<left><left>
+" カーソル下の単語をハイライトする
+nnoremap <silent> <Leader><Leader> "zyiw:let @/ = '\<' . @z . '\>'<CR>:set hlsearch<CR>
+
+nmap <Leader>* <Leader><Leader>:%s/<C-r>///g<Left><Left>
 
 " 行の移動
 nnoremap <Leader>k :m-2<cr>==
 nnoremap <Leader>j :m+<cr>==
 noremap <Leader>k :m-2<cr>gv=gv
 xnoremap <Leader>j :m'>+<cr>gv=gv
+" カーソル下の単語を置換の対象にする
 
 " 分割したウインドウを HJKL で場所を移動
 nnoremap <Leader>J <C-w>J
@@ -50,8 +53,6 @@ nnoremap <Leader>q :bp <bar> bd! #<cr>
 nnoremap <Leader>n :bnext<cr>
 " Shift + Tab to switch to previous open buffer
 nnoremap <Leader>p :bprevious<cr>
-" leader key twice to cycle between last two open buffers
-nnoremap <Leader><Leader> <c-^>
 
 " tagファイル生成のショートカット
 nnoremap <Leader>tc :!ctags -Rf .git/tags<cr><cr>
