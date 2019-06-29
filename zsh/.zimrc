@@ -9,7 +9,7 @@
 # Select what modules you would like enabled.
 # The second line of modules may depend on options set by modules in the first
 # line. These dependencies are noted on the respective module's README.md.
-zmodules=(directory environment git git-info history input utility custom \
+zmodules=(directory environment git-info history input utility custom \
           prompt completion syntax-highlighting history-substring-search )
 
 
@@ -22,33 +22,7 @@ zmodules=(directory environment git git-info history input utility custom \
 #
 
 # Set your desired prompt here
-# Themes
-#   - eriner
-#   - gitster
-#   - lean
-#   - liquidprompt
-#   - magicmace
-#   - minimal
-#   - pure
-#   - steeef
-#   - adam1
-#   - adam2
-#   - bart
-#   - bigfade
-#   - clint default
-#   - elite2
-#   - elite
-#   - fade
-#   - fire
-#   - off
-#   - oliver
-#   - pws
-#   - redhat
-#   - restore
-#   - suse
-#   - walters
-#   - zefram
-zprompt_theme='lean'
+zprompt_theme='pure'
 
 #
 # Completion
@@ -98,9 +72,7 @@ zinput_mode='vi'
 # This determines what highlighters will be used with the syntax-highlighting module.
 # Documentation of the highlighters can be found here:
 #   https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/docs/highlighters.md
-# For (u)rxvt, termite and gnome-terminal users,
-# removing the 'cursor' highlighter will fix the disappearing cursor problem
-zhighlighters=(main brackets cursor)
+zhighlighters=(main brackets)
 
 #
 # SSH
@@ -114,7 +86,7 @@ zhighlighters=(main brackets cursor)
 #
 
 # Set (optional) pacman front-end.
-#zpacman_frontend='powerpill'
+zpacman_frontend='powerpill'
 
 # Load any helper scripts as defined here
 #zpacman_helper=(aur)
