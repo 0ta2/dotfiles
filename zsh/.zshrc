@@ -176,6 +176,9 @@ alias vim="nvim"
 alias ..2='cd ../../'
 alias ..3='cd ../../..'
 
+# GNU
+alias sed="gsed"
+
 ### Prompt
 # 変数の添字を保管する
 zstyle ':completion:*:*:-subscript-:*' tag-order indexes parameters
