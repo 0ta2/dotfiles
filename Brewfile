@@ -28,7 +28,6 @@ brew "unrar"
 brew "neovim"
 brew "wget"
 brew "zsh"
-brew "zplug"
 brew "grep"
 brew "ricty", args: ["with-powerline"]
 brew "brew-cask-completion"
@@ -61,15 +60,14 @@ cask "1password-cli"  # 1password の CLI ツール
 cask "iTerm2"
 cask "xmind"          # マインドマップ
 cask "docker"         # Docker
+cask "slack"
 # App Storeからインストール
 mas "Xcode", id: 497799835
 mas "PopClip", id: 445189367
 mas "Evernote", id: 406056744
 mas "MARKETSPEED", id: 946680495
 mas "Tweetbot 3 for Twitter", id: 1384080005
-mas "Microsoft Remote Desktop", id: 1295203466
 mas "LINE", id: 539883307
 mas "Spark - Email App by Readdle", id: 1176895641
 mas "Translate Tab", id: 458887729
 mas "MindNode", id: 1289197285
-mas "Slack", id: 803453959
