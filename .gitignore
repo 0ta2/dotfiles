@@ -22,3 +22,6 @@ node_modules/*
 ### tmux
 .tmux/*
 !.gitkeep
+
+### karabiner
+karabiner/automatic_backups/*
