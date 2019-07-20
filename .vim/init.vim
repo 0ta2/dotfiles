@@ -21,7 +21,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'kana/vim-submode'
 " シンタックチェック
 Plug 'w0rp/ale'
-" buffer の表示
+" Buffer の表示
 " Buffer の可視化
 Plug 'ap/vim-buftabline'
 " gtacs
