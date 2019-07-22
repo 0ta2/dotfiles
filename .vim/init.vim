@@ -42,8 +42,6 @@ Plug 'gko/vim-coloresque'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 " タブ毎に変わっていまうツリー状態をタブ間で共有
 Plug 'jistr/vim-nerdtree-tabs'
-" ファイルに変更があた場合に、ツリーに表示
-Plug 'Xuyuanp/nerdtree-git-plugin'
 " NERDtree にファイルタイプごとにアイコンを表示
 Plug 'ryanoasis/vim-devicons'
 
@@ -80,8 +78,22 @@ Plug 'tpope/vim-fugitive'
 "--------------
 " 補完関連
 "--------------
-" Use release branch
+" coc
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" coc exstensions
+Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-phpls', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-python', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-lists', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-git', {'do': 'yarn install --frozen-lockfile'}
+
+
 
 " 対応する括弧を入力
 Plug 'kana/vim-smartinput'
