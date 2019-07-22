@@ -79,18 +79,17 @@ Plug 'tpope/vim-fugitive'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " coc exstensions
+Plug 'neoclide/coc-sources', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-phpls', {'do': 'yarn install --frozen-lockfile'}
+Plug 'marlonfan/coc-phpls', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-python', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-lists', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-git', {'do': 'yarn install --frozen-lockfile'}
-
-
 
 " 対応する括弧を入力
 Plug 'kana/vim-smartinput'
