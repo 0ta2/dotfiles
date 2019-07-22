@@ -54,9 +54,6 @@ Plug 'majutsushi/tagbar'
 " ファイルに変更があった場合に､｢+｣､｢-｣ で表示
 Plug 'airblade/vim-gitgutter'
 
-" インデントの深さの可視化
-Plug 'Yggdroot/indentLine'
-
 " ファイルにあるに末尾にあるスペースを可視化
 Plug 'bronson/vim-trailing-whitespace'
 
