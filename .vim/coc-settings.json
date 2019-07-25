@@ -10,5 +10,6 @@
 "yaml.schemas": {
   "http://json.schemastore.org/composer": "/*",
   "http://json.schemastore.org/ansible-stable-2.5": "/*"
-  }
+  },
+  "coc.preferences.formatOnSaveFiletypes": ["css", "Markdown", "PHP"]
 }
