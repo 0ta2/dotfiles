@@ -51,9 +51,6 @@ Plug 'majutsushi/tagbar'
 "--------------
 " ファイル関連
 "--------------
-" ファイルに変更があった場合に､｢+｣､｢-｣ で表示
-Plug 'airblade/vim-gitgutter'
-
 " ファイルにあるに末尾にあるスペースを可視化
 Plug 'bronson/vim-trailing-whitespace'
 
@@ -89,6 +86,7 @@ Plug 'neoclide/coc-python', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-lists', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-yank', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-git', {'do': 'yarn install --frozen-lockfile'}
 
 " 対応する括弧を入力
