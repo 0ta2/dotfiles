@@ -24,8 +24,8 @@ let g:fzf_buffers_jump = 1
 " キーバインド
 "--------------
 nnoremap <Leader>b :Buffers<CR>
-nnoremap <Leader>f :Files<CR>
-nnoremap <Leader>r :Rg<CR>
+nnoremap <Leader>f :ProjectFiles<CR>
+nnoremap <Leader>r :ProjectRg<CR>
 nnoremap <Leader>hi :History<CR>
 nnoremap <Leader>; :History:<CR>
 nnoremap <Leader>/ :History/<CR>
@@ -43,6 +43,15 @@ command! -bang -nargs=* Rg
   \   <bang>0 ? fzf#vim#with_preview('up:60%')
   \           : fzf#vim#with_preview('right:50%:hidden', '?'),
   \   <bang>0)
+
+
+" プロジェクトのトップディレクトリから検索する function
+function! s:find_git_root()
+  return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
+endfunction
+
+command! ProjectFiles execute 'Files' s:find_git_root()
+command! ProjectRg execute 'Rg' s:find_git_root()
 
 "--------------
 " カラー設定
