@@ -19,10 +19,10 @@ inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " Remap keys for gotos
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+nnoremap <silent> gd <Plug>(coc-definition)
+nnoremap <silent> gy <Plug>(coc-type-definition)
+nnoremap <silent> gi <Plug>(coc-implementation)
+nnoremap <silent> gr <Plug>(coc-references)
 
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -35,4 +35,9 @@ nnoremap <silent> <Leader>y  :<C-u>CocList -A --normal yank<CR>
 "------------------
 " coc-git
 "------------------
-nnoremap <silent> <Leader>g  :<C-u>CocList --normal gstatus<CR>
+nmap <Leader>gs <Plug>(coc-git-chunkinfo)
+nmap <Leader>gc <Plug>(coc-git-commit)
+
+"------------------
+" coc-snippets
+"------------------
