@@ -1,6 +1,0 @@
-" deoplete 有効にする
-let g:deoplete#enable_at_startup = 1
-
-" phpcd.vim
-let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
-let g:deoplete#ignore_sources.php = ['omni']
