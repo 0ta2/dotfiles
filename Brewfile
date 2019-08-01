@@ -36,6 +36,7 @@ brew "universal-ctags", args: ["HEAD"]
 brew "global"
 brew "gnupg" # 1Password CLI のバイナリ確認のため
 brew "gnu-sed" # gnu版のsed
+brew "yarn"
 # App のインストール
 cask "google-chrome"
 cask "google-photos-backup-and-sync"

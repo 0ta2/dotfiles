@@ -21,7 +21,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'kana/vim-submode'
 " シンタックチェック
 Plug 'w0rp/ale'
-" buffer の表示
+" Buffer の表示
 " Buffer の可視化
 Plug 'ap/vim-buftabline'
 " gtacs
@@ -42,8 +42,6 @@ Plug 'gko/vim-coloresque'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 " タブ毎に変わっていまうツリー状態をタブ間で共有
 Plug 'jistr/vim-nerdtree-tabs'
-" ファイルに変更があた場合に、ツリーに表示
-Plug 'Xuyuanp/nerdtree-git-plugin'
 " NERDtree にファイルタイプごとにアイコンを表示
 Plug 'ryanoasis/vim-devicons'
 
@@ -53,12 +51,6 @@ Plug 'majutsushi/tagbar'
 "--------------
 " ファイル関連
 "--------------
-" ファイルに変更があった場合に､｢+｣､｢-｣ で表示
-Plug 'airblade/vim-gitgutter'
-
-" インデントの深さの可視化
-Plug 'Yggdroot/indentLine'
-
 " ファイルにあるに末尾にあるスペースを可視化
 Plug 'bronson/vim-trailing-whitespace'
 
@@ -80,35 +72,25 @@ Plug 'tpope/vim-fugitive'
 "--------------
 " 補完関連
 "--------------
-" 補完フレームワーク
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" coc
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" filetype の syntaxファイルから補完候補を追加
-Plug 'Shougo/neco-syntax'
-
-" Vimスクリプトの補完
-Plug 'Shougo/neco-vim'
-
-" PHPの補完
-" Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
-
-" Pythonの補完
-" Plug 'deoplete-plugins/deoplete-jedi'
-Plug 'ryanolsonx/vim-lsp-python'
+" coc exstensions
+Plug 'neoclide/coc-sources', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
+Plug 'marlonfan/coc-phpls', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-python', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-lists', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-yank', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-git', {'do': 'yarn install --frozen-lockfile'}
 
 " 対応する括弧を入力
 Plug 'kana/vim-smartinput'
-
-" 言語パック(syntac/indent)
-Plug 'sheerun/vim-polyglot'
-
-" vim-lsp
-Plug 'prabirshrestha/vim-lsp'
-Plug 'prabirshrestha/async.vim'        " vim-lsp を使うために必要
-Plug 'lighttiger2505/deoplete-vim-lsp' " deoplete-vim で vim-lsp を使えるようにする
-
-" PHP Lunguage Server
-Plug 'felixfbecker/php-language-server', {'do': 'composer install && composer run-script parse-stubs'}
 
 " コメントアウト
 Plug 'tpope/vim-commentary'
@@ -119,10 +101,7 @@ Plug 'tpope/vim-surround'
 "--------------
 " スニペット関連
 "--------------
-" default スニペット
-Plug 'Shougo/neosnippet-snippets'
-" 独自スニペット
-Plug 'Shougo/neosnippet'
+Plug 'honza/vim-snippets'
 
 "--------------
 " Markdown関連

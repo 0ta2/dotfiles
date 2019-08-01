@@ -18,6 +18,7 @@ tags
 node_modules/*
 .bundle/*
 .venv/*
+.vim/sessions
 
 ### tmux
 .tmux/*
