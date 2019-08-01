@@ -101,10 +101,7 @@ Plug 'tpope/vim-surround'
 "--------------
 " スニペット関連
 "--------------
-" default スニペット
-Plug 'Shougo/neosnippet-snippets'
-" 独自スニペット
-Plug 'Shougo/neosnippet'
+Plug 'honza/vim-snippets'
 
 "--------------
 " Markdown関連
