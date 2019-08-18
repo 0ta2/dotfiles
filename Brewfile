@@ -62,6 +62,7 @@ cask "iTerm2"
 cask "xmind"          # マインドマップ
 cask "docker"         # Docker
 cask "slack"
+cask "cyberduck"      # FTPソフト
 # App Storeからインストール
 mas "Xcode", id: 497799835
 mas "PopClip", id: 445189367
