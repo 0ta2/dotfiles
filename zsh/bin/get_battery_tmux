@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if battery_info=$(/usr/bin/pmset -g ps | tr -d '\n' | awk '{print $4,$5," "$8}' | sed -e "s/;//g" | sed -e "s/%//g" | sed -e "s/'//g") ; then
+		battery_quantity=$(echo $battery_info | awk '{print $3}')
+  	if [[ $battery_info =~ "AC Power" ]]; then
+    	battery="#[bg=colour255,fg=colour238] ⚡︎ $battery_quantity% #[default]"
+  	elif (( $battery_quantity < 16 )); then
+    	battery="#[bg=red,fg=white] $battery_quantity% #[default]"
+  	else
+   		battery="#[bg=colour255,fg=colour238] $battery_quantity% #[default]"
+ 		fi
+ 	echo $battery
+fi

@@ -1,0 +1,10 @@
+function get_load_average_tmux() {
+  uptime | awk '{print $10,$11,$12}'
+}
+
+function main() {
+    local load_average=$(get_load_average_tmux)
+    echo "${load_average}"
+}
+
+main $@
