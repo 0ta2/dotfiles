@@ -40,10 +40,6 @@ Plug 'gko/vim-coloresque'
 "--------------
 " ファイルツリーを表示
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-" タブ毎に変わっていまうツリー状態をタブ間で共有
-Plug 'jistr/vim-nerdtree-tabs'
-" NERDtree にファイルタイプごとにアイコンを表示
-Plug 'ryanoasis/vim-devicons'
 
 " スクリプトの構造表示(universal-ctagsが必須)
 Plug 'majutsushi/tagbar'
