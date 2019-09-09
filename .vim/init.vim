@@ -37,8 +37,8 @@ Plug 'gko/vim-coloresque'
 " Vim Color
 "--------------
 " vimのカラー設定
-Plug 'cocopon/iceberg.vim'
-
+"Plug 'cocopon/iceberg.vim'
+Plug 'arcticicestudio/nord-vim'
 "--------------
 " ファイルツリー関連
 "--------------
