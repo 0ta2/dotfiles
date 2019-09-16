@@ -32,7 +32,7 @@ Plug 'reireias/vim-cheatsheet'
 Plug 'osyo-manga/vim-anzu'
 " 16進数の色を表示する
 Plug 'gko/vim-coloresque'
-
+Plug 'liuchengxu/vista.vim'
 "--------------
 " Vim Color
 "--------------
