@@ -83,18 +83,3 @@ if match_idx != -1
     autocmd BufWrite * silent! :CtagsUpdate
     autocmd VimLeave * silent! :CtagsRemove
 endif
-
-" カーソルの単語の定義先にジャンプ（複数候補はリスト表示）
-nnoremap <Leader>tj :exe("tjump ".expand('<cword>'))<CR>
-" tag stack を戻る
-nnoremap <Leader>tp :pop<CR>
-" tag stack を進む
-nnoremap <Leader>tn :tag<CR>
-" 縦にウィンドウを分割してジャンプ
-nnoremap <Leader>tv :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
-" 横にウィンドウを分割してジャンプ
-nnoremap <Leader>ts :split<CR> :exe("tjump ".expand('<cword>'))<CR>
-" 新しいタブでジャンプ
-nnoremap <Leader>tt :tab sp<CR> :exe("tjump ".expand('<cword>'))<CR>
-" tag list を表示
-nnoremap <Leader>tl :ts<CR>
