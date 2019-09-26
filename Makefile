@@ -38,7 +38,8 @@ deploy: ## Create symlink to home directory
 	@$(call print_success, `ln -sfnv $(DOTPATH)/zsh/dircolors/nord-dircolors/src/dir_colors ~/.dir_colors`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/powerline ~/.config/powerline`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/karabiner ~/.config/karabiner`)
-	@$(call print_success, 'ln -sfnv $(DOTPATH)/.ctags.d ~/.ctags.d/config.ctags')
+	@$(call print_success, `ln -sfnv $(DOTPATH)/.ctags.d ~/.ctags.d/config.ctags`)
+	@$(call print_success, `ln -sfnv $(DOTPATH)/.settings.json ~/Library/Application\ Support/Code/User/settings.json`)
 
 init: ## Setup environment settings
 	@$(call print_title, Start to init dotofiles)
