@@ -1,7 +1,12 @@
 [
   {
-    "key": "shift+cmd+f",
-    "command": "workbench.view.search",
-    "when": "!searchViewletVisible"
+    "key": "ctrl+h",
+    "command": "workbench.action.focusSideBar",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.focusFirstEditorGroup",
+    "when": "!editorTextFocus"
   }
 ]

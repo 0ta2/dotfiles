@@ -16,6 +16,7 @@
     // テーマの設定
     "workbench.colorTheme": "Nord",
 
+    "workbench.iconTheme": "vscode-icons-mac" ,
     //----------------------------------------------------------
     // vscodeの検索系
     //----------------------------------------------------------
@@ -68,11 +69,16 @@
             ]
         },
         {
-            "before": ["<leader>","f"],
+            "before": ["<leader>","r"],
             "commands": [
                 "workbench.view.search",
             ]
-        }
-    ],
-    "workbench.iconTheme": "vscode-icons-mac"
- }
+        },
+        {
+            "before": ["<leader>","f"],
+            "commands": [
+                "workbench.action.quickOpen"
+            ]
+        },
+    ]
+}
