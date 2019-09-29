@@ -1,0 +1,7 @@
+[
+  {
+    "key": "shift+cmd+f",
+    "command": "workbench.view.search",
+    "when": "!searchViewletVisible"
+  }
+]
