@@ -52,6 +52,18 @@
         {
             "before": [";"],
             "after": [":"]
+        },
+        {
+            "before": ["<leader>", "v"],
+            "commands": [
+                "workbench.action.splitEditor"
+            ]
+        },
+        {
+            "before": ["<leader>","s"],
+            "commands": [
+                "workbench.action.splitEditorDown"
+            ]
         }
     ],
     // visualモードのkeybindを書き換える
