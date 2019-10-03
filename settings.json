@@ -39,8 +39,8 @@
     "vim.hlsearch": true,
     // easymotion を有効にする
     "vim.easymotion": true,
-
-    "vim.useCtrlKeys": false,
+    // Vim のキーバインドを有効にする
+    "vim.useCtrlKeys": true,
 
     //----------------------------------------------------------
     // vscode の key 設定
