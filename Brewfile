@@ -1,73 +1,83 @@
-#1password-cli brew インストール
+# tap
 tap "homebrew/bundle"
 tap "homebrew/core"
 tap "sanemat/font"
-tap "universal-ctags/universal-ctags"
-brew "ansible"
-brew "coreutils"
-brew "fzf"
-brew "git"
+
+# programming
 brew "go"
-brew "ghq"
-brew "jq"
-brew "mas"
-brew "mercurial"
-brew "packer"
+
+# env
 brew "pyenv"
-brew "pyenv-virtualenv"
-brew "readline" # pyenv の依存関係で必要
-brew "xz" # pyenv の依存関係で必要
 brew "pipenv"
 brew "rbenv"
 brew "nodenv"
-brew "reattach-to-user-namespace"
+brew "pyenv-virtualenv"
+brew "readline" # pyenv の依存関係で必要
+brew "xz"       # pyenv の依存関係で必要
+
+# tools
+brew "coreutils"
+brew "fzf"
+brew "ghq"
+brew "git"
+brew "jq"
+brew "mercurial"
 brew "ripgrep"
-brew "ssh-copy-id"
 brew "tmux"
+brew "ansible"
+brew "packer"
+brew "reattach-to-user-namespace"
+brew "ssh-copy-id"
 brew "tree"
 brew "unrar"
 brew "neovim"
 brew "wget"
 brew "zsh"
 brew "grep"
-brew "ricty", args: ["with-powerline"]
-brew "brew-cask-completion"
 brew "composer"
-brew "universal-ctags", args: ["HEAD"]
 brew "global"
-brew "gnupg" # 1Password CLI のバイナリ確認のため
-brew "gnu-sed" # gnu版のsed
+brew "gnupg"    # 1Password CLI のバイナリ確認のため
+brew "gnu-sed"  # gnu版のsed
 brew "yarn"
-# App のインストール
+cask "vagrant"
+cask "docker"   # Docker
+
+## completion
+brew "docker-compose-completion"
+
+# font
+brew "ricty", args: ["with-powerline"]
+cask "font-cica"
+
+### application
 cask "google-chrome"
 cask "google-photos-backup-and-sync"
 cask "google-japanese-ime"
-cask "alacritty"
 cask "alfred"
 cask "avast-security"
 cask "clipy"
 cask "dropbox"
-cask "gyazo"
-cask "karabiner-elements"
-cask "kindle"
-cask "skitch"
 cask "virtualbox"
 cask "virtualbox-extension-pack"
-cask "visual-studio-code"
 cask "vlc"
-cask "vagrant"
-cask "station"
 cask "1password"
 cask "1password-cli"  # 1password の CLI ツール
-cask "iTerm2"
 cask "xmind"          # マインドマップ
-cask "docker"         # Docker
-cask "slack"
 cask "cyberduck"      # FTPソフト
-# App Storeからインストール
+cask "slack"
+
+## terminal
+cask "iTerm2"
+
+## editor
+cask "visual-studio-code"
+
+### other
+brew "mas"
+
+### for app store
 mas "Xcode", id: 497799835
 mas "PopClip", id: 445189367
-mas "Evernote", id: 406056744
 mas "MARKETSPEED", id: 946680495
 mas "Tweetbot 3 for Twitter", id: 1384080005
 mas "LINE", id: 539883307
