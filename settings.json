@@ -1,0 +1,96 @@
+{
+    //----------------------------------------------------------
+    // vscodeのeditorの設定
+    //----------------------------------------------------------
+    // 自動保存を有効
+    // タブやウィンドウからフォーカスを外れると保存される
+    "files.autoSave": "onWindowChange",
+    // フォントサイズを指定
+    "editor.fontSize": 11,
+    // フォントを指定
+    "editor.fontFamily": "Cica",
+    // エディターで空白文字を表示する方法を制御する｡
+    "editor.renderWhitespace": "boundary",
+    // tabのサイズを指定
+    "editor.tabSize": 2,
+    // テーマの設定
+    "workbench.colorTheme": "Nord",
+
+    "workbench.iconTheme": "vscode-icons-mac" ,
+    //----------------------------------------------------------
+    // vscodeの検索系
+    //----------------------------------------------------------
+    // 検索除外対象のディレクトリ
+    "search.exclude": {
+        "**/bower_components": true,
+        "**/vendor": true,
+        "**/env": true,
+        "tags":true,
+        "**/.svn": true,
+        "**/.git": true,
+        "**/.DS_Store": true
+    },
+    //----------------------------------------------------------
+    // vscode vimの設定
+    //----------------------------------------------------------
+    // system とクリップボードを共有する
+    "vim.useSystemClipboard": true,
+    // ハイライトを有効にする
+    "vim.hlsearch": true,
+    // easymotion を有効にする
+    "vim.easymotion": true,
+    // Vim のキーバインドを有効にする
+    "vim.useCtrlKeys": true,
+
+    //----------------------------------------------------------
+    // vscode の key 設定
+    //----------------------------------------------------------
+    // leader の設定
+    "vim.leader": "<space>",
+    // normalモードのkeybindを書き換える
+    "vim.normalModeKeyBindings": [
+        {
+            "before": [";"],
+            "after": [":"]
+        },
+        {
+            "before": ["<leader>", "v"],
+            "commands": [
+                "workbench.action.splitEditor"
+            ]
+        },
+        {
+            "before": ["<leader>","s"],
+            "commands": [
+                "workbench.action.splitEditorDown"
+            ]
+        }
+    ],
+    // visualモードのkeybindを書き換える
+    "vim.visualModeKeyBindings": [
+        {
+            "before": [";"],
+            "after": [":"]
+        }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [":"],
+            "commands": [
+                "workbench.action.showCommands",
+            ]
+        },
+        {
+            "before": ["<leader>","r"],
+            "commands": [
+                "workbench.view.search",
+            ]
+        },
+        {
+            "before": ["<leader>","f"],
+            "commands": [
+                "workbench.action.quickOpen"
+            ]
+        },
+    ]
+}

@@ -179,6 +179,9 @@ alias ..3='cd ../../..'
 # GNU
 alias sed="gsed"
 
+# ls系
+alias ls="gls --color=auto"
+
 ### Prompt
 # 変数の添字を保管する
 zstyle ':completion:*:*:-subscript-:*' tag-order indexes parameters

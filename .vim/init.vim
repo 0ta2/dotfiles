@@ -8,8 +8,6 @@ call plug#begin('~/.vim/plugged')
 "--------------
 " helpの日本語訳
 Plug 'vim-jp/vimdoc-ja'
-" vimのカラー設定
-Plug 'cocopon/iceberg.vim'
 " 起動時の表示画面変更
 Plug 'mhinz/vim-startify'
 " 移動強化
@@ -34,16 +32,18 @@ Plug 'reireias/vim-cheatsheet'
 Plug 'osyo-manga/vim-anzu'
 " 16進数の色を表示する
 Plug 'gko/vim-coloresque'
-
+Plug 'liuchengxu/vista.vim'
+"--------------
+" Vim Color
+"--------------
+" vimのカラー設定
+"Plug 'cocopon/iceberg.vim'
+Plug 'arcticicestudio/nord-vim'
 "--------------
 " ファイルツリー関連
 "--------------
 " ファイルツリーを表示
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-" タブ毎に変わっていまうツリー状態をタブ間で共有
-Plug 'jistr/vim-nerdtree-tabs'
-" NERDtree にファイルタイプごとにアイコンを表示
-Plug 'ryanoasis/vim-devicons'
 
 " スクリプトの構造表示(universal-ctagsが必須)
 Plug 'majutsushi/tagbar'
