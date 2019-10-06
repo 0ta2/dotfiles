@@ -77,13 +77,13 @@
         {
             "before": [":"],
             "commands": [
-                "workbench.action.showCommands",
+                "workbench.action.showCommands"
             ]
         },
         {
             "before": ["<leader>","r"],
             "commands": [
-                "workbench.view.search",
+                "workbench.view.search"
             ]
         },
         {
@@ -91,7 +91,7 @@
             "commands": [
                 "workbench.action.quickOpen"
             ]
-        },
+        }
     ],
     //----------------------------------------------------------
     // Terminal の設定
