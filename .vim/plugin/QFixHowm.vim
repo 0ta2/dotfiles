@@ -122,9 +122,9 @@ let MyGrep_DefaultSearchWord = 1
 " File/Template Settings
 "--------------
 " クイックメモファイル
-let QFixHowm_QuickMemoFile = 'Qmem-00-0000-00-00-000000.txt'
+let QFixHowm_QuickMemoFile = 'Qmem-00-0000-00-00-000000'
 " 日記メモファイル
-let QFixHowm_DiaryFile     = '%Y/%m/%Y-%m-%d-000000.txt'
+let QFixHowm_DiaryFile     = '%Y/%m/%Y-%m-%d-000000'
 " ペアファイル保存場所
 let QFixHowm_PairLinkDir   = 'pairlink'
 " キーワード保存ファイル

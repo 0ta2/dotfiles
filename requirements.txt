@@ -1,4 +1,1 @@
-powerline-status
 pynvim
-jedi
-python-language-server
