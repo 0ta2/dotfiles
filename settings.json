@@ -92,5 +92,12 @@
                 "workbench.action.quickOpen"
             ]
         },
-    ]
+    ],
+    //----------------------------------------------------------
+    // Terminal の設定
+    //----------------------------------------------------------
+    // デフォルトシェルを指定
+    "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
+    // テーミナルを iTerm に変更
+    "terminal.external.osxExec": "iTerm.app"
 }
