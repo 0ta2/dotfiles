@@ -1,5 +1,0 @@
---php-kinds=cdfin
---tag-relative
---recurse
---sort=yes
---exclude=.git,pkg
