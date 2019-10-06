@@ -28,19 +28,16 @@ endef
 all:
 
 deploy: ## Create symlink to home directory
-	@$(call print_title, Start to deploy dotfiles to home directory)
-	@$(foreach val, $(DOTFILES), $(call print_success, `ln -sfnv $(abspath $(val)) $(HOME)/$(val)`);)
+	@$(call print_title,Start to deploy dotfiles to home directory)
 	@$(call print_success, `ln -sfnv $(HOME)/.vim ~/.config/nvim`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/.vim ~/.config/nvim`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/zsh ~/.config/zsh`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/zsh/ ~/.config/zsh`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/zsh/.zshenv ~/.zshenv`)
+	@$(call print_success, `ln -sfnv $(DOTPATH)/.tmux/.tmux.conf ~/.tmux.conf`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/zsh/dircolors/nord-dircolors/src/dir_colors ~/.dir_colors`)
-	@$(call print_success, `ln -sfnv $(DOTPATH)/powerline ~/.config/powerline`)
-	@$(call print_success, `ln -sfnv $(DOTPATH)/karabiner ~/.config/karabiner`)
-	@$(call print_success, `ln -sfnv $(DOTPATH)/.ctags.d ~/.ctags.d/config.ctags`)
-	@$(call print_success, `ln -sfnv $(DOTPATH)/settings.json ~/Library/Application\ Support/Code/User/settings.json`)
-	@$(call print_success, `ln -sfnv $(DOTPATH)/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json`)
+	@$(call print_success, `ln -sfnv $(DOTPATH)/code/settings.json ~/Library/Application\ Support/Code/User/settings.json`)
+	@$(call print_success, `ln -sfnv $(DOTPATH)/code/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json`)
 
 init: ## Setup environment settings
 	@$(call print_title, Start to init dotofiles)
@@ -58,11 +55,7 @@ clean: ## Remove the dot files and this repo
 	@$(call print_title, Remove dot files in your home directory...)
 	@-$(foreach val, $(DOTFILES), $(call print_success, `rm -vrf $(HOME)/$(val)`);)
 	@-$(call print_success, `rm -fr $(HOME)/.config/nvim`)
-	@-$(call print_success, `rm -fr $(HOME)/.config/powerline`)
-	@-$(call print_success, `rm -fr $(HOME)/.config/karabiner`)
 	@-$(call print_success, `rm -fr $(HOME)/.config/zimfw`)
-	@-$(call print_success, `rm -fr $(HOME)/.ctags.d/config.ctags`)
-	@-$(call print_success, `rm -rf $(DOTPATH)`)
 
 help: ## Self-documented Makefile
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) \
