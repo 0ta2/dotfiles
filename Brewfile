@@ -76,7 +76,6 @@ cask "visual-studio-code"
 brew "mas"
 
 ### for app store
-mas "Xcode", id: 497799835
 mas "PopClip", id: 445189367
 mas "MARKETSPEED", id: 946680495
 mas "Tweetbot 3 for Twitter", id: 1384080005
@@ -84,3 +83,4 @@ mas "LINE", id: 539883307
 mas "Spark - Email App by Readdle", id: 1176895641
 mas "Translate Tab", id: 458887729
 mas "MindNode", id: 1289197285
+mas "Xcode", id: 497799835
