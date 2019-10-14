@@ -37,7 +37,6 @@ doctor_homebrew() {
   else
     print_error "Not ready not brew"
   fi
-
 }
 
 # brew bundle install from Brewfile.
