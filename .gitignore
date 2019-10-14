@@ -7,6 +7,7 @@ zsh/.zhistory
 zsh/*.zwc
 zsh/*.old
 zsh/.zcompcache
+zsh/.zsh_history
 
 ### vim
 .netrwhist
