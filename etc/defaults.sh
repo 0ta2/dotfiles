@@ -4,7 +4,7 @@
 # 一般
 #------------------------------
 # 外観モードをダークに変更
-defaults write -g AppleInterfaceStyle -string "Dark"
+defaults write 'Apple Global Domain' AppleInterfaceStyle -string "Dark"
 
 #------------------------------
 # Dock
@@ -29,6 +29,7 @@ defaults write com.apple.dock autohide -bool true
 #------------------------------
 # 一般 -> スリープとスクリーンセイバの解除にパスワードを要求 4時間に変更
 defaults write com.apple.screensaver askForPasswordDelay -integer 14400
+defaults write com.apple.screensaver askForPassword -integer 1
 
 # ダウンロードしたアプリケーションの実行許可 -> App Store と確認済みの開発元からのアプリケーションを許可
 defaults write com.apple.LaunchServices LSQuarantine -bool false
@@ -41,7 +42,7 @@ defaults write com.apple.spotlight orderedItems -array \
       '{"enabled" = 0;"name" = "PDF";}' \
       '{"enabled" = 0;"name" = "MENU_SPOTLIGHT_SUGGESTIONS";}' \
       '{"enabled" = 0;"name" = "MENU_OTHER";}' \
-      '{"enabled" = 0;"name" = "APPLICATIONS";}' \
+      '{"enabled" = 1;"name" = "APPLICATIONS";}' \
       '{"enabled" = 0;"name" = "EVENT_TODO";}' \
       '{"enabled" = 0;"name" = "IMAGES";}' \
       '{"enabled" = 0;"name" = "SYSTEM_PREFS";}' \
@@ -87,42 +88,28 @@ defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 60 "
 "
 
 # ショートカット -> 入力ソース -> 入力メニューの次のソースを選択 を Cntrol + shift + スペース に変更
-defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 61 "
-      <dict>
-        <key>enabled</key>
-        <true/>
-        <key>value</key>
-        <dict>
-          <key>parameters</key>
-          <array>
-            <integer>32</integer>
-            <integer>49</integer>
-            <integer>1572864</integer>
-          </array>
-          <key>type</key>
-          <string>standard</string>
-        </dict>
-      </dict>
-"
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 61 "<dict><key>enabled</key><false/></dict>"
 
 # フルキーボードアクセス: Tabキーを押して大ウインドウやダイアログ内の操作対象を移動する機能の適用範囲 -> すべてのコントロール
 defaults write -g AppleKeyboardUIMode -int 2
 
 # 入力ソース -> USキー と ひらがな(Google)
+defaults write com.apple.HIToolbox AppleCurrentKeyboardLayoutInputSourceID -string com.apple.keylayout.ABC
+
 defaults write com.apple.HIToolbox AppleEnabledInputSources -array \
         '{"Bundle ID" = "com.apple.inputmethod.Kotoeri";"Input Mode" = "com.apple.inputmethod.Japanese";InputSourceKind = "Input Mode";}' \
         '{"Bundle ID" = "com.apple.inputmethod.Kotoeri";"Input Mode" = "com.apple.inputmethod.Roman";InputSourceKind = "Input Mode";}' \
         '{"Bundle ID" = "com.apple.50onPaletteIM";InputSourceKind = "Non Keyboard Input Method";}' \
         '{"Bundle ID" = "com.google.inputmethod.Japanese";"Input Mode" = "com.apple.inputmethod.Japanese";InputSourceKind = "Input Mode";}' \
         '{"Bundle ID" = "com.google.inputmethod.Japanese";InputSourceKind = "Keyboard Input Method";}' \
-        '{InputSourceKind = "Keyboard Layout";"KeyboardLayout ID" = 252;"KeyboardLayout Name" = ABC;}'
+        '{"Bundle ID" = "com.google.inputmethod.Japanese";"Input Mode" = "com.apple.inputmethod.Roman";InputSourceKind = "Input Mode";}'
 
 defaults write com.apple.HIToolbox AppleInputSourceHistory -array \
-        '{InputSourceKind = "Keyboard Layout";"KeyboardLayout ID" = 252;"KeyboardLayout Name" = ABC;}' \
-        '{"Bundle ID" = "com.google.inputmethod.Japanese";"Input Mode" = "com.apple.inputmethod.Japanese";InputSourceKind = "Input Mode";}'
+        '{"Bundle ID" = "com.google.inputmethod.Japanese";"Input Mode" = "com.apple.inputmethod.Roman";InputSourceKind = "Input Mode";}' \
+        '{"Bundle ID" = "com.google.inputmethod.Japanese";"Input Mode" = "com.apple.inputmethod.Japanese";InputSourceKind = "Input Mode";}' 
 
 defaults write com.apple.HIToolbox AppleSelectedInputSources -array \
-        '{InputSourceKind = "Keyboard Layout";"KeyboardLayout ID" = 252;"KeyboardLayout Name" = ABC;}'
+        '{"Bundle ID" = "com.google.inputmethod.Japanese";"Input Mode" = "com.apple.inputmethod.Roman";InputSourceKind = "Input Mode";}'
 
 #------------------------------
 # トラックパッド
@@ -134,12 +121,11 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -int 
 # ポイントとクリック -> 軌跡の速さ
 defaults write -g com.apple.trackpad.scaling -int 3
 
-
 #------------------------------
 # 共有
 #------------------------------
 # 時計 -> 日付を表示
-defaults write com.apple.menuextra.clock DateFormat -string "M\u6708d\u65e5(EEE)  H:mm" 
+defaults write com.apple.menuextra.clock DateFormat -string "M\u6708d\u65e5(EEE) H:mm" 
 
 #------------------------------
 # アクセシビリティ
