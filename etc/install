@@ -3,7 +3,6 @@
 DOTFILES_PATH="${HOME}/.ghq/github.com/0ta2/dotfiles"
 DOTFILES_GITHUB="https://github.com/0ta2/dotfiles.git"
 
-
 print_error() {
     printf "\033[31m    [×] $1\033[m\n"
 }
