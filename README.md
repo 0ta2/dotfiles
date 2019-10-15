@@ -4,7 +4,7 @@
 インストールするときは､ `curl` を叩けばOK
 
 ```bash
-$ curl -fsSL https://raw.githubusercontent.com/0ta2/dotfiles/master/etc/install
+$ curl -fsSL https://raw.githubusercontent.com/0ta2/dotfiles/master/etc/install | bash
 ```
 
 ## install shell で実装できていない箇所は手動でセットアップ
@@ -40,3 +40,4 @@ $ nodenv init
 - システム環境設定
   - 共有
     - コンピュータ名を変更
+
