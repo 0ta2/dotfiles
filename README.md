@@ -14,13 +14,6 @@ $ sudo sh -c "echo '/usr/local/bin/zsh' >> /etc/shells"
 $ chsh -s /usr/local/bin/zsh
 ```
 
-### フォントを追加
-```
-$ cp -f /usr/local/opt/ricty/share/fonts/Ricty*.ttf ~/Library/Fonts/
-$ fc-cache -vf
-$ pipenv install
-```
-
 ### pyenv 設定
 ```bash
 $ pyenv init
