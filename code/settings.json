@@ -13,6 +13,8 @@
     "editor.tabSize": 2,
     // テーマの設定
     "workbench.colorTheme": "Nord",
+    // ファイルの最後を改行で終わらせる
+    "files.insertFinalNewline": true,
 
     "workbench.iconTheme": "vscode-icons-mac" ,
     //----------------------------------------------------------
