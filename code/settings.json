@@ -13,6 +13,8 @@
     "editor.tabSize": 2,
     // ファイルの最後を改行で終わらせる
     "files.insertFinalNewline": true,
+    // 文字コードの自動錦
+    "files.autoGuessEncoding": true,
     // テーマの設定
     "workbench.colorTheme": "Nord",
     // アイコンのテーマを指定
