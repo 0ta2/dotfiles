@@ -11,10 +11,10 @@
     "editor.renderWhitespace": "boundary",
     // tabのサイズを指定
     "editor.tabSize": 2,
-    // テーマの設定
-    "workbench.colorTheme": "Nord",
     // ファイルの最後を改行で終わらせる
     "files.insertFinalNewline": true,
+    // テーマの設定
+    "workbench.colorTheme": "Nord",
     // アイコンのテーマを指定
     "workbench.iconTheme": "vscode-icons-mac" ,
     //----------------------------------------------------------
