@@ -102,6 +102,11 @@
             "commands": [
                 "workbench.action.focusAboveGroup"
             ]
+        },
+        {
+            // highlightを解除
+            "before": ["<Esc>","<Esc>"],
+            "commands": [":nohl"]
         }
     ],
     // visualモードのkeybindを書き換える
