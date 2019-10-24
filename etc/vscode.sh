@@ -21,6 +21,7 @@ pkglist=(
     wayou.vscode-icons-mac
     yzhang.markdown-all-in-one
     felixfbecker.php-intellisense
+    donjayamanne.githistory
 )
 
 for i in ${pkglist[@]}; do
