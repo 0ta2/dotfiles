@@ -15,7 +15,7 @@
     "workbench.colorTheme": "Nord",
     // ファイルの最後を改行で終わらせる
     "files.insertFinalNewline": true,
-
+    // アイコンのテーマを指定
     "workbench.iconTheme": "vscode-icons-mac" ,
     //----------------------------------------------------------
     // vscodeの検索系
