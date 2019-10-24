@@ -86,7 +86,7 @@
             ]
         },
         {
-            "before": ["<leader>","j"],
+            "before": ["<leader>","h"],
             "commands": [
                 "workbench.action.focusLeftGroup"
             ]
