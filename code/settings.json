@@ -138,5 +138,6 @@
     "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
     // テーミナルを iTerm に変更
     "terminal.external.osxExec": "iTerm.app",
-    "editor.fontSize": 13
+    //  ターミナルのフォントを指定
+    "terminal.integrated.fontFamily": "Cica"
 }
