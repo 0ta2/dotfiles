@@ -1,7 +1,4 @@
 DOTPATH    := $(realpath $(dir $(lastword $(MAKEFILE_LIST))))
-CANDIDATES := $(wildcard .??*)
-EXCLUSIONS := .DS_Store .git .gitmodules .gitignore
-DOTFILES   := $(filter-out $(EXCLUSIONS), $(CANDIDATES))
 
 .DEFAULT_GOAL := help
 
@@ -18,7 +15,7 @@ define print_warning
 endef
 
 define print_title
-    printf "\n\n\033[35m$1\033[m\n\n "
+    printf "\n\n\033[35m$1\033[m\n\n"
 endef
 
 define print_list
@@ -26,18 +23,6 @@ define print_list
 endef
 
 all:
-
-deploy: ## Create symlink to home directory
-	@$(call print_title,Start to deploy dotfiles to home directory)
-	@$(call print_success, `ln -sfnv $(HOME)/.vim ~/.config/nvim`)
-	@$(call print_success, `ln -sfnv $(DOTPATH)/.vim ~/.config/nvim`)
-	@$(call print_success, `ln -sfnv $(DOTPATH)/zsh ~/.config/zsh`)
-	@$(call print_success, `ln -sfnv $(DOTPATH)/zsh/ ~/.config/zsh`)
-	@$(call print_success, `ln -sfnv $(DOTPATH)/zsh/.zshenv ~/.zshenv`)
-	@$(call print_success, `ln -sfnv $(DOTPATH)/.tmux/.tmux.conf ~/.tmux.conf`)
-	@$(call print_success, `ln -sfnv $(DOTPATH)/zsh/dircolors/nord-dircolors/src/dir_colors ~/.dir_colors`)
-	@$(call print_success, `ln -sfnv $(DOTPATH)/code/settings.json ~/Library/Application\ Support/Code/User/settings.json`)
-	@$(call print_success, `ln -sfnv $(DOTPATH)/code/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json`)
 
 init: ## Setup environment settings
 	@$(call print_title, Start to init dotofiles)
@@ -51,11 +36,30 @@ update: ## Fetch changes for this repo
 install: update deploy init ## Run make update, deploy, init
 	@exec $$SHELL
 
+deploy: ## Create symlink to home directory
+	@$(call print_title, Start to deploy dotfiles to home directory)
+	@mkdir -p $(HOME)/.config
+	@$(call print_success, `ln -sfnv $(DOTPATH)/.vim ~/.config/nvim`)
+	@$(call print_success, `ln -sfnv $(DOTPATH)/.vim ~/.vim`)
+	@$(call print_success, `ln -sfnv $(DOTPATH)/zsh ~/.config/zsh`)
+	@$(call print_success, `ln -sfnv $(DOTPATH)/zsh/ ~/.config/zsh`)
+	@$(call print_success, `ln -sfnv $(DOTPATH)/zsh/.zshenv ~/.zshenv`)
+	@$(call print_success, `ln -sfnv $(DOTPATH)/.tmux/.tmux.conf ~/.tmux.conf`)
+	@$(call print_success, `ln -sfnv $(DOTPATH)/.tmux ~/.tmux`)
+	@$(call print_success, `ln -sfnv $(DOTPATH)/zsh/dircolors/nord-dircolors/src/dir_colors ~/.dir_colors`)
+	@$(call print_success, `ln -sfnv $(DOTPATH)/code/settings.json ~/Library/Application\ Support/Code/User/settings.json`)
+	@$(call print_success, `ln -sfnv $(DOTPATH)/code/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json`)
+	@$(call print_success, `ln -sfnv $(DOTPATH)/com.googlecode.iterm2.plist ~/com.googlecode.iterm2.plist`)
+
 clean: ## Remove the dot files and this repo
 	@$(call print_title, Remove dot files in your home directory...)
-	@-$(foreach val, $(DOTFILES), $(call print_success, `rm -vrf $(HOME)/$(val)`);)
 	@-$(call print_success, `rm -fr $(HOME)/.config/nvim`)
-	@-$(call print_success, `rm -fr $(HOME)/.config/zimfw`)
+	@-$(call print_success, `rm -fr $(HOME)/.config/zsh`)
+	@-$(call print_success, `rm -fr $(HOME)/.zshenv`)
+	@-$(call print_success, `rm -fr $(HOME)/.tmux.conf`)
+	@-$(call print_success, `rm -fr $(HOME)/.dir_colors`)
+	@-$(call print_success, `rm -fr $(HOME)/Library/Application\ Support/Code/User/settings.json`)
+	@-$(call print_success, `rm -fr $(HOME)/Library/Application\ Support/Code/User/keybindings.json`)
 
 help: ## Self-documented Makefile
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) \
