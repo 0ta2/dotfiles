@@ -5,17 +5,21 @@
     // 自動保存を有効
     // タブやウィンドウからフォーカスを外れると保存される
     "files.autoSave": "onWindowChange",
-    // フォントサイズを指定
-    "editor.fontSize": 11,
     // フォントを指定
     "editor.fontFamily": "Cica",
     // エディターで空白文字を表示する方法を制御する｡
     "editor.renderWhitespace": "boundary",
     // tabのサイズを指定
     "editor.tabSize": 2,
+    // ファイルの最後を改行で終わらせる
+    "files.insertFinalNewline": true,
+    // 文字コードの自動錦
+    "files.autoGuessEncoding": true,
+    // 常に新しいタブで開く
+    "workbench.editor.enablePreview": false,
     // テーマの設定
     "workbench.colorTheme": "Nord",
-
+    // アイコンのテーマを指定
     "workbench.iconTheme": "vscode-icons-mac" ,
     //----------------------------------------------------------
     // vscodeの検索系
@@ -64,6 +68,47 @@
             "commands": [
                 "workbench.action.splitEditorDown"
             ]
+        },
+        {
+            "before": ["<leader>","n"],
+            "commands": [
+                "workbench.action.nextEditor"
+            ]
+        },
+        {
+            "before": ["<leader>","p"],
+            "commands": [
+                "workbench.action.previousEditor"
+            ]
+        },
+        {
+            "before": ["<leader>","l"],
+            "commands": [
+                "workbench.action.focusRightGroup"
+            ]
+        },
+        {
+            "before": ["<leader>","h"],
+            "commands": [
+                "workbench.action.focusLeftGroup"
+            ]
+        },
+        {
+            "before": ["<leader>","j"],
+            "commands": [
+                "workbench.action.focusBelowGroup"
+            ]
+        },
+        {
+            "before": ["<leader>","k"],
+            "commands": [
+                "workbench.action.focusAboveGroup"
+            ]
+        },
+        {
+            // highlightを解除
+            "before": ["<Esc>"],
+            "commands": [":nohl"]
         }
     ],
     // visualモードのkeybindを書き換える
@@ -93,11 +138,20 @@
             ]
         }
     ],
+    // インサートモードの設定
+    "vim.insertModeKeyBindings": [
+      {
+        "before": ["j", "j"],
+        "after": ["<Esc>"]
+      }
+    ],
     //----------------------------------------------------------
     // Terminal の設定
     //----------------------------------------------------------
     // デフォルトシェルを指定
     "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
     // テーミナルを iTerm に変更
-    "terminal.external.osxExec": "iTerm.app"
+    "terminal.external.osxExec": "iTerm.app",
+    //  ターミナルのフォントを指定
+    "terminal.integrated.fontFamily": "Cica"
 }
