@@ -15,6 +15,8 @@
     "files.insertFinalNewline": true,
     // 文字コードの自動錦
     "files.autoGuessEncoding": true,
+    // 常に新しいタブで開く
+    "workbench.editor.enablePreview": false,
     // テーマの設定
     "workbench.colorTheme": "Nord",
     // アイコンのテーマを指定
@@ -105,7 +107,7 @@
         },
         {
             // highlightを解除
-            "before": ["<Esc>","<Esc>"],
+            "before": ["<Esc>"],
             "commands": [":nohl"]
         }
     ],
