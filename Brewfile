@@ -44,6 +44,7 @@ cask "docker"   # Docker
 
 ## completion
 brew "docker-compose-completion"
+brew "docker-machine-completion"
 
 # font
 brew "ricty", args: ["with-powerline"]
