@@ -153,5 +153,10 @@
     // テーミナルを iTerm に変更
     "terminal.external.osxExec": "iTerm.app",
     //  ターミナルのフォントを指定
-    "terminal.integrated.fontFamily": "Cica"
+    "terminal.integrated.fontFamily": "Cica",
+    //----------------------------------------------------------
+    // Git 設定
+    //----------------------------------------------------------
+    // 定期的に fetch を実行する
+    "git.autofetch": true
 }
