@@ -21,6 +21,10 @@ nnoremap <silent> <Leader><Leader> "zyiw:let @/ = '\<' . @z . '\>'<CR>:set hlsea
 
 nmap <Leader>* <Leader><Leader>:%s/<C-r>///g<Left><Left>
 
+" 行が折り返し表示されたいた場合、表示行単位で移動する
+nnoremap j gj
+nnoremap k gk
+
 " 行の移動
 nnoremap <Leader>k :m-2<cr>==
 nnoremap <Leader>j :m+<cr>==
