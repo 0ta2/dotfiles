@@ -55,8 +55,6 @@ nnoremap <Leader>n :bnext<cr>
 nnoremap <Leader>p :bprevious<cr>
 
 " 削除してもレジスタに入らないようにする(visualモードのときは例外)
-nnoremap d "_d
-nnoremap D "_D
 nnoremap x "_x
 nnoremap s "_s
 
