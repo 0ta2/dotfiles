@@ -109,6 +109,14 @@
             // highlightを解除
             "before": ["<Esc>"],
             "commands": [":nohl"]
+        },
+        {
+            "before": ["j"],
+            "after": ["g", "j"]
+        },
+        {
+            "before": ["k"],
+            "after": ["g", "k"]
         }
     ],
     // visualモードのkeybindを書き換える
@@ -116,6 +124,14 @@
         {
             "before": [";"],
             "after": [":"]
+        },
+        {
+            "before": ["j"],
+            "after": ["g", "j"]
+        },
+        {
+            "before": ["k"],
+            "after": ["g", "k"]
         }
     ],
     "vim.normalModeKeyBindingsNonRecursive": [
@@ -158,5 +174,6 @@
     // Git 設定
     //----------------------------------------------------------
     // 定期的に fetch を実行する
-    "git.autofetch": true
+    "git.autofetch": true,
+    "terminal.integrated.scrollback": 100000
 }
