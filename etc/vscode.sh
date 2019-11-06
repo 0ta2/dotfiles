@@ -22,6 +22,7 @@ pkglist=(
     yzhang.markdown-all-in-one
     felixfbecker.php-intellisense
     donjayamanne.githistory
+    bbenoist.vagrant
 )
 
 for i in ${pkglist[@]}; do
