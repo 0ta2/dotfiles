@@ -23,6 +23,7 @@ pkglist=(
     felixfbecker.php-intellisense
     donjayamanne.githistory
     bbenoist.vagrant
+    coolbear.systemd-unit-file
 )
 
 for i in ${pkglist[@]}; do
