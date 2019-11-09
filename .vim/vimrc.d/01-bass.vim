@@ -99,13 +99,14 @@ let g:python3_host_prog = expand('~/.pyenv/versions/py3neovim/bin/python')
 " Neovim用 Ruby設定
 " rbenv でインストールしたPATHを指定
 "---------------------------
-let g:ruby_host_prog = "$HOME/.rbenv/versions/2.6.3/bin/neovim-ruby-host"
+let g:ruby_host_prog = "$HOME/.rbenv/versions/2.6.5/bin/neovim-ruby-host"
 
 "---------------------------
 " Neovim用 Node.js設定
 " nodenv でインストールしたPATHを指定
 "---------------------------
 let g:node_host_prog = "$DOTFILES_PATH/node_modules/.bin/neovim-node-host"
+let g:node_host_prog = "$HOME/.nodenv/versions/13.1.0/bin/neovim-node-host"
 
 "---------------------------
 " インデント関連のオプション
