@@ -27,7 +27,7 @@ export DOTFILES_PATH="${HOME}/.ghq/github.com/0ta2/dotfiles"
 export EDITOR=nvim
 
 #TERM設定
-export TERM=xterm-256color
+export TERM=screen-256color
 
 # 文字コード指定
 export LANG=ja_JP.UTF-8

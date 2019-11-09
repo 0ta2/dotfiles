@@ -9,25 +9,32 @@ $ curl -fsSL https://raw.githubusercontent.com/0ta2/dotfiles/master/etc/install 
 
 ## install shell で実装できていない箇所は手動でセットアップ
 ### ログインシェルを変更
+
 ```bash
 $ sudo sh -c "echo '/usr/local/bin/zsh' >> /etc/shells"
 $ chsh -s /usr/local/bin/zsh
 ```
 
 ### pyenv 設定
+
 ```bash
-$ pyenv init
-$ sudo installer -pkg /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg -target /
+$ pyenv activate py2neovim
+$ pip install neovim
+
+$ pyenv activate py3neovim
+$ pip install neovim
 ```
 
 ### rbenv 設定
+
 ```bash
-$ rbenv init
+$ gem install neovim
 ```
 
 ### nodenv 設定
+
 ```bash
-$ nodenv init
+$ npm install --global neovim
 ```
 
 - システム環境設定
