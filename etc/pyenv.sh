@@ -34,7 +34,6 @@ main() {
   install_pyenv_python 2.7.17
   create_virtualenv 3.7.5
   create_virtualenv 2.7.17
-  activate_pyenv 3.7.5
 }
 
 main
