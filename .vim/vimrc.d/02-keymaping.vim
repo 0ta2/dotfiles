@@ -13,6 +13,9 @@ noremap ; :
 " mapleader を <Space> に指定
 let mapleader = "\<Space>"
 
+" jj でESCAPE
+inoremap <silent>jj <Esc>
+
 " ファイル保存
 nnoremap <Leader>w :w<cr>
 
