@@ -36,7 +36,9 @@ Plug 'liuchengxu/vista.vim'
 "--------------
 " vimのカラー設定
 "Plug 'cocopon/iceberg.vim'
-Plug 'arcticicestudio/nord-vim'
+"Plug 'arcticicestudio/nord-vim'
+Plug 'w0ng/vim-hybrid'
+
 "--------------
 " ファイルツリー関連
 "--------------
