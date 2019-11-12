@@ -42,7 +42,9 @@ set undodir=~/.vim/tmp/undo
 
 " カラーテーマ指定
 " iceberg
-colorscheme nord
+" nord
+set background=dark
+colorscheme hybrid
 
 " バッファを保存しなくても他のバッファを表示できるようにする
 set hidden
