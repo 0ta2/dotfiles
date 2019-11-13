@@ -28,6 +28,9 @@ nmap <Leader>* <Leader><Leader>:%s/<C-r>///g<Left><Left>
 nnoremap j gj
 nnoremap k gk
 
+vnoremap j gj
+vnoremap k gk
+
 " 行の移動
 nnoremap <Leader>k :m-2<cr>==
 nnoremap <Leader>j :m+<cr>==
