@@ -88,6 +88,11 @@ if [ "`which pyenv-virtualenvs`" ]; then
   eval "$(pyenv virtualenv-init -)"
 fi
 
+# pipenv の補完有効化
+if [ "`which pipenv`" ];then
+  eval "$(pipenv --completion)"
+fi
+
 # rbenv 設定
 if [ "`which rbenv`" ]; then
   eval "$(rbenv init -)"
