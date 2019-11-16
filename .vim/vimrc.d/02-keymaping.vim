@@ -68,26 +68,15 @@ nnoremap <Leader>p :bprevious<cr>
 nnoremap x "_x
 nnoremap s "_s
 
-" tagファイル生成のショートカット
-nnoremap <Leader>tc :!ctags -Rf .git/tags<cr><cr>
+" 全体や指定範囲の空白行を削除
+nnoremap <Leader>dl :%s/^$\n//g<CR>
+vnoremap <Leader>dl  :s/^$\n//g<CR>
 
-let g:pid = getpid()
-let g:tag_file_path = "/tmp/" . g:pid . "_tags"
-function! _CtagsUpdate()
-    exe '!ctags -R -f '.g:tag_file_path.' `pwd` &'
-    exe 'set tags='.g:tag_file_path
-endfunction
-command! CtagsUpdate call _CtagsUpdate()
+" 行内のスペースをカット
+nnoremap <Leader>db  :%s/\s\+//gc<CR>
+vnoremap <Leader>db  :s/\s\+//gc<CR>
 
-function! _CtagsRemove()
-    exe '!rm '.g:tag_file_path
-endfunction
-command! CtagsRemove call _CtagsRemove()
+" 全角英数字を半角に変換
+nnoremap <Leader>zh :HzjaConvert han_eisu
+vnoremap <Leader>zh :HzjaConvert han_eisu
 
-let current_path = expand("%:p")
-let match_idx = match(current_path, ".git")
-if match_idx != -1
-    autocmd VimEnter * silent! :CtagsUpdate
-    autocmd BufWrite * silent! :CtagsUpdate
-    autocmd VimLeave * silent! :CtagsRemove
-endif
