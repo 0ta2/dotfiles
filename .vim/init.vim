@@ -8,29 +8,40 @@ call plug#begin('~/.vim/plugged')
 "--------------
 " helpの日本語訳
 Plug 'vim-jp/vimdoc-ja'
+
 " 起動時の表示画面変更
 Plug 'mhinz/vim-startify'
+
 " 移動強化
 Plug 'easymotion/vim-easymotion'
+
 " 整形
-" command: ga
 Plug 'junegunn/vim-easy-align'
+
 " 画面分割した際のサイズ変更を便利にする
 Plug 'kana/vim-submode'
+
 " シンタックチェック
 Plug 'w0rp/ale'
+
 " Buffer の表示
 " Buffer の可視化
 Plug 'ap/vim-buftabline'
+
 " gtacs
 Plug 'jsfaint/gen_tags.vim'
+
 " cheatsheet
 Plug 'reireias/vim-cheatsheet'
+
 " 文字列検索
 Plug 'osyo-manga/vim-anzu'
+
 " 16進数の色を表示する
 Plug 'gko/vim-coloresque'
+
 Plug 'liuchengxu/vista.vim'
+
 "--------------
 " Vim Color
 "--------------
@@ -78,6 +89,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " coc exstensions
 Plug 'neoclide/coc-sources', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
 Plug 'marlonfan/coc-phpls', {'do': 'yarn install --frozen-lockfile'}
@@ -88,6 +100,7 @@ Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-lists', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-yank', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-git', {'do': 'yarn install --frozen-lockfile'}
+Plug 'iamcco/coc-vimlsp', {'do': 'yarn install --frozen-lockfile'}
 
 " 対応する括弧を入力
 Plug 'kana/vim-smartinput'
