@@ -55,14 +55,14 @@ nnoremap <Leader>o <C-w>_<C-w>\|
 nnoremap <Leader>= <C-w>=
 
 " create a new buffer (save it with :w ./path/to/FILENAME)
-nnoremap <silent><Leader>B :enew<cr>
+nnoremap <silent><Leader>t :enew<cr>
 " close current buffer
 nnoremap <silent><Leader>q :bp <bar> bd! #<cr>
 
 " Tab to switch to next open buffer
-nnoremap <Leader>n :bnext<cr>
+nnoremap <silent><Leader>n :bnext<cr>
 " Shift + Tab to switch to previous open buffer
-nnoremap <Leader>p :bprevious<cr>
+nnoremap <silent><Leader>p :bprevious<cr>
 
 " 削除してもレジスタに入らないようにする(visualモードのときは例外)
 nnoremap x "_x
@@ -79,4 +79,3 @@ vnoremap <Leader>db  :s/\s\+//gc<CR>
 " 全角英数字を半角に変換
 nnoremap <Leader>zh :HzjaConvert han_eisu
 vnoremap <Leader>zh :HzjaConvert han_eisu
-
