@@ -12,6 +12,7 @@ zsh/.zsh_history
 ### vim
 .netrwhist
 *.swp
+*.swo
 .vim/plugged/*
 viminfo.txt
 tags
