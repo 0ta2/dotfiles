@@ -66,6 +66,7 @@ cask "1password-cli"  # 1password の CLI ツール
 cask "xmind"          # マインドマップ
 cask "cyberduck"      # FTPソフト
 cask "slack"
+cask "notion"
 
 ## terminal
 cask "iTerm2"
