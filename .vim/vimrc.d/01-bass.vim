@@ -90,6 +90,9 @@ set tags+=.git/tags
 " ダブルクォーテーションが隠れてしまう問題の対応
 set conceallevel=0
 
+" カーソル上下移動のときに位置を維持する
+set nostartofline
+
 "---------------------------
 " Neovim用 Python設定
 " pyenv でインストールしたPATHを指定
