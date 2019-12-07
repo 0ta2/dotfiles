@@ -38,6 +38,7 @@ set backupdir=~/.vim/tmp/backup
 set viminfo+=n$HOME/.vim/tmp/viminfo.txt
 
 " undofileの出力先 .un~
+set undofile
 set undodir=~/.vim/tmp/undo
 
 " カラーテーマ指定

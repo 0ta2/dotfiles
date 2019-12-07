@@ -73,6 +73,11 @@ Plug 'junegunn/fzf.vim'
 Plug 'elzr/vim-json'
 
 "--------------
+" undo関連
+"--------------
+Plug 'mbbill/undotree'
+
+"--------------
 " Git関連
 "--------------
 " リポジトリビューア
