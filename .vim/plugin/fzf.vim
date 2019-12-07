@@ -17,22 +17,25 @@ let g:fzf_layout = { 'window': 'call FloatingFZF()' }
 
 function! FloatingFZF()
   let buf = nvim_create_buf(v:false, v:true)
-  call setbufvar(buf, '&signcolumn', 'no')
 
-  let height = &lines - 3
-  let width = float2nr(&columns - (&columns * 2 / 10))
-  let col = float2nr((&columns - width) / 2)
+  let height = float2nr(&lines * 0.9)
+  let width = float2nr(&columns * 0.6)
+  " horizontal position (centralized)
+  let horizontal = float2nr((&columns - width) / 2)
+  " vertical position (one line down of the top)
+  let vertical = 1
 
   let opts = {
         \ 'relative': 'editor',
-        \ 'row': 1,
-        \ 'col': col,
+        \ 'row': vertical,
+        \ 'col': horizontal,
         \ 'width': width,
         \ 'height': height
         \ }
 
   call nvim_open_win(buf, v:true, opts)
 endfunction
+
 "--------------
 " fzf の設定
 "--------------
@@ -44,7 +47,7 @@ let g:fzf_buffers_jump = 1
 "--------------
 nnoremap <Leader>b :Buffers<CR>
 nnoremap <Leader>f :ProjectFiles<CR>
-nnoremap <Leader>r :ProjectRg<CR>
+nnoremap <Leader>r :Rg<CR>
 nnoremap <Leader>hi :History<CR>
 nnoremap <Leader>; :History:<CR>
 nnoremap <Leader>/ :History/<CR>
@@ -70,7 +73,6 @@ function! s:find_git_root()
 endfunction
 
 command! ProjectFiles execute 'Files' s:find_git_root()
-command! ProjectRg execute 'Rg' s:find_git_root()
 
 "--------------
 " カラー設定
@@ -89,30 +91,3 @@ let g:fzf_colors =
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
-
-function! s:tags_sink(line)
-  let parts = split(a:line, '\t\zs')
-  let excmd = matchstr(parts[2:], '^.*\ze;"\t')
-  execute 'silent e' parts[1][:-2]
-  let [magic, &magic] = [&magic, 0]
-  execute excmd
-  let &magic = magic
-endfunction
-
-function! s:tags()
-  if empty(tagfiles())
-    echohl WarningMsg
-    echom 'Preparing tags'
-    echohl None
-    call system('ctags -R')
-  endif
-
-  call fzf#run({
-  \ 'source':  'cat '.join(map(tagfiles(), 'fnamemodify(v:val, ":S")')).
-  \            '| grep -v -a ^!',
-  \ 'options': '+m -d "\t" --with-nth 1,4.. -n 1 --tiebreak=index',
-  \ 'down':    '40%',
-  \ 'sink':    function('s:tags_sink')})
-endfunction
-
-command! Tags call s:tags()
