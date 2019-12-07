@@ -7,9 +7,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " 無視するファイルを設定する
 let g:NERDTreeIgnore=['\.git$', '\.clean$', '\.swp$', '\.bak$', '\~$']
 
-" 表示する順序
-let g:NERDTreeSortOrder=['\.vim$', '\.c$', '\.h$', '*', 'foobar']
-
 " 隠しファイルを表示するか
 " 0 : 表示しない
 " 1 : 表示する
