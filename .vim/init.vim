@@ -37,6 +37,9 @@ Plug 'gko/vim-coloresque'
 
 Plug 'liuchengxu/vista.vim'
 
+" カーソルのマルチ操作
+Plug 'terryma/vim-multiple-cursors'
+
 "--------------
 " tab/buffer関連
 "--------------
@@ -131,10 +134,9 @@ Plug 'honza/vim-snippets'
 " Markdown関連
 "--------------
 " markdown
+Plug 'iamcco/markdown-preview.nvim', {'do': 'cd app & yarn install'}
 Plug 'plasticboy/vim-markdown'
 Plug 'godlygeek/tabular'      " Markdownの表整形に必要
-Plug 'kannokanno/previm'
-Plug 'tyru/open-browser.vim'
 
 "--------------
 " Tmux関連
