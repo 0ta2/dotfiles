@@ -21,6 +21,7 @@ node_modules/*
 .bundle/*
 .venv/*
 .vim/sessions
+.vim/tmp/undo/*
 
 ### tmux
 .tmux/*
