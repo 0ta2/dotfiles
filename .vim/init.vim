@@ -23,11 +23,6 @@ Plug 'kana/vim-submode'
 
 " シンタックチェック
 Plug 'w0rp/ale'
-
-" Buffer の表示
-" Buffer の可視化
-Plug 'ap/vim-buftabline'
-
 " gtacs
 Plug 'jsfaint/gen_tags.vim'
 
@@ -41,6 +36,18 @@ Plug 'osyo-manga/vim-anzu'
 Plug 'gko/vim-coloresque'
 
 Plug 'liuchengxu/vista.vim'
+
+"--------------
+" tab/buffer関連
+"--------------
+" Buffer の表示/可視化
+Plug 'ap/vim-buftabline'
+
+"--------------
+" 移動系
+"--------------
+" 対応するカッコへの移動
+Plug 'andymass/vim-matchup'
 
 "--------------
 " Vim Color
@@ -106,9 +113,8 @@ Plug 'neoclide/coc-lists', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-yank', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-git', {'do': 'yarn install --frozen-lockfile'}
 Plug 'iamcco/coc-vimlsp', {'do': 'yarn install --frozen-lockfile'}
-
-" 対応する括弧を入力
-Plug 'kana/vim-smartinput'
+" 対応するカッコの自動入力
+Plug 'neoclide/coc-pairs', {'do': 'yarn install --frozen-lockfile'}
 
 " コメントアウト
 Plug 'tpope/vim-commentary'
