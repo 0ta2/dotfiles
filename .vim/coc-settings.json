@@ -22,8 +22,12 @@
     }
   },
 "yaml.schemas": {
+  "yaml.hover": true,
+  "yaml.completion": true,
   "http://json.schemastore.org/composer": "/*",
-  "http://json.schemastore.org/ansible-stable-2.7": "/*.yaml"
+  "http://json.schemastore.org/ansible-stable-2.7": "/*.yml",
+  "http://json.schemastore.org/github-action": "/*.yml",
+  "http://json.schemastore.org/github-workflow": "/*.yml"
   },
   "coc.preferences.formatOnSaveFiletypes": ["css", "Markdown", "PHP"]
 }
