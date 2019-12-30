@@ -59,9 +59,7 @@ Plug 'andymass/vim-matchup'
 " Vim Color
 "--------------
 " vimのカラー設定
-"Plug 'cocopon/iceberg.vim'
-"Plug 'arcticicestudio/nord-vim'
-Plug 'w0ng/vim-hybrid'
+Plug 'arcticicestudio/nord-vim'
 
 "--------------
 " ファイルツリー関連
