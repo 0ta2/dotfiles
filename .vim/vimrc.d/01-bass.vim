@@ -60,7 +60,9 @@ set visualbell
 set cmdheight=2
 
 " 毎行の前に行番号を表示する。(有効:number/無効:nonumber)
-set number
+" set number
+" 行番号を相対的に表示する。
+set relativenumber
 
 " キーコードはすぐにタイムアウト。マッピングはタイムアウトしない
 set notimeout       " マッピングについてタイムアウトしない
