@@ -43,6 +43,9 @@ Plug 'terryma/vim-multiple-cursors'
 " ステータス表示
 Plug 'itchyny/lightline.vim'
 
+" インデントを可視化
+Plug 'nathanaelkane/vim-indent-guides'
+
 "--------------
 " tab/buffer関連
 "--------------
