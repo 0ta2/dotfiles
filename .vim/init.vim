@@ -40,6 +40,9 @@ Plug 'liuchengxu/vista.vim'
 " カーソルのマルチ操作
 Plug 'terryma/vim-multiple-cursors'
 
+" ステータス表示
+Plug 'itchyny/lightline.vim'
+
 "--------------
 " tab/buffer関連
 "--------------
