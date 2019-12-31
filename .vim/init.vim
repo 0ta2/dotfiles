@@ -65,15 +65,6 @@ Plug 'andymass/vim-matchup'
 Plug 'arcticicestudio/nord-vim'
 
 "--------------
-" ファイルツリー関連
-"--------------
-" ファイルツリーを表示
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-
-" スクリプトの構造表示(universal-ctagsが必須)
-Plug 'majutsushi/tagbar'
-
-"--------------
 " ファイル関連
 "--------------
 " ファイルにあるに末尾にあるスペースを可視化
@@ -122,6 +113,8 @@ Plug 'neoclide/coc-git', {'do': 'yarn install --frozen-lockfile'}
 Plug 'iamcco/coc-vimlsp', {'do': 'yarn install --frozen-lockfile'}
 " 対応するカッコの自動入力
 Plug 'neoclide/coc-pairs', {'do': 'yarn install --frozen-lockfile'}
+"
+Plug 'weirongxu/coc-explorer', {'do': 'yarn install --frozen-lockfile'}
 
 " コメントアウト
 Plug 'tpope/vim-commentary'

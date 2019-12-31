@@ -21,6 +21,7 @@
       "args": ["--stdio"]
     }
   },
+// coc-yaml
 "yaml.schemas": {
   "yaml.hover": true,
   "yaml.completion": true,
@@ -29,5 +30,15 @@
   "http://json.schemastore.org/github-action": "/*.yml",
   "http://json.schemastore.org/github-workflow": "/*.yml"
   },
-  "coc.preferences.formatOnSaveFiletypes": ["css", "Markdown", "PHP"]
+// coc-explorer
+"explorer.keyMappings": {
+  "k": "nodePrev",
+
+  "*": "toggleSelection",
+  "<tab>": "actionMenu",
+
+  "e": "open",
+  "E": "openInVsplit",
+  "t": "openInTab"
+  }
 }
