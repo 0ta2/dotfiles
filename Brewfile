@@ -67,6 +67,7 @@ cask "xmind"          # マインドマップ
 cask "cyberduck"      # FTPソフト
 cask "slack"
 cask "notion"
+cask "raindropio"
 
 ## terminal
 cask "iTerm2"
