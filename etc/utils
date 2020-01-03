@@ -3,7 +3,7 @@
 # よく使う変数と関数
 
 # dotfiles でよく使うであろう変数
-DOTFILES_PATH="${HOME}/.ghq/github.com/0ta2/dotfiles"
+DOTFILES_PATH="${HOME}/ghq/github.com/0ta2/dotfiles"
 DOTFILES_GITHUB="https://github.com/0ta2/dotfiles.git"
 
 ############################################################

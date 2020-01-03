@@ -8,8 +8,8 @@ function f() {
     dir=~/repos/${project}
   elif [[ -d ~/.go/src/${project} ]]; then
     dir=~/.go/src/${project}
-  elif [[ -d ~/.ghq/${project} ]]; then
-    dir=~/.ghq/${project}
+  elif [[ -d ~/ghq/${project} ]]; then
+    dir=~/ghq/${project}
   fi
 
   if [[ ! -z ${TMUX} ]]; then
