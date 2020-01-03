@@ -21,7 +21,7 @@ done
 ### 環境変数設定
 
 # 独自関数
-export DOTFILES_PATH="${HOME}/.ghq/github.com/0ta2/dotfiles"
+export DOTFILES_PATH="${HOME}/ghq/github.com/0ta2/dotfiles"
 
 ### 環境変数設定
 export EDITOR=nvim
