@@ -40,5 +40,6 @@
   "e": "open",
   "E": "openInVsplit",
   "t": "openInTab"
-  }
+},
+"explorer.file.showHiddenFiles": true
 }
