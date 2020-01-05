@@ -29,9 +29,6 @@ Plug 'jsfaint/gen_tags.vim'
 " cheatsheet
 Plug 'reireias/vim-cheatsheet'
 
-" 文字列検索
-Plug 'osyo-manga/vim-anzu'
-
 " 16進数の色を表示する
 Plug 'gko/vim-coloresque'
 
@@ -45,6 +42,15 @@ Plug 'itchyny/lightline.vim'
 
 " インデントを可視化
 Plug 'nathanaelkane/vim-indent-guides'
+
+"--------------
+" 検索系
+"--------------
+" 文字列検索
+Plug 'osyo-manga/vim-anzu'
+
+" 置換のプレビュー
+Plug 'markonm/traces.vim'
 
 "--------------
 " tab/buffer関連
