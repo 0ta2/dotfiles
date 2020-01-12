@@ -256,23 +256,6 @@ HISTSIZE=50000
 # HISTFILE で指定したファイルに保存される履歴の件数
 SAVEHIST=50000
 
-# 重複して記録させない
-setopt hist_ignore_dups
-
-# コマンド履歴をターミナル間で共有する
-setopt share_history
-
-# PROMPT変数内で変数参照する
-setopt prompt_subst
-
-### Keybind
-# 履歴を表示する時にカーソルは末尾
-autoload history-search-end
-zle -N history-beginning-search-backward-end history-search-end
-zle -N history-beginning-search-forward-end history-search-end
-bindkey "^p" history-beginning-search-backward-end  #<C-p>
-bindkey "^n" history-beginning-search-forward-end   #<C-n>
-
 ### Alias
 # エイリアスでも補完を有効
 setopt complete_aliases
@@ -289,7 +272,3 @@ alias ..3='cd ../../..'
 
 # GNU
 alias sed="gsed"
-
-### Prompt
-# 変数の添字を保管する
-zstyle ':completion:*:*:-subscript-:*' tag-order indexes parameters
