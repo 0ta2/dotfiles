@@ -209,6 +209,9 @@ if [ "`which nodenv`" ]; then
   eval "$(nodenv init -)"
 fi
 
+# dircolors
+eval "$(gdircolors ~/.config/zsh/dircolors/nord-dircolors/src/dir_colors)"
+
 ### Optin
 
 # 隠しファイル補完候補に表示
@@ -272,3 +275,6 @@ alias ..3='cd ../../..'
 
 # GNU
 alias sed="gsed"
+
+# ls
+alias ls="gls --color=auto"
