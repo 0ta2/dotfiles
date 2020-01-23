@@ -32,6 +32,7 @@ update: ## Fetch changes for this repo
 	@$(call print_title, Start to update dotfiles)
 	git pull origin master
 	git submodule update --init --recursive
+	git submodule foreach git pull origin master
 
 install: update deploy init ## Run make update, deploy, init
 	@exec $$SHELL
