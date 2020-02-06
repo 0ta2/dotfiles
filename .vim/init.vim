@@ -69,6 +69,7 @@ Plug 'andymass/vim-matchup'
 "--------------
 " vimのカラー設定
 Plug 'arcticicestudio/nord-vim'
+Plug 'KeitaNakamura/neodark.vim'
 
 "--------------
 " ファイル関連

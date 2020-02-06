@@ -42,7 +42,8 @@ set undofile
 set undodir=~/.vim/tmp/undo
 
 " カラーテーマ指定
-colorscheme nord
+colorscheme neodark
+let g:neodark#background = '#202020'
 
 " バッファを保存しなくても他のバッファを表示できるようにする
 set hidden
