@@ -120,8 +120,10 @@ Plug 'neoclide/coc-git', {'do': 'yarn install --frozen-lockfile'}
 Plug 'iamcco/coc-vimlsp', {'do': 'yarn install --frozen-lockfile'}
 " 対応するカッコの自動入力
 Plug 'neoclide/coc-pairs', {'do': 'yarn install --frozen-lockfile'}
-"
+" cocのフォルダツリー
 Plug 'weirongxu/coc-explorer', {'do': 'yarn install --frozen-lockfile'}
+" golang
+Plug 'josa42/coc-go', {'do': 'yarn install --frozen-lockfile'}
 
 " コメントアウト
 Plug 'tpope/vim-commentary'
