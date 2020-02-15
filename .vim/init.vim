@@ -70,6 +70,8 @@ Plug 'andymass/vim-matchup'
 " vimのカラー設定
 Plug 'arcticicestudio/nord-vim'
 Plug 'KeitaNakamura/neodark.vim'
+Plug 'kristijanhusak/vim-hybrid-material'
+Plug 'morhetz/gruvbox'
 
 "--------------
 " ファイル関連
@@ -124,6 +126,8 @@ Plug 'neoclide/coc-pairs', {'do': 'yarn install --frozen-lockfile'}
 Plug 'weirongxu/coc-explorer', {'do': 'yarn install --frozen-lockfile'}
 " golang
 Plug 'josa42/coc-go', {'do': 'yarn install --frozen-lockfile'}
+" SQL
+Plug 'fannheyward/coc-sql', {'do': 'yarn install --frozen-lockfile'}
 
 " コメントアウト
 Plug 'tpope/vim-commentary'

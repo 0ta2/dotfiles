@@ -1,45 +1,73 @@
 {
-// languageserver の設定
-"languageserver": {
+  "languageserver": {
     "bash": {
       "command": "bash-language-server",
-      "args": ["start"],
-      "filetypes": ["sh"],
-      "ignoredRootPaths": ["~"]
+      "args": [
+        "start"
+      ],
+      "filetypes": [
+        "sh"
+      ],
+      "ignoredRootPaths": [
+        "~"
+      ]
     },
     "golang": {
       "command": "gopls",
-      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
-      "filetypes": ["go"],
+      "rootPatterns": [
+        "go.mod",
+        ".vim/",
+        ".git/",
+        ".hg/"
+      ],
+      "filetypes": [
+        "go"
+      ],
       "initializationOptions": {
         "usePlaceholders": true
       }
     },
     "dockerfile": {
       "command": "docker-langserver",
-      "filetypes": ["dockerfile"],
-      "args": ["--stdio"]
+      "filetypes": [
+        "dockerfile"
+      ],
+      "args": [
+        "--stdio"
+      ]
     }
   },
-// coc-yaml
-"yaml.schemas": {
-  "yaml.hover": true,
-  "yaml.completion": true,
-  "http://json.schemastore.org/composer": "/*",
-  "http://json.schemastore.org/ansible-stable-2.7": "/*.yml",
-  "http://json.schemastore.org/github-action": "/*.yml",
-  "http://json.schemastore.org/github-workflow": "/*.yml"
+  "yaml.schemas": {
+    "yaml.hover": true,
+    "yaml.completion": true,
+    "http://json.schemastore.org/composer": "/*",
+    "http://json.schemastore.org/ansible-stable-2.7": "/*.yml",
+    "http://json.schemastore.org/github-action": "/*.yml",
+    "http://json.schemastore.org/github-workflow": "/*.yml"
   },
-// coc-explorer
-"explorer.keyMappings": {
-  "k": "nodePrev",
-
-  "*": "toggleSelection",
-  "<tab>": "actionMenu",
-
-  "e": "open",
-  "E": "openInVsplit",
-  "t": "openInTab"
-},
-"explorer.file.showHiddenFiles": true
+  "explorer.sources": [
+    {
+      "name": "buffer",
+      "expand": true
+    },
+    {
+      "name": "file",
+      "expand": true
+    }
+  ],
+  "explorer.keyMappings": {
+    "k": "nodePrev",
+    "*": "toggleSelection",
+    "<tab>": "actionMenu",
+    "e": "open",
+    "E": "openInVsplit",
+    "t": "openInTab"
+  },
+  "explorer.file.showHiddenFiles": true,
+  "list.source.files.args": [
+    "--hidden",
+    "--files"
+  ],
+  "list.source.grep.command": "rg",
+  "translator.toLang": "ja"
 }

@@ -20,7 +20,10 @@ highlight link ALEWarningSign StorageClass
 let g:ale_fixers = {
       \ '*': ['remove_trailing_lines', 'trim_whitespace'],
       \ 'php': ['php_cs_fixer'],
-      \ 'go': ['gofmt']
+      \ 'go': ['gofmt'],
+      \ 'json': ['fixjson', 'jq'],
+      \ 'markdown': ['prettier'],
+      \ 'python': ['autopep8', 'yapf']
       \}
 
 " linter を設定
