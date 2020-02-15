@@ -45,9 +45,6 @@ let g:fzf_buffers_jump = 1
 "--------------
 " キーバインド
 "--------------
-nnoremap <Leader>b :Buffers<CR>
-nnoremap <Leader>f :ProjectFiles<CR>
-nnoremap <Leader>r :Rg<CR>
 nnoremap <Leader>hi :History<CR>
 nnoremap <Leader>; :History:<CR>
 nnoremap <Leader>/ :History/<CR>
