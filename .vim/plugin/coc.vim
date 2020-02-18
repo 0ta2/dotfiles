@@ -43,13 +43,6 @@ nmap <leader>rn <Plug>(coc-rename)
 nnoremap <silent> <Leader>y  :<C-u>CocList -A --normal yank<CR>
 
 "------------------
-" coc-git
-"------------------
-nmap <Leader>gs <Plug>(coc-git-chunkinfo)
-nmap <Leader>gc <Plug>(coc-git-commit)
-nmap <Leader>gp <Plug>(coc-git-prevchunk)
-
-"------------------
 " coc-snippets
 "------------------
 imap <C-l> <Plug>(coc-snippets-expand)
