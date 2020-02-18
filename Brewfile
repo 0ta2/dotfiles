@@ -41,6 +41,7 @@ brew "gnu-sed"  # gnu版のsed
 brew "yarn"
 cask "vagrant"
 cask "docker"   # Docker
+brew "github/gh/gh"
 
 ## completion
 brew "docker-compose-completion"
