@@ -40,6 +40,7 @@
   "yaml.schemas": {
     "yaml.hover": true,
     "yaml.completion": true,
+    "yaml.format.enable": true,
     "http://json.schemastore.org/composer": "/*",
     "http://json.schemastore.org/ansible-stable-2.7": "/*.yml",
     "http://json.schemastore.org/github-action": "/*.yml",
@@ -68,6 +69,8 @@
     "--hidden",
     "--files"
   ],
-  "list.source.grep.command": "rg",
-  "translator.toLang": "ja"
+  "list.source.files.excludePatterns": [
+    "**/.git/*"
+  ],
+  "list.source.grep.command": "rg"
 }
