@@ -65,6 +65,7 @@
     "t": "openInTab"
   },
   "explorer.file.showHiddenFiles": true,
+  "list.source.files.command": "rg",
   "list.source.files.args": [
     "--hidden",
     "--files"
@@ -72,5 +73,8 @@
   "list.source.files.excludePatterns": [
     "**/.git/*"
   ],
-  "list.source.grep.command": "rg"
+  "list.source.grep.command": "rg",
+  "list.source.grep.excludePatterns": [
+    "**/.git/*"
+  ]
 }
