@@ -42,6 +42,7 @@ brew "yarn"
 cask "vagrant"
 cask "docker"   # Docker
 brew "github/gh/gh"
+brew "gawk"     # tmux-picker で必要
 
 ## completion
 brew "docker-compose-completion"
