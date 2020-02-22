@@ -64,6 +64,9 @@
     "E": "openInVsplit",
     "t": "openInTab"
   },
+  "list.insertMappings": {
+    "<C-v>": "eval:@@"
+  },
   "explorer.file.showHiddenFiles": true,
   "list.source.files.command": "rg",
   "list.source.files.args": [
