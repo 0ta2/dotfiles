@@ -73,6 +73,7 @@ Plug 'KeitaNakamura/neodark.vim'
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'morhetz/gruvbox'
 Plug 'Rigellute/rigel'
+Plug 'jaredgorski/spacecamp'
 
 "--------------
 " ファイル関連
