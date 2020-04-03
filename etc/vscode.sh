@@ -1,7 +1,6 @@
 #!/bin/bash
 
 pkglist=(
-    arcticicestudio.nord-visual-studio-code
     christian-kohler.path-intellisense
     CoenraadS.bracket-pair-colorizer-2
     esbenp.prettier-vscode
@@ -18,12 +17,13 @@ pkglist=(
     vscodevim.vim
     vscoss.vscode-ansible
     waderyan.gitblame
-    wayou.vscode-icons-mac
     yzhang.markdown-all-in-one
     felixfbecker.php-intellisense
     donjayamanne.githistory
     bbenoist.vagrant
     coolbear.systemd-unit-file
+    robertrossmann.remedy
+    material-icon-theme
 )
 
 for i in ${pkglist[@]}; do
