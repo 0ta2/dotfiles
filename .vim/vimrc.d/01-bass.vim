@@ -43,7 +43,7 @@ set undodir=~/.vim/tmp/undo
 
 " カラーテーマ指定
 set background=dark
-colorscheme gruvbox
+colorscheme srcery
 
 " バッファを保存しなくても他のバッファを表示できるようにする
 set hidden
