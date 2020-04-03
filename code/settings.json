@@ -18,9 +18,9 @@
     // 常に新しいタブで開く
     "workbench.editor.enablePreview": false,
     // テーマの設定
-    "workbench.colorTheme": "Nord",
+    "workbench.colorTheme": "Remedy - Dark (Straight)",
     // アイコンのテーマを指定
-    "workbench.iconTheme": "vscode-icons-mac" ,
+    "workbench.iconTheme": "material-icon-theme" ,
     //----------------------------------------------------------
     // vscodeの検索系
     //----------------------------------------------------------
@@ -82,27 +82,39 @@
             ]
         },
         {
-            "before": ["<leader>","l"],
+            "before": ["ctrl+l"],
             "commands": [
                 "workbench.action.focusRightGroup"
             ]
         },
         {
-            "before": ["<leader>","h"],
+            "before": ["ctrl+h"],
             "commands": [
                 "workbench.action.focusLeftGroup"
             ]
         },
         {
-            "before": ["<leader>","j"],
+            "before": ["ctrl+j"],
             "commands": [
                 "workbench.action.focusBelowGroup"
             ]
         },
         {
-            "before": ["<leader>","k"],
+            "before": ["ctrl+k"],
             "commands": [
                 "workbench.action.focusAboveGroup"
+            ]
+        },
+        {
+            "before": ["<leader>","e"],
+            "commands": [
+                "workbench.action.focusSideBar"
+            ]
+        },
+        {
+            "before": ["<leader>","l"],
+            "commands": [
+                "workbench.action.showCommands"
             ]
         },
         {
@@ -175,5 +187,7 @@
     //----------------------------------------------------------
     // 定期的に fetch を実行する
     "git.autofetch": true,
-    "terminal.integrated.scrollback": 100000
+    "terminal.integrated.scrollback": 100000,
+    "editor.minimap.enabled": false,
+    "workbench.startupEditor": "newUntitledFile"
 }
