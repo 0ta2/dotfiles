@@ -74,6 +74,7 @@ Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'morhetz/gruvbox'
 Plug 'Rigellute/rigel'
 Plug 'jaredgorski/spacecamp'
+Plug 'srcery-colors/srcery-vim'
 
 "--------------
 " ファイル関連
