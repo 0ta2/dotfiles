@@ -45,7 +45,8 @@
     "vim.easymotion": true,
     // Vim のキーバインドを有効にする
     "vim.useCtrlKeys": true,
-
+    // * or # でカーソルは以下の文字列を検索する
+    "vim.visualstar": true,
     //----------------------------------------------------------
     // vscode の key 設定
     //----------------------------------------------------------
@@ -189,5 +190,10 @@
     "git.autofetch": true,
     "terminal.integrated.scrollback": 100000,
     "editor.minimap.enabled": false,
-    "workbench.startupEditor": "newUntitledFile"
+    "workbench.startupEditor": "newUntitledFile",
+    //----------------------------------------------------------
+    // PHP 設定
+    //----------------------------------------------------------
+    "php.validate.enable": false,
+    "php.suggest.basic": false
 }
