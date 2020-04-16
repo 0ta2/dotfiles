@@ -18,12 +18,17 @@ pkglist=(
     vscoss.vscode-ansible
     waderyan.gitblame
     yzhang.markdown-all-in-one
-    felixfbecker.php-intellisense
     donjayamanne.githistory
     bbenoist.vagrant
     coolbear.systemd-unit-file
     robertrossmann.remedy
     material-icon-theme
+    streetsidesoftware.code-spell-checker
+    sainnhe.gruvbox-material
+    shuworks.vscode-table-formatter
+    PKief.material-icon-theme
+    bmewburn.vscode-intelephense-client
+    felixfbecker.php-debug
 )
 
 for i in ${pkglist[@]}; do
