@@ -18,7 +18,7 @@
     // 常に新しいタブで開く
     "workbench.editor.enablePreview": false,
     // テーマの設定
-    "workbench.colorTheme": "Remedy - Dark (Straight)",
+    "workbench.colorTheme": "One Dark Pro",
     // アイコンのテーマを指定
     "workbench.iconTheme": "material-icon-theme" ,
     //----------------------------------------------------------
@@ -195,5 +195,6 @@
     // PHP 設定
     //----------------------------------------------------------
     "php.validate.enable": false,
-    "php.suggest.basic": false
+    "php.suggest.basic": false,
+    "terminal.integrated.fontSize": 14
 }
