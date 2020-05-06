@@ -7,7 +7,6 @@ pkglist=(
     formulahendry.docker-explorer
     hangxingliu.vscode-nginx-conf-hint
     jebbs.plantuml
-    kken0201.vscode-esa
     mrmlnc.vscode-apache
     ms-azuretools.vscode-docker
     MS-CEINTL.vscode-language-pack-ja
@@ -29,6 +28,11 @@ pkglist=(
     PKief.material-icon-theme
     bmewburn.vscode-intelephense-client
     felixfbecker.php-debug
+    onecentlin.laravel5-snippets                # Laravel snippets
+    onecentlin.laravel-blade                    # Laravel blade snippets
+    ryannaddy.laravel-artisan                   # Laravel Artisan command
+    codingyu.laravel-goto-view                  # Laravel blade
+    amiralizadeh9480.laravel-extra-intellisense # Laravel autocomplete
 )
 
 for i in ${pkglist[@]}; do
