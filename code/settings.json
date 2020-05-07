@@ -183,6 +183,8 @@
     "terminal.external.osxExec": "iTerm.app",
     //  ターミナルのフォントを指定
     "terminal.integrated.fontFamily": "Cica",
+    // ターミナルのフォントサイズ
+    "terminal.integrated.fontSize": 14,
     //----------------------------------------------------------
     // Git 設定
     //----------------------------------------------------------
@@ -195,6 +197,5 @@
     // PHP 設定
     //----------------------------------------------------------
     "php.validate.enable": false,
-    "php.suggest.basic": false,
-    "terminal.integrated.fontSize": 14
+    "php.suggest.basic": false
 }
