@@ -49,7 +49,6 @@ brew "docker-compose-completion"
 brew "docker-machine-completion"
 
 # font
-brew "ricty", args: ["with-powerline"]
 cask "font-cica"
 
 ### application
@@ -65,11 +64,9 @@ cask "virtualbox-extension-pack"
 cask "vlc"
 cask "1password"
 cask "1password-cli"  # 1password の CLI ツール
-cask "xmind"          # マインドマップ
-cask "cyberduck"      # FTPソフト
 cask "slack"
-cask "notion"
 cask "raindropio"
+cask "bettertouchtool"
 
 ## terminal
 cask "iTerm2"
@@ -89,3 +86,4 @@ mas "Spark - Email App by Readdle", id: 1176895641
 mas "Translate Tab", id: 458887729
 mas "MindNode", id: 1289197285
 mas "Xcode", id: 497799835
+mas "BetterSnapTool", id: 417375580
