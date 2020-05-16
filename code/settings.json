@@ -1,202 +1,180 @@
 {
-    //----------------------------------------------------------
-    // vscodeのeditorの設定
-    //----------------------------------------------------------
-    // 自動保存を有効
-    // タブやウィンドウからフォーカスを外れると保存される
-    "files.autoSave": "onWindowChange",
-    // フォントを指定
-    "editor.fontFamily": "Cica",
-    // エディターで空白文字を表示する方法を制御する｡
-    "editor.renderWhitespace": "boundary",
-    // tabのサイズを指定
-    "editor.tabSize": 2,
-    // ファイルの最後を改行で終わらせる
-    "files.insertFinalNewline": true,
-    // 文字コードの自動錦
-    "files.autoGuessEncoding": true,
-    // 常に新しいタブで開く
-    "workbench.editor.enablePreview": false,
-    // テーマの設定
-    "workbench.colorTheme": "GitHub Dark",
-    // アイコンのテーマを指定
-    "workbench.iconTheme": "material-icon-theme" ,
-    //----------------------------------------------------------
-    // vscodeの検索系
-    //----------------------------------------------------------
-    // 検索除外対象のディレクトリ
-    "search.exclude": {
-        "**/bower_components": true,
-        "**/vendor": true,
-        "**/env": true,
-        "tags":true,
-        "**/.svn": true,
-        "**/.git": true,
-        "**/.DS_Store": true
+  //----------------------------------------------------------
+  // vscodeのeditorの設定
+  //----------------------------------------------------------
+  // 自動保存を有効
+  // タブやウィンドウからフォーカスを外れると保存される
+  "files.autoSave": "onWindowChange",
+  // フォントを指定
+  "editor.fontFamily": "Cica",
+  // エディターで空白文字を表示する方法を制御する｡
+  "editor.renderWhitespace": "boundary",
+  // tabのサイズを指定
+  "editor.tabSize": 2,
+  // ファイルの最後を改行で終わらせる
+  "files.insertFinalNewline": true,
+  // 文字コードの自動錦
+  "files.autoGuessEncoding": true,
+  // 常に新しいタブで開く
+  "workbench.editor.enablePreview": false,
+  // テーマの設定
+  "workbench.colorTheme": "GitHub Dark",
+  // アイコンのテーマを指定
+  "workbench.iconTheme": "material-icon-theme",
+  // defaultのフォーマッターを指定
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // 保存時にフォーマッターをする
+  "editor.formatOnSave": true,
+  //----------------------------------------------------------
+  // vscodeの検索系
+  //----------------------------------------------------------
+  // 検索除外対象のディレクトリ
+  "search.exclude": {
+    "**/bower_components": true,
+    "**/vendor": true,
+    "**/env": true,
+    "tags": true,
+    "**/.svn": true,
+    "**/.git": true,
+    "**/.DS_Store": true
+  },
+  //----------------------------------------------------------
+  // vscode vimの設定
+  //----------------------------------------------------------
+  // system とクリップボードを共有する
+  "vim.useSystemClipboard": true,
+  // ハイライトを有効にする
+  "vim.hlsearch": true,
+  // easymotion を有効にする
+  "vim.easymotion": true,
+  // Vim のキーバインドを有効にする
+  "vim.useCtrlKeys": true,
+  // * or # でカーソルは以下の文字列を検索する
+  "vim.visualstar": true,
+  //----------------------------------------------------------
+  // vscode の key 設定
+  //----------------------------------------------------------
+  // leader の設定
+  "vim.leader": "<space>",
+  // normalモードのkeybindを書き換える
+  "vim.normalModeKeyBindings": [
+    {
+      "before": [";"],
+      "after": [":"]
     },
-    //----------------------------------------------------------
-    // vscode vimの設定
-    //----------------------------------------------------------
-    // system とクリップボードを共有する
-    "vim.useSystemClipboard": true,
-    // ハイライトを有効にする
-    "vim.hlsearch": true,
-    // easymotion を有効にする
-    "vim.easymotion": true,
-    // Vim のキーバインドを有効にする
-    "vim.useCtrlKeys": true,
-    // * or # でカーソルは以下の文字列を検索する
-    "vim.visualstar": true,
-    //----------------------------------------------------------
-    // vscode の key 設定
-    //----------------------------------------------------------
-    // leader の設定
-    "vim.leader": "<space>",
-    // normalモードのkeybindを書き換える
-    "vim.normalModeKeyBindings": [
-        {
-            "before": [";"],
-            "after": [":"]
-        },
-        {
-            "before": ["<leader>", "v"],
-            "commands": [
-                "workbench.action.splitEditor"
-            ]
-        },
-        {
-            "before": ["<leader>","s"],
-            "commands": [
-                "workbench.action.splitEditorDown"
-            ]
-        },
-        {
-            "before": ["<leader>","n"],
-            "commands": [
-                "workbench.action.nextEditor"
-            ]
-        },
-        {
-            "before": ["<leader>","p"],
-            "commands": [
-                "workbench.action.previousEditor"
-            ]
-        },
-        {
-            "before": ["ctrl+l"],
-            "commands": [
-                "workbench.action.focusRightGroup"
-            ]
-        },
-        {
-            "before": ["ctrl+h"],
-            "commands": [
-                "workbench.action.focusLeftGroup"
-            ]
-        },
-        {
-            "before": ["ctrl+j"],
-            "commands": [
-                "workbench.action.focusBelowGroup"
-            ]
-        },
-        {
-            "before": ["ctrl+k"],
-            "commands": [
-                "workbench.action.focusAboveGroup"
-            ]
-        },
-        {
-            "before": ["<leader>","e"],
-            "commands": [
-                "workbench.action.focusSideBar"
-            ]
-        },
-        {
-            "before": ["<leader>","l"],
-            "commands": [
-                "workbench.action.showCommands"
-            ]
-        },
-        {
-            // highlightを解除
-            "before": ["<Esc>"],
-            "commands": [":nohl"]
-        },
-        {
-            "before": ["j"],
-            "after": ["g", "j"]
-        },
-        {
-            "before": ["k"],
-            "after": ["g", "k"]
-        }
-    ],
-    // visualモードのkeybindを書き換える
-    "vim.visualModeKeyBindings": [
-        {
-            "before": [";"],
-            "after": [":"]
-        },
-        {
-            "before": ["j"],
-            "after": ["g", "j"]
-        },
-        {
-            "before": ["k"],
-            "after": ["g", "k"]
-        }
-    ],
-    "vim.normalModeKeyBindingsNonRecursive": [
-        {
-            "before": [":"],
-            "commands": [
-                "workbench.action.showCommands"
-            ]
-        },
-        {
-            "before": ["<leader>","r"],
-            "commands": [
-                "workbench.view.search"
-            ]
-        },
-        {
-            "before": ["<leader>","f"],
-            "commands": [
-                "workbench.action.quickOpen"
-            ]
-        }
-    ],
-    // インサートモードの設定
-    "vim.insertModeKeyBindings": [
-      {
-        "before": ["j", "j"],
-        "after": ["<Esc>"]
-      }
-    ],
-    //----------------------------------------------------------
-    // Terminal の設定
-    //----------------------------------------------------------
-    // デフォルトシェルを指定
-    "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
-    // テーミナルを iTerm に変更
-    "terminal.external.osxExec": "iTerm.app",
-    //  ターミナルのフォントを指定
-    "terminal.integrated.fontFamily": "Cica",
-    // ターミナルのフォントサイズ
-    "terminal.integrated.fontSize": 14,
-    //----------------------------------------------------------
-    // Git 設定
-    //----------------------------------------------------------
-    // 定期的に fetch を実行する
-    "git.autofetch": true,
-    "terminal.integrated.scrollback": 100000,
-    "editor.minimap.enabled": false,
-    "workbench.startupEditor": "newUntitledFile",
-    //----------------------------------------------------------
-    // PHP 設定
-    //----------------------------------------------------------
-    "php.validate.enable": false,
-    "php.suggest.basic": false,
-    "blade.format.enable": true
+    {
+      "before": ["<leader>", "v"],
+      "commands": ["workbench.action.splitEditor"]
+    },
+    {
+      "before": ["<leader>", "s"],
+      "commands": ["workbench.action.splitEditorDown"]
+    },
+    {
+      "before": ["<leader>", "n"],
+      "commands": ["workbench.action.nextEditor"]
+    },
+    {
+      "before": ["<leader>", "p"],
+      "commands": ["workbench.action.previousEditor"]
+    },
+    {
+      "before": ["ctrl+l"],
+      "commands": ["workbench.action.focusRightGroup"]
+    },
+    {
+      "before": ["ctrl+h"],
+      "commands": ["workbench.action.focusLeftGroup"]
+    },
+    {
+      "before": ["ctrl+j"],
+      "commands": ["workbench.action.focusBelowGroup"]
+    },
+    {
+      "before": ["ctrl+k"],
+      "commands": ["workbench.action.focusAboveGroup"]
+    },
+    {
+      "before": ["<leader>", "e"],
+      "commands": ["workbench.action.focusSideBar"]
+    },
+    {
+      "before": ["<leader>", "l"],
+      "commands": ["workbench.action.showCommands"]
+    },
+    {
+      // highlightを解除
+      "before": ["<Esc>"],
+      "commands": [":nohl"]
+    },
+    {
+      "before": ["j"],
+      "after": ["g", "j"]
+    },
+    {
+      "before": ["k"],
+      "after": ["g", "k"]
+    }
+  ],
+  // visualモードのkeybindを書き換える
+  "vim.visualModeKeyBindings": [
+    {
+      "before": [";"],
+      "after": [":"]
+    },
+    {
+      "before": ["j"],
+      "after": ["g", "j"]
+    },
+    {
+      "before": ["k"],
+      "after": ["g", "k"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [":"],
+      "commands": ["workbench.action.showCommands"]
+    },
+    {
+      "before": ["<leader>", "r"],
+      "commands": ["workbench.view.search"]
+    },
+    {
+      "before": ["<leader>", "f"],
+      "commands": ["workbench.action.quickOpen"]
+    }
+  ],
+  // インサートモードの設定
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
+    }
+  ],
+  //----------------------------------------------------------
+  // Terminal の設定
+  //----------------------------------------------------------
+  // デフォルトシェルを指定
+  "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
+  // テーミナルを iTerm に変更
+  "terminal.external.osxExec": "iTerm.app",
+  //  ターミナルのフォントを指定
+  "terminal.integrated.fontFamily": "Cica",
+  // ターミナルのフォントサイズ
+  "terminal.integrated.fontSize": 14,
+  //----------------------------------------------------------
+  // Git 設定
+  //----------------------------------------------------------
+  // 定期的に fetch を実行する
+  "git.autofetch": true,
+  "terminal.integrated.scrollback": 100000,
+  "editor.minimap.enabled": false,
+  "workbench.startupEditor": "newUntitledFile",
+  //----------------------------------------------------------
+  // PHP 設定
+  //----------------------------------------------------------
+  "php.validate.enable": false,
+  "php.suggest.basic": false,
+  "blade.format.enable": true
 }
