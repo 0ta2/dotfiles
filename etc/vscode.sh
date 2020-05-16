@@ -21,9 +21,7 @@ pkglist=(
     bbenoist.vagrant
     coolbear.systemd-unit-file
     robertrossmann.remedy
-    material-icon-theme
     streetsidesoftware.code-spell-checker
-    sainnhe.gruvbox-material
     shuworks.vscode-table-formatter
     PKief.material-icon-theme
     bmewburn.vscode-intelephense-client
@@ -33,6 +31,7 @@ pkglist=(
     ryannaddy.laravel-artisan                   # Laravel Artisan command
     codingyu.laravel-goto-view                  # Laravel blade
     amiralizadeh9480.laravel-extra-intellisense # Laravel autocomplete
+    GitHub.github-vscode-theme                  # Theme
 )
 
 for i in ${pkglist[@]}; do
