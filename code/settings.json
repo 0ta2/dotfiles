@@ -197,5 +197,6 @@
     // PHP 設定
     //----------------------------------------------------------
     "php.validate.enable": false,
-    "php.suggest.basic": false
+    "php.suggest.basic": false,
+    "blade.format.enable": true
 }
