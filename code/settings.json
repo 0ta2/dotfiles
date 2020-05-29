@@ -21,8 +21,6 @@
   "workbench.colorTheme": "GitHub Dark",
   // アイコンのテーマを指定
   "workbench.iconTheme": "material-icon-theme",
-  // defaultのフォーマッターを指定
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
   // 保存時にフォーマッターをする
   "editor.formatOnSave": true,
   //----------------------------------------------------------
