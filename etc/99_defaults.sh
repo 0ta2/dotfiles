@@ -111,6 +111,17 @@ defaults write com.apple.HIToolbox AppleInputSourceHistory -array \
 defaults write com.apple.HIToolbox AppleSelectedInputSources -array \
         '{"Bundle ID" = "com.google.inputmethod.Japanese";"Input Mode" = "com.apple.inputmethod.Roman";InputSourceKind = "Input Mode";}'
 
+# CapsLock を Ctrl に変更する
+keyboard_id="$(ioreg -c AppleEmbeddedKeyboard -r | grep -Eiw "VendorID|ProductID" | awk '{ print $4 }' | paste -s -d'-\n' -)-0"
+defaults -currentHost write -g com.apple.keyboard.modifiermapping.${keyboard_id} -array-add "
+<dict>
+  <key>HIDKeyboardModifierMappingDst</key>\
+  <integer>30064771300</integer>\
+  <key>HIDKeyboardModifierMappingSrc</key>\
+  <integer>30064771129</integer>\
+</dict>
+"
+
 #------------------------------
 # トラックパッド
 #------------------------------
