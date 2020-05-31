@@ -2,6 +2,7 @@
 tap "homebrew/bundle"
 tap "homebrew/core"
 tap "sanemat/font"
+tap "homebrew/cask-fonts"
 
 # programming
 brew "go"
@@ -37,10 +38,11 @@ brew "composer"
 brew "global"
 brew "gnu-sed"  # gnu版のsed
 brew "yarn"
-cask "vagrant"
-cask "docker"   # Docker
 brew "github/gh/gh"
 brew "gawk"     # tmux-picker で必要
+cask "docker"   # Docker
+cask "vagrant"
+cask "font-inconsolata"
 
 ## completion
 brew "docker-compose-completion"

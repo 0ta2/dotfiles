@@ -30,9 +30,9 @@ create_virtualenv() {
  }
 
 main() {
-  install_pyenv_python 3.7.5
+  install_pyenv_python 3.8.2
   install_pyenv_python 2.7.17
-  create_virtualenv 3.7.5
+  create_virtualenv 3.8.2
   create_virtualenv 2.7.17
 }
 

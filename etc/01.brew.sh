@@ -12,7 +12,7 @@ install_homebrew() {
     print_warning "brew already installed"
   else
     print_message "Installing homebrew..."
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
     print_success "Successfully Installed"
   fi
 }

@@ -47,7 +47,6 @@ deploy: ## Create symlink to home directory
 	@$(call print_success, `ln -sfnv $(DOTPATH)/zsh/.zshenv ~/.zshenv`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/.tmux/.tmux.conf ~/.tmux.conf`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/.tmux ~/.tmux`)
-	@$(call print_success, `ln -sfnv $(DOTPATH)/zsh/dircolors/nord-dircolors/src/dir_colors ~/.dir_colors`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/code/settings.json ~/Library/Application\ Support/Code/User/settings.json`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/code/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/com.googlecode.iterm2.plist ~/com.googlecode.iterm2.plist`)
@@ -58,7 +57,6 @@ clean: ## Remove the dot files and this repo
 	@-$(call print_success, `rm -fr $(HOME)/.config/zsh`)
 	@-$(call print_success, `rm -fr $(HOME)/.zshenv`)
 	@-$(call print_success, `rm -fr $(HOME)/.tmux.conf`)
-	@-$(call print_success, `rm -fr $(HOME)/.dir_colors`)
 	@-$(call print_success, `rm -fr $(HOME)/Library/Application\ Support/Code/User/settings.json`)
 	@-$(call print_success, `rm -fr $(HOME)/Library/Application\ Support/Code/User/keybindings.json`)
 
