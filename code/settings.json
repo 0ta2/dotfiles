@@ -18,7 +18,7 @@
   // 常に新しいタブで開く
   "workbench.editor.enablePreview": false,
   // テーマの設定
-  "workbench.colorTheme": "GitHub Dark",
+  "workbench.colorTheme": "Signed Dark Pro",
   // アイコンのテーマを指定
   "workbench.iconTheme": "material-icon-theme",
   // 保存時にフォーマッターをする
@@ -169,10 +169,17 @@
   "terminal.integrated.scrollback": 100000,
   "editor.minimap.enabled": false,
   "workbench.startupEditor": "newUntitledFile",
+  // Gitリポジトリと動悸する前に確認させない
+  "git.confirmSync": false
   //----------------------------------------------------------
   // PHP 設定
   //----------------------------------------------------------
   "php.validate.enable": false,
   "php.suggest.basic": false,
-  "blade.format.enable": true
+  "blade.format.enable": true,
+  //----------------------------------------------------------
+  // Todoツリーの設定
+  //----------------------------------------------------------
+  // Todo Tree のツリービューのヘッダーにボタンを表示して、現在のファイル、開いているファイル、またはワークスペース全体のスキャンを切り替える
+  "todo-tree.tree.showScanModeButton": false,
 }
