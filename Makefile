@@ -37,6 +37,10 @@ update: ## Fetch changes for this repo
 install: update deploy init ## Run make update, deploy, init
 	@exec $$SHELL
 
+vs-install: ## Installing the vscode extension.
+	@$(call print_title, Start to vscode extension)
+	sh $(DOTPATH)/etc/07_vscode.sh
+
 deploy: ## Create symlink to home directory
 	@$(call print_title, Start to deploy dotfiles to home directory)
 	@mkdir -p $(HOME)/.config
