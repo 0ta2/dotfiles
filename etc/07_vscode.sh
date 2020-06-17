@@ -26,6 +26,8 @@ pkglist=(
     PKief.material-icon-theme
     bmewburn.vscode-intelephense-client
     felixfbecker.php-debug
+    aaron-bond.better-comments                  # コメントの表示
+    Gruntfuggly.todo-tree                       # コード内のTODOの表示
     onecentlin.laravel5-snippets                # Laravel snippets
     onecentlin.laravel-blade                    # Laravel blade snippets
     ryannaddy.laravel-artisan                   # Laravel Artisan command
