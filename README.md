@@ -8,12 +8,6 @@ $ curl -fsSL https://raw.githubusercontent.com/0ta2/dotfiles/master/etc/install 
 ```
 
 ## install shell で実装できていない箇所は手動でセットアップ
-### ログインシェルを変更
-
-```bash
-$ sudo sh -c "echo '/usr/local/bin/zsh' >> /etc/shells"
-$ chsh -s /usr/local/bin/zsh
-```
 
 ### pyenv 設定
 
@@ -36,8 +30,3 @@ $ gem install neovim
 ```bash
 $ npm install --global neovim
 ```
-
-- システム環境設定
-  - 共有
-    - コンピュータ名を変更
-
