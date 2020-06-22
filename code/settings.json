@@ -21,8 +21,6 @@
   "workbench.colorTheme": "Signed Dark Pro",
   // アイコンのテーマを指定
   "workbench.iconTheme": "material-icon-theme",
-  // 保存時にフォーマッターをする
-  "editor.formatOnSave": true,
   //----------------------------------------------------------
   // vscodeの検索系
   //----------------------------------------------------------
@@ -49,6 +47,7 @@
   "vim.useCtrlKeys": true,
   // * or # でカーソルは以下の文字列を検索する
   "vim.visualstar": true,
+  "vim.whichwrap": "h,l,<,>,[,]",
   //----------------------------------------------------------
   // vscode の key 設定
   //----------------------------------------------------------
@@ -112,6 +111,15 @@
     {
       "before": ["k"],
       "after": ["g", "k"]
+    },
+    {
+      //実装箇所に移動
+      "before": ["<leader>", "u"],
+      "commands": ["editor.action.goToImplementation"]
+    },
+    {
+      "before": ["<leader>", "u"],
+      "commands": ["editor.action.goToDeclaration"]
     }
   ],
   // visualモードのkeybindを書き換える
@@ -170,7 +178,7 @@
   "editor.minimap.enabled": false,
   "workbench.startupEditor": "newUntitledFile",
   // Gitリポジトリと動悸する前に確認させない
-  "git.confirmSync": false
+  "git.confirmSync": false,
   //----------------------------------------------------------
   // PHP 設定
   //----------------------------------------------------------
@@ -181,5 +189,5 @@
   // Todoツリーの設定
   //----------------------------------------------------------
   // Todo Tree のツリービューのヘッダーにボタンを表示して、現在のファイル、開いているファイル、またはワークスペース全体のスキャンを切り替える
-  "todo-tree.tree.showScanModeButton": false,
+  "todo-tree.tree.showScanModeButton": false
 }
