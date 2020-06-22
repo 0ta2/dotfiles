@@ -34,6 +34,7 @@ pkglist=(
     codingyu.laravel-goto-view                  # Laravel blade
     amiralizadeh9480.laravel-extra-intellisense # Laravel autocomplete
     GitHub.github-vscode-theme                  # Theme
+    alefragnani.Bookmarks                       # Bookmarks
 )
 
 for i in ${pkglist[@]}; do
