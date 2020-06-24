@@ -115,13 +115,18 @@
       "after": ["g", "k"]
     },
     {
-      //実装箇所に移動
+      // 実装箇所に移動
       "before": ["<leader>", "u"],
       "commands": ["editor.action.goToImplementation"]
     },
     {
       "before": ["<leader>", "u"],
       "commands": ["editor.action.goToDeclaration"]
+    },
+    // 参照へ移動
+    {
+      "before": ["<leader>", "r"],
+      "commands": ["editor.action.referenceSearch.trigger"]
     }
   ],
   // visualモードのkeybindを書き換える
