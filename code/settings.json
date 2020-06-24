@@ -7,6 +7,8 @@
   "files.autoSave": "onWindowChange",
   // フォントを指定
   "editor.fontFamily": "Cica",
+  // フォントサイズ
+  "editor.fontSize": 14,
   // エディターで空白文字を表示する方法を制御する｡
   "editor.renderWhitespace": "boundary",
   // tabのサイズを指定
