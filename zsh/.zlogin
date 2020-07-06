@@ -2,8 +2,8 @@
 # User configuration sourced by login shells
 #
 
-# Initialize Zim
-source ${ZIM_HOME}/login_init.zsh -q &!
+# Initialize zim
+[[ -s ${ZIM_HOME}/login_init.zsh ]] && source ${ZIM_HOME}/login_init.zsh
 
 #
 # Customize
