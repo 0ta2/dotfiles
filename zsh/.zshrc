@@ -140,6 +140,9 @@ export LANG=ja_JP.UTF-8
 
 ### PATH 設定
 
+# コマンド補完を有効化
+fpath=(/usr/local/share/zsh/site-functions $fpath)
+
 # GOPATH設定
 export GOPATH=$HOME/go
 
@@ -178,7 +181,6 @@ path=(
   /usr/bin(N-/)
   ${ZDOTDIR}/bin(N-/)
   $HOME/.fzf/bin(N-/)
-  ${GOPATH}/bin(N-/)
   ${path}
 )
 

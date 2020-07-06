@@ -46,7 +46,7 @@ cask "font-inconsolata"
 
 ## completion
 brew "docker-compose-completion"
-brew "docker-machine-completion"
+brew "docker-completion"
 
 # font
 cask "font-cica"
