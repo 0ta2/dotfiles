@@ -35,6 +35,7 @@ pkglist=(
     amiralizadeh9480.laravel-extra-intellisense # Laravel autocomplete
     GitHub.github-vscode-theme                  # Theme
     alefragnani.Bookmarks                       # Bookmarks
+    eamodio.gitlens                             # Git強化
 )
 
 for i in ${pkglist[@]}; do
