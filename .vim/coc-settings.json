@@ -1,83 +1,29 @@
 {
-  "languageserver": {
-    "bash": {
-      "command": "bash-language-server",
-      "args": [
-        "start"
-      ],
-      "filetypes": [
-        "sh"
-      ],
-      "ignoredRootPaths": [
-        "~"
-      ]
+  //------------------
+  // explorer
+  //------------------
+  // explorerの表示方法
+  "explorer.position": "left",
+  // 隠しファイルを表示
+  "explorer.file.showHiddenFiles": true,
+  // 表示するソース情報
+  "explorer.sources":
+  [
+    {
+      "name": "bookmark",
+      "expand": false
     },
-    "golang": {
-      "command": "gopls",
-      "rootPatterns": [
-        "go.mod",
-        ".vim/",
-        ".git/",
-        ".hg/"
-      ],
-      "filetypes": [
-        "go"
-      ],
-      "initializationOptions": {
-        "usePlaceholders": true
-      }
-    },
-    "dockerfile": {
-      "command": "docker-langserver",
-      "filetypes": [
-        "dockerfile"
-      ],
-      "args": [
-        "--stdio"
-      ]
-    }
-  },
-  "yaml.schemas": {
-    "yaml.hover": true,
-    "yaml.completion": true,
-    "yaml.format.enable": true,
-    "http://json.schemastore.org/composer": "/*",
-    "http://json.schemastore.org/ansible-stable-2.7": "/*.yml",
-    "http://json.schemastore.org/github-action": "/*.yml",
-    "http://json.schemastore.org/github-workflow": "/*.yml"
-  },
-  "explorer.sources": [
     {
       "name": "buffer",
-      "expand": true
+      "expand": false
     },
     {
       "name": "file",
       "expand": true
     }
   ],
-  "explorer.keyMappings": {
-    "k": "nodePrev",
-    "*": "toggleSelection",
-    "<tab>": "actionMenu",
-    "e": "open",
-    "E": "openInVsplit",
-    "t": "openInTab"
-  },
-  "list.insertMappings": {
-    "<C-v>": "eval:@@"
-  },
-  "explorer.file.showHiddenFiles": true,
-  "list.source.files.command": "rg",
-  "list.source.files.args": [
-    "--hidden",
-    "--files"
-  ],
-  "list.source.files.excludePatterns": [
-    "**/.git/*"
-  ],
-  "list.source.grep.command": "rg",
-  "list.source.grep.excludePatterns": [
-    "**/.git/*"
-  ]
+  //------------------
+  // snippets
+  //------------------
+  "snippets.convertToSnippetsAction": false
 }
