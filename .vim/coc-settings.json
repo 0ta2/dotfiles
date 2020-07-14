@@ -25,5 +25,12 @@
   //------------------
   // snippets
   //------------------
-  "snippets.convertToSnippetsAction": false
+  "snippets.convertToSnippetsAction": false,
+  //------------------
+  // coc-lists
+  //------------------
+  "list.source.files.args":
+  [
+    "--hidden", "--files"
+  ]
 }

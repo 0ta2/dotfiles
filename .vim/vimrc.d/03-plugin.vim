@@ -82,8 +82,6 @@
 " coc-prettier
 "--------------
   command! -nargs=0 Prettier :CocCommand prettier.formatFile
-  vmap <leader>f  <Plug>(coc-format-selected)
-  nmap <leader>f  <Plug>(coc-format-selected)
 
 "--------------
 " coc-vimlsp
@@ -103,3 +101,45 @@
   endfunction
   xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
   nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
+
+"--------------
+" coc-list
+"--------------
+  nnoremap <silent><Leader>f :CocList files<CR>
+  nnoremap <silent><Leader>b :CocList buffers<CR>
+
+"--------------
+" fzf
+"--------------
+let $FZF_DEFAULT_COMMAND = 'rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   <bang>0)
+
+"--------------
+" ale.vim
+"--------------
+  " 表示関連の設定
+  let g:ale_sign_error = ''
+  let g:ale_sign_warning = ''
+
+  " fixers
+  let g:ale_fixers = {
+        \ '*': ['remove_trailing_lines', 'trim_whitespace'],
+        \ 'php': ['php_cs_fixer'],
+        \ 'go': ['gofmt'],
+        \ 'json': ['fixjson', 'jq'],
+        \ 'markdown': ['prettier'],
+        \ 'python': ['autopep8', 'yapf']
+  \}
+
+  " linter
+  let g:ale_linters = {
+  	    \ 'go': ['gopls'],
+  \}
+
+  " Set this. Airline will handle the rest.
+  let g:airline#extensions#ale#enabled = 1
