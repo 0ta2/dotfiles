@@ -82,6 +82,9 @@ set softtabstop=2
 " Number of spaces to use for each step of (auto)indent.
 set shiftwidth=2
 
+" The kind of folding used for the current window.
+set foldmethod=indent
+
 " Setting colorscheme
 set background=dark
 colorscheme deus
