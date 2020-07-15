@@ -32,5 +32,18 @@
   "list.source.files.args":
   [
     "--hidden", "--files"
+  ],
+  "cSpell.userWords": [
+    "dotfiles",
+    "gopls",
+    "gotos",
+    "neoclide",
+    "neovim",
+    "nodenv",
+    "phpls",
+    "pyenv",
+    "rbenv",
+    "reireias",
+    "yapf"
   ]
 }

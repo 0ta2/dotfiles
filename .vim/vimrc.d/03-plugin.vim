@@ -1,9 +1,6 @@
 "--------------
 " coc.nvim
 "--------------
-  nnoremap <Leader>c :CocCommand<CR>
-  nnoremap <Leader>l :CocList<CR>
-
   " use <tab> for trigger completion and navigate to the next complete item
   function! s:check_back_space() abort
     let col = col('.') - 1
@@ -91,7 +88,6 @@
     \ 'help'
   \]
 
-
 "--------------
 " coc-actions
 "--------------
@@ -103,21 +99,31 @@
   nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
 
 "--------------
-" coc-list
-"--------------
-  nnoremap <silent><Leader>f :CocList files<CR>
-  nnoremap <silent><Leader>b :CocList buffers<CR>
-
-"--------------
 " fzf
 "--------------
-let $FZF_DEFAULT_COMMAND = 'rg --files --no-ignore --hidden --follow --glob "!.git/*"'
-command! -bang -nargs=* Rg
-  \ call fzf#vim#grep(
-  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
-  \   <bang>0 ? fzf#vim#with_preview('up:60%')
-  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
-  \   <bang>0)
+  let $FZF_DEFAULT_COMMAND = 'rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+  command! -bang -nargs=* Rg
+    \ call fzf#vim#grep(
+    \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+    \   <bang>0 ? fzf#vim#with_preview('up:60%')
+    \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+    \   <bang>0)
+
+"--------------
+" coc-clap
+"--------------
+  nnoremap <silent><Leader>c :Clap coc_commands<CR>
+  nnoremap <silent><Leader>b :Clap buffers<CR>
+  nnoremap <silent><Leader>d :Clap coc_diagnostics<CR>
+
+"--------------
+" vim-clap
+"--------------
+  nnoremap <silent><Leader>l :Clap<CR>
+  " Fuzzy search option"
+  let g:clap_provider_grep_opts = '--hidden -g "!.git/"'
+  " File fuzzy search.
+  nnoremap <silent><Leader>f :Clap files --hidden<CR>
 
 "--------------
 " ale.vim
@@ -130,7 +136,7 @@ command! -bang -nargs=* Rg
   let g:ale_fixers = {
         \ '*': ['remove_trailing_lines', 'trim_whitespace'],
         \ 'php': ['php_cs_fixer'],
-        \ 'go': ['gofmt'],
+        \ 'go': ['goff'],
         \ 'json': ['fixjson', 'jq'],
         \ 'markdown': ['prettier'],
         \ 'python': ['autopep8', 'yapf']
