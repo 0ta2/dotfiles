@@ -5,6 +5,7 @@ call plug#begin('~/.vim/plugged')
 
 " coc
   Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+  Plug 'vn-ki/coc-clap', {'do': 'yarn install --frozen-lockfile'}
   let g:coc_global_extensions = [
     \ 'coc-snippets'
     \, 'coc-explorer'
