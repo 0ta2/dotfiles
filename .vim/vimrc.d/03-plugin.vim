@@ -39,6 +39,11 @@
   nmap <leader>rn <Plug>(coc-rename)
 
 "--------------
+" coc-yank
+"--------------
+nnoremap <silent><Leader>y :<C-u>CocList -A --normal yank<CR>
+
+"--------------
 " coc-snippets
 "--------------
   " Use <C-l> for trigger snippet expand.
@@ -119,6 +124,7 @@
 "--------------
 " vim-clap
 "--------------
+  " Clap List
   nnoremap <silent><Leader>l :Clap<CR>
   " Fuzzy search option"
   let g:clap_provider_grep_opts = '--hidden -g "!.git/"'
@@ -149,3 +155,7 @@
 
   " Set this. Airline will handle the rest.
   let g:airline#extensions#ale#enabled = 1
+
+
+
+
