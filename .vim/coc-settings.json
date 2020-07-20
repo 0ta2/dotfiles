@@ -6,6 +6,8 @@
   "explorer.position": "left",
   // 隠しファイルを表示
   "explorer.file.showHiddenFiles": true,
+  // ホバーした際の情報を非表示
+  "explorer.previewAction.onHover": false,
   // 表示するソース情報
   "explorer.sources":
   [
