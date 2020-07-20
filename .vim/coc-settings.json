@@ -34,16 +34,30 @@
     "--hidden", "--files"
   ],
   "cSpell.userWords": [
+    "ajmwagar",
+    "anzu",
+    "christoomey",
     "dotfiles",
     "gopls",
     "gotos",
+    "gruvbox",
+    "junegunn",
+    "liuchengxu",
+    "markonm",
+    "morhetz",
     "neoclide",
     "neovim",
     "nodenv",
+    "osyo",
     "phpls",
     "pyenv",
     "rbenv",
     "reireias",
+    "sheerun",
+    "simeji",
+    "terryma",
+    "tpope",
+    "winresizer",
     "yapf"
   ]
 }
