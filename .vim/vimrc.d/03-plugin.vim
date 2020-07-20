@@ -11,9 +11,9 @@
   inoremap <silent><expr> <c-space> coc#refresh()
 
   inoremap <silent><expr> <Tab>
-        \ pumvisible() ? "\<C-n>" :
-        \ <SID>check_back_space() ? "\<Tab>" :
-        \ coc#refresh()
+    \ pumvisible() ? "\<C-n>" :
+    \ <SID>check_back_space() ? "\<Tab>" :
+    \ coc#refresh()
 
   inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
   inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
@@ -41,7 +41,8 @@
 "--------------
 " coc-yank
 "--------------
-nnoremap <silent><Leader>y :<C-u>CocList -A --normal yank<CR>
+  " mapping
+  nnoremap <silent><Leader>y :<C-u>CocList -A --normal yank<CR>
 
 "--------------
 " coc-snippets
@@ -83,6 +84,7 @@ nnoremap <silent><Leader>y :<C-u>CocList -A --normal yank<CR>
 "--------------
 " coc-prettier
 "--------------
+  " command
   command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 "--------------
@@ -114,12 +116,27 @@ nnoremap <silent><Leader>y :<C-u>CocList -A --normal yank<CR>
     \           : fzf#vim#with_preview('right:50%:hidden', '?'),
     \   <bang>0)
 
+  " buffer jump
+  let g:fzf_buffers_jump = 1
+
+  " プロジェクトのトップディレクトリから検索する function
+  function! s:find_git_root()
+    return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
+  endfunction
+  command! ProjectFiles execute 'Files' s:find_git_root()
+
 "--------------
 " coc-clap
 "--------------
   nnoremap <silent><Leader>c :Clap coc_commands<CR>
   nnoremap <silent><Leader>b :Clap buffers<CR>
   nnoremap <silent><Leader>d :Clap coc_diagnostics<CR>
+
+  let g:clap_open_action={
+    \ 'ctrl-t': 'tab split'
+    \,'ctrl-s': 'split'
+    \,'ctrl-v': 'vsplit'
+  \}
 
 "--------------
 " vim-clap
@@ -155,6 +172,67 @@ nnoremap <silent><Leader>y :<C-u>CocList -A --normal yank<CR>
 
   " Set this. Airline will handle the rest.
   let g:airline#extensions#ale#enabled = 1
+
+"--------------
+" vim-anzu
+"--------------
+ " mapping
+  nmap n <Plug>(anzu-n-with-echo)
+  nmap N <Plug>(anzu-N-with-echo)
+  nmap * <Plug>(anzu-star-with-echo)
+  nmap # <Plug>(anzu-sharp-with-echo)
+
+"--------------
+" vim-cheatsheet
+"--------------
+  " cheart file
+  let g:cheatsheet#cheat_file = '$DOTFILES_PATH/Doc/cheetsheet.md'
+
+"--------------
+" vim-winresizer
+"--------------
+  let g:winresizer_vert_resize = 5
+  let g:winresizer_horiz_resize = 5
+
+"--------------
+" vim-airline
+"--------------
+  " airline theme
+  let g:airline_theme='gruvbox'
+
+"--------------
+" vim-indent-guides.vim
+"--------------
+  let g:indent_guides_enable_on_vim_startup = 1
+  hi IndentGuidesOdd  ctermbg=black
+  hi IndentGuidesEven ctermbg=darkgrey
+  let g:indent_guides_start_level = 2
+  let g:indent_guides_guide_size = 1
+  let g:indent_guides_exclude_filetypes = ['help', 'coc-explorer']
+
+"--------------
+" vim-devicons
+"--------------
+  " airline
+  let g:webdevicons_enable_airline_tabline = 1
+  let g:webdevicons_enable_airline_statusline = 1
+  let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+
+"--------------
+" previm
+"--------------
+  " markdown と拡張子を紐付ける
+  augroup PrevimSettings
+      autocmd!
+      autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+  augroup END
+
+"--------------
+" vim-easymotion
+"--------------
+  " mapping
+  nmap f <Plug>(easymotion-prefix)
+
 
 
 

@@ -87,7 +87,7 @@ set foldmethod=indent
 
 " Setting colorscheme
 set background=dark
-colorscheme deus
+colorscheme gruvbox
 
 " Settings python.
 let g:python_host_prog="$HOME/.pyenv/versions/py2neovim/bin/python"

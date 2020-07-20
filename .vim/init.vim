@@ -49,7 +49,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'junegunn/fzf.vim'         " Vim から fzf を使用
 
 " Status ber
-  Plug 'vim-airline/vim-airline'  " ステータスバーの拡張
+  Plug 'vim-airline/vim-airline'        " ステータスバーの拡張
+  Plug 'vim-airline/vim-airline-themes' " ステータスバーのカラーテーマ
 
 " tmux
   Plug 'christoomey/vim-tmux-navigator' " tmuxとの連携強化
@@ -60,8 +61,9 @@ call plug#begin('~/.vim/plugged')
 
 " display
   Plug 'nathanaelkane/vim-indent-guides'  " インデント可視化
-  Plug 'bronson/vim-trailing-whitespace'   " 末尾にあるスペースを可視化
+  Plug 'bronson/vim-trailing-whitespace'  " 末尾にあるスペースを可視化
   Plug 'simeji/winresizer'                " 分割のリサイズ
+  Plug 'previm/previm'                    " markdown preview
 
 " cursor
   Plug 'terryma/vim-multiple-cursors'   " カーソル操作
@@ -75,6 +77,7 @@ call plug#begin('~/.vim/plugged')
 
 " Color
   Plug 'ajmwagar/vim-deus'
+  Plug 'morhetz/gruvbox'
 
 " Other
   Plug 'tpope/vim-surround'             " カッコの編集
@@ -82,6 +85,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'vim-jp/vimdoc-ja'               " help の日本語化
   Plug 'reireias/vim-cheatsheet'        " チャートシート
   Plug 'gko/vim-coloresque'             " カラープレビュー
+  Plug 'ryanoasis/vim-devicons'         " アイコン
 
 call plug#end()
 
