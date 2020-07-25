@@ -26,7 +26,7 @@ all:
 
 init: ## Setup environment settings
 	@$(call print_title, Start to init dotofiles)
-	@$(foreach val, $(wildcard ./etc/*.sh), bash $(val);)
+	@$(foreach val, $(wildcard ./init/*.sh), bash $(val);)
 
 update: ## Fetch changes for this repo
 	@$(call print_title, Start to update dotfiles)
@@ -39,7 +39,7 @@ install: update deploy init ## Run make update, deploy, init
 
 vs-install: ## Installing the vscode extension.
 	@$(call print_title, Start to vscode extension)
-	sh $(DOTPATH)/etc/07_vscode.sh
+	sh $(DOTPATH)/init/07_vscode.sh
 
 deploy: ## Create symlink to home directory
 	@$(call print_title, Start to deploy dotfiles to home directory)
@@ -51,6 +51,7 @@ deploy: ## Create symlink to home directory
 	@$(call print_success, `ln -sfnv $(DOTPATH)/zsh/.zshenv ~/.zshenv`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/.tmux/.tmux.conf ~/.tmux.conf`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/.tmux ~/.tmux`)
+	@$(call print_success, `ln -sfvn $(DOTPATH)/etc/alacritty ~/.config/alacritty`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/code/settings.json ~/Library/Application\ Support/Code/User/settings.json`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/code/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/com.googlecode.iterm2.plist ~/com.googlecode.iterm2.plist`)

@@ -20,7 +20,7 @@
   // 常に新しいタブで開く
   "workbench.editor.enablePreview": false,
   // テーマの設定
-  "workbench.colorTheme": "Signed Dark Pro",
+  "workbench.colorTheme": "Gruvbox Dark (Medium)",
   // アイコンのテーマを指定
   "workbench.iconTheme": "material-icon-theme",
   //----------------------------------------------------------

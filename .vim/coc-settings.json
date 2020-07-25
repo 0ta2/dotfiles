@@ -25,6 +25,12 @@
     }
   ],
   //------------------
+  // coc-yaml
+  //------------------
+  "yaml.schemas": {
+    "https://json.schemastore.org/ansible-stable-2.9": "/*.yml"
+  },
+  //------------------
   // snippets
   //------------------
   "snippets.convertToSnippetsAction": false,
@@ -36,10 +42,15 @@
     "--hidden", "--files"
   ],
   "cSpell.userWords": [
+    "Cica",
+    "DISTRO",
     "ajmwagar",
+    "ansible",
     "anzu",
+    "centos",
     "christoomey",
     "dotfiles",
+    "eoan",
     "gopls",
     "gotos",
     "gruvbox",
@@ -55,8 +66,10 @@
     "pyenv",
     "rbenv",
     "reireias",
+    "sbin",
     "sheerun",
     "simeji",
+    "systemctl",
     "terryma",
     "tpope",
     "winresizer",
