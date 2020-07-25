@@ -232,8 +232,3 @@
 "--------------
   " mapping
   nmap f <Plug>(easymotion-prefix)
-
-
-
-
-
