@@ -17,7 +17,7 @@ inoremap <silent>jj <Esc>
 nnoremap <Leader>w :w<cr>
 
 " カーソル下の単語をハイライトする
-nnoremap <silent><Leader><Leader> "zyiw:let @/ = '\<' . @z . '\>'<CR>:set hlsearch<CR>
+nnoremap <silent>* "zyiw:let @/ = '\<' . @z . '\>'<CR>:set hlsearch<CR>
 
 " 行が折り返し表示されたいた場合、表示行単位で移動する
 nnoremap j gj

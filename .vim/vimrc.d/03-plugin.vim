@@ -108,6 +108,7 @@
 "--------------
 " fzf
 "--------------
+  let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
   let $FZF_DEFAULT_COMMAND = 'rg --files --no-ignore --hidden --follow --glob "!.git/*"'
   command! -bang -nargs=* Rg
     \ call fzf#vim#grep(
@@ -124,37 +125,44 @@
     return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
   endfunction
   command! ProjectFiles execute 'Files' s:find_git_root()
+  nnoremap <silent><space>f :<C-u>ProjectFiles<CR>
 
 "--------------
 " coc-clap
 "--------------
-  nnoremap <silent><Leader>c :Clap coc_commands<CR>
-  nnoremap <silent><Leader>b :Clap buffers<CR>
-  nnoremap <silent><Leader>d :Clap coc_diagnostics<CR>
-
-  let g:clap_open_action={
-    \ 'ctrl-t': 'tab split'
-    \,'ctrl-s': 'split'
-    \,'ctrl-v': 'vsplit'
-  \}
+"  nnoremap <silent><Leader>c :Clap coc_commands<CR>
+"  nnoremap <silent><Leader>b :Clap buffers<CR>
+"  nnoremap <silent><Leader>d :Clap coc_diagnostics<CR>
+"
+"  let g:clap_open_action={
+"    \ 'ctrl-t': 'tab split'
+"    \,'ctrl-s': 'split'
+"    \,'ctrl-v': 'vsplit'
+"  \}
 
 "--------------
 " vim-clap
 "--------------
-  " Clap List
-  nnoremap <silent><Leader>l :Clap<CR>
-  " Fuzzy search option"
-  let g:clap_provider_grep_opts = '--hidden -g "!.git/"'
-  " File fuzzy search.
-  nnoremap <silent><Leader>f :Clap files --hidden<CR>
+"  " Clap List
+"  nnoremap <silent><Leader>l :Clap<CR>
+"  " Fuzzy search option"
+"  let g:clap_provider_grep_opts = '--hidden -g "!.git/"'
+"  " File fuzzy search.
+"  nnoremap <silent><Leader>f :Clap files --hidden<CR>
+
+"--------------
+" coc-fzf
+"--------------
+  " Coc List
+  nnoremap <silent><space><space> :<C-u>CocFzfList<CR>
+  " Coc yank
+  nnoremap <silent><space>y :<C-u>CocFzfList yank<CR>
+  " Coc command
+  nnoremap <silent><space>c :<C-u>CocFzfList commandCR>
 
 "--------------
 " ale.vim
 "--------------
-  " 表示関連の設定
-  let g:ale_sign_error = ''
-  let g:ale_sign_warning = ''
-
   " fixers
   let g:ale_fixers = {
         \ '*': ['remove_trailing_lines', 'trim_whitespace'],
