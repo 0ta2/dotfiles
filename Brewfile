@@ -50,6 +50,7 @@ brew "docker-completion"
 
 # font
 cask "font-cica"
+cask "font-hackgen"
 
 ### application
 cask "google-chrome"
