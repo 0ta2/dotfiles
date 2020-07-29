@@ -39,11 +39,11 @@ call plug#begin('~/.vim/plugged')
   Plug 'dense-analysis/ale'       " シンタックスチェック
   Plug 'sheerun/vim-polyglot'     " 各言語の設定パック
   Plug 'liuchengxu/vista.vim'     " ナビゲーター
-  Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' }
 
 " Git
   Plug 'tpope/vim-fugitive'       " Vim からGit操作
   Plug 'airblade/vim-gitgutter'   " 変更点を行番号に表示
+  Plug 'tpope/vim-rhubarb'        " GitのURLアクセス
 
 " fzf
   Plug '/usr/local/opt/fzf'       " Homebrew でインストールした、fzf を使用
@@ -92,5 +92,6 @@ call plug#end()
 
 "--------------
 " Load vim files
+" let g:fugitive_browse_handlers
 "--------------
 runtime! vimrc.d/*.vim

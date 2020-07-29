@@ -39,12 +39,6 @@
   nmap <leader>rn <Plug>(coc-rename)
 
 "--------------
-" coc-yank
-"--------------
-  " mapping
-  nnoremap <silent><Leader>y :<C-u>CocList -A --normal yank<CR>
-
-"--------------
 " coc-snippets
 "--------------
   " Use <C-l> for trigger snippet expand.
@@ -128,37 +122,12 @@
   nnoremap <silent><space>f :<C-u>ProjectFiles<CR>
 
 "--------------
-" coc-clap
-"--------------
-"  nnoremap <silent><Leader>c :Clap coc_commands<CR>
-"  nnoremap <silent><Leader>b :Clap buffers<CR>
-"  nnoremap <silent><Leader>d :Clap coc_diagnostics<CR>
-"
-"  let g:clap_open_action={
-"    \ 'ctrl-t': 'tab split'
-"    \,'ctrl-s': 'split'
-"    \,'ctrl-v': 'vsplit'
-"  \}
-
-"--------------
-" vim-clap
-"--------------
-"  " Clap List
-"  nnoremap <silent><Leader>l :Clap<CR>
-"  " Fuzzy search option"
-"  let g:clap_provider_grep_opts = '--hidden -g "!.git/"'
-"  " File fuzzy search.
-"  nnoremap <silent><Leader>f :Clap files --hidden<CR>
-
-"--------------
 " coc-fzf
 "--------------
   " Coc List
   nnoremap <silent><space><space> :<C-u>CocFzfList<CR>
-  " Coc yank
-  nnoremap <silent><space>y :<C-u>CocFzfList yank<CR>
   " Coc command
-  nnoremap <silent><space>c :<C-u>CocFzfList commandCR>
+  nnoremap <silent><space>c :<C-u>CocFzfList commands<CR>
 
 "--------------
 " ale.vim
@@ -231,8 +200,8 @@
 "--------------
   " markdown と拡張子を紐付ける
   augroup PrevimSettings
-      autocmd!
-      autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+    autocmd!
+    autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
   augroup END
 
 "--------------
