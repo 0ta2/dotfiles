@@ -19,10 +19,10 @@
   inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
   " Remap keys for gotos
-  nmap <silent> <Leader>gd <Plug>(coc-definition)
-  nmap <silent> <Leader>gy <Plug>(coc-type-definition)
-  nmap <silent> <Leader>gi <Plug>(coc-implementation)
-  nmap <silent> <Leader>gr <Plug>(coc-references)
+  nmap <silent> gd <Plug>(coc-definition)
+  nmap <silent> gy <Plug>(coc-type-definition)
+  nmap <silent> gi <Plug>(coc-implementation)
+  nmap <silent> gr <Plug>(coc-references)
 
   " Use K to show documentation in preview window.
   nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -185,7 +185,7 @@
   hi IndentGuidesEven ctermbg=darkgrey
   let g:indent_guides_start_level = 2
   let g:indent_guides_guide_size = 1
-  let g:indent_guides_exclude_filetypes = ['help', 'coc-explorer']
+  let g:indent_guides_exclude_filetypes = ['help', 'coc-explorer', 'fzf', 'dashboard']
 
 "--------------
 " vim-devicons
@@ -209,3 +209,23 @@
 "--------------
   " mapping
   nmap f <Plug>(easymotion-prefix)
+
+"--------------
+" dashboard-nvim
+"--------------
+  " Default value is clap
+  let g:dashboard_default_executive ='fzf'
+
+  let g:dashboard_custom_shortcut={
+    \ 'last_session'       : 'SPC s l',
+    \ 'find_history'       : 'SPC f h',
+    \ 'find_file'          : 'SPC f f',
+    \ 'change_colorscheme' : 'SPC t c',
+    \ 'find_word'          : 'SPC f a',
+    \ 'book_marks'         : 'SPC f b',
+    \ }
+
+"--------------
+" vim-trailing-whitespace
+"--------------
+  let g:extra_whitespace_ignored_filetypes = ['help', 'coc-explorer', 'fzf', 'dashboard']
