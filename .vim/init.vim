@@ -32,6 +32,8 @@ call plug#begin('~/.vim/plugged')
     \, 'coc-phpls'
     \, 'coc-bootstrap-classname'
     \, 'coc-zi'
+    \, 'coc-tsserver'
+    \, 'coc-vetur'
   \ ]
 
 " Dev
