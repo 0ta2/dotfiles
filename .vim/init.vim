@@ -41,6 +41,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'dense-analysis/ale'       " シンタックスチェック
   Plug 'sheerun/vim-polyglot'     " 各言語の設定パック
   Plug 'liuchengxu/vista.vim'     " ナビゲーター
+  Plug '2072/PHP-Indenting-for-VIm'
 
 " Git
   Plug 'tpope/vim-fugitive'       " Vim からGit操作
