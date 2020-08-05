@@ -132,14 +132,17 @@
 "--------------
 " ale.vim
 "--------------
+  let g:ale_php_phpcbf_standard = 'PSR2'
+  let g:ale_php_phpcs_standard = 'PSR2'
+
   " fixers
   let g:ale_fixers = {
-        \ '*': ['remove_trailing_lines', 'trim_whitespace'],
-        \ 'php': ['php_cs_fixer'],
-        \ 'go': ['goff'],
-        \ 'json': ['fixjson', 'jq'],
-        \ 'markdown': ['prettier'],
-        \ 'python': ['autopep8', 'yapf']
+    \ '*': ['remove_trailing_lines', 'trim_whitespace'],
+    \ 'php': ['phpcbf'],
+    \ 'go': ['goff'],
+    \ 'json': ['fixjson', 'jq'],
+    \ 'markdown': ['prettier'],
+    \ 'python': ['autopep8', 'yapf']
   \}
 
   " linter
