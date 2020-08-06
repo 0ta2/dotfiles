@@ -57,6 +57,7 @@
   "cSpell.userWords": [
     "Cica",
     "DISTRO",
+    "Hzja",
     "ajmwagar",
     "ansible",
     "anzu",
@@ -64,6 +65,7 @@
     "cheetsheet",
     "christoomey",
     "dotfiles",
+    "eisu",
     "eoan",
     "gopls",
     "gotos",
@@ -87,10 +89,12 @@
     "sbin",
     "sheerun",
     "simeji",
+    "sjis",
     "systemctl",
     "terryma",
     "tpope",
     "winresizer",
-    "yapf"
+    "yapf",
+    "zyiw"
   ]
 }
