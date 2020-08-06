@@ -54,7 +54,7 @@ deploy: ## Create symlink to home directory
 	@$(call print_success, `ln -sfvn $(DOTPATH)/etc/alacritty ~/.config/alacritty`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/code/settings.json ~/Library/Application\ Support/Code/User/settings.json`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/code/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json`)
-	@$(call print_success, `ln -sfnv $(DOTPATH)/com.googlecode.iterm2.plist ~/com.googlecode.iterm2.plist`)
+	@$(call print_success, `ln -sfnv $(DOTPATH)/etc/com.googlecode.iterm2.plist ~/com.googlecode.iterm2.plist`)
 
 clean: ## Remove the dot files and this repo
 	@$(call print_title, Remove dot files in your home directory...)
