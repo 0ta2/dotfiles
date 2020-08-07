@@ -24,18 +24,11 @@
       "expand": true
     }
   ],
-  //------------------
-  // oc-phpls
-  //------------------
-  "intelephense.files.exclude": [
-    "**/.git/**",
-    "**/.svn/**",
-    "**/.hg/**",
-    "**/CVS/**",
-    "**/.DS_Store/**",
-    "**/node_modules/**",
-    "**/bower_components/**",
-    "**/vendor/**/{Test,test,Tests,tests}/**"
+  "html.filetypes": [
+    "html",
+    "handlebars",
+    "htmldjango",
+    "blade"
   ],
   //------------------
   // coc-yaml
@@ -70,6 +63,7 @@
     "gopls",
     "gotos",
     "gruvbox",
+    "intelephense",
     "junegunn",
     "liuchengxu",
     "markonm",
@@ -84,6 +78,7 @@
     "phpcs",
     "phpls",
     "pyenv",
+    "rakr",
     "rbenv",
     "reireias",
     "sbin",

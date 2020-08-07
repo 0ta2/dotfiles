@@ -41,7 +41,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'dense-analysis/ale'       " シンタックスチェック
   Plug 'sheerun/vim-polyglot'     " 各言語の設定パック
   Plug 'liuchengxu/vista.vim'     " ナビゲーター
-  Plug '2072/PHP-Indenting-for-VIm'
+  Plug '2072/PHP-Indenting-for-VIm' " PHP Indent
+  Plug 'honza/vim-snippets'
 
 " Git
   Plug 'tpope/vim-fugitive'       " Vim からGit操作
@@ -80,8 +81,11 @@ call plug#begin('~/.vim/plugged')
   Plug 'ap/vim-buftabline'              " bufferのタブ表示
 
 " Color
-  Plug 'ajmwagar/vim-deus'
   Plug 'morhetz/gruvbox'
+  Plug 'rakr/vim-one'
+  Plug 'jellybeans.vim'
+  Plug 'cocopon/iceberg.vim'
+  Plug 'gkeep/iceberg-dark'
 
 " Other
   Plug 'tpope/vim-surround'             " カッコの編集
