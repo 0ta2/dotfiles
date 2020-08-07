@@ -132,6 +132,7 @@
 "--------------
 " ale.vim
 "--------------
+  let g:ale_fix_on_save = 1
   let g:ale_php_phpcbf_standard = 'PSR2'
   let g:ale_php_phpcs_standard = 'PSR2'
 
@@ -142,7 +143,10 @@
     \ 'go': ['goff'],
     \ 'json': ['fixjson', 'jq'],
     \ 'markdown': ['prettier'],
-    \ 'python': ['autopep8', 'yapf']
+    \ 'python': ['autopep8', 'yapf'],
+    \ 'javascript': ['prettier', 'eslint'],
+    \ 'css': ['prettier'],
+    \ 'html': ['prettier']
   \}
 
   " linter
@@ -178,7 +182,7 @@
 " vim-airline
 "--------------
   " airline theme
-  let g:airline_theme='gruvbox'
+  let g:airline_theme='icebergDark'
 
 "--------------
 " vim-indent-guides.vim

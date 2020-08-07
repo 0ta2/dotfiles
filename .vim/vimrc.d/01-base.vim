@@ -16,6 +16,9 @@ set undofile
 " Clipboard Settings.
 set clipboard^=unnamedplus
 
+" Consider only if the first letter is capitalized.
+set ignorecase
+
 " Make it possible to open a new file even if you haven't saved it.
 set hidden
 
@@ -87,7 +90,7 @@ set foldmethod=indent
 
 " Setting colorscheme
 set background=dark
-colorscheme gruvbox
+colorscheme iceberg
 
 " Settings python.
 let g:python_host_prog="$HOME/.pyenv/versions/py2neovim/bin/python"
