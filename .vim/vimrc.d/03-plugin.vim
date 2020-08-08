@@ -38,6 +38,9 @@
   " Remap for rename current word
   nmap <leader>rn <Plug>(coc-rename)
 
+  " Remap for CocList"
+  nmap <silent><Leader>l :CocList<CR>
+
 "--------------
 " coc-snippets
 "--------------
@@ -121,13 +124,28 @@
   command! ProjectFiles execute 'Files' s:find_git_root()
   nnoremap <silent><space>f :<C-u>ProjectFiles<CR>
 
+  " floating window size ratio
+  let g:fzf_preview_floating_window_rate = 0.9
+
+"--------------
+" coc-fzf-preview
+"--------------
+  " Remap for fzf-preview
+  nmap <Leader>f [fzf-p]
+  nnoremap <silent> [fzf-p]p  :<C-u>CocCommand fzf-preview.FromResources project_mru git<CR>
+  nnoremap <silent> [fzf-p]b  :<C-u>CocCommand fzf-preview.Buffers<CR>
+  nnoremap <silent> [fzf-p]gs :<C-u>CocCommand fzf-preview.GitStatus<CR>
+  nnoremap <silent> [fzf-p]ga :<C-u>CocCommand fzf-preview.GitActions<CR>
+  nnoremap          [fzf-p]gr :<C-u>CocCommand fzf-preview.ProjectGrep<Space>
+  nnoremap <silent> [fzf-p]q  :<C-u>CocCommand fzf-preview.QuickFix<CR>
+
 "--------------
 " coc-fzf
 "--------------
-  " Coc List
-  nnoremap <silent><space><space> :<C-u>CocFzfList<CR>
-  " Coc command
-  nnoremap <silent><space>c :<C-u>CocFzfList commands<CR>
+"  " Coc List
+"  nnoremap <silent><space><space> :<C-u>CocFzfList<CR>
+"  " Coc command
+"  nnoremap <silent><space>c :<C-u>CocFzfList commands<CR>
 
 "--------------
 " ale.vim
@@ -192,7 +210,7 @@
   hi IndentGuidesEven ctermbg=darkgrey
   let g:indent_guides_start_level = 2
   let g:indent_guides_guide_size = 1
-  let g:indent_guides_exclude_filetypes = ['help', 'coc-explorer', 'fzf', 'dashboard']
+  let g:indent_guides_exclude_filetypes = ['help', 'coc-explorer', 'fzf', 'startify']
 
 "--------------
 " vim-devicons
@@ -218,21 +236,38 @@
   nmap f <Plug>(easymotion-prefix)
 
 "--------------
-" dashboard-nvim
-"--------------
-  " Default value is clap
-  let g:dashboard_default_executive ='fzf'
-
-  let g:dashboard_custom_shortcut={
-    \ 'last_session'       : 'SPC s l',
-    \ 'find_history'       : 'SPC f h',
-    \ 'find_file'          : 'SPC f f',
-    \ 'change_colorscheme' : 'SPC t c',
-    \ 'find_word'          : 'SPC f a',
-    \ 'book_marks'         : 'SPC f b',
-    \ }
-
-"--------------
 " vim-trailing-whitespace
 "--------------
   let g:extra_whitespace_ignored_filetypes = ['help', 'coc-explorer', 'fzf', 'dashboard']
+
+"--------------
+" vim-startify
+"--------------
+  " vim-startify で開くときに、そのディレクトリに移動する
+  let g:startify_change_to_dir = 1
+
+  " git ディレクトリを開く場合は、トップディレクトリに移動する
+  let g:startify_change_to_vcs_root = 1
+
+  " empty buffer や quit を表示する
+  let g:startify_enable_special = 1
+
+  " 最初に表示する内容を記載する。
+  let g:startify_lists = [
+         \ { 'type': 'files',     'header': ['最近使ったファイル'] },
+         \ { 'type': 'dir',       'header': ['カレントディレクトリ配下で最近使ったファイル'] },
+         \ { 'type': 'sessions',  'header': ['Session']       },
+         \ { 'type': 'bookmarks', 'header': ['Bookmarks']      },
+         \ { 'type': 'commands',  'header': ['Commands']       },
+      \ ]
+
+  " 起動時のログを指定
+  let g:startify_custom_header = [
+        \ '  ___      ___ ___  _____ ______',
+        \ ' |\  \    /  /|\  \|\   _ \  _   \',
+        \ ' \ \  \  /  / | \  \ \  \\\__\ \  \',
+        \ '  \ \  \/  / / \ \  \ \  \\|__| \  \',
+        \ '   \ \    / /   \ \  \ \  \    \ \  \',
+        \ '    \ \__/ /     \ \__\ \__\    \ \__\',
+        \ '     \|__|/       \|__|\|__|     \|__|',
+        \ ]
