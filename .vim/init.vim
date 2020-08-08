@@ -5,8 +5,6 @@ call plug#begin('~/.vim/plugged')
 
 " coc
   Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
-  Plug 'vn-ki/coc-clap', {'do': 'yarn install --frozen-lockfile'}
-  Plug 'antoinemadec/coc-fzf', {'do': 'yarn install --frozen-lockfile'}
   let g:coc_global_extensions = [
     \ 'coc-snippets'
     \, 'coc-explorer'
@@ -34,6 +32,7 @@ call plug#begin('~/.vim/plugged')
     \, 'coc-zi'
     \, 'coc-tsserver'
     \, 'coc-vetur'
+    \, 'coc-fzf-preview'
   \ ]
 
 " Dev
@@ -83,13 +82,12 @@ call plug#begin('~/.vim/plugged')
 " Color
   Plug 'morhetz/gruvbox'
   Plug 'rakr/vim-one'
-  Plug 'jellybeans.vim'
   Plug 'cocopon/iceberg.vim'
   Plug 'gkeep/iceberg-dark'
 
 " Other
   Plug 'tpope/vim-surround'             " カッコの編集
-  Plug 'hardcoreplayers/dashboard-nvim' " ダッシュボード
+  Plug 'mhinz/vim-startify'              " ダッシュボード
   Plug 'vim-jp/vimdoc-ja'               " help の日本語化
   Plug 'reireias/vim-cheatsheet'        " チャートシート
   Plug 'gko/vim-coloresque'             " カラープレビュー
