@@ -85,7 +85,7 @@
 " coc-prettier
 "--------------
   " command
-  command! -nargs=0 Prettier :CocCommand prettier.formatFile
+"  command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 "--------------
 " coc-vimlsp
@@ -146,31 +146,20 @@
 " ale.vim
 "--------------
   let g:ale_fix_on_save = 1
-  let g:ale_php_phpcbf_standard = 'PSR2'
-  let g:ale_php_phpcs_standard = 'PSR2'
+  let g:ale_php_phpcs_standard = 'psr2'
+  let g:ale_php_phpcbf_standard = 'psr2'
 
   " fixers
   let g:ale_fixers = {
     \ '*': ['remove_trailing_lines', 'trim_whitespace'],
-    \ 'php': ['phpcbf'],
-    \ 'go': ['goff'],
-    \ 'json': ['fixjson', 'jq'],
-    \ 'markdown': ['prettier'],
-    \ 'python': ['autopep8', 'yapf'],
-    \ 'javascript': ['prettier', 'eslint'],
-    \ 'css': ['prettier'],
-    \ 'html': ['prettier']
-  \}
-
-  " linter
-  let g:ale_linters = {
-  	    \ 'go': ['gopls'],
+    \ 'php': ['prettier','phpcbf'],
+    \ 'json':  ['prettier']
   \}
 
   " Set this. Airline will handle the rest.
   let g:airline#extensions#ale#enabled = 1
 
-"--------------
+  "--------------
 " vim-anzu
 "--------------
  " mapping
@@ -195,7 +184,7 @@
 " vim-airline
 "--------------
   " airline theme
-  let g:airline_theme='icebergDark'
+  let g:airline_theme='papercolor'
 
 "--------------
 " vim-indent-guides.vim
@@ -266,3 +255,15 @@
         \ '    \ \__/ /     \ \__\ \__\    \ \__\',
         \ '     \|__|/       \|__|\|__|     \|__|',
         \ ]
+
+"--------------
+" wilder.nvim
+"--------------
+  call wilder#enable_cmdline_enter()
+
+  set wildcharm=<Tab>
+  cmap <expr> <Tab> wilder#in_context() ? wilder#next() : "\<Tab>"
+  cmap <expr> <S-Tab> wilder#in_context() ? wilder#previous() : "\<S-Tab>"
+
+  " only / and ? is enabled by default
+  call wilder#set_option('modes', ['/', '?', ':'])
