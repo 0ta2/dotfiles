@@ -36,12 +36,11 @@ call plug#begin('~/.vim/plugged')
   \ ]
 
 " Dev
-  Plug 'tpope/vim-commentary'     " コメントアウト
-  Plug 'dense-analysis/ale'       " シンタックスチェック
-  Plug 'sheerun/vim-polyglot'     " 各言語の設定パック
-  Plug 'liuchengxu/vista.vim'     " ナビゲーター
-  Plug '2072/PHP-Indenting-for-VIm' " PHP Indent
-  Plug 'honza/vim-snippets'
+  Plug 'tpope/vim-commentary'       " コメントアウト
+  Plug 'dense-analysis/ale'         " シンタックスチェック
+  Plug 'sheerun/vim-polyglot'       " 各言語の設定パック
+  Plug 'liuchengxu/vista.vim'       " ナビゲーター
+  Plug 'honza/vim-snippets'         " スニペット
 
 " Git
   Plug 'tpope/vim-fugitive'       " Vim からGit操作
@@ -84,14 +83,16 @@ call plug#begin('~/.vim/plugged')
   Plug 'rakr/vim-one'
   Plug 'cocopon/iceberg.vim'
   Plug 'gkeep/iceberg-dark'
+  Plug 'NLKNguyen/papercolor-theme'
 
 " Other
   Plug 'tpope/vim-surround'             " カッコの編集
-  Plug 'mhinz/vim-startify'              " ダッシュボード
+  Plug 'mhinz/vim-startify'             " ダッシュボード
   Plug 'vim-jp/vimdoc-ja'               " help の日本語化
   Plug 'reireias/vim-cheatsheet'        " チャートシート
   Plug 'gko/vim-coloresque'             " カラープレビュー
   Plug 'ryanoasis/vim-devicons'         " アイコン
+  Plug 'Gelguy/wilder.nvim'
 
 call plug#end()
 

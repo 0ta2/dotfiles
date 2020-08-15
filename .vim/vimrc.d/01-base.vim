@@ -90,7 +90,7 @@ set foldmethod=indent
 
 " Setting colorscheme
 set background=dark
-colorscheme iceberg
+colorscheme PaperColor
 
 " Settings python.
 let g:python_host_prog="$HOME/.pyenv/versions/py2neovim/bin/python"

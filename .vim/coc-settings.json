@@ -1,4 +1,16 @@
 {
+  "phpls.enable": false,
+  "intelephense.format.braces": "psr12",
+  "intelephense.format.enable": false,
+  //------------------
+  // list
+  //------------------
+  "list.normalMappings": {
+    "<C-c>": "do:exit"
+  },
+  "list.insertMappings": {
+    "<C-c>": "do:exit"
+  },
   //------------------
   // explorer
   //------------------
@@ -9,8 +21,7 @@
   // ホバーした際の情報を非表示
   "explorer.previewAction.onHover": false,
   // 表示するソース情報
-  "explorer.sources":
-  [
+  "explorer.sources": [
     {
       "name": "bookmark",
       "expand": false
@@ -23,12 +34,6 @@
       "name": "file",
       "expand": true
     }
-  ],
-  "html.filetypes": [
-    "html",
-    "handlebars",
-    "htmldjango",
-    "blade"
   ],
   //------------------
   // coc-yaml
@@ -58,10 +63,10 @@
   //------------------
   // coc-lists
   //------------------
-  "list.source.files.args":
-  [
-    "--hidden", "--files"
-  ],
+  "list.source.files.args": ["--hidden", "--files"],
+  //------------------
+  // Spell
+  //------------------
   "cSpell.userWords": [
     "Cica",
     "DISTRO",
