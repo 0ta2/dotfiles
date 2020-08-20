@@ -108,27 +108,27 @@
 "--------------
 " fzf
 "--------------
-  let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
-  let $FZF_DEFAULT_COMMAND = 'rg --files --no-ignore --hidden --follow --glob "!.git/*"'
-  command! -bang -nargs=* Rg
-    \ call fzf#vim#grep(
-    \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
-    \   <bang>0 ? fzf#vim#with_preview('up:60%')
-    \           : fzf#vim#with_preview('right:50%:hidden', '?'),
-    \   <bang>0)
+   let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
+   let $FZF_DEFAULT_COMMAND = 'rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+   command! -bang -nargs=* Rg
+     \ call fzf#vim#grep(
+     \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+     \   <bang>0 ? fzf#vim#with_preview('up:60%')
+     \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+     \   <bang>0)
 
-  " buffer jump
-  let g:fzf_buffers_jump = 1
+   " buffer jump
+   let g:fzf_buffers_jump = 1
 
-  " プロジェクトのトップディレクトリから検索する function
-  function! s:find_git_root()
-    return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
-  endfunction
-  command! ProjectFiles execute 'Files' s:find_git_root()
-  nnoremap <silent><space>f :<C-u>ProjectFiles<CR>
+   " プロジェクトのトップディレクトリから検索する function
+   function! s:find_git_root()
+     return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
+   endfunction
+   command! ProjectFiles execute 'Files' s:find_git_root()
+   nnoremap <silent><space>f :<C-u>ProjectFiles<CR>
 
-  " floating window size ratio
-  let g:fzf_preview_floating_window_rate = 0.9
+   " floating window size ratio
+   let g:fzf_preview_floating_window_rate = 0.9
 
 "--------------
 " coc-fzf-preview
@@ -145,6 +145,7 @@
 "--------------
 " ale.vim
 "--------------
+  let g:ale_completion_enabled=1
   let g:ale_fix_on_save = 1
   let g:ale_php_phpcs_standard = 'psr2'
   let g:ale_php_phpcbf_standard = 'psr2'
@@ -152,8 +153,14 @@
   " fixers
   let g:ale_fixers = {
     \ '*': ['remove_trailing_lines', 'trim_whitespace'],
-    \ 'php': ['prettier','phpcbf'],
-    \ 'json':  ['prettier']
+    \ 'go': ['goff'],
+    \ 'php': ['prettier', 'phpcbf'],
+    \ 'json': ['fixjson', 'jq'],
+    \ 'python': ['autopep8', 'yapf'],
+    \ 'javascript': ['prettier', 'eslint'],
+    \ 'html': ['prettier'],
+    \ 'css': ['csslint'],
+    \ 'markdown': ['prettier']
   \}
 
   " Set this. Airline will handle the rest.
@@ -266,4 +273,4 @@
   cmap <expr> <S-Tab> wilder#in_context() ? wilder#previous() : "\<S-Tab>"
 
   " only / and ? is enabled by default
-  call wilder#set_option('modes', ['/', '?', ':'])
+  call wilder#set_option('modes', ['/', '?'])

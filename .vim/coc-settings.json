@@ -1,7 +1,4 @@
 {
-  "phpls.enable": false,
-  "intelephense.format.braces": "psr12",
-  "intelephense.format.enable": false,
   //------------------
   // list
   //------------------

@@ -2,13 +2,13 @@
 " vim-plug
 "--------------
 call plug#begin('~/.vim/plugged')
-
 " coc
   Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
   let g:coc_global_extensions = [
     \ 'coc-snippets'
     \, 'coc-explorer'
     \, 'coc-prettier'
+    \, 'coc-phpls'
     \, 'coc-html'
     \, 'coc-css'
     \, 'coc-yaml'
@@ -27,7 +27,6 @@ call plug#begin('~/.vim/plugged')
     \, 'coc-emoji'
     \, 'coc-syntax'
     \, 'coc-bookmark'
-    \, 'coc-phpls'
     \, 'coc-bootstrap-classname'
     \, 'coc-zi'
     \, 'coc-tsserver'
