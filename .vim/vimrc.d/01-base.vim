@@ -100,4 +100,4 @@ let g:python3_host_prog="$HOME/.pyenv/versions/py3neovim/bin/python"
 let g:ruby_host_prog="$HOME/.rbenv/versions/2.7.1/bin/neovim-ruby-host"
 
 " Settings node.
-let g:node_host_prog="$HOME/.nodenv/versions/14.5.0/bin/neovim-node-host"
+let g:node_host_prog="$HOME/.nodenv/versions/14.8.0/bin/neovim-node-host"
