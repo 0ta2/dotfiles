@@ -25,8 +25,8 @@ global_nodenv() {
 }
 
 main() {
-  install_nodenv_nodejs 14.5.0
-  global_nodenv 14.5.0
+  install_nodenv_nodejs 14.8.0
+  global_nodenv 14.8.0
 }
 
 main
