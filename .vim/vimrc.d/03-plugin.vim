@@ -82,12 +82,6 @@
   nmap <space>e :CocCommand explorer<CR>
 
 "--------------
-" coc-prettier
-"--------------
-  " command
-"  command! -nargs=0 Prettier :CocCommand prettier.formatFile
-
-"--------------
 " coc-vimlsp
 "--------------
   let g:markdown_fenced_languages = [
@@ -159,7 +153,7 @@
     \ 'python': ['autopep8', 'yapf'],
     \ 'javascript': ['prettier', 'eslint'],
     \ 'html': ['prettier'],
-    \ 'css': ['csslint'],
+    \ 'css': ['prettier'],
     \ 'markdown': ['prettier']
   \}
 
@@ -229,6 +223,7 @@
 "--------------
 " vim-trailing-whitespace
 "--------------
+  " Ignore FileType
   let g:extra_whitespace_ignored_filetypes = ['help', 'coc-explorer', 'fzf', 'dashboard']
 
 "--------------
@@ -262,15 +257,3 @@
         \ '    \ \__/ /     \ \__\ \__\    \ \__\',
         \ '     \|__|/       \|__|\|__|     \|__|',
         \ ]
-
-"--------------
-" wilder.nvim
-"--------------
-  call wilder#enable_cmdline_enter()
-
-  set wildcharm=<Tab>
-  cmap <expr> <Tab> wilder#in_context() ? wilder#next() : "\<Tab>"
-  cmap <expr> <S-Tab> wilder#in_context() ? wilder#previous() : "\<S-Tab>"
-
-  " only / and ? is enabled by default
-  call wilder#set_option('modes', ['/', '?'])
