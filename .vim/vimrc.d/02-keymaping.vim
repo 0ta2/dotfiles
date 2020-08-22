@@ -71,3 +71,6 @@ vnoremap <Leader>db :s/\s\+//gc<CR>
 " 全角英数字を半角に変換
 nnoremap <Leader>zh :HzjaConvert han_eisu
 vnoremap <Leader>zh :HzjaConvert han_eisu
+
+" blade のフォーマット
+nnoremap <Leader>fo :%!blade-formatter --stdin<CR>

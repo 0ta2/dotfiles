@@ -7,7 +7,6 @@ call plug#begin('~/.vim/plugged')
   let g:coc_global_extensions = [
     \ 'coc-snippets'
     \, 'coc-explorer'
-    \, 'coc-prettier'
     \, 'coc-phpls'
     \, 'coc-html'
     \, 'coc-css'
@@ -91,7 +90,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'reireias/vim-cheatsheet'        " チャートシート
   Plug 'gko/vim-coloresque'             " カラープレビュー
   Plug 'ryanoasis/vim-devicons'         " アイコン
-  Plug 'Gelguy/wilder.nvim'
 
 call plug#end()
 

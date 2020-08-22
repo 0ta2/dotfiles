@@ -181,6 +181,7 @@ path=(
   /usr/bin(N-/)
   ${ZDOTDIR}/bin(N-/)
   $HOME/.fzf/bin(N-/)
+  $HOME/.nodenv/shims(N-/)
   ${path}
 )
 
