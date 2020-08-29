@@ -60,14 +60,6 @@ nnoremap <silent><Leader>p :bprevious<cr>
 nnoremap x "_x
 nnoremap s "_s
 
-" 全体や指定範囲の空白行を削除
-nnoremap <Leader>dl :%s/^$\n//g<CR>
-vnoremap <Leader>dl :s/^$\n//g<CR>
-
-" 行内のスペースをカット
-nnoremap <Leader>db :%s/\s\+//gc<CR>
-vnoremap <Leader>db :s/\s\+//gc<CR>
-
 " 全角英数字を半角に変換
 nnoremap <Leader>zh :HzjaConvert han_eisu
 vnoremap <Leader>zh :HzjaConvert han_eisu
