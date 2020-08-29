@@ -15,6 +15,8 @@
   "editor.tabSize": 2,
   // ファイルの最後を改行で終わらせる
   "files.insertFinalNewline": true,
+  // ファイル保存時に最終行の空白を削除
+  "files.trimTrailingWhitespace": true
   // 文字コードの自動錦
   "files.autoGuessEncoding": true,
   // 常に新しいタブで開く
@@ -154,7 +156,7 @@
       "commands": ["workbench.action.showCommands"]
     },
     {
-      "before": ["<leader>", "ff"],
+      "before": ["<leader>", "f", "f"],
       "commands": ["workbench.action.quickOpen"]
     }
   ],
@@ -196,5 +198,5 @@
   // Todoツリーの設定
   //----------------------------------------------------------
   // Todo Tree のツリービューのヘッダーにボタンを表示して、現在のファイル、開いているファイル、またはワークスペース全体のスキャンを切り替える
-  "todo-tree.tree.showScanModeButton": false
+  "todo-tree.tree.showScanModeButton": false,
 }
