@@ -70,6 +70,10 @@
       "commands": ["workbench.action.splitEditorDown"]
     },
     {
+      "before": ["<leader>", "t"],
+      "commands": ["workbench.action.files.newUntitledFile"]
+    },
+    {
       "before": ["<leader>", "n"],
       "commands": ["workbench.action.nextEditor"]
     },
@@ -116,11 +120,11 @@
     },
     {
       // 実装箇所に移動
-      "before": ["<leader>", "u"],
+      "before": ["<leader>", "g"],
       "commands": ["editor.action.goToImplementation"]
     },
     {
-      "before": ["<leader>", "u"],
+      "before": ["<leader>", "g"],
       "commands": ["editor.action.goToDeclaration"]
     },
     // 参照へ移動
@@ -150,7 +154,7 @@
       "commands": ["workbench.action.showCommands"]
     },
     {
-      "before": ["<leader>", "f"],
+      "before": ["<leader>", "ff"],
       "commands": ["workbench.action.quickOpen"]
     }
   ],
