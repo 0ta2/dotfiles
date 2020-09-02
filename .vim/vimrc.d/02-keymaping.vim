@@ -5,56 +5,56 @@
 let mapleader = "\<Space>"
 
 " 検索後の強調表示を解除する
-noremap <silent><Esc><Esc> :nohlsearch<CR><Esc>
+noremap <silent> <Esc><Esc> :nohlsearch<CR><Esc>
 
 " ; :を入れ替える
 noremap ; :
 
 " jj でEsc
-inoremap <silent>jj <Esc>
+inoremap <silent> jj <Esc>
 
 " ファイル保存
-nnoremap <silent><Leader>w :w<cr>
+nnoremap <Leader> w :w<cr>
 
 " カーソル下の単語をハイライトする
-nnoremap <silent>* "zyiw:let @/ = '\<' . @z . '\>'<CR>:set hlsearch<CR>
+nnoremap * "zyiw:let @/ = '\<' . @z . '\>'<CR>:set hlsearch<CR>
 
 " 行が折り返し表示されたいた場合、表示行単位で移動する
-nnoremap <silent>j gj
-nnoremap <silent>k gk
-vnoremap <silent>j gj
-vnoremap <silent>k gk
+nnoremap j gj
+nnoremap k gk
+vnoremap j gj
+vnoremap k gk
 
 " 行の移動
-nnoremap <silent><leader>k :m-2<cr>==
-nnoremap <silent><leader>j :m+<cr>==
-xnoremap <silent><leader>k :m-2<cr>gv=gv
-xnoremap <silent><leader>j :m'>+<cr>gv=gv
+nnoremap <leader> k :m-2<cr>==
+nnoremap <leader> j :m+<cr>==
+xnoremap <leader> k :m-2<cr>gv=gv
+xnoremap <leader> j :m'>+<cr>gv=gv
 
 " 分割したウインドウを HJKL で場所を移動
-nnoremap <silent><Leader>J <C-w>J
-nnoremap <silent><Leader>K <C-w>K
-nnoremap <silent><Leader>L <C-w>L
-nnoremap <silent><Leader>H <C-w>H
+nnoremap <Leader> J <C-w>J
+nnoremap <Leader> K <C-w>K
+nnoremap <Leader> L <C-w>L
+nnoremap <Leader> H <C-w>H
 
 " 画面を横に分割
-nnoremap <silent><Leader>s :<C-u>sp<CR>
+nnoremap <Leader> s :<C-u>sp<CR>
 " 画面を縦に分割
-nnoremap <silent><Leader>v :<C-u>vs<CR>
+nnoremap <Leader> v :<C-u>vs<CR>
 
 " 縦横に最大化
-nnoremap <silent><Leader>o <C-w>_<C-w>\|
+nnoremap <Leader> o <C-w>_<C-w>\|
 " 幅を揃える
-nnoremap <silent><Leader>= <C-w>=
+nnoremap <Leader> = <C-w>=
 
 " Create new buffer.
-nnoremap <silent><Leader>t :enew<cr>
+nnoremap <silent> <Leader> t :enew<cr>
 " close current buffer.
-nnoremap <silent><Leader>q :bp <bar> bd! #<cr>
+nnoremap <silent> <Leader> q :bp <bar> bd! #<cr>
 " Tab to switch to next open buffer.
-nnoremap <silent><Leader>n :bnext<cr>
+nnoremap <silent> <Leader> n :bnext<cr>
 " Shift + Tab to switch to previous open buffer.
-nnoremap <silent><Leader>p :bprevious<cr>
+nnoremap <silent> <Leader> p :bprevious<cr>
 
 " 削除してもレジスタに入らないようにする
 nnoremap x "_x

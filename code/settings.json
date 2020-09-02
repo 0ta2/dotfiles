@@ -16,13 +16,13 @@
   // ファイルの最後を改行で終わらせる
   "files.insertFinalNewline": true,
   // ファイル保存時に最終行の空白を削除
-  "files.trimTrailingWhitespace": true
+  "files.trimTrailingWhitespace": true,
   // 文字コードの自動錦
   "files.autoGuessEncoding": true,
   // 常に新しいタブで開く
   "workbench.editor.enablePreview": false,
   // テーマの設定
-  "workbench.colorTheme": "Gruvbox Dark (Medium)",
+  "workbench.colorTheme": "Gruvbox Dark (Hard)",
   // アイコンのテーマを指定
   "workbench.iconTheme": "material-icon-theme",
   //----------------------------------------------------------
@@ -199,4 +199,7 @@
   //----------------------------------------------------------
   // Todo Tree のツリービューのヘッダーにボタンを表示して、現在のファイル、開いているファイル、またはワークスペース全体のスキャンを切り替える
   "todo-tree.tree.showScanModeButton": false,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

@@ -1,0 +1,16 @@
+"--------------
+" PhpStorm Settings
+"--------------
+" source .ideavimrc
+source ~/.vim/vimrc.d/02-keymaping.vim
+
+" mapleader を指定
+let mapleader = " "
+
+" OS のクリップボードを共有
+set clipboard=unnamed
+
+" vim-surround を有効化
+set surround
+" easymotion を有効化
+set easymotion
