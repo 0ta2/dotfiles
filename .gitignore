@@ -29,3 +29,6 @@ node_modules/*
 
 ### karabiner
 karabiner/automatic_backups/*
+
+### Phpstorm
+.idea
