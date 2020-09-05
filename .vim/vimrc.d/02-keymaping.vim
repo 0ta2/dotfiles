@@ -26,21 +26,21 @@ vnoremap j gj
 vnoremap k gk
 
 " 行の移動
-nnoremap <leader> k :m-2<cr>==
-nnoremap <leader> j :m+<cr>==
-xnoremap <leader> k :m-2<cr>gv=gv
-xnoremap <leader> j :m'>+<cr>gv=gv
+nnoremap <leader>k :m-2<cr>==
+nnoremap <leader>j :m+<cr>==
+xnoremap <leader>k :m-2<cr>gv=gv
+xnoremap <leader>j :m'>+<cr>gv=gv
 
 " 分割したウインドウを HJKL で場所を移動
-nnoremap <Leader> J <C-w>J
-nnoremap <Leader> K <C-w>K
-nnoremap <Leader> L <C-w>L
-nnoremap <Leader> H <C-w>H
+nnoremap <Leader>J <C-w>J
+nnoremap <Leader>K <C-w>K
+nnoremap <Leader>L <C-w>L
+nnoremap <Leader>H <C-w>H
 
 " 画面を横に分割
-nnoremap <Leader> s :<C-u>sp<CR>
+nnoremap <Leader>s :<C-u>sp<CR>
 " 画面を縦に分割
-nnoremap <Leader> v :<C-u>vs<CR>
+nnoremap <Leader>v :<C-u>vs<CR>
 
 " 縦横に最大化
 nnoremap <Leader> o <C-w>_<C-w>\|
@@ -48,13 +48,13 @@ nnoremap <Leader> o <C-w>_<C-w>\|
 nnoremap <Leader> = <C-w>=
 
 " Create new buffer.
-nnoremap <silent> <Leader> t :enew<cr>
+nnoremap <silent> <Leader>t :enew<cr>
 " close current buffer.
-nnoremap <silent> <Leader> q :bp <bar> bd! #<cr>
+nnoremap <silent> <Leader>q :bp <bar> bd! #<cr>
 " Tab to switch to next open buffer.
-nnoremap <silent> <Leader> n :bnext<cr>
+nnoremap <silent> <Leader>n :bnext<cr>
 " Shift + Tab to switch to previous open buffer.
-nnoremap <silent> <Leader> p :bprevious<cr>
+nnoremap <silent> <Leader>p :bprevious<cr>
 
 " 削除してもレジスタに入らないようにする
 nnoremap x "_x
