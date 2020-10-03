@@ -65,6 +65,7 @@ cask "vlc"
 cask "1password"
 cask "slack"
 cask "bettertouchtool"
+cask "notion"
 
 ## terminal
 cask "iTerm2"
