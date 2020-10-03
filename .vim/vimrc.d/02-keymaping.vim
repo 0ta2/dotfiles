@@ -14,38 +14,32 @@ noremap ; :
 inoremap <silent> jj <Esc>
 
 " ファイル保存
-nnoremap <Leader> w :w<cr>
+nnoremap <silent> <Leader>w :w<CR>
 
 " カーソル下の単語をハイライトする
 nnoremap * "zyiw:let @/ = '\<' . @z . '\>'<CR>:set hlsearch<CR>
 
 " 行が折り返し表示されたいた場合、表示行単位で移動する
-nnoremap j gj
-nnoremap k gk
-vnoremap j gj
-vnoremap k gk
+nnoremap <silent> j gj
+nnoremap <silent> k gk
+vnoremap <silent> j gj
+vnoremap <silent> k gk
 
 " 行の移動
-nnoremap <leader>k :m-2<cr>==
-nnoremap <leader>j :m+<cr>==
-xnoremap <leader>k :m-2<cr>gv=gv
-xnoremap <leader>j :m'>+<cr>gv=gv
-
-" 分割したウインドウを HJKL で場所を移動
-nnoremap <Leader>J <C-w>J
-nnoremap <Leader>K <C-w>K
-nnoremap <Leader>L <C-w>L
-nnoremap <Leader>H <C-w>H
+nnoremap <silent> <Leader>k :m-2<CR>==
+nnoremap <silent> <Leader>j :m+<CR>==
+xnoremap <silent> <Leader>k :m-2<CR>gv=gv
+xnoremap <silent> <Leader>j :m'>+<CR>gv=gv
 
 " 画面を横に分割
-nnoremap <Leader>s :<C-u>sp<CR>
+nnoremap <silent> <Leader>s :<C-u>sp<CR>
 " 画面を縦に分割
-nnoremap <Leader>v :<C-u>vs<CR>
+nnoremap <silent> <Leader>v :<C-u>vs<CR>
 
 " 縦横に最大化
-nnoremap <Leader> o <C-w>_<C-w>\|
+nnoremap <Leader>o <C-w>_<C-w>\|
 " 幅を揃える
-nnoremap <Leader> = <C-w>=
+nnoremap <Leader>= <C-w>=
 
 " Create new buffer.
 nnoremap <silent> <Leader>t :enew<cr>
