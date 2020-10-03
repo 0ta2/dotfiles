@@ -40,3 +40,6 @@ decorations: none
 
 scrolling:
   history: 100000
+
+key_bindings:
+  - {key: Space, mods: Control, chars: "\x00"}
