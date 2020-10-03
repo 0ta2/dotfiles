@@ -157,6 +157,9 @@ if [ -e /Applications/Alacritty.app/Contents/MacOS/alacritty ];then
 	export PATH=/Applications/Alacritty.app/Contents/MacOS:${PATH}
 fi
 
+# less コマンドの環境変数
+export LESS='--ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD'
+
 ### fzf 設定
 if [ -f ~/.fzf.zsh ]; then
   source ~/.fzf.zsh
