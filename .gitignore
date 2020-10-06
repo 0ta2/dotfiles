@@ -25,10 +25,11 @@ node_modules/*
 .vim/tmp/backup/*
 
 ### tmux
+.tmux/plugins/*
 !.gitkeep
 
 ### karabiner
 karabiner/automatic_backups/*
 
-### Phpstorm
+### phpstorm
 .idea
