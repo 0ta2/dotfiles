@@ -56,7 +56,7 @@
   //------------------
   // snippets
   //------------------
-  "snippets.convertToSnippetsAction": false,
+  "snippets.enableStatusItem": true,
   //------------------
   // coc-lists
   //------------------

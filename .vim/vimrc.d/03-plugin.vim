@@ -253,3 +253,16 @@
         \ '    \ \__/ /     \ \__\ \__\    \ \__\',
         \ '     \|__|/       \|__|\|__|     \|__|',
         \ ]
+
+
+"--------------
+" vim-tmux-navigator
+"--------------
+  let g:tmux_navigator_no_mappings = 1
+  let g:tmux_navigator_save_on_switch = 2
+  let g:tmux_navigator_no_mappings = 1
+  nnoremap <silent> <C-S-h> :TmuxNavigateLeft<cr>
+  nnoremap <silent> <C-S-j> :TmuxNavigateDown<cr>
+  nnoremap <silent> <C-S-k> :TmuxNavigateUp<cr>
+  nnoremap <silent> <C-S-l> :TmuxNavigateRight<cr>
+  nnoremap <silent> <C-S-\> :TmuxNavigatePrevious<cr>

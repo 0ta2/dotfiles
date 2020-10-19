@@ -65,6 +65,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'bronson/vim-trailing-whitespace'  " 末尾にあるスペースを可視化
   Plug 'simeji/winresizer'                " 分割のリサイズ
   Plug 'previm/previm'                    " markdown preview
+  Plug 'tyru/open-browser.vim'            " ブラウザ起動
 
 " cursor
   Plug 'terryma/vim-multiple-cursors'   " カーソル操作
