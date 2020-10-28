@@ -1,0 +1,306 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = 'toml'
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+on_event = 'InsertEnter'
+hook_add = '''
+  let g:deoplete#enable_at_startup = 1
+'''
+
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+on_cmd = 'Denite'
+hook_add = '''
+	call denite#custom#var('file/rec', 'command',
+	\ ['rg', '--files', '--no-ignore', '--hidden', '--follow', '--glob', '!.git/*', '--color', 'never'])
+
+	call denite#custom#alias('source', 'file/rec/git', 'file/rec')
+	call denite#custom#var('file/rec/git', 'command',
+	\ ['git', 'ls-files', '-co', '--exclude-standard'])
+
+	nnoremap <silent> <C-p> :<C-u>Denite
+	\ `finddir('.git', ';') != '' ? 'file/rec/git' : 'file/rec'`<CR>
+
+'''
+
+[plugins.ftplugin]
+denite = '''
+  nnoremap <silent><buffer><expr> <CR>
+  \ denite#do_map('do_action')
+  nnoremap <silent><buffer><expr> d
+  \ denite#do_map('do_action', 'delete')
+  nnoremap <silent><buffer><expr> p
+  \ denite#do_map('do_action', 'preview')
+  nnoremap <silent><buffer><expr> <Esc><Esc>
+  \ denite#do_map('quit')
+  nnoremap <silent><buffer><expr> i
+  \ denite#do_map('open_filter_buffer')
+  nnoremap <silent><buffer><expr> <Space>
+  \ denite#do_map('toggle_select').'j'
+'''
+
+[[plugins]]
+repo = 'prabirshrestha/vim-lsp'
+hook_add = '''
+  function! s:on_lsp_buffer_enabled() abort
+    setlocal omnifunc=lsp#complete
+    setlocal signcolumn=yes
+    if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
+    nmap <buffer> gd <plug>(lsp-definition)
+    nmap <buffer> gr <plug>(lsp-references)
+    nmap <buffer> gi <plug>(lsp-implementation)
+    nmap <buffer> gt <plug>(lsp-type-definition)
+    nmap <buffer> <leader>rn <plug>(lsp-rename)
+    nmap <buffer> [g <Plug>(lsp-previous-diagnostic)
+    nmap <buffer> ]g <Plug>(lsp-next-diagnostic)
+    nmap <buffer> K <plug>(lsp-hover)
+  endfunction
+
+  augroup lsp_install
+    au!
+    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+  augroup END
+'''
+
+[[plugins]]
+repo = 'mattn/vim-lsp-settings'
+
+[[plugins]]
+repo = 'lighttiger2505/deoplete-vim-lsp'
+
+[[plugins]]
+repo = 'Shougo/defx.nvim'
+hook_add = '''
+  call defx#custom#option('_', {
+    \ 'split': 'vertical',
+    \ 'winwidth': 30,
+    \ 'direction': 'topleft',
+    \ 'toggle': 1,
+    \ 'resume': 1,
+  \ })
+  nnoremap <silent><Leader>e :<C-u> Defx -show-ignored-files <CR>
+'''
+[plugins.ftplugin]
+defx = '''
+  " Define mappings
+	nnoremap <silent><buffer><expr> <CR>
+	\ defx#do_action('drop')
+	nnoremap <silent><buffer><expr> c
+	\ defx#do_action('copy')
+	nnoremap <silent><buffer><expr> m
+	\ defx#do_action('move')
+	nnoremap <silent><buffer><expr> p
+	\ defx#do_action('paste')
+	nnoremap <silent><buffer><expr> l
+	\ defx#do_action('drop')
+	nnoremap <silent><buffer><expr> E
+	\ defx#do_action('drop', 'vsplit')
+	nnoremap <silent><buffer><expr> P
+	\ defx#do_action('preview')
+	nnoremap <silent><buffer><expr> o
+	\ defx#do_action('open_tree', 'toggle')
+	nnoremap <silent><buffer><expr> K
+	\ defx#do_action('new_directory')
+	nnoremap <silent><buffer><expr> N
+	\ defx#do_action('new_file')
+	nnoremap <silent><buffer><expr> M
+	\ defx#do_action('new_multiple_files')
+	nnoremap <silent><buffer><expr> C
+	\ defx#do_action('toggle_columns',
+	\                'mark:indent:icon:filename:type:size:time')
+	nnoremap <silent><buffer><expr> S
+	\ defx#do_action('toggle_sort', 'time')
+	nnoremap <silent><buffer><expr> d
+	\ defx#do_action('remove')
+	nnoremap <silent><buffer><expr> r
+	\ defx#do_action('rename')
+	nnoremap <silent><buffer><expr> !
+	\ defx#do_action('execute_command')
+	nnoremap <silent><buffer><expr> x
+	\ defx#do_action('execute_system')
+	nnoremap <silent><buffer><expr> yy
+	\ defx#do_action('yank_path')
+	nnoremap <silent><buffer><expr> .
+	\ defx#do_action('toggle_ignored_files')
+	nnoremap <silent><buffer><expr> ;
+	\ defx#do_action('repeat')
+	nnoremap <silent><buffer><expr> h
+	\ defx#do_action('cd', ['..'])
+	nnoremap <silent><buffer><expr> ~
+	\ defx#do_action('cd')
+	nnoremap <silent><buffer><expr> q
+	\ defx#do_action('quit')
+	nnoremap <silent><buffer><expr> <Space>
+	\ defx#do_action('toggle_select') . 'j'
+	nnoremap <silent><buffer><expr> *
+	\ defx#do_action('toggle_select_all')
+	nnoremap <silent><buffer><expr> j
+	\ line('.') == line('$') ? 'gg' : 'j'
+	nnoremap <silent><buffer><expr> k
+	\ line('.') == 1 ? 'G' : 'k'
+	nnoremap <silent><buffer><expr> <C-l>
+	\ defx#do_action('redraw')
+	nnoremap <silent><buffer><expr> <C-g>
+	\ defx#do_action('print')
+	nnoremap <silent><buffer><expr> cd
+	\ defx#do_action('change_vim_cwd')
+'''
+
+[[plugins]]
+repo = 'tpope/vim-commentary'
+
+[[plugins]]
+repo = 'honza/vim-snippets'
+
+[[plugins]]
+repo = 'sheerun/vim-polyglot'
+
+[[plugins]]
+repo = 'nathanaelkane/vim-indent-guides'
+hook_add = '''
+  let g:indent_guides_enable_on_vim_startup = 1
+  hi IndentGuidesOdd  ctermbg=black
+  hi IndentGuidesEven ctermbg=darkgrey
+  let g:indent_guides_start_level = 2
+  let g:indent_guides_guide_size = 1
+  let g:indent_guides_exclude_filetypes = ['help', 'coc-explorer', 'fzf', 'startify']
+'''
+
+[[plugins]]
+repo = 'bronson/vim-trailing-whitespace'
+hook_add = '''
+  let g:extra_whitespace_ignored_filetypes = ['help', 'defx', 'startify']
+'''
+
+[[plugins]]
+repo = 'simeji/winresizer'
+hook_add = '''
+  let g:winresizer_vert_resize = 5
+  let g:winresizer_horiz_resize = 5
+'''
+
+[[plugins]]
+repo = 'previm/previm'
+on_ft = [ 'markdown', 'md']
+
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+
+# カーソル操作
+[[plugins]]
+repo = 'terryma/vim-multiple-cursors'
+
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+[[plugins]]
+repo = 'mhinz/vim-startify'
+hook_add = '''
+  " vim-startify で開くときに、そのディレクトリに移動する
+  let g:startify_change_to_dir = 1
+  " git ディレクトリを開く場合は、トップディレクトリに移動する
+  let g:startify_change_to_vcs_root = 1
+  " empty buffer や quit を表示する
+  let g:startify_enable_special = 1
+  " 最初に表示する内容を記載する
+  let g:startify_lists = [
+         \ { 'type': 'files',     'header': ['最近使ったファイル'] },
+         \ { 'type': 'dir',       'header': ['カレントディレクトリ配下で最近使ったファイル'] },
+         \ { 'type': 'sessions',  'header': ['Session']       },
+         \ { 'type': 'bookmarks', 'header': ['Bookmarks']      },
+         \ { 'type': 'commands',  'header': ['Commands']       },
+      \ ]
+
+  " 起動時のログを指定
+  let g:startify_custom_header = [
+        \ '  ___      ___ ___  _____ ______',
+        \ ' |\  \    /  /|\  \|\   _ \  _   \',
+        \ ' \ \  \  /  / | \  \ \  \\\__\ \  \',
+        \ '  \ \  \/  / / \ \  \ \  \\|__| \  \',
+        \ '   \ \    / /   \ \  \ \  \    \ \  \',
+        \ '    \ \__/ /     \ \__\ \__\    \ \__\',
+        \ '     \|__|/       \|__|\|__|     \|__|',
+        \ ]
+'''
+
+[[plugins]]
+repo = 'vim-jp/vimdoc-ja'
+
+[[plugins]]
+repo = 'reireias/vim-cheatsheet'
+hook_add = '''
+  let g:cheatsheet#cheat_file = '$DOTFILES_PATH/Doc/cheetsheet.md'
+'''
+
+# カラープレビュー
+[[plugins]]
+repo = 'gko/vim-coloresque'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+
+[[plugins]]
+repo = 'tpope/vim-rhubarb'
+
+[[plugins]]
+repo = 'christoomey/vim-tmux-navigator'
+hook_add = '''
+  let g:tmux_navigator_no_mappings = 1
+  let g:tmux_navigator_save_on_switch = 2
+  let g:tmux_navigator_no_mappings = 1
+  nnoremap <silent> <C-S-h> :TmuxNavigateLeft<cr>
+  nnoremap <silent> <C-S-j> :TmuxNavigateDown<cr>
+  nnoremap <silent> <C-S-k> :TmuxNavigateUp<cr>
+  nnoremap <silent> <C-S-l> :TmuxNavigateRight<cr>
+  nnoremap <silent> <C-S-\> :TmuxNavigatePrevious<cr>
+'''
+
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+depends = ['vim-airline/vim-airline-themes']
+
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+hook_add = '''
+  let g:airline_theme='hybridline'
+'''
+
+[[plugins]]
+repo = 'easymotion/vim-easymotion'
+on_map   = ['<Plug>(easymotion-']
+hook_add = '''
+  nmap f <Plug>(easymotion-prefix)
+'''
+
+[[plugins]]
+repo = 'andymass/vim-matchup'
+
+[[plugins]]
+repo = 'osyo-manga/vim-anzu'
+hook_add = '''
+  nmap n <Plug>(anzu-n-with-echo)
+  nmap N <Plug>(anzu-N-with-echo)
+  nmap * <Plug>(anzu-star-with-echo)
+  nmap # <Plug>(anzu-sharp-with-echo)
+'''
+
+[[plugins]]
+repo = 'markonm/traces.vim'
+
+[[plugins]]
+repo = 'ap/vim-buftabline'
+
+[[plugins]] # Color
+repo = 'w0ng/vim-hybrid'
+hook_add = '''
+  set background=dark
+  colorscheme hybrid
+'''
