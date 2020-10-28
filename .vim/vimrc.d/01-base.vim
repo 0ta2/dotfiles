@@ -88,10 +88,6 @@ set shiftwidth=2
 " The kind of folding used for the current window.
 set foldmethod=indent
 
-" Setting colorscheme
-set background=dark
-colorscheme PaperColor
-
 " Settings python.
 let g:python_host_prog="$HOME/.pyenv/versions/py2neovim/bin/python"
 let g:python3_host_prog="$HOME/.pyenv/versions/py3neovim/bin/python"

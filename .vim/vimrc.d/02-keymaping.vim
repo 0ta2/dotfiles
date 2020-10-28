@@ -1,9 +1,6 @@
 "--------------
 " Basic Key Mapping
 "--------------
-" mapleader を指定
-let mapleader = "\<Space>"
-
 " 検索後の強調表示を解除する
 noremap <silent> <Esc><Esc> :nohlsearch<CR><Esc>
 

@@ -1,101 +1,56 @@
 "--------------
-" vim-plug
+" mapleader
 "--------------
-call plug#begin('~/.vim/plugged')
-" coc
-  Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
-  let g:coc_global_extensions = [
-    \ 'coc-snippets'
-    \, 'coc-explorer'
-    \, 'coc-phpls'
-    \, 'coc-html'
-    \, 'coc-css'
-    \, 'coc-yaml'
-    \, 'coc-pairs'
-    \, 'coc-vimlsp'
-    \, 'coc-markdownlint'
-    \, 'coc-yank'
-    \, 'coc-sh'
-    \, 'coc-actions'
-    \, 'coc-docker'
-    \, 'coc-spell-checker'
-    \, 'coc-lists'
-    \, 'coc-json'
-    \, 'coc-dictionary'
-    \, 'coc-word'
-    \, 'coc-emoji'
-    \, 'coc-syntax'
-    \, 'coc-bookmark'
-    \, 'coc-bootstrap-classname'
-    \, 'coc-zi'
-    \, 'coc-tsserver'
-    \, 'coc-vetur'
-    \, 'coc-fzf-preview'
-  \ ]
+" mapleader を指定
+let mapleader = "\<Space>"
 
-" Dev
-  Plug 'tpope/vim-commentary'       " コメントアウト
-  Plug 'dense-analysis/ale'         " シンタックスチェック
-  Plug 'sheerun/vim-polyglot'       " 各言語の設定パック
-  Plug 'liuchengxu/vista.vim'       " ナビゲーター
-  Plug 'honza/vim-snippets'         " スニペット
+"--------------
+" dein.vim
+"--------------
+" dein.vim settings
+  let s:dein_dir = expand('~/.cache/dein')
+  let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 
-" Git
-  Plug 'tpope/vim-fugitive'       " Vim からGit操作
-  Plug 'airblade/vim-gitgutter'   " 変更点を行番号に表示
-  Plug 'tpope/vim-rhubarb'        " GitのURLアクセス
+" dein installation check
+  if &runtimepath !~# '/dein.vim'
+    if !isdirectory(s:dein_repo_dir)
+      execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+    endif
+    execute 'set runtimepath^=' . s:dein_repo_dir
+  endif
+    set background=dark
 
-" fzf
-  Plug '/usr/local/opt/fzf'       " Homebrew でインストールした、fzf を使用
-  Plug 'junegunn/fzf.vim'         " Vim から fzf を使用
+" begin settings
+  if dein#load_state(s:dein_dir)
+    call dein#begin(s:dein_dir)
 
-" Status ber
-  Plug 'vim-airline/vim-airline'        " ステータスバーの拡張
-  Plug 'vim-airline/vim-airline-themes' " ステータスバーのカラーテーマ
+    " .tmol file
+      let s:rc_dir = expand('~/.vim')
+      let s:toml = s:rc_dir . '/dein.toml'
 
-" tmux
-  Plug 'christoomey/vim-tmux-navigator' " tmuxとの連携強化
+    " read toml and cache
+      call dein#load_toml(s:toml, {'lazy': 0})
 
-" move
-  Plug 'easymotion/vim-easymotion'      " vim移動拡張
-  Plug 'andymass/vim-matchup'           " 対応するカッコに移動強化
+    call dein#end()
+    call dein#save_state()
+  endif
 
-" display
-  Plug 'nathanaelkane/vim-indent-guides'  " インデント可視化
-  Plug 'bronson/vim-trailing-whitespace'  " 末尾にあるスペースを可視化
-  Plug 'simeji/winresizer'                " 分割のリサイズ
-  Plug 'previm/previm'                    " markdown preview
-  Plug 'tyru/open-browser.vim'            " ブラウザ起動
+" plugin installation check
+  if dein#check_install()
+    call dein#install()
+  endif
 
-" cursor
-  Plug 'terryma/vim-multiple-cursors'   " カーソル操作
+" plugin remove check
+  let s:removed_plugins = dein#check_clean()
+  if len(s:removed_plugins) > 0
+    call map(s:removed_plugins, "delete(v:val, 'rf')")
+    call dein#recache_runtimepath()
+  endif
 
-" Search
-  Plug 'osyo-manga/vim-anzu'            " 検索位置表示
-  Plug 'markonm/traces.vim'             " 置換結果プレビュー
-
-" buffer
-  Plug 'ap/vim-buftabline'              " bufferのタブ表示
-
-" Color
-  Plug 'morhetz/gruvbox'
-  Plug 'rakr/vim-one'
-  Plug 'cocopon/iceberg.vim'
-  Plug 'gkeep/iceberg-dark'
-  Plug 'NLKNguyen/papercolor-theme'
-
-" Other
-  Plug 'tpope/vim-surround'             " カッコの編集
-  Plug 'mhinz/vim-startify'             " ダッシュボード
-  Plug 'vim-jp/vimdoc-ja'               " help の日本語化
-  Plug 'reireias/vim-cheatsheet'        " チャートシート
-  Plug 'gko/vim-coloresque'             " カラープレビュー
-  Plug 'ryanoasis/vim-devicons'         " アイコン
-
-call plug#end()
+filetype plugin indent on
+syntax enable
 
 "--------------
 " Load vim files
-" let g:fugitive_browse_handlers
 "--------------
 runtime! vimrc.d/*.vim
