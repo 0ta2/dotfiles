@@ -27,7 +27,6 @@ hook_add = '''
 	\ `finddir('.git', ';') != '' ? 'file/rec/git' : 'file/rec'`<CR>
 
 '''
-
 [plugins.ftplugin]
 denite = '''
   nnoremap <silent><buffer><expr> <CR>
@@ -36,7 +35,7 @@ denite = '''
   \ denite#do_map('do_action', 'delete')
   nnoremap <silent><buffer><expr> p
   \ denite#do_map('do_action', 'preview')
-  nnoremap <silent><buffer><expr> <Esc><Esc>
+  nnoremap <silent><buffer><expr> q
   \ denite#do_map('quit')
   nnoremap <silent><buffer><expr> i
   \ denite#do_map('open_filter_buffer')
