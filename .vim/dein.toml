@@ -63,6 +63,12 @@ denite = '''
 '''
 
 [[plugins]]
+repo = 'Shougo/neoyank.vim'
+hook_add = '''
+  let g:neoyank#file = $HOME.'/.vim/yankring.txt'
+'''
+
+[[plugins]]
 repo = 'prabirshrestha/vim-lsp'
 hook_add = '''
   function! s:on_lsp_buffer_enabled() abort
