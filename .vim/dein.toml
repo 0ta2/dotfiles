@@ -41,10 +41,11 @@ hook_add = '''
 	call denite#custom#var('file/rec/git', 'command',
 	\ ['git', 'ls-files', '-co', '--exclude-standard'])
 
-	nnoremap <silent> <C-p> :<C-u>Denite
-	\ `finddir('.git', ';') != '' ? 'file/rec/git' : 'file/rec'`<CR>
+  " Project file/rec
+  nnoremap <silent><Leader>ff :<C-u> DeniteProjectDir file/rec <CR>
 
-  nnoremap <silent><Leader>ff :<C-u> Denite file/rec/git <CR>
+  " Yank History
+  nnoremap <silent><Leader>y :<C-u> Denite neoyank <CR>
 '''
 [plugins.ftplugin]
 denite = '''
@@ -67,6 +68,9 @@ repo = 'Shougo/neoyank.vim'
 hook_add = '''
   let g:neoyank#file = $HOME.'/.vim/yankring.txt'
 '''
+
+[[plugins]]
+repo = 'jiangmiao/auto-pairs'
 
 [[plugins]]
 repo = 'prabirshrestha/vim-lsp'
