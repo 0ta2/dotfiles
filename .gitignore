@@ -23,6 +23,7 @@ node_modules/*
 .vim/sessions
 .vim/tmp/undo/*
 .vim/tmp/backup/*
+.vim/yankring.txt
 
 ### tmux
 .tmux/plugins/*
