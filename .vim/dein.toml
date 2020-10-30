@@ -26,6 +26,7 @@ hook_add = '''
 	nnoremap <silent> <C-p> :<C-u>Denite
 	\ `finddir('.git', ';') != '' ? 'file/rec/git' : 'file/rec'`<CR>
 
+  nnoremap <silent><Leader>ff :<C-u> Denite file/rec/git <CR>
 '''
 [plugins.ftplugin]
 denite = '''
