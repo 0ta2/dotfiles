@@ -222,6 +222,13 @@ on_ft = [ 'markdown', 'md']
 [[plugins]]
 repo = 'tyru/open-browser.vim'
 
+[[plugins]]
+repo = 'vim-scripts/VOoM'
+hook_add = '''
+  let g:voom_tree_placement = "right"
+'''
+
+
 # カーソル操作
 [[plugins]]
 repo = 'terryma/vim-multiple-cursors'
