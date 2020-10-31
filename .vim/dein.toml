@@ -41,6 +41,9 @@ hook_add = '''
 	call denite#custom#var('file/rec/git', 'command',
 	\ ['git', 'ls-files', '-co', '--exclude-standard'])
 
+  " command
+  nnoremap <silent><Leader>c :<C-u> Denite command <CR>
+
   " Project file/rec
   nnoremap <silent><Leader>ff :<C-u> DeniteProjectDir file/rec <CR>
 
