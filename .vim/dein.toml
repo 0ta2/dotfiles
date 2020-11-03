@@ -183,6 +183,12 @@ defx = '''
 '''
 
 [[plugins]]
+repo = 'tbodt/deoplete-tabnine'
+hook_post_update = '''
+  build = './install.sh'
+'''
+
+[[plugins]]
 repo = 'tpope/vim-commentary'
 
 [[plugins]]
