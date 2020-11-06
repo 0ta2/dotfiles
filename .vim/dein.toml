@@ -122,12 +122,6 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'mattn/vim-lsp-settings'
-
-[[plugins]]
-repo = 'lighttiger2505/deoplete-vim-lsp'
-
-[[plugins]]
 repo = 'Shougo/defx.nvim'
 hook_add = '''
   call defx#custom#option('_', {
@@ -204,6 +198,12 @@ defx = '''
 	nnoremap <silent><buffer><expr> cd
 	\ defx#do_action('change_vim_cwd')
 '''
+
+[[plugins]]
+repo = 'mattn/vim-lsp-settings'
+
+[[plugins]]
+repo = 'lighttiger2505/deoplete-vim-lsp'
 
 [[plugins]]
 repo = 'tbodt/deoplete-tabnine'
