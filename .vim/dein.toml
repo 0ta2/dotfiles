@@ -213,9 +213,6 @@ build = './install.sh'
 repo = 'tpope/vim-commentary'
 
 [[plugins]]
-repo = 'honza/vim-snippets'
-
-[[plugins]]
 repo = 'sheerun/vim-polyglot'
 
 [[plugins]]

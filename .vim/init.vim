@@ -27,9 +27,11 @@ let mapleader = "\<Space>"
     " .tmol file
       let s:rc_dir = expand('~/.vim')
       let s:toml = s:rc_dir . '/dein.toml'
+      let s:lazy = s:rc_dir . '/lazy.toml'
 
     " read toml and cache
       call dein#load_toml(s:toml, {'lazy': 0})
+      call dein#load_toml(s:lazy, {'lazy': 1})
 
     call dein#end()
     call dein#save_state()
