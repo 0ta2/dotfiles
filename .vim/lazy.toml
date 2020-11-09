@@ -1,5 +1,6 @@
 [[plugins]]
 repo = 'Shougo/deoppet.nvim'
+depends = ['neosnippet-snippets', 'context_filetype.vim']
 on_event = 'InsertEnter'
 hook_source = '''
 	imap <C-k>  <Plug>(deoppet_expand)
@@ -12,10 +13,12 @@ hook_source = '''
 
   call deoppet#initialize()
 	call deoppet#custom#option('snippets_dirs',
-  \ [expand('~/.vim/ultisnips')] +
+  \ [expand('~/.vim/snippets')] +
 	\ globpath(&runtimepath, 'neosnippets', 1, 1))
-
 '''
 
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+repo = 'Shougo/context_filetype.vim'

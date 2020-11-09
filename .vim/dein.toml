@@ -12,22 +12,22 @@ hook_add = '''
   let g:deoplete#enable_at_startup = 1
   set completeopt-=preview
 
-  " Set a single option
-  call deoplete#custom#option('auto_complete_delay', 200)
-
   " Pass a dictionary to set multiple options
   call deoplete#custom#option({
     \ 'smart_case': v:true,
+    \ 'auto_complete_delay': 0,
+    \ 'auto_refresh_delay': 20,
   \ })
 
-  inoremap <silent><expr> <TAB>
-  \ pumvisible() ? "\<C-n>" :
-  \ <SID>check_back_space() ? "\<TAB>" :
-  \ deoplete#manual_complete()
-  function! s:check_back_space() abort "{{{
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-  endfunction"}}}
+  let s:use_lsp_sources = ['lsp','tabnine', 'buffer', 'file']
+  call deoplete#custom#option('sources', {
+    \ 'go': s:use_lsp_sources,
+    \ 'python': s:use_lsp_sources,
+    \ 'vim': ['vim', 'tabnine','buffer', 'file'],
+  \})
+
+  inoremap <silent><expr> <CR>
+    \ pumvisible() ? "<C-y>" : "<CR>"
 '''
 
 [[plugins]]
@@ -46,7 +46,6 @@ hook_add = '''
 		\ 'separator': ['--'],
 		\ 'final_opts': [],
 		\ })
-
 
 	call denite#custom#alias('source', 'file/rec/git', 'file/rec')
 	call denite#custom#var('file/rec/git', 'command',
@@ -101,6 +100,15 @@ repo = 'jiangmiao/auto-pairs'
 [[plugins]]
 repo = 'prabirshrestha/vim-lsp'
 hook_add = '''
+  let g:lsp_signs_enabled = 1
+  let g:lsp_diagnostics_enabled = 1
+  let g:lsp_diagnostics_echo_cursor = 1
+  let g:lsp_virtual_text_enabled = 1
+  let g:lsp_signs_error = {'text': '✗'}
+  let g:lsp_signs_warning = {'text': '‼'}
+  let g:lsp_signs_information = {'text': 'i'}
+  let g:lsp_signs_hint = {'text': '?'}
+
   function! s:on_lsp_buffer_enabled() abort
     setlocal omnifunc=lsp#complete
     setlocal signcolumn=yes
@@ -361,8 +369,8 @@ repo = 'markonm/traces.vim'
 repo = 'ap/vim-buftabline'
 
 [[plugins]] # Color
-repo = 'w0ng/vim-hybrid'
+repo = 'ryuta69/elly.vim'
 hook_add = '''
-  set background=dark
-  colorscheme hybrid
+  colorscheme elly
+  set termguicolors
 '''
