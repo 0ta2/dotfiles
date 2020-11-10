@@ -19,11 +19,11 @@ hook_add = '''
     \ 'auto_refresh_delay': 20,
   \ })
 
-  let s:use_lsp_sources = ['lsp','tabnine', 'buffer', 'file']
+  let s:use_lsp_sources = ['lsp', 'buffer', 'file']
   call deoplete#custom#option('sources', {
     \ 'go': s:use_lsp_sources,
     \ 'python': s:use_lsp_sources,
-    \ 'vim': ['vim', 'tabnine','buffer', 'file'],
+    \ 'vim': ['vim', 'buffer', 'file'],
   \})
 
   inoremap <silent><expr> <CR>
@@ -212,10 +212,6 @@ repo = 'mattn/vim-lsp-settings'
 
 [[plugins]]
 repo = 'lighttiger2505/deoplete-vim-lsp'
-
-[[plugins]]
-repo = 'tbodt/deoplete-tabnine'
-build = './install.sh'
 
 [[plugins]]
 repo = 'tpope/vim-commentary'
