@@ -22,3 +22,19 @@ repo = 'Shougo/neosnippet-snippets'
 
 [[plugins]]
 repo = 'Shougo/context_filetype.vim'
+
+[[plugins]]
+repo = 'endel/ctrlp-filetype.vim'
+deoppet = ['ctrlp.vim']
+
+[[plugins]]
+repo = 'ctrlpvim/ctrlp.vim'
+hook_add = '''
+  let g:ctrlp_show_hidden = 1
+  let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'dir', 'rtscript',
+                          \ 'undo', 'line', 'changes', 'mixed', 'bookmarkdir',
+                          \ 'filetype']
+  nnoremap <silent><Leader>b :<C-u> CtrlPBuffer <CR>
+  nnoremap <silent><Leader>l :<C-u> CtrlPLine <CR>
+  nnoremap <silent><Leader>f :<C-u> CtrlPFiletype <CR>
+'''
