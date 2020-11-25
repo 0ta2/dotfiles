@@ -65,7 +65,6 @@ cask "vlc"
 cask "1password"
 cask "slack"
 cask "bettertouchtool"
-cask "notion"
 
 ## terminal
 cask "iTerm2"
@@ -82,7 +81,4 @@ mas "Tweetbot", id: 1384080005
 mas "LINE", id: 539883307
 mas "Spark", id: 1176895641
 mas "Translate Tab", id: 458887729
-mas "MindNode", id: 1289197285
 mas "Xcode", id: 497799835
-mas "BetterSnapTool", id: 417375580
-mas "Things", id: 904280696

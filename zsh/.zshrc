@@ -168,6 +168,8 @@ if [ -f ~/.fzf.zsh ]; then
   export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 fi
 
+export GOBIN="$GOPATH/bin"
+
 #   path=xxxx(N-/)
 #     (N-/): 存在しないディレクトリは登録しない
 #     パス(...): ...という条件にマッチするパスのみ残す
