@@ -225,7 +225,5 @@ return require('packer').startup(function()
   }
 
   -- カラー設定
-  use {'sainnhe/sonokai',
-    vim.cmd('colorscheme sonokai')
-  }
+  use {'sainnhe/sonokai'}
 end)

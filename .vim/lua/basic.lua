@@ -65,9 +65,12 @@ vim.o.shiftwidth = 2
 -- The kind of folding used for the current window.
 vim.wo.foldmethod = 'manual'
 
+-- Colorscheme
+vim.cmd('colorscheme sonokai')
+
 -- undofile
 vim.cmd [[ set undofile ]]
-vim.cmd [[ set undodir=~/.vim/tmp/tmp ]]
+vim.cmd [[ set undodir=~/.vim/tmp/undo ]]
 -- backupfile
 vim.cmd [[ set backup ]]
 vim.cmd [[ set backupdir=~/.vim/tmp/backup ]]
