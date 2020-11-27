@@ -66,7 +66,7 @@ vim.o.shiftwidth = 2
 vim.wo.foldmethod = 'manual'
 
 -- Colorscheme
-vim.cmd('colorscheme sonokai')
+vim.cmd('colorscheme nvcode')
 
 -- undofile
 vim.cmd [[ set undofile ]]
