@@ -225,5 +225,6 @@ return require('packer').startup(function()
   }
 
   -- カラー設定
-  use {'sainnhe/sonokai'}
+  use {'christianchiarulli/nvcode-color-schemes.vim'}
+  use {'nvim-treesitter/nvim-treesitter'}
 end)
