@@ -23,6 +23,7 @@ node_modules/*
 .vim/sessions
 .vim/tmp/*
 .vim/yankring.txt
+.vim/plugin/packer_compiled.vim
 
 ### tmux
 .tmux/plugins/*
