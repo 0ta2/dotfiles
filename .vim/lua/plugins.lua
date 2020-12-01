@@ -207,7 +207,11 @@ return require('packer').startup(function()
   }
 
   -- 移動
-  use {'unblevable/quick-scope'}
+  use {'easymotion/vim-easymotion',
+    config = function()
+      vim.api.nvim_set_keymap('', 'f', '<Plug>(easymotion-prefix)', { noremap = false, silent = true  })
+    end
+  }
 
   -- カッコ移動の強化
   use {'andymass/vim-matchup'}
