@@ -17,10 +17,6 @@ vim.api.nvim_set_keymap('n', 'L', '$', { noremap = true, silent = true })
 -- Y で末尾までコピー
 vim.api.nvim_set_keymap('n', 'Y', 'y$', { noremap = true, silent = true })
 
--- インクリメント/デクリメント
-vim.api.nvim_set_keymap('n', '<C-a>', '<C-n>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-x>', '<C-p>', { noremap = true, silent = true })
-
 -- 行が折り返し表示されている場合、表示行単位で移動
 vim.api.nvim_set_keymap('n', 'j', 'gj', { noremap = true, silent = ture })
 vim.api.nvim_set_keymap('n', 'k', 'gk', { noremap = true, silent = ture })
