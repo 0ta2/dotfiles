@@ -229,6 +229,10 @@ return require('packer').startup(function()
   }
 
   -- カラー設定
-  use {'christianchiarulli/nvcode-color-schemes.vim'}
+  use {
+    'christianchiarulli/nvcode-color-schemes.vim',
+    config = require'plugins.colorscheme',
+    as = 'colorscheme',
+  }
   use {'nvim-treesitter/nvim-treesitter'}
 end)
