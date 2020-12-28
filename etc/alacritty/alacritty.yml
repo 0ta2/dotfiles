@@ -33,7 +33,8 @@ font:
 
 background_opacity: 1.00
 
-decorations: none
+window:
+  decorations: buttonless
 
 scrolling:
   history: 100000
