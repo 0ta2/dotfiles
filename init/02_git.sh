@@ -23,6 +23,7 @@ GIT_CONFIGS=(
   "core,editor,nvim"
   "color,ui,auto"
   "credential,helper,cache"
+  "pull,rebase,false"
 )
 
 # Set an alias in an associative array.
