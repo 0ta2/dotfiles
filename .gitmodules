@@ -4,6 +4,3 @@
 [submodule "zsh/.zim"]
 	path = zsh/.zim
 	url = https://github.com/zimfw/zimfw.git
-[submodule ".vim/packer.nvim"]
-	path = .vim/packer.nvim
-	url = https://github.com/wbthomason/packer.nvim.git
