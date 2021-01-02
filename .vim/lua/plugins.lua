@@ -180,9 +180,10 @@ return require('packer').startup(function()
     'ctrlpvim/ctrlp.vim',
     config = function()
       vim.g.ctrlp_map = '<Nop>'
-      vim.g.ctrlp_show_hidden = 1
       vim.g.ctrlp_extensions = {'tag', 'buffertag', 'quickfix', 'dir', 'rtscript', 'undo', 'line', 'changes', 'mixed', 'bookmarkdir', 'filetype'}
-      vim.g.ctrlp_user_command = [[ rg %s --files --color=never --glob "" ]]
+      -- vim.g.ctrlp_user_command = [[ rg %s --files --hidden --color=never --glob "" ]]
+      vim.g.ctrlp_user_command = {'.git', 'rg %s --files --hidden --color=never' }
+      vim.g.ctrlp_use_caching = 0
 
       -- keymap
       vim.api.nvim_set_keymap('n', leader .. leader, ':<C-u> CtrlPMixed <CR>', { noremap = true, silent = true  })
