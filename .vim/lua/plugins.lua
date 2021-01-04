@@ -62,6 +62,14 @@ return require('packer').startup(function()
     }
   }
 
+  -- lsp tagbar
+  use {
+    'liuchengxu/vista.vim',
+    config = function()
+      require'config/vista'.setup()
+    end
+  }
+
   -- Golnag
   use {'mattn/vim-goimports'}
 
