@@ -73,7 +73,7 @@ vim.cmd [[ set backup ]]
 vim.cmd [[ set backupdir=~/.vim/tmp/backup ]]
 
 -- Set the behavior at completion.
-vim.cmd('set completeopt=menuone,noinsert,noselect')
+vim.o.completeopt = 'menuone,noinsert,noselect'
 
 -- Settings python.
 vim.g.python_host_prog = vim.env.HOME .. '/.pyenv/versions/py2neovim/bin/python'
