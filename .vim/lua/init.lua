@@ -1,8 +1,8 @@
 -- Basic Settings
-require('basic')
+require"basic"
 
 -- Basic Key Mapping
-require('keymap')
+require"keymap"
 
 -- Require plugins
-require('plugins')
+require"plugins".init()
