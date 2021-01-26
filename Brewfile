@@ -68,6 +68,7 @@ cask "bettertouchtool"
 
 ## terminal
 cask "iTerm2"
+cask "alacritty"
 
 ## editor
 cask "visual-studio-code"
