@@ -2,16 +2,27 @@ local use = require"packer".use
 
 -- completion engine
 local function init()
-  use {'prabirshrestha/asyncomplete.vim',
+--   use {'prabirshrestha/asyncomplete.vim',
+--     config = function()
+--       require"config.asyncomplete".init()
+--     end,
+--     requires = {
+--       {'prabirshrestha/asyncomplete-lsp.vim'},
+--       {'prabirshrestha/asyncomplete-buffer.vim'},
+--       {'prabirshrestha/asyncomplete-file.vim'},
+--       {'prabirshrestha/asyncomplete-ultisnips.vim'},
+--       {'wellle/tmux-complete.vim'}
+--     }
+--   }
+
+  use {
+    'hrsh7th/nvim-compe',
     config = function()
-      require"config.asyncomplete".init()
+      require"config.nvim-compe".init()
     end,
     requires = {
-      {'prabirshrestha/asyncomplete-lsp.vim'},
-      {'prabirshrestha/asyncomplete-buffer.vim'},
-      {'prabirshrestha/asyncomplete-file.vim'},
-      {'prabirshrestha/asyncomplete-ultisnips.vim'},
-      {'wellle/tmux-complete.vim'}
+      {'hrsh7th/vim-vsnip'},
+      {'hrsh7th/vim-vsnip-integ'},
     }
   }
 
