@@ -2,22 +2,22 @@ local use = require"packer".use
 
 local function init()
   -- lsp config
-  use {
-    'prabirshrestha/vim-lsp',
-    config = function()
-      require"config.vim-lsp".init()
-    end,
-    requires = {
-      {'mattn/vim-lsp-settings'}
-    }
-  }
-
   -- use {
-  --   "neovim/nvim-lspconfig",
+  --   'prabirshrestha/vim-lsp',
   --   config = function()
-  --     require"config.nvim-lspconfig".init()
-  --   end
+  --     require"config.vim-lsp".init()
+  --   end,
+  --   requires = {
+  --     {'mattn/vim-lsp-settings'}
+  --   }
   -- }
+
+  use {
+    "neovim/nvim-lspconfig",
+    config = function()
+      require"config.nvim-lspconfig"
+    end
+  }
 
   -- lsp tagbar
   use {
