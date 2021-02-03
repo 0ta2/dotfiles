@@ -65,6 +65,12 @@ vim.o.shiftwidth = 2
 -- The kind of folding used for the current window.
 vim.wo.foldmethod = 'manual'
 
+-- Change regular expression to backtracking engine.
+vim.o.regexpengine = 1
+
+-- Maximum number of digits to search for a syntax item.
+vim.o.synmaxcol = 300
+
 -- undofile
 vim.cmd [[ set undofile ]]
 vim.cmd [[ set undodir=~/.vim/tmp/undo ]]
