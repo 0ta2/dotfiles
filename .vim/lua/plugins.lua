@@ -11,6 +11,9 @@ end
 ----Only required if you have packer in your `opt` pack
 vim.cmd [[packadd packer.nvim]]
 
+-- Auto PackerCompile
+vim.cmd[[autocmd BufWritePost plugins.lua PackerCompile]]
+
 local packer = nil
 local function init()
   if packer == nil then
