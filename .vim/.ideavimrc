@@ -12,8 +12,8 @@ noremap ; :
 inoremap <silent> jj <Esc>
 
 " H/L で ^ と $ に移動
-nnoremap <silent>H ^
-nnoremap <silent>L $
+nnoremap <silent> H ^
+nnoremap <silent> L $
 
 " Y で末尾までコピー
 nnoremap <silent>Y y$
