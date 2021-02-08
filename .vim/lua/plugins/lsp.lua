@@ -16,7 +16,16 @@ local function init()
     "neovim/nvim-lspconfig",
     config = function()
       require"config.nvim-lspconfig"
-    end
+    end,
+    requires = {
+      {'mattn/vim-lsp-settings'},
+      {
+        'glepnir/lspsaga.nvim',
+        config = function()
+          require"config/lspsaga".init()
+        end
+      }
+    }
   }
 
   -- lsp tagbar

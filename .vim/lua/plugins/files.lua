@@ -10,7 +10,7 @@ local function init()
   }
 
   -- 末尾の空白スペースの表示
-  use {
+ use {
     'bronson/vim-trailing-whitespace',
     config = function()
       require"config.vim-trailing-whitespace".init()
