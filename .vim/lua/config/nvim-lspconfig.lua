@@ -30,6 +30,9 @@ local servers = {
       }
     }
   },
+  intelephense = {
+    cmd = { "intelephense", "--stdio" },
+  },
   pyls = {
     cmd = { "$HOME/.local/share/vim-lsp-settings/servers/pyls/venv/bin/pyls" };
   }
