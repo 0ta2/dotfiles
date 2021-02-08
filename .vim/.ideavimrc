@@ -93,7 +93,7 @@ nnoremap <C-K> <C-w>k
 nnoremap <C-L> <C-w>l
 nnoremap <C-H> <C-w>h
 
-nnoremap <Leader><Leader> :<C-u>action GotoFile<CR>
+nnoremap <Leader>f :<C-u>action GotoFile<CR>
 nnoremap <Leader>c :<C-u>action GotoAction<CR>
 nnoremap / :<C-u>action Find<CR>
 nnoremap <Leader>n :action NextTab<CR>

@@ -7,6 +7,14 @@ local function init()
       require"config.colorscheme".init()
     end
   }
+
+  use {
+    'sainnhe/sonokai',
+    config = function()
+      require"config.colorscheme".init()
+    end
+
+  }
 end
 
 return {
