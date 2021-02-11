@@ -1,0 +1,14 @@
+[
+  {
+    "key": "space f",
+    "command": "workbench.action.quickOpen"
+  },
+  {
+    "key": "space c",
+    "command": "workbench.action.showCommands"
+  },
+  {
+    "key": "shift+cmd+p",
+    "command": "-workbench.action.showCommands"
+  }
+]
