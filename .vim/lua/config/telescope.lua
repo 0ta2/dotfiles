@@ -13,7 +13,7 @@ function M.setup_settings()
             '--line-number',
             '--column',
             '--smart-case',
-            '--unrestricted'
+            '--hidden'
          }
       }
    }
