@@ -37,7 +37,15 @@ local servers = {
   },
   pyls = {
     cmd = { "$HOME/.local/share/vim-lsp-settings/servers/pyls/venv/bin/pyls" };
-  }
+  },
+  dockerls = {},
+  html = {},
+  cssls = {},
+  tsserver = {},
+  vimls = {},
+  yamlls = {},
+  gopls = {},
+  bashls = {}
 }
 
 for server, config in pairs(servers) do

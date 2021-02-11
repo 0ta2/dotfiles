@@ -15,10 +15,16 @@ function M.on_attach()
     default = {
       {
         complete_items = {
-          'lsp',
-          'snippet',
-          'buffers',
-          'path',
+          path = true;
+          buffer = true;
+          calc = true;
+          vsnip = true;
+          nvim_lsp = true;
+          nvim_lua = true;
+          spell = true;
+          tags = true;
+          snippets_nvim = true;
+          treesitter = true;
         }
       },
     },
