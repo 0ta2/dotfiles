@@ -18,7 +18,9 @@ local function init()
       require"config.nvim-lspconfig"
     end,
     requires = {
-      {'mattn/vim-lsp-settings'},
+      {
+        'mattn/vim-lsp-settings'
+      },
       {
         'glepnir/lspsaga.nvim',
         config = function()
