@@ -2,8 +2,12 @@ local M = {}
 
 function M.init()
   local lualine = require('lualine')
-  lualine.theme = 'onedark'
-  lualine.separator = '|'
+  lualine.options = {
+    theme = 'ayu_dark',
+    section_separators = {'', ''},
+    component_separators = {'', ''},
+    icons_enabled = true,
+  }
   lualine.sections = {
     lualine_a = { 'mode' },
     lualine_b = { 'branch' },
