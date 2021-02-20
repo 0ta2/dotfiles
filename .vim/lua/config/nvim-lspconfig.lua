@@ -49,7 +49,11 @@ local servers = {
   bashls = {}
 }
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 for server, config in pairs(servers) do
   config.on_attach = on_attach
+  config.capabilities = capabilities
   lspconfig[server].setup(config)
 end
