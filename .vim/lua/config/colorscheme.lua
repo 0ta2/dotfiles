@@ -16,9 +16,14 @@ function M.moonfly()
   vim.cmd [[ colorscheme moonfly ]]
 end
 
+function M.oceanic_next()
+  vim.cmd [[ colorscheme OceanicNext ]]
+end
+
 function M.init()
+  M.nvcode()
   -- M.sonokai()
-  M.moonfly()
+  -- M.moonfly()
 end
 
 return M
