@@ -17,6 +17,13 @@ local function init()
 
   use {
     'bluz71/vim-moonfly-colors',
+    -- config = function()
+      -- require"config.colorscheme".init()
+    -- end
+  }
+
+  use {
+    'mhartington/oceanic-next',
     config = function()
       require"config.colorscheme".init()
     end
