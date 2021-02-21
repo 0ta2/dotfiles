@@ -39,7 +39,8 @@ vim.wo.cursorline = true
 vim.wo.cursorcolumn = true
 
 -- Use twice the width of ASCII characters.
-vim.o.ambiwidth = 'double'
+-- dobule or single
+vim.o.ambiwidth = 'single'
 
 -- Last line in a window will be displayed.
 vim.o.display = 'lastline'
