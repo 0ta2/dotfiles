@@ -1,7 +1,9 @@
 local use = require"packer".use
 
 local function init()
-  use {'easymotion/vim-easymotion',
+  -- 移動強化
+  use {
+    'easymotion/vim-easymotion',
     config = function()
       require"config.vim-easymotion".init()
     end
