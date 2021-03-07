@@ -20,10 +20,16 @@ function M.oceanic_next()
   vim.cmd [[ colorscheme OceanicNext ]]
 end
 
+function M.vim_gruvbox8()
+  vim.cmd [[ set background=dark ]]
+  vim.cmd [[ colorscheme gruvbox8 ]]
+end
+
 function M.init()
-  M.nvcode()
+  -- M.nvcode()
   -- M.sonokai()
   -- M.moonfly()
+  M.vim_gruvbox8()
 end
 
 return M
