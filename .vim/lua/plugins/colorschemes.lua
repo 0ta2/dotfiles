@@ -24,6 +24,13 @@ local function init()
 
   use {
     'mhartington/oceanic-next',
+  --   config = function()
+  --     require"config.colorscheme".init()
+  --   end
+  }
+
+  use {
+    'lifepillar/vim-gruvbox8',
     config = function()
       require"config.colorscheme".init()
     end
