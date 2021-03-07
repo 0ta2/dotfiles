@@ -42,9 +42,9 @@ local servers = {
   pyls = {
     cmd = { lsp_servers .. "/pyls/venv/bin/pyls" };
   },
-  -- tsserver = {
-    -- cmd = { lsp_servers .. "/typescript-language-server/typescript-language-server", "--stdio" };
-  -- },
+  --tsserver = {
+  -- cmd = { lsp_servers .. "/typescript-language-server/typescript-language-server", "--stdio" };
+  --},
   denols = {
     cmd = { lsp_servers .. "/deno/deno", "lsp" };
   },
