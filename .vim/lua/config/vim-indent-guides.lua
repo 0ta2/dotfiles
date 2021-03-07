@@ -9,11 +9,11 @@ local function init()
     'packer',
     'lspsagafinder',
     'TelescopePrompt',
-    'moving.lua'
+    'moving.lua',
+    'HopChar'
   }
 end
 
 return {
   init = init,
 }
-
