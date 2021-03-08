@@ -75,6 +75,9 @@ vim.o.synmaxcol = 300
 -- The time it takes to redraw the screen.
 vim.o.redrawtime = 1000
 
+-- 24-bit color support
+vim.o.termguicolors = true
+
 -- undofile
 vim.cmd [[ set undofile ]]
 vim.cmd [[ set undodir=~/.vim/tmp/undo ]]
