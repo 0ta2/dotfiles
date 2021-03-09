@@ -2,12 +2,12 @@ local use = require"packer".use
 
 local function init()
   -- 移動強化
-  use {
-    'easymotion/vim-easymotion',
-    config = function()
-      require"config.vim-easymotion".init()
-    end
-  }
+  -- use {
+  --   'easymotion/vim-easymotion',
+  --   config = function()
+  --     require"config.vim-easymotion".init()
+  --   end
+  -- }
 
   use {
     'phaazon/hop.nvim',
