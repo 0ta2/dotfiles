@@ -25,11 +25,16 @@ function M.vim_gruvbox8()
   vim.cmd [[ colorscheme gruvbox8 ]]
 end
 
+function M.melange()
+  vim.cmd [[ colorscheme melange ]]
+end
+
 function M.init()
   -- M.nvcode()
   -- M.sonokai()
   -- M.moonfly()
-  M.vim_gruvbox8()
+  -- M.vim_gruvbox8()
+  M.melange()
 end
 
 return M
