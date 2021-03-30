@@ -49,7 +49,10 @@ local servers = {
     cmd = { lsp_servers .. "/deno/deno", "lsp" };
   },
   dockerls = {},
-  html = {},
+  html = {
+    cmd = { lsp_servers .. "/html-languageserver/html-languageserver", "--stdio" };
+    filetypes = { "html", "twig"}
+  },
   cssls = {},
   vimls = {},
   yamlls = {},
