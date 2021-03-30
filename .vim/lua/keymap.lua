@@ -8,7 +8,7 @@ _G.leader = ' '
 api.nvim_set_keymap('n', '<Esc><Esc>', ':nohlsearch<CR>', opts)
 
 -- ; : を入れ替える
-api.nvim_set_keymap('n', ';', ':', opts)
+api.nvim_set_keymap('n', ';', ':', {})
 
 -- ファイル保存
 api.nvim_set_keymap('n', leader .. 'w', ':w<CR>', opts)
