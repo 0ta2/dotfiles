@@ -15,7 +15,9 @@ api.nvim_set_keymap('n', leader .. 'w', ':w<CR>', opts)
 
 -- H/L で ^ と $ に移動
 api.nvim_set_keymap('n', 'H', '^', opts)
+api.nvim_set_keymap('v', 'H', '^', opts)
 api.nvim_set_keymap('n', 'L', '$', opts)
+api.nvim_set_keymap('v', 'L', '$', opts)
 
 -- Y で末尾までコピー
 api.nvim_set_keymap('n', 'Y', 'y$', opts)
