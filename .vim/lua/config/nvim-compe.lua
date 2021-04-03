@@ -27,7 +27,7 @@ function M.setup_settings()
       vsnip = true;
       nvim_lsp = true;
       nvim_lua = true;
-      your_awesome_source = {};
+      tmux = true;
     };
   }
 end
