@@ -30,11 +30,11 @@ function M.melange()
 end
 
 function M.init()
-  -- M.nvcode()
+  M.nvcode()
   -- M.sonokai()
   -- M.moonfly()
   -- M.vim_gruvbox8()
-  M.melange()
+  -- M.melange()
 end
 
 return M
