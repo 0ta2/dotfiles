@@ -5,6 +5,10 @@ local function init()
   --  -- 各種言語の設定集
   --  'sheerun/vim-polyglot'
   --}
+  --
+  use {
+    'evidens/vim-twig'
+  }
 
   -- インデント表示
   use {
