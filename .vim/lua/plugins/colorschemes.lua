@@ -38,9 +38,9 @@ local function init()
 
   use {
     'savq/melange',
-    config = function ()
-      require"config.colorscheme".init()
-    end
+    -- config = function ()
+    --   require"config.colorscheme".init()
+    -- end
   }
 end
 
