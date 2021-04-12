@@ -13,6 +13,7 @@ local function on_attach(client, bufnr)
   buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
   buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
   buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
+  buf_set_keymap('n', leader ..'E', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
 
   if client.resolved_capabilities.document_formatting then
     buf_set_keymap("n", "for", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
