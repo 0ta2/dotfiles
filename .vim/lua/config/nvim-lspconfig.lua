@@ -55,7 +55,30 @@ local servers = {
   },
   cssls = {},
   vimls = {},
-  yamlls = {},
+  yamlls = {
+    cmd = { lsp_servers .. "/yaml-language-server/yaml-language-server", "--stdio"};
+    settings = {
+      json = {
+        schemas = {
+          {
+            description = "Docker Compose",
+            fileMatch = "docker-compose*.{yml,yaml}",
+            url = "https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"
+          },
+          {
+            description = "GitHub WorkFlow",
+            fileMatch = '.github/workflows/*.{yml,yaml}',
+            url = "https://json.schemastore.org/github-workflow.json"
+          },
+          {
+            description = "GitHub Action",
+            fileMatch = '.github/action.{yml,yaml}',
+            url = "https://json.schemastore.org/github-action.json"
+          },
+        },
+      },
+    },
+  },
   gopls = {},
   bashls = {}
 }
