@@ -24,6 +24,7 @@ local function init()
       {'hrsh7th/vim-vsnip'},
       {'hrsh7th/vim-vsnip-integ'},
       {'andersevenrud/compe-tmux'},
+      {'rafamadriz/friendly-snippets'}
     }
   }
 
