@@ -1,11 +1,11 @@
 local use = require"packer".use
 
 local function init()
-  --use {
-  --  -- 各種言語の設定集
-  --  'sheerun/vim-polyglot'
-  --}
-  --
+  use {
+    -- 各種言語の設定集
+    'sheerun/vim-polyglot'
+  }
+
   use {
     'evidens/vim-twig'
   }
