@@ -24,9 +24,10 @@ function M.setup_settings()
     source = {
       path = true;
       buffer = true;
-      vsnip = true;
+      calc = true;
       nvim_lsp = true;
       nvim_lua = true;
+      vsnip = true;
       tmux = true;
     };
   }
