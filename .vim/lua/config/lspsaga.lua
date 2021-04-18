@@ -4,7 +4,9 @@ local M = {}
 
 function M.setup_settings()
   local saga = require 'lspsaga'
-  saga.init_lsp_saga()
+  saga.init_lsp_saga {
+    code_action_icon = '💡',
+  }
 end
 
 function M.setup_keymappings()
@@ -14,6 +16,7 @@ function M.setup_keymappings()
   api.nvim_set_keymap('n', 'K', '<cmd>lua require("lspsaga.hover").render_hover_doc()<CR>', opts)
   api.nvim_set_keymap('n', '<C-k>', '<cmd>lua require("lspsaga.signaturehelp").signature_help()<CR>', opts)
   api.nvim_set_keymap('n', leader .. 'rn', '<cmd>lua require("lspsaga.rename").rename()<CR>', opts)
+  api.nvim_set_keymap('n', 'ca', '<cmd>lua require("lspsaga.codeaction").code_action()<CR>', opts)
 end
 
 function M.init()
