@@ -7,7 +7,6 @@ function M.init()
 
   vim.fn['wilder#enable_cmdline_enter']()
 
-  -- vim.o.wildcharm = 9
   vim.cmd [[ set wildcharm=<Tab> ]]
 
   api.nvim_set_keymap('c', '<Tab>', 'wilder#in_context() ? wilder#next() : "<Tab>"', opts)
