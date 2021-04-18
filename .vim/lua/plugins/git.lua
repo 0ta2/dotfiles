@@ -11,7 +11,10 @@ local function init()
     'tpope/vim-fugitive'
   }
   use {
-    'airblade/vim-gitgutter'
+   'airblade/vim-gitgutter',
+    config = function()
+      require"config.vim-gitgutter".init()
+    end
   }
   use {
     'tpope/vim-rhubarb'
