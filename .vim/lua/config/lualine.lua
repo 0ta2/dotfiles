@@ -4,7 +4,7 @@ function M.init()
   local lualine = require('lualine')
   lualine.setup{
     options = {
-      theme = 'onedark',
+      theme = 'gruvbox_material',
       section_separators = {'', ''},
       component_separators = {'', ''},
       icons_enabled = true,

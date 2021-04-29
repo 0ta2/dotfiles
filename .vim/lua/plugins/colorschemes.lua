@@ -31,9 +31,9 @@ local function init()
 
   use {
     'lifepillar/vim-gruvbox8',
-    config = function()
-      require"config.colorscheme".init()
-    end
+    -- config = function()
+    --   require"config.colorscheme".init()
+    -- end
   }
 
   use {
@@ -41,6 +41,13 @@ local function init()
     -- config = function ()
     --   require"config.colorscheme".init()
     -- end
+  }
+
+  use {
+    'sainnhe/gruvbox-material',
+    config = function()
+      require"config.colorscheme".init()
+    end
   }
 end
 

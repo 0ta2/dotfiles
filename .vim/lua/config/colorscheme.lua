@@ -29,12 +29,19 @@ function M.melange()
   vim.cmd [[ colorscheme melange ]]
 end
 
+function M.gruvboxMaterial()
+  vim.cmd [[ set background=dark ]]
+  vim.g.gruvbox_material_background = 'soft'
+  vim.cmd [[ colorscheme gruvbox-material ]]
+end
+
 function M.init()
-  M.nvcode()
+  -- M.nvcode()
   -- M.sonokai()
   -- M.moonfly()
   -- M.vim_gruvbox8()
   -- M.melange()
+  M.gruvboxMaterial()
 end
 
 return M
