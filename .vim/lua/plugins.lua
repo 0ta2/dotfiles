@@ -44,9 +44,9 @@ local function init()
   require"plugins.help".init()
   require"plugins.color".init()
   require"plugins.support".init()
-  require"plugins.treesitter".init()
+  --require"plugins.treesitter".init()
   require"plugins.statusline".init()
--- require"plugins.wilder".init()
+  --require"plugins.wilder".init()
   require"plugins.denops".init()
 end
 
