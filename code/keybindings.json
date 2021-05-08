@@ -1,11 +1,13 @@
 [
   {
     "key": "space f",
-    "command": "workbench.action.quickOpen"
+    "command": "workbench.action.quickOpen",
+    "when": "vim.mode != 'Insert'"
   },
   {
     "key": "space c",
-    "command": "workbench.action.showCommands"
+    "command": "workbench.action.showCommands",
+    "when": "vim.mode != 'Insert'"
   },
   {
     "key": "shift+cmd+p",
