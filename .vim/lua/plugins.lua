@@ -27,7 +27,7 @@ local function init()
   use {'wbthomason/packer.nvim', opt = true}
 
   require"plugins.colorschemes".init()
-  require"plugins.completion".init()
+  --require"plugins.completion".init()
   require"plugins.lsp".init()
   require"plugins.delimiters".init()
   require"plugins.files".init()

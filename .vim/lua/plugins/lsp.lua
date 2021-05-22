@@ -12,30 +12,39 @@ local function init()
   --   }
   -- }
 
-  use {
-    "neovim/nvim-lspconfig",
-    config = function()
-      require"config.nvim-lspconfig"
-    end,
-    requires = {
-      --{
-      --  'mattn/vim-lsp-settings'
-      --},
-      {
-        'glepnir/lspsaga.nvim',
-        config = function()
-          require"config/lspsaga".init()
-        end
-      }
-    }
-  }
+  --use {
+  --  "neovim/nvim-lspconfig",
+  --  config = function()
+  --    require"config.nvim-lspconfig"
+  --  end,
+  --  requires = {
+  --    --{
+  --    --  'mattn/vim-lsp-settings'
+  --    --},
+  --    {
+  --      'glepnir/lspsaga.nvim',
+  --      config = function()
+  --        require"config/lspsaga".init()
+  --      end
+  --    }
+  --  }
+  --}
 
-  -- lsp tagbar
+  ---- lsp tagbar
+  --use {
+  --  "liuchengxu/vista.vim",
+  --  cmd = "Vista",
+  --  config = function()
+  --    require "config.vista".init()
+  --  end
+  --}
+
   use {
-    "liuchengxu/vista.vim",
-    cmd = "Vista",
+    'neoclide/coc.nvim',
+    branch = 'master',
+    run = 'yarn install --frozen-lockfile',
     config = function()
-      require "config.vista".init()
+      require"config.coc".init()
     end
   }
 end
