@@ -1,0 +1,6 @@
+{
+  // Lua
+  "Lua.diagnostics.globals": [
+    "vim"
+  ]
+}
