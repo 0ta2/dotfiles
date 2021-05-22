@@ -8,4 +8,4 @@ require"keymap"
 require"plugins".init()
 
 -- develop
-vim.cmd([[ command! Format lua require'develop'.Format()]])
+--vim.cmd([[ command! Format lua require'develop'.Format()]])
