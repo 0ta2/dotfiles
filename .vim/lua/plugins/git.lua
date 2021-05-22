@@ -1,12 +1,20 @@
 local use = require"packer".use
 
 local function init()
+
+
   use {
     'TimUntersberger/neogit',
-    config = function ()
+    config = function()
       require"config.neogit".init()
-    end
+    end,
+    requires = {
+      {
+        'nvim-lua/plenary.nvim'
+      }
+    }
   }
+
   use {
     'tpope/vim-fugitive'
   }

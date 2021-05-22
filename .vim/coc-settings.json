@@ -2,5 +2,10 @@
   // Lua
   "Lua.diagnostics.globals": [
     "vim"
+  ],
+  // coc-lists
+  "list.source.files.args": [
+    "--hidden",
+    "--files"
   ]
 }
