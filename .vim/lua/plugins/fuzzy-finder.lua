@@ -13,19 +13,25 @@ local function init()
   --   }
   -- }
 
+  --use {
+  --  'nvim-telescope/telescope.nvim',
+  --  config = function()
+  --    require"config/telescope".init()
+  --  end,
+  --  requires = {
+  --    {
+  --      'nvim-lua/popup.nvim'
+  --    }, {
+  --      'nvim-lua/plenary.nvim'
+  --    }
+  --  }
+  --}
+
   use {
-    'nvim-telescope/telescope.nvim',
-    config = function()
-      require"config/telescope".init()
-    end,
-    requires = {
-      {
-        'nvim-lua/popup.nvim'
-      }, {
-        'nvim-lua/plenary.nvim'
-      }
-    }
+    'junegunn/fzf',
+    run = 'fzf#install()'
   }
+
 
 end
 
