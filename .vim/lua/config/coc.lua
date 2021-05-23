@@ -74,11 +74,11 @@ function M.setup_settings()
     'coc-lua',
     'coc-vimlsp',
     'coc-lists',
-    'coc-fzf-preview'
+    'coc-fzf-preview',
+    'coc-snippets'
   }
-
-vim.cmd([[ command! -nargs=0 Format :call CocAction('format') ]])
-vim.cmd([[ command! -nargs=? Fold :call CocAction('fold', <f-args>) ]])
+  vim.cmd([[ command! -nargs=0 Format :call CocAction('format') ]])
+  vim.cmd([[ command! -nargs=? Fold :call CocAction('fold', <f-args>) ]])
 end
 
 function M.init()
