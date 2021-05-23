@@ -7,5 +7,9 @@
   "list.source.files.args": [
     "--hidden",
     "--files"
-  ]
+  ],
+  // coc-snippet
+  "snippets.extends": {
+    "typescript": ["javaxript"]
+  }
 }
