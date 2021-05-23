@@ -1,4 +1,4 @@
-local use = require"packer".use
+ local use = require"packer".use
 
 local function init()
   -- lsp config
@@ -45,7 +45,12 @@ local function init()
     run = 'yarn install --frozen-lockfile',
     config = function()
       require"config.coc".init()
-    end
+    end,
+    requires = {
+      {
+        'honza/vim-snippets'
+      }
+    }
   }
 end
 
