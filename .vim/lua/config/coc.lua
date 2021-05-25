@@ -77,7 +77,8 @@ function M.setup_settings()
     'coc-fzf-preview',
     'coc-snippets',
     '@yaegassy/coc-intelephense',
-    'coc-phpactor'
+    'coc-phpactor',
+    'coc-php-cs-fixer'
   }
   vim.cmd([[ command! -nargs=0 Format :call CocAction('format') ]])
   vim.cmd([[ command! -nargs=? Fold :call CocAction('fold', <f-args>) ]])
