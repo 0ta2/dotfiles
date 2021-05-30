@@ -43,16 +43,6 @@ function M.setup_keymappings()
   api.nvim_set_keymap('n', leader .. 'l', [[:<C-u>CocCommand fzf-preview.Lines --add-fzf-arg=--no-sort --add-fzf-arg=--query="'"<CR>]], opts_silent)
   api.nvim_set_keymap('n', leader .. 'gr', ':<C-u>CocCommand fzf-preview.ProjectGrep<Space>', {})
   api.nvim_set_keymap('n', leader .. 'dig', ':<C-u>CocCommand fzf-preview.CocCurrentDiagnostics<CR>', {})
-
-end
-
-_G.check_back_space = function()
-    local col = vim.fn.col('.') - 1
-    if col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
-        return true
-    else
-        return false
-    end
 end
 
 _G.show_documentation = function()
