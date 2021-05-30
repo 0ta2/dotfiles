@@ -167,6 +167,16 @@
       "after": ["<Esc>"]
     }
   ],
+  "vim.operatorPendingModeKeyBindings": [
+    {
+      "before": ["L"],
+      "after": ["$"]
+    },
+    {
+      "before": ["H"],
+      "after": ["^"]
+    }
+  ],
   //----------------------------------------------------------
   // Terminal の設定
   //----------------------------------------------------------
@@ -186,7 +196,7 @@
   "terminal.integrated.scrollback": 100000,
   "editor.minimap.enabled": false,
   "workbench.startupEditor": "newUntitledFile",
-  // Gitリポジトリと動悸する前に確認させない
+  // Gitリポジトリと同期する前に確認させない
   "git.confirmSync": false,
   //----------------------------------------------------------
   // PHP 設定

@@ -3,7 +3,7 @@
 pkglist=(
     christian-kohler.path-intellisense
     CoenraadS.bracket-pair-colorizer-2
-    esbenp.prettier-vscode
+    esbenp.prettier-vscod e
     formulahendry.docker-explorer
     hangxingliu.vscode-nginx-conf-hint
     jebbs.plantuml
@@ -36,6 +36,7 @@ pkglist=(
     GitHub.github-vscode-theme                  # Theme
     alefragnani.Bookmarks                       # Bookmarks
     eamodio.gitlens                             # Git強化
+    denoland.vscode-deno                        # Deno
 )
 
 for i in ${pkglist[@]}; do
