@@ -14,10 +14,10 @@ curl -fsSL https://raw.githubusercontent.com/0ta2/dotfiles/master/etc/install | 
 
 ```bash
 pyenv activate py2neovim
-pip install neovim
+pip install pynvim
 
 pyenv activate py3neovim
-pip install neovim
+pip install npynvim
 ```
 
 ### rbenv 設定

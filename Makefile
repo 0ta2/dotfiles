@@ -45,9 +45,7 @@ deploy: ## Create symlink to home directory
 	@$(call print_title, Start to deploy dotfiles to home directory)
 	@mkdir -p $(HOME)/.config
 	@$(call print_success, `ln -sfnv $(DOTPATH)/.vim ~/.config/nvim`)
-	@$(call print_success, `ln -sfnv $(DOTPATH)/.vim ~/.vim`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/.vim/.ideavimrc ~/.ideavimrc`)
-	@$(call print_success, `ln -sfnv $(DOTPATH)/.vim/ultisnips ~/.config/coc`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/zsh ~/.config/zsh`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/zsh/ ~/.config/zsh`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/zsh/.zshenv ~/.zshenv`)

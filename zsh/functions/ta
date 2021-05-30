@@ -1,10 +1,11 @@
 # tmux attach
 function ta() {
-       if [ -n "${1}" ]; then
-           tmux attach-session -t ${1} || \
-           tmux new-session -s ${1}
-    else
-           tmux attach-session || \
-           tmux new-session
-       fi
+  local arg=$(echo ${1} | sed 's/.\+/\U\0/')
+  if [ -n "${arg}" ]; then
+    tmux attach-session -t ${arg} || \
+    tmux new-session -s ${arg}
+  else
+    tmux attach-session || \
+    tmux new-session
+  fi
 }

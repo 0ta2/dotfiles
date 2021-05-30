@@ -8,6 +8,7 @@ zsh/*.zwc
 zsh/*.old
 zsh/.zcompcache
 zsh/.zsh_history
+zsh/.zsh_sessions
 
 ### vim
 .netrwhist
@@ -21,8 +22,9 @@ node_modules/*
 .bundle/*
 .venv/*
 .vim/sessions
-.vim/tmp/undo/*
-.vim/tmp/backup/*
+.vim/tmp/*
+.vim/yankring.txt
+.vim/plugin/packer_compiled.vim
 
 ### tmux
 .tmux/plugins/*
