@@ -30,7 +30,7 @@ init: ## Setup environment settings
 
 update: ## Fetch changes for this repo
 	@$(call print_title, Start to update dotfiles)
-	git pull origin master
+	git pull origin main
 	git submodule update --init --recursive
 	git submodule foreach git pull origin master
 
