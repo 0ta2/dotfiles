@@ -70,7 +70,8 @@ function M.setup_settings()
     'coc-snippets',
     '@yaegassy/coc-intelephense',
     'coc-phpactor',
-    'coc-php-cs-fixer'
+    'coc-php-cs-fixer',
+    'coc-git'
   }
   vim.cmd([[ command! -nargs=0 Format :call CocAction('format') ]])
   vim.cmd([[ command! -nargs=? Fold :call CocAction('fold', <f-args>) ]])
