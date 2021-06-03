@@ -42,8 +42,7 @@ function M.setup_keymappings()
   api.nvim_set_keymap('n', leader .. 'gs' , ':<C-u>CocCommand fzf-preview.GitStatus<CR>', opts_silent)
   api.nvim_set_keymap('n', leader .. 'ga' , ':<C-u>CocCommand fzf-preview.GitActions<CR>', opts_silent)
   api.nvim_set_keymap('n', leader .. '<C-o>', ':<C-u>CocCommand fzf-preview.Jumps<CR>', opts_silent)
-  api.nvim_set_keymap('n', leader .. 'l', [[:<C-u>CocCommand fzf-preview.Lines --add-fzf-arg=--no-sort --add-fzf-arg=--query="'"<CR>]], opts_silent)
-  api.nvim_set_keymap('n', leader .. 'gr', ':<C-u>CocCommand fzf-preview.ProjectGrep<Space>', {})
+  api.nvim_set_keymap('n', leader .. 'l', [[:<C-u>CocCommand fzf-preview.Lines --add-fzf-arg=--no-sort --add-fzf-arg=--query=""<CR>]], opts_silent)
   api.nvim_set_keymap('n', leader .. 'dig', ':<C-u>CocCommand fzf-preview.CocCurrentDiagnostics<CR>', {})
 end
 
