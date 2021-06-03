@@ -48,7 +48,8 @@ local function init()
     end,
     requires = {
       {
-        'honza/vim-snippets'
+        'honza/vim-snippets',
+        'antoinemadec/coc-fzf'
       }
     }
   }
