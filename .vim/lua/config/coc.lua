@@ -38,7 +38,7 @@ function M.setup_keymappings()
 
   -- coc-fzf-preview
   api.nvim_set_keymap('n', leader .. 'f' , ':<C-u>CocCommand fzf-preview.FromResources project_mru git<CR>', opts_silent)
-  api.nvim_set_keymap('n', leader .. 'b' , ':<C-u>CocCommand fzf-preview.FromResources<CR>', opts_silent)
+  api.nvim_set_keymap('n', leader .. 'b' , ':<C-u>CocCommand fzf-preview.Buffers<CR>', opts_silent)
   api.nvim_set_keymap('n', leader .. 'gs' , ':<C-u>CocCommand fzf-preview.GitStatus<CR>', opts_silent)
   api.nvim_set_keymap('n', leader .. 'ga' , ':<C-u>CocCommand fzf-preview.GitActions<CR>', opts_silent)
   api.nvim_set_keymap('n', leader .. '<C-o>', ':<C-u>CocCommand fzf-preview.Jumps<CR>', opts_silent)
