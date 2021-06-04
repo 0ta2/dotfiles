@@ -48,6 +48,7 @@ local function init()
   require"plugins.statusline".init()
   --require"plugins.wilder".init()
   require"plugins.denops".init()
+  require("plugins.db").init()
 end
 
 return {
