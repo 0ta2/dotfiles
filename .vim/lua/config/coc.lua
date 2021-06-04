@@ -12,6 +12,7 @@ function M.setup_keymappings()
   api.nvim_set_keymap('i', '<S-TAB>', 'pumvisible() ? "<C-n>" : "<C-h>"', opts_silent_expr)
   api.nvim_set_keymap('i', '<CR>', 'pumvisible() ? coc#_select_confirm() : "<C-g>u<CR><C-r>=coc#on_enter()<CR>"', opts_silent_expr)
   api.nvim_set_keymap('i', '<c-spaces>', 'coc#refresh()', opts_silent_expr)
+  api.nvim_set_keymap('n', leader .. 'c', ':<C-u>CocList commands<CR>', opts_silent)
 
   -- Use `[g` and `]g` to navigate diagnostics.
   api.nvim_set_keymap('n', '[g', '<Plug>(coc-diagnostic-prev)', opts_silent)
