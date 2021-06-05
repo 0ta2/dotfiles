@@ -63,6 +63,7 @@ function M.setup_settings()
   vim.g.coc_global_extensions = {
     'coc-json',
     'coc-tsserver',
+    'coc-deno',
     'coc-lua',
     'coc-vimlsp',
     'coc-lists',
