@@ -165,7 +165,7 @@ if [ -f ~/.fzf.zsh ]; then
   source ~/.fzf.zsh
   export FZF_TMUX=1
   export FZF_TMUX_HEIGHT=30
-  export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+  export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 fi
 
 export GOBIN="$GOPATH/bin"
