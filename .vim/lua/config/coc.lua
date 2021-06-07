@@ -77,6 +77,7 @@ function M.setup_settings()
   }
   vim.cmd([[ command! -nargs=0 Format :call CocAction('format') ]])
   vim.cmd([[ command! -nargs=? Fold :call CocAction('fold', <f-args>) ]])
+  vim.cmd([[ command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport') ]])
 end
 
 function M.init()
