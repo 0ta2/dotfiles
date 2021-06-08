@@ -38,7 +38,7 @@ function M.setup_keymappings()
   api.nvim_set_keymap('x', 'cf', '<Plug>(coc-format-selected)', opts_silent)
 
   -- coc-fzf-preview
-  api.nvim_set_keymap('n', leader .. 'f' , ':<C-u>CocCommand fzf-preview.FromResources project_mru git<CR>', opts_silent)
+  api.nvim_set_keymap('n', leader .. 'f' , ':<C-u>CocCommand fzf-preview.GitFiles<CR>', opts_silent)
   api.nvim_set_keymap('n', leader .. 'b' , ':<C-u>CocCommand fzf-preview.Buffers<CR>', opts_silent)
   api.nvim_set_keymap('n', leader .. 'r' , ':<C-u>CocCommand fzf-preview.ProjectGrep<Space>', {})
   api.nvim_set_keymap('n', leader .. 'gs' , ':<C-u>CocCommand fzf-preview.GitStatus<CR>', opts_silent)
@@ -78,6 +78,9 @@ function M.setup_settings()
   vim.cmd([[ command! -nargs=0 Format :call CocAction('format') ]])
   vim.cmd([[ command! -nargs=? Fold :call CocAction('fold', <f-args>) ]])
   vim.cmd([[ command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport') ]])
+
+  -- fzf
+  vim.g.fzf_preview_filelist_command = 'rg --files --hidden --follow --no-messages -g !"* *"'
 end
 
 function M.init()
