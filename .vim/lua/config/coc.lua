@@ -22,7 +22,7 @@ function M.setup_keymappings()
   api.nvim_set_keymap('n', 'gd', '<Plug>(coc-definition)', opts_silent)
   api.nvim_set_keymap('n', 'gy', '<Plug>(coc-type-definition)', opts_silent)
   api.nvim_set_keymap('n', 'gi', '<Plug>(coc-implementation)', opts_silent)
-  api.nvim_set_keymap('n', 'gr', '<Plug>(coc-references)', opts_silent)
+  --api.nvim_set_keymap('n', 'gr', '<Plug>(coc-references)', opts_silent)
   api.nvim_set_keymap('n', leader .. 'a', '<Plug>(coc-codeaction)', opts_silent)
   api.nvim_set_keymap('n', leader .. 'qf', '<Plug>(coc-fix-current)', opts_silent)
 
@@ -46,6 +46,7 @@ function M.setup_keymappings()
   api.nvim_set_keymap('n', leader .. '<C-o>', ':<C-u>CocCommand fzf-preview.Jumps<CR>', opts_silent)
   api.nvim_set_keymap('n', leader .. 'l', [[:<C-u>CocCommand fzf-preview.Lines --add-fzf-arg=--no-sort --add-fzf-arg=--query=""<CR>]], opts_silent)
   api.nvim_set_keymap('n', leader .. 'dig', ':<C-u>CocCommand fzf-preview.CocCurrentDiagnostics<CR>', {})
+  api.nvim_set_keymap('n', 'gr', ':CocCommand fzf-preview.CocReferences<CR>', opts_silent)
 end
 
 _G.show_documentation = function()
