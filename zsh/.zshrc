@@ -157,6 +157,11 @@ if [ -e /Applications/Alacritty.app/Contents/MacOS/alacritty ];then
 	export PATH=/Applications/Alacritty.app/Contents/MacOS:${PATH}
 fi
 
+# mysql-client
+if [ "`which mysql`" ]; then
+  export PATH="/usr/local/opt/mysql-client/bin:$PATH"
+fi
+
 # less コマンドの環境変数
 export LESS='--ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD'
 
