@@ -5,7 +5,10 @@ local function init()
     'tpope/vim-dadbod',
     requires = {
       {
-        'kristijanhusak/vim-dadbod-ui'
+        'kristijanhusak/vim-dadbod-ui',
+        config = function()
+          require("config.vim-dadbod-ui")
+        end
       }
     }
   }
