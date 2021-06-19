@@ -24,7 +24,7 @@ create_virtualenv() {
     print_warning "Installed virtualenv version"
   else
     print_message "Installed virtualenv"
-    pyenv virtualenv $1 py$(echo $1 | cut -d. -f 1)neovim
+    pyenv virtualenv $1 py$(echo $1 | cut -d. -f 1)pyenv
     print_success "Successfully Created"
   fi
  }
