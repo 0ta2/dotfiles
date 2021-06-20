@@ -67,7 +67,7 @@ vim.o.shiftwidth = 2
 vim.wo.foldmethod = 'manual'
 
 -- Change regular expression to backtracking engine.
-vim.o.regexpengine = 1
+vim.o.regexpengine = 2
 
 -- Maximum number of digits to search for a syntax item.
 vim.o.synmaxcol = 300
