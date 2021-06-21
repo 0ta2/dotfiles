@@ -24,15 +24,15 @@ create_virtualenv() {
     print_warning "Installed virtualenv version"
   else
     print_message "Installed virtualenv"
-    pyenv virtualenv $1 py$(echo $1 | cut -d. -f 1)neovim
+    pyenv virtualenv $1 py$(echo $1 | cut -d. -f 1)pyenv
     print_success "Successfully Created"
   fi
  }
 
 main() {
-  install_pyenv_python 3.9.0
+  install_pyenv_python 3.9.5
   install_pyenv_python 2.7.18
-  create_virtualenv 3.9.0
+  create_virtualenv 3.9.5
   create_virtualenv 2.7.18
 }
 
