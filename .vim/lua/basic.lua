@@ -67,7 +67,7 @@ vim.o.shiftwidth = 2
 vim.wo.foldmethod = 'manual'
 
 -- Change regular expression to backtracking engine.
-vim.o.regexpengine = 1
+vim.o.regexpengine = 2
 
 -- Maximum number of digits to search for a syntax item.
 vim.o.synmaxcol = 300
@@ -89,8 +89,8 @@ vim.cmd [[ set backupdir=~/.vim/tmp/backup ]]
 vim.o.completeopt = 'menu,menuone,noselect'
 
 -- Settings python.
-vim.g.python_host_prog = vim.env.HOME .. '/.pyenv/versions/py2neovim/bin/python'
-vim.g.python3_host_prog = vim.env.HOME ..  '/.pyenv/versions/py3neovim/bin/python'
+vim.g.python_host_prog = vim.env.HOME .. '/.pyenv/versions/py2pyvim/bin/python'
+vim.g.python3_host_prog = vim.env.HOME ..  '/.pyenv/versions/py3pyvim/bin/python'
 -- Settings ruby.
 vim.g.ruby_host_prog = vim.env.HOME .. '/.rbenv/versions/2.7.1/bin/neovim-ruby-host'
 -- Settings node.
