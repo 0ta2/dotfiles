@@ -74,7 +74,8 @@ function M.setup_settings()
     '@yaegassy/coc-intelephense',
     'coc-phpactor',
     'coc-php-cs-fixer',
-    'coc-git'
+    'coc-git',
+    'coc-db',
   }
   vim.cmd([[ command! -nargs=0 Format :call CocAction('format') ]])
   vim.cmd([[ command! -nargs=? Fold :call CocAction('fold', <f-args>) ]])
