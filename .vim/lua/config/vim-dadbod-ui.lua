@@ -6,6 +6,7 @@ end
 
 function M.init()
   M.setup_settings()
+  vim.g.dbs = {}
 end
 
 return M

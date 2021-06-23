@@ -9,7 +9,6 @@ local function init()
         config = function()
           require("config.vim-dadbod-ui").init()
         end
-
       }
     }
   }
