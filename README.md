@@ -13,11 +13,11 @@ curl -fsSL https://raw.githubusercontent.com/0ta2/dotfiles/master/etc/install | 
 ### pyenv 設定
 
 ```bash
-pyenv activate py2pyvim
+pyenv activate py2pynvim
 pip install pynvim
 
-pyenv activate py3pyvim
-pip install npynvim
+pyenv activate py3pynvim
+pip install pynvim
 ```
 
 ### rbenv 設定
