@@ -5,7 +5,7 @@ local function init()
     "vim-denops/denops.vim",
     requires = {
       {
-        '0ta2/dps-incrementer',
+        '~/ghq/github.com/0ta2/dps-incrementer/',
         config = function()
           require("config.dps-incrementer").init()
         end
