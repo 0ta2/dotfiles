@@ -83,6 +83,9 @@ function M.setup_settings()
 
   -- fzf
   vim.g.fzf_preview_filelist_command = 'rg --files --hidden --follow --no-messages -g !"* *"'
+
+  -- coc-snippets
+  vim.g.ultisnips_php_scalar_types = 1
 end
 
 function M.init()
