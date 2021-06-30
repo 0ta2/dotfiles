@@ -76,6 +76,7 @@ function M.setup_settings()
     'coc-php-cs-fixer',
     'coc-git',
     'coc-db',
+    'coc-yaml'
   }
   vim.cmd([[ command! -nargs=0 Format :call CocAction('format') ]])
   vim.cmd([[ command! -nargs=? Fold :call CocAction('fold', <f-args>) ]])
