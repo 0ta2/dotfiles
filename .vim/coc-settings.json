@@ -10,6 +10,12 @@
   ],
   // coc-snippet
   "snippets.extends": {
-    "typescript": ["javascript"]
+    "typescript": [
+      "javascript"
+    ]
+  },
+  "yaml.schemas": {
+    "https://json.schemastore.org/composer": ["composer.yml"],
+    "https://json.schemastore.org/github-workflow.json": [".github/workflows/*.yml" ]
   }
 }
