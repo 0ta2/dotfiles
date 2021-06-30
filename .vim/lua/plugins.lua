@@ -47,9 +47,12 @@ local function init()
   --require"plugins.treesitter".init()
   require"plugins.statusline".init()
   --require"plugins.wilder".init()
-  require"plugins.denops".init()
+  require("plugins.denops").init()
   require("plugins.db").init()
 end
+
+--vim.cmd[[ set runtimepath^=/Users/0ta2/ghq/github.com/0ta2/dps-incrementer ]]
+--vim.cmd[[ let g:denops#server#service#deno_args = [ '-q', '--unstable', '-A' ] ]]
 
 return {
   init = init,
