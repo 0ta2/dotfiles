@@ -40,6 +40,7 @@ brew "gnu-sed"  # gnu版のsed
 brew "yarn"
 brew "github/gh/gh"
 brew "gawk"     # tmux-picker で必要
+brew "bat"
 cask "docker"   # Docker
 cask "vagrant"
 cask "font-inconsolata"
