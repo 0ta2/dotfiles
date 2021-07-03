@@ -13,6 +13,7 @@ function M.setup_keymappings()
   api.nvim_set_keymap('i', '<CR>', 'pumvisible() ? coc#_select_confirm() : "<C-g>u<CR><C-r>=coc#on_enter()<CR>"', opts_silent_expr)
   api.nvim_set_keymap('i', '<c-spaces>', 'coc#refresh()', opts_silent_expr)
   api.nvim_set_keymap('n', leader .. 'c', ':<C-u>CocList commands<CR>', opts_silent)
+  api.nvim_set_keymap('n', leader .. 'l', ":<C-u>CocList<CR>", opts_silent)
 
   -- Use `[g` and `]g` to navigate diagnostics.
   api.nvim_set_keymap('n', '[g', '<Plug>(coc-diagnostic-prev)', opts_silent)
@@ -44,7 +45,7 @@ function M.setup_keymappings()
   api.nvim_set_keymap('n', leader .. 'gs' , ':<C-u>CocCommand fzf-preview.GitStatus<CR>', opts_silent)
   api.nvim_set_keymap('n', leader .. 'ga' , ':<C-u>CocCommand fzf-preview.GitActions<CR>', opts_silent)
   api.nvim_set_keymap('n', leader .. '<C-o>', ':<C-u>CocCommand fzf-preview.Jumps<CR>', opts_silent)
-  api.nvim_set_keymap('n', leader .. 'l', [[:<C-u>CocCommand fzf-preview.Lines --add-fzf-arg=--no-sort --add-fzf-arg=--query=""<CR>]], opts_silent)
+  --api.nvim_set_keymap('n', leader .. 'l', [[:<C-u>CocCommand fzf-preview.Lines --add-fzf-arg=--no-sort --add-fzf-arg=--query=""<CR>]], opts_silent)
   api.nvim_set_keymap('n', leader .. 'dig', ':<C-u>CocCommand fzf-preview.CocCurrentDiagnostics<CR>', {})
   api.nvim_set_keymap('n', 'gr', ':CocCommand fzf-preview.CocReferences<CR>', opts_silent)
 end
@@ -87,6 +88,7 @@ function M.setup_settings()
 
   -- coc-snippets
   vim.g.ultisnips_php_scalar_types = 1
+  vim.highlight.create('CocWarningSign', {ctermfg=0, ctermbg=172}, false)
 end
 
 function M.init()
