@@ -15,6 +15,7 @@ zsh/.zsh_sessions
 *.swp
 *.swo
 .vim/plugged/*
+.vim/plugin/*
 viminfo.txt
 tags
 !.gitkeep
