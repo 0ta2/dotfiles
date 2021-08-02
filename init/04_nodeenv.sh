@@ -25,8 +25,8 @@ global_nodenv() {
 }
 
 main() {
-  install_nodenv_nodejs 16.2.0
-  global_nodenv 16.2.0
+  install_nodenv_nodejs 16.6.0
+  global_nodenv 16.6.0
 }
 
 main
