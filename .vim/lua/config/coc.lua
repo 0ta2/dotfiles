@@ -40,6 +40,7 @@ function M.setup_keymappings()
 
   -- coc-fzf-preview
   api.nvim_set_keymap('n', leader .. 'f' , ':<C-u>CocCommand fzf-preview.GitFiles<CR>', opts_silent)
+  api.nvim_set_keymap('n', leader .. 'F', ':<C-u>CocCommand fzf-preview.ProjectFiles<CR>', opts_silent)
   api.nvim_set_keymap('n', leader .. 'b' , ':<C-u>CocCommand fzf-preview.Buffers<CR>', opts_silent)
   api.nvim_set_keymap('n', leader .. 'r' , ':<C-u>CocCommand fzf-preview.ProjectGrep<Space>', {})
   api.nvim_set_keymap('n', leader .. 'gs' , ':<C-u>CocCommand fzf-preview.GitStatus<CR>', opts_silent)
@@ -84,7 +85,7 @@ function M.setup_settings()
   vim.cmd([[ command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport') ]])
 
   -- fzf
-  vim.g.fzf_preview_filelist_command = 'rg --files --hidden --follow --no-messages -g !"* *"'
+  vim.g.fzf_preview_filelist_command = 'rg --files --hidden --follow --no-messages -g "!.git/*"'
 
   -- coc-snippets
   vim.g.ultisnips_php_scalar_types = 1
