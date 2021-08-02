@@ -67,7 +67,7 @@ function M.setup_settings()
     'coc-json',
     'coc-tsserver',
     'coc-deno',
-    'coc-lua',
+    'coc-sumneko-lua',
     'coc-vimlsp',
     'coc-lists',
     'coc-fzf-preview',
