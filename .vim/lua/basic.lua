@@ -94,4 +94,4 @@ vim.g.python3_host_prog = vim.env.HOME ..  '/.pyenv/versions/py3pynvim/bin/pytho
 -- Settings ruby.
 vim.g.ruby_host_prog = vim.env.HOME .. '/.rbenv/versions/2.7.1/bin/neovim-ruby-host'
 -- Settings node.
-vim.g.node_host_prog = vim.env.HOME .. '/.nodenv/versions/16.2.0/bin/neovim-node-host'
+vim.g.node_host_prog = vim.env.HOME .. '/.nodenv/versions/16.6.0/bin/neovim-node-host'
