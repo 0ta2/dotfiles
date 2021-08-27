@@ -145,6 +145,7 @@ fpath=(/usr/local/share/zsh/site-functions $fpath)
 
 # GOPATH設定
 export GOPATH=$HOME/go
+export GOBIN="$GOPATH/bin"
 
 # WSL を使っている場合の PATH 設定
 if [[ $(uname -a) =~ Linnux && $(uname -a) =~ Microsoft ]]; then
@@ -172,8 +173,6 @@ if [ -f ~/.fzf.zsh ]; then
   export FZF_TMUX_HEIGHT=30
   export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 fi
-
-export GOBIN="$GOPATH/bin"
 
 #   path=xxxx(N-/)
 #     (N-/): 存在しないディレクトリは登録しない
@@ -293,3 +292,6 @@ alias sed="gsed"
 
 # ls
 alias ls="gls --color=auto"
+
+# PHPstrom
+alias p="open -a PhpStorm ."
