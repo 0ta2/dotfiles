@@ -18,7 +18,41 @@
     "go"
   ],
   "yaml.schemas": {
-    "https://json.schemastore.org/composer": ["composer.yml"],
-    "https://json.schemastore.org/github-workflow.json": [".github/workflows/*.yml" ]
+    "https://json.schemastore.org/composer": [
+      "composer.yml"
+    ],
+    "https://json.schemastore.org/github-workflow.json": [
+      ".github/workflows/*.yml"
+    ]
+  },
+  // coc-go
+  "go.enable": false,
+  // Language Server
+  "languageserver": {
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": [
+        "go.mod",
+        ".vim/",
+        ".git/",
+        ".hg/"
+      ],
+      "filetypes": [
+        "go"
+      ],
+      "initializationOptions": {
+        "usePlaceholders": true
+      }
+    },
+    "terraform": {
+			"command": "terraform-ls",
+			"args": ["serve"],
+			"filetypes": [
+				"terraform",
+				"tf"
+			],
+			"initializationOptions": {},
+			"settings": {}
+		}
   }
 }

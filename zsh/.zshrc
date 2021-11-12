@@ -146,6 +146,7 @@ fpath=(/usr/local/share/zsh/site-functions $fpath)
 # GOPATH設定
 export GOPATH=$HOME/go
 export GOBIN="$GOPATH/bin"
+export PATH="$GOPATH/bin:${PATH}"
 
 # WSL を使っている場合の PATH 設定
 if [[ $(uname -a) =~ Linnux && $(uname -a) =~ Microsoft ]]; then
