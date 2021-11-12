@@ -2,7 +2,7 @@ function fghq() {
   local selected_dir=$(ghq list | fzf --query="$LBUFFER")
 
   if [ -n "$selected_dir" ]; then
-    tmux rename-window $(basename $selected_dir | sed 's/.\+/\U\0/')
+    tmux rename-window $(basename $selected_dir)
     BUFFER="cd $(ghq root)/${selected_dir}"
     zle accept-line
   fi
