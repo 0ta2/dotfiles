@@ -78,12 +78,12 @@ function M.setup_settings()
     'coc-php-cs-fixer',
     'coc-git',
     'coc-db',
-    'coc-yaml',
-    'coc-go',
+    'coc-yaml'
   }
   vim.cmd([[ command! -nargs=0 Format :call CocAction('format') ]])
   vim.cmd([[ command! -nargs=? Fold :call CocAction('fold', <f-args>) ]])
   vim.cmd([[ command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport') ]])
+  vim.cmd([[ autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport') ]])
 
   -- fzf
   vim.g.fzf_preview_filelist_command = 'rg --files --hidden --follow --no-messages -g "!.git/*"'
