@@ -3,9 +3,9 @@ local use = require"packer".use
 local function init()
   use {
     'christianchiarulli/nvcode-color-schemes.vim',
-    -- config = function()
-   --    require"config.colorscheme".init()
-    -- end
+    config = function()
+      require"config.colorscheme".init()
+    end
   }
 
   use {
@@ -45,9 +45,9 @@ local function init()
 
   use {
     'sainnhe/gruvbox-material',
-    config = function()
-      require"config.colorscheme".init()
-    end
+    --config = function()
+    --  require"config.colorscheme".init()
+    --end
   }
 end
 
