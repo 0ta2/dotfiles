@@ -44,6 +44,7 @@ brew "bat"
 cask "docker"   # Docker
 cask "vagrant"
 cask "font-inconsolata"
+brew "hashicorp/tap/terraform-ls"
 
 ## completion
 brew "docker-compose-completion"
