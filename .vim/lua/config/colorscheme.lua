@@ -36,12 +36,12 @@ function M.gruvboxMaterial()
 end
 
 function M.init()
-  -- M.nvcode()
+  M.nvcode()
   -- M.sonokai()
   -- M.moonfly()
   -- M.vim_gruvbox8()
   -- M.melange()
-  M.gruvboxMaterial()
+  -- M.gruvboxMaterial()
 end
 
 return M
