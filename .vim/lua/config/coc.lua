@@ -87,6 +87,7 @@ function M.setup_settings()
 
   -- fzf
   vim.g.fzf_preview_filelist_command = 'rg --files --hidden --follow --no-messages -g "!.git/*"'
+  vim.g.fzf_preview_grep_cmd = 'rg --line-number --no-heading --color=never --hidden -g "!.git/*"'
 
   -- coc-snippets
   vim.g.ultisnips_php_scalar_types = 1
