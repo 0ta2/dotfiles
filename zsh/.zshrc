@@ -214,7 +214,7 @@ fi
 
 # pipenv の補完有効化
 if [ "`which pipenv`" ];then
-  eval "$(pipenv --completion)"
+  eval "$(_PIPENV_COMPLETE=zsh_source pipenv)"
 fi
 
 # rbenv 設定
