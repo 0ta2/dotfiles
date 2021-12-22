@@ -39,14 +39,14 @@ function M.setup_keymappings()
   api.nvim_set_keymap('x', 'cf', '<Plug>(coc-format-selected)', opts_silent)
 
   -- coc-fzf-preview
-  api.nvim_set_keymap('n', leader .. 'f' , ':<C-u>CocCommand fzf-preview.GitFiles<CR>', opts_silent)
+  api.nvim_set_keymap('n', leader .. 'f' , ':<C-u>CocCommand fzf-preview.FromResources buffer project_mru project<CR>', opts_silent)
   api.nvim_set_keymap('n', leader .. 'F', ':<C-u>CocCommand fzf-preview.ProjectFiles<CR>', opts_silent)
   api.nvim_set_keymap('n', leader .. 'b' , ':<C-u>CocCommand fzf-preview.Buffers<CR>', opts_silent)
-  api.nvim_set_keymap('n', leader .. 'r' , ':<C-u>CocCommand fzf-preview.ProjectGrep<Space>', {})
+  api.nvim_set_keymap('n', leader .. 'r' , ':<C-u>CocCommand fzf-preview.ProjectGrep --add-fzf-arg=--exact --add-fzf-arg=--no-sort<Space>', {})
   api.nvim_set_keymap('n', leader .. 'gs' , ':<C-u>CocCommand fzf-preview.GitStatus<CR>', opts_silent)
   api.nvim_set_keymap('n', leader .. 'ga' , ':<C-u>CocCommand fzf-preview.GitActions<CR>', opts_silent)
   api.nvim_set_keymap('n', leader .. '<C-o>', ':<C-u>CocCommand fzf-preview.Jumps<CR>', opts_silent)
-  --api.nvim_set_keymap('n', leader .. 'l', [[:<C-u>CocCommand fzf-preview.Lines --add-fzf-arg=--no-sort --add-fzf-arg=--query=""<CR>]], opts_silent)
+  api.nvim_set_keymap('n', leader .. 'o', [[:<C-u>CocCommand fzf-preview.Lines --add-fzf-arg=--no-sort --add-fzf-arg=--query=""<CR>]], opts_silent)
   api.nvim_set_keymap('n', leader .. 'dig', ':<C-u>CocCommand fzf-preview.CocCurrentDiagnostics<CR>', {})
   api.nvim_set_keymap('n', 'gr', ':CocCommand fzf-preview.CocReferences<CR>', opts_silent)
 end
