@@ -31,13 +31,13 @@ local function init()
   --}
 
   ---- lsp tagbar
-  --use {
-  --  "liuchengxu/vista.vim",
-  --  cmd = "Vista",
-  --  config = function()
-  --    require "config.vista".init()
-  --  end
-  --}
+  use {
+    "liuchengxu/vista.vim",
+    cmd = "Vista",
+    config = function()
+      require "config.vista".init()
+    end
+  }
 
   use {
     'neoclide/coc.nvim',
