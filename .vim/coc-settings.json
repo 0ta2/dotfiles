@@ -54,5 +54,12 @@
 			"initializationOptions": {},
 			"settings": {}
 		}
+  },
+  "diagnostic-languageserver.filetypes": {
+    "vim": "vint",
+    "sh": "shellcheck",
+    "php": ["phpstan", "psalm"],
+    "yaml": [ "yamllint" ],
+    "cmake": [ "cmake-lint", "cmakelint" ]
   }
 }
