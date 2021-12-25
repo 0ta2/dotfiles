@@ -3,6 +3,7 @@ tap "homebrew/bundle"
 tap "homebrew/core"
 tap "sanemat/font"
 tap "homebrew/cask-fonts"
+tap "homebrew/cask-fonts"
 
 # programming
 brew "go"
@@ -53,6 +54,7 @@ brew "docker-completion"
 # font
 cask "font-cica"
 cask "font-hackgen"
+cask "font-hackgen-nerd"
 
 ### application
 cask "google-chrome"
