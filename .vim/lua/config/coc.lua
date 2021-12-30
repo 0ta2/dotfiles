@@ -92,6 +92,8 @@ function M.setup_settings()
 
   -- coc-snippets
   vim.g.ultisnips_php_scalar_types = 1
+  vim.g.coc_snippet_next = '<c-j>'
+  vim.g.coc_snippet_prev = '<c-k>'
   vim.highlight.create('CocWarningSign', {ctermfg=0, ctermbg=172}, false)
 end
 
