@@ -1,4 +1,6 @@
 {
+  // coc
+  "coc.preferences.jumpCommand": "drop",
   // Lua
   "Lua.diagnostics.globals": [
     "vim"
