@@ -14,6 +14,7 @@ function M.setup_keymappings()
   api.nvim_set_keymap('i', '<c-spaces>', 'coc#refresh()', opts_silent_expr)
   api.nvim_set_keymap('n', leader .. 'c', ':<C-u>CocList commands<CR>', opts_silent)
   api.nvim_set_keymap('n', leader .. 'l', ":<C-u>CocList<CR>", opts_silent)
+  api.nvim_set_keymap('n', '<c-t>', ':<C-u>call CocActionAsync("jumpDefinition", v:lua.CocJumpAction())<CR>', opts_silent)
 
   -- Use `[g` and `]g` to navigate diagnostics.
   api.nvim_set_keymap('n', '[g', '<Plug>(coc-diagnostic-prev)', opts_silent)
@@ -60,6 +61,27 @@ _G.show_documentation = function()
     vim.fn.CocActionAsync("doHover")
   else
     vim.fn.execute(vim.o.keywordprg .. ' ' .. cword)
+  end
+end
+
+function _G.CocJumpAction()
+  local actions = {
+    ["split"] = "(s)plit",
+    ["vsplit"] = "(v)slit",
+    ['tabedit'] = "(t)ab"
+  }
+  print(pconcat(actions, ", "))
+
+  local imputKey = vim.fn.getcharstr()
+
+  if imputKey == "s" then
+    return "split"
+  elseif imputKey == "v" then
+    return "vsplit"
+  elseif imputKey == "t" then
+    return "tabedit"
+  else
+    return "split"
   end
 end
 
