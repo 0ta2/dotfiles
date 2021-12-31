@@ -11,3 +11,12 @@ _G.check_back_space = function()
         return false
     end
 end
+
+_G.pconcat = function(tab, del)
+    local ctab, n = {}, 1
+    for _, v in pairs(tab) do
+        ctab[n] = v
+        n = n + 1
+    end
+    return table.concat(ctab, del)
+end
