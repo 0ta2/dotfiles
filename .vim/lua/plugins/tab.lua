@@ -6,7 +6,7 @@ local function init()
   --}
 
   use {
-    'akinsho/nvim-bufferline.lua',
+    'akinsho/bufferline.nvim',
     config = function ()
       require'config.nvim-bufferline'.init()
     end,
