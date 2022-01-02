@@ -101,7 +101,8 @@ function M.setup_settings()
     'coc-git',
     'coc-db',
     'coc-yaml',
-    'coc-diagnostic'
+    'coc-diagnostic',
+    'coc-flutter'
   }
   vim.cmd([[ command! -nargs=0 Format :call CocAction('format') ]])
   vim.cmd([[ command! -nargs=? Fold :call CocAction('fold', <f-args>) ]])
