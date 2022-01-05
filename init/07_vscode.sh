@@ -37,10 +37,11 @@ pkglist=(
     alefragnani.Bookmarks                       # Bookmarks
     eamodio.gitlens                             # Git強化
     denoland.vscode-deno                        # Deno
+    Dart-Code.flutter
 )
 
-for i in ${pkglist[@]}; do
-  code --install-extension $i
+for i in "${pkglist[@]}"; do
+  code --install-extension "${i}"
 done
 
 # キーの押しっぱなしで移動できるようにする
