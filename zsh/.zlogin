@@ -1,4 +1,11 @@
 #
+# Startup compiled
+#
+for zfile in ${ZDOTDIR:-${HOME}}/.z(shenv|profile|shrc|login|logout); do
+  rm -f ${zfile}.zwc(|.old)(N)
+done
+
+#
 # User configuration sourced by login shells
 #
 
