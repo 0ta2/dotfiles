@@ -279,7 +279,7 @@ SAVEHIST=50000
 setopt complete_aliases
 
 # Git関連
-alias gbr="git branch --merged | grep -vE '^\*|master$|develop$' | xargs -I % git branch -d %"
+alias gbr="git branch --merged | grep -vE '^\*|master$|main$|develop$' | xargs -I % git branch -d %"
 
 # nvim
 alias vim="nvim"
