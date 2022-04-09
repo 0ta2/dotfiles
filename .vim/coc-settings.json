@@ -63,5 +63,6 @@
     "php": ["phpstan", "psalm"],
     "yaml": [ "yamllint" ],
     "cmake": [ "cmake-lint", "cmakelint" ]
-  }
+  },
+  "Lua.telemetry.enable": true
 }
