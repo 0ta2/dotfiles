@@ -5,8 +5,8 @@
   // 自動保存を有効
   // タブやウィンドウからフォーカスを外れると保存される
   "files.autoSave": "onWindowChange",
-  // フォントを指定
-  "editor.fontFamily": "Cica",
+  // Font
+  "editor.fontFamily": "HackGenNerd",
   // フォントサイズ
   "editor.fontSize": 14,
   // エディターで空白文字を表示する方法を制御する｡
@@ -22,7 +22,7 @@
   // 常に新しいタブで開く
   "workbench.editor.enablePreview": false,
   // テーマの設定
-  "workbench.colorTheme": "Gruvbox Dark (Hard)",
+  "workbench.colorTheme": "Atom One Dark",
   // アイコンのテーマを指定
   "workbench.iconTheme": "material-icon-theme",
   //----------------------------------------------------------
@@ -119,6 +119,14 @@
     {
       "before": ["k"],
       "after": ["g", "k"]
+    },
+    {
+      "before": ["H"],
+      "after": ["^"]
+    },
+    {
+      "before": ["L"],
+      "after": ["$"]
     },
     {
       // 実装箇所に移動
@@ -226,5 +234,5 @@
     "editor.suggestSelection": "first",
     "editor.tabCompletion": "onlySnippets",
     "editor.wordBasedSuggestions": false
-  }
+  },
 }

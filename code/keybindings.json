@@ -2,12 +2,12 @@
   {
     "key": "space f",
     "command": "workbench.action.quickOpen",
-    "when": "vim.mode != 'Insert'"
+    "when": "vim.mode != 'Insert' && textInputFocus"
   },
   {
     "key": "space c",
     "command": "workbench.action.showCommands",
-    "when": "vim.mode != 'Insert'"
+    "when": "vim.mode != 'Insert' && textInputFocus"
   },
   {
     "key": "shift+cmd+p",
