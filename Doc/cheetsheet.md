@@ -25,3 +25,7 @@
 ## vim-commentary
 
 - 'gc + c'                            : コメントアウト
+
+## surround.vim
+
+- cs"'                                : 囲い文字を"から'に変更
