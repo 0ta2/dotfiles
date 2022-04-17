@@ -143,11 +143,6 @@ export LANG=ja_JP.UTF-8
 # コマンド補完を有効化
 fpath=(/usr/local/share/zsh/site-functions $fpath)
 
-# GOPATH設定
-export GOPATH=$HOME/go
-export GOBIN="$GOPATH/bin"
-export PATH="$GOPATH/bin:${PATH}"
-
 # WSL を使っている場合の PATH 設定
 if [[ $(uname -a) =~ Linnux && $(uname -a) =~ Microsoft ]]; then
   export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS="1"
