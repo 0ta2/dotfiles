@@ -184,6 +184,7 @@ path=(
   /usr/local/bin(N-/)
   /usr/local/sbin(N-/)
   /usr/bin(N-/)
+  /usr/local/go/bin(N-/)
   ${ZDOTDIR}/bin(N-/)
   $HOME/.fzf/bin(N-/)
   $HOME/.nodenv/shims(N-/)
