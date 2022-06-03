@@ -38,7 +38,7 @@ brew "composer"
 brew "global"
 brew "gnu-sed"  # gnu版のsed
 brew "yarn"
-brew "github/gh/gh"
+brew "gh"
 brew "gawk"     # tmux-picker で必要
 brew "bat"
 cask "docker"   # Docker
