@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Load utils
-. $(cd $(dirname $0) && pwd)/utils
+# shellcheck source=init/utils
+. "$(cd $(dirname $0) && pwd)"/utils
 
 print_title "Install Xcode"
 
