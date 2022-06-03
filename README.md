@@ -5,7 +5,7 @@
 インストールするときは､ `curl` を叩けばOK
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/0ta2/dotfiles/master/etc/install | bash
+curl -fsSL https://raw.githubusercontent.com/0ta2/dotfiles/master/init/install | bash
 ```
 
 ## install shell で実装できていない箇所は手動でセットアップ
