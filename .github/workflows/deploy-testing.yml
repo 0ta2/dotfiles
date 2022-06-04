@@ -1,0 +1,18 @@
+---
+name: deploy-testing
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron:  '0 0 * * *'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: deploy test
+        run: curl -fsSL https://raw.githubusercontent.com/0ta2/dotfiles/master/init/install | bash
+
