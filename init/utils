@@ -62,6 +62,21 @@ os_detect() {
 }
 
 ############################################################
+# Determine if mac os.
+# Arguments:
+#  None
+# Returns:
+#  0(true) or 1(false)
+############################################################
+is_mac() {
+  os_detect
+  if [[ $PLATFORM == 'osx' ]]; then
+    return 0
+  fi
+  return 1
+}
+
+############################################################
 # is_exists returns true if executable $1 exsts in $PATH
 # Arguments:
 #   Command

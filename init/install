@@ -4,29 +4,23 @@ DOTFILES_PATH="${HOME}/ghq/github.com/0ta2/dotfiles"
 DOTFILES_GITHUB="https://github.com/0ta2/dotfiles.git"
 
 print_error() {
-    printf "\033[31m    [×] $1\033[m\n"
+    printf "\033[31m    [×] %s\033[m\n" "$1"
 }
 
 print_success() {
-    printf "\033[32m    [✓] $1\033[m\n"
+    printf "\033[32m    [✓] %s\033[m\n" "$1"
 }
 
 print_warning() {
-    printf "\033[33m    [!] $1\033[m\n"
+    printf "\033[33m    [!] %s\033[m\n" "$1"
 }
 
 print_title() {
-    printf "\n\n\033[35m$1\033[m\n\n"
+    printf "\n\n\033[35m %s \033[m\n\n" "$1"
 }
 
 print_message() {
-    printf "    $1\n"
-}
-
-
-is_exists() {
-  which "$1" >/dev/null 2>&1
-  return $?
+    printf "    %s\n" "$1"
 }
 
 DOTFILES_LOGO='
@@ -47,17 +41,14 @@ DOTFILES_LOGO='
 xcode_select_install() {
   print_message "xcode-select --install..."
 
-  xcode-select -p >/dev/null 2>&1
-
-  if [ $? == 0 ]; then
+  if xcode-select -p >/dev/null 2>&1; then
     print_warning "Already exist"
     exit 0
   else
     xcode-select --install >/dev/null 2>&1
     while :
     do
-      xcode-select -p >/dev/null 2>&1
-      if [ $? == 0 ]; then
+      if xcode-select -p >/dev/null 2>&1; then
         print_success "Sccessfully xcode-select --install"
         sleep 60
         break
@@ -70,19 +61,20 @@ xcode_select_install() {
 # dotfiles download
 download_dotfiles() {
   print_title "Download dotfiles"
-  if [ -d ${DOTFILES_PATH} ]; then
+  if [ -d "${DOTFILES_PATH}" ]; then
     print_warning "Already exists"
     exit 1
   else
     if is_exists "git"; then
       print_message "Git clone dotfiles..."
-      mkdir -p `dirname ${DOTFILES_PATH}`
-      git clone --recursive -q ${DOTFILES_GITHUB} ${DOTFILES_PATH}
+      mkdir -p "$(dirname "${DOTFILES_PATH}")"
+      git clone --recursive -q "${DOTFILES_GITHUB}" "${DOTFILES_PATH}"
       print_success "Successfully downloaded"
     else
       print_message "Downloading dotfiles..."
-      curl -sL https://github.com/0ta2/dotfiles/archive/master.zip | tar xz
-      mv dotfiles-master dotfiles
+      curl -sL https://github.com/0ta2/dotfiles/archive/refs/heads/main.tar.gz | tar xz
+      mkdir -p "$(dirname "${DOTFILES_PATH}")"
+      mv dotfiles-main "$DOTFILES_PATH"
       print_success "Successfully downloaded"
     fi
   fi
@@ -90,19 +82,14 @@ download_dotfiles() {
 
 # dotfiles deploy
 deploy_dotfiles() {
-  if [ -d ${DOTFILES_PATH} ]; then
-    cd ${DOTFILES_PATH}
+  cd "${DOTFILES_PATH}" || print_error "${DOTFILES_PATH}: Not found"
 
-    make deploy
-
-    if [ $? == 0 ]; then
-      print_success "Sccessfully deploy"
-    else
-      print_error "Unsuccessfully deploy"
-      exit 1
-    fi
+  if make deploy; then
+    print_success "Sccessfully deploy"
+  else
+    print_error "Unsuccessfully deploy"
+    exit 1
   fi
-    print_error "${DOTFILES_PATH}: Not found"
 }
 
 # dotfiles initialize
@@ -119,11 +106,17 @@ dotfiles_initialize() {
 
 # Main
 main() {
+  # Load utils
+  # shellcheck source=/dev/null
+  . "$(cd "$(dirname "$0")" && pwd)"/utils
+
   # print logo
   echo "${DOTFILES_LOGO}"
 
   # xcode-select install
-  xcode_select_install
+  if is_mac; then
+    xcode_select_install
+  fi
 
   # download dotfiles
   # priority git -> curl
@@ -134,7 +127,8 @@ main() {
   deploy_dotfiles
 
   # execute shell files
-  dotfiles_initialize
+  #dotfiles_initialize
 }
+
 
 main
