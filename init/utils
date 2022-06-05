@@ -3,6 +3,7 @@
 # よく使う変数と関数
 
 # dotfiles でよく使うであろう変数
+# shellcheck disable=SC2034
 DOTFILES_PATH="${HOME}/ghq/github.com/0ta2/dotfiles"
 DOTFILES_GITHUB="https://github.com/0ta2/dotfiles.git"
 
@@ -14,23 +15,23 @@ DOTFILES_GITHUB="https://github.com/0ta2/dotfiles.git"
 #   Printf Message
 ############################################################
 print_error() {
-    printf "\033[31m    [×] $1\033[m\n"
+    printf "\033[31m    [×] %s\033[m\n" "$1"
 }
 
 print_success() {
-    printf "\033[32m    [✓] $1\033[m\n"
+    printf "\033[32m    [✓] %s\033[m\n" "$1"
 }
 
 print_warning() {
-    printf "\033[33m    [!] $1\033[m\n"
+    printf "\033[33m    [!] %s\033[m\n" "$1"
 }
 
 print_title() {
-    printf "\n\n\033[35m$1\033[m\n\n"
+    printf "\n\n\033[35m%s\033[m\n\n" "$1"
 }
 
 print_message() {
-    printf "    $1\n"
+    printf "    %s\n" "$1"
 }
 
 ############################################################
@@ -41,7 +42,7 @@ print_message() {
 #   [darwin|linux\]
 ############################################################
 ostype() {
-  uname | tr [:upper:] [:lower:]
+  uname | tr '[:upper:]' '[:lower:]'
 }
 
 ############################################################
@@ -93,7 +94,7 @@ is_exists() {
 ############################################################
 return_value() {
   local ret=$1
-  if [ ! ${ret} == "0" ]; then
+  if [ ! "${ret}" == "0" ]; then
     return $?
   fi
 }

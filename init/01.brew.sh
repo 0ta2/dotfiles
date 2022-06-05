@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Load utils
-. $(cd $(dirname $0) && pwd)/utils
+# shellcheck source=/dev/null
+. "$(cd "$(dirname "$0")" && pwd)"/utils
 
 # install homebrew
 install_homebrew() {

@@ -3,7 +3,8 @@
 # Git の初期設定
 
 # Load utils
-. $(cd $(dirname $0) && pwd)/utils
+# shellcheck source=/dev/null
+. "$(cd "$(dirname "$0")" && pwd)"/utils
 
 # git config
 # alias の場合は、第一カラムを空にする
@@ -32,17 +33,15 @@ git_add_config() {
 
   for git_config in "${GIT_CONFIGS[@]}"
   do
-    git_type=$(echo ${git_config} | cut -d "," -f 1)
-    git_item=$(echo ${git_config} | cut -d "," -f 2)
-    git_value=$(echo ${git_config} | cut -d "," -f 3)
+    git_type=$(echo "${git_config}" | cut -d "," -f 1)
+    git_item=$(echo "${git_config}" | cut -d "," -f 2)
+    git_value=$(echo "${git_config}" | cut -d "," -f 3)
 
-    git config ${git_type}.${git_item} > /dev/null 2>&1
-
-    if [ $? == 0 ]; then
+    if git config "${git_type}"."${git_item}" > /dev/null 2>&1; then
       print_warning "${git_type}.${git_item}: Already exists"
     else
-      git config --global ${git_type}.${git_item} "${git_value}"
-      print_success ${git_type}.${git_item}: Successfully Git config
+      git config --global "${git_type}"."${git_item}" "${git_value}"
+      print_success "${git_type}"."${git_item}": Successfully Git config
     fi
   done
 }
