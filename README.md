@@ -2,7 +2,7 @@
 
 ## Setup
 
-インストールするときは､ `curl` を叩けばOK
+インストールするときは､ `curl` を叩けばOK。
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/0ta2/dotfiles/master/init/install | bash

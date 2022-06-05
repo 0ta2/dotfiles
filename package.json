@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "textlint": "^12.1.1",
+    "textlint-rule-preset-ja-technical-writing": "^7.0.0"
+  }
+}
