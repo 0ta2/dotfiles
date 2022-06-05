@@ -6,6 +6,7 @@ tap "homebrew/cask-fonts"
 
 # programming
 brew "go"
+brew "efm-langserver"
 
 # env
 brew "pyenv"

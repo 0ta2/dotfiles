@@ -57,6 +57,11 @@
       ],
       "initializationOptions": {},
       "settings": {}
+    },
+    "efm": {
+      "command": "efm-langserver",
+      "args": [],
+      "filetypes": ["markdown"]
     }
   },
   "diagnostic-languageserver.filetypes": {
