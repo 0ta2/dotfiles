@@ -15,15 +15,15 @@ local function init()
   --   }
   -- }
 
-  --use {
-  --  'tpope/vim-fugitive'
-  --}
-  --use {
-  -- 'airblade/vim-gitgutter',
-  --  config = function()
-  --    require"config.vim-gitgutter".init()
-  --  end
-  --}
+  use {
+    'tpope/vim-fugitive'
+  }
+  use {
+   'airblade/vim-gitgutter',
+    config = function()
+      require"config.vim-gitgutter".init()
+    end
+  }
   --use {
   --  'tpope/vim-rhubarb'
   --}
