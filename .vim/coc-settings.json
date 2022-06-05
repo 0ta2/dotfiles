@@ -47,22 +47,32 @@
       }
     },
     "terraform": {
-			"command": "terraform-ls",
-			"args": ["serve"],
-			"filetypes": [
-				"terraform",
-				"tf"
-			],
-			"initializationOptions": {},
-			"settings": {}
-		}
+      "command": "terraform-ls",
+      "args": [
+        "serve"
+      ],
+      "filetypes": [
+        "terraform",
+        "tf"
+      ],
+      "initializationOptions": {},
+      "settings": {}
+    }
   },
   "diagnostic-languageserver.filetypes": {
     "vim": "vint",
     "sh": "shellcheck",
-    "php": ["phpstan", "psalm"],
-    "yaml": [ "yamllint" ],
-    "cmake": [ "cmake-lint", "cmakelint" ]
+    "php": [
+      "phpstan",
+      "psalm"
+    ],
+    "yaml": [
+      "yamllint"
+    ],
+    "cmake": [
+      "cmake-lint",
+      "cmakelint"
+    ]
   },
   "Lua.telemetry.enable": true
 }
