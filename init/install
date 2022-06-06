@@ -127,7 +127,7 @@ main() {
   deploy_dotfiles
 
   # execute shell files
-  #dotfiles_initialize
+  dotfiles_initialize
 }
 
 
