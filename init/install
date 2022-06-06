@@ -38,26 +38,6 @@ DOTFILES_LOGO='
   Licensed under the MIT license.
 '
 
-xcode_select_install() {
-  print_message "xcode-select --install..."
-
-  if xcode-select -p >/dev/null 2>&1; then
-    print_warning "Already exist"
-    exit 0
-  else
-    xcode-select --install >/dev/null 2>&1
-    while :
-    do
-      if xcode-select -p >/dev/null 2>&1; then
-        print_success "Sccessfully xcode-select --install"
-        sleep 60
-        break
-      fi
-        sleep 30
-      done
-  fi
-}
-
 # dotfiles download
 download_dotfiles() {
   print_title "Download dotfiles"
@@ -112,11 +92,6 @@ main() {
 
   # print logo
   echo "${DOTFILES_LOGO}"
-
-  # xcode-select install
-  if is_mac; then
-    xcode_select_install
-  fi
 
   # download dotfiles
   # priority git -> curl
