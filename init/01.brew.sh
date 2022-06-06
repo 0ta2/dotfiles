@@ -13,7 +13,10 @@ install_homebrew() {
     print_warning "brew already installed"
   else
     print_message "Installing homebrew..."
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+    install_cmd="$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    if [[ ! $(/bin/bash -c "${install_cmd}") == "0" ]]; then
+      exit 0
+    fi
     print_success "Successfully Installed"
   fi
 }
