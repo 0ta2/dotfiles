@@ -81,6 +81,7 @@ dotfiles_initialize() {
     make init
   else
     print_error "Makefile Not found"
+    exit 1
   fi
 }
 
@@ -104,6 +105,5 @@ main() {
   # execute shell files
   dotfiles_initialize
 }
-
 
 main
