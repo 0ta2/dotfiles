@@ -3,14 +3,15 @@
 # :emoji: issue-id issue-title
 
 # ==== example ====
-# :+1: SR-400 認証機能の実装
+# :sparkles: SR-400 認証機能の実装
 # :bug: BG-128 Thanksメッセージは２通ではなく１通
 
 # ==== Emojis ====
-# 👍 機能追加 :+1:
-# 🐛 バグ修正 :bug:
-# 💚 リファクタリング  :green_heart:
-# ✅ テストの追加 :white_check_mark:
-# 📝 ドキュメント追加 :memo:
-# 🚀 パフォーマンス改善 :rocket:
-# 🆙 バージョンアップ :up:
+# 🎉  :tada: 初めてのコミット
+# ✨  :sparkles: 新機能
+# 🐛  :bug: バグ修正（Bugfix）
+# 🚀 :rocket: パフォーマンス改善
+# ♻️  :recycle: リファクタリング
+# 📚  :books: ドキュメント
+# 🔧  :wrench: ツール
+# 🗑️  :wastebasket: 削除
