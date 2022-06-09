@@ -188,6 +188,7 @@ path=(
   ${ZDOTDIR}/bin(N-/)
   $HOME/.fzf/bin(N-/)
   $HOME/.nodenv/shims(N-/)
+  $HOME/go/bin(N-/)
   ${path}
 )
 
