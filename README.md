@@ -32,6 +32,12 @@ gem install neovim
 npm install --global neovim
 ```
 
+### npm パッケージのインストール
+
+```bash
+npm install
+```
+
 ## mac セットアップ
 
 - 一般
