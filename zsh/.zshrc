@@ -141,7 +141,11 @@ export LANG=ja_JP.UTF-8
 ### PATH 設定
 
 # コマンド補完を有効化
-fpath=(/usr/local/share/zsh/site-functions $fpath)
+if [ $(uname -m) = 'x86_64' ]; then
+  fpath=(/usr/local/share/zsh/site-functions $fpath)
+elif [ "$(uname -m)" = 'arm64' ]; then
+  fpath=(/opt/homebrew/share/zsh/site-functions/ $fpath)
+fi
 
 # WSL を使っている場合の PATH 設定
 if [[ $(uname -a) =~ Linnux && $(uname -a) =~ Microsoft ]]; then
