@@ -4,5 +4,5 @@ function fzf-history() {
     CURSOR=$#BUFFER
     zle clear-screen
 }
-zle     -N   fzf-history-widget
-bindkey '^R' fzf-history-widget
+zle     -N   fzf-history
+bindkey '^R' fzf-history
