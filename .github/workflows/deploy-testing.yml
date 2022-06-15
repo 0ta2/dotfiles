@@ -16,5 +16,5 @@ jobs:
       - name: deploy test
         run: curl -fsSL https://raw.githubusercontent.com/0ta2/dotfiles/master/init/install | bash
       - name: clean test
-        run: make clean
+        run: cd ${HOME}/ghq/github.com/0ta2/dotfiles && make clean
 
