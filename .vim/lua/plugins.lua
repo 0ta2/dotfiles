@@ -18,7 +18,12 @@ local packer = nil
 local function init()
   if packer == nil then
     packer = require('packer')
-    packer.init({disabe_commands = false})
+    packer.init({
+      disabe_commands = false,
+      git = {
+        clone_timeout = 120
+      }
+    })
   end
 
   local use = packer.use
