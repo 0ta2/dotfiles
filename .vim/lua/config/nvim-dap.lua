@@ -12,8 +12,13 @@ api.nvim_set_keymap("n", leader .. "db", ":lua require'dap'.toggle_breakpoint()<
 api.nvim_set_keymap("n", leader .. leader .. "d", ":lua require'dapui'.toggle()<CR>", opts_silent)
 api.nvim_set_keymap("n", leader .. leader .. "df", ":lua require'dapui'.eval()<CR>", opts_silent)
 
+-- debug が開始したらdapui を起動
 require 'dap'.listeners.before['event_initialized']['custom'] = function(session, body)
   require("dapui").open()
+end
+-- debug が終了したらdapui を終了
+require 'dap'.listeners.before['event_terminated']['custom'] = function(session, body)
+  require 'dapui'.close()
 end
 
 local dap = require("dap")
