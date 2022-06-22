@@ -9,7 +9,6 @@ function M.init()
     indent = {
       enable = true,
     },
-    ensure_installed = 'all'
   }
 end
 
