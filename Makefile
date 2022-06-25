@@ -51,8 +51,9 @@ deploy: ## Create symlink to home directory
 	@$(call print_success, `ln -sfnv $(DOTPATH)/zsh/.zshenv ~/.zshenv`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/.tmux/.tmux.conf ~/.tmux.conf`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/.tmux ~/.tmux`)
-	@$(call print_success, `ln -sfvn $(DOTPATH)/etc/alacritty ~/.config/alacritty`)
+	@$(call print_success, `ln -sfvn $(DOTPATH)/config/alacritty ~/.config/alacritty`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/etc/com.googlecode.iterm2.plist ~/com.googlecode.iterm2.plist`)
+	@$(call print_success, `ln -sfnv $(DOTPATH)/config/efm-langserver` ~/.config/efm-langserver)
 
 clean: ## Remove the dot files and this repo
 	@$(call print_title, Remove dot files in your home directory...)
