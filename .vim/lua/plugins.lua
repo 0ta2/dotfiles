@@ -54,6 +54,7 @@ local function init()
   --require"plugins.wilder".init()
   require("plugins.denops").init()
   require("plugins.db").init()
+  require("plugins.debug").init()
 end
 
 return {
