@@ -55,7 +55,6 @@ dap.adapters.go = function(callback, config)
     end,
     100)
 end
--- https://github.com/go-delve/delve/blob/master/Documentation/usage/dlv_dap.md
 dap.configurations.go = {
   {
     type = "go",
@@ -74,5 +73,19 @@ dap.configurations.go = {
       local args_string = vim.fn.input('Arguments: ')
       return vim.split(args_string, " +")
     end;
+  }
+}
+
+dap.adapters.php = {
+  type = "executable",
+  command = "node",
+  args = {"~/ghq/github.com/xdebug/vscode-php-debug/out/phpDebug.js"}
+}
+dap.configurations.php = {
+  {
+    type = 'php',
+    request = 'launch',
+    name = 'Listen for Xdebug',
+    port = 9000
   }
 }
