@@ -8,9 +8,12 @@ function M.setup_keymappings()
   local opts_silent_expr = { silent = true, expr = true }
   local opts_silent = { silent = true }
 
-  api.nvim_set_keymap("i", "<TAB>", 'pumvisible() ? "<C-N>" : v:lua.check_back_space() ? "<TAB>" : coc#refresh()', opts_silent_expr )
-  api.nvim_set_keymap('i', '<S-TAB>', 'pumvisible() ? "<C-n>" : "<C-h>"', opts_silent_expr)
+  api.nvim_set_keymap("i", "<TAB>", "coc#pum#visible() ? coc#pum#next(1): '<TAB>'", opts_silent_expr )
+  api.nvim_set_keymap("i", "<TAB>", 'coc#pum#visible() ? "<C-N>" : v:lua.check_back_space() ? "<TAB>" : coc#refresh()', opts_silent_expr )
+  api.nvim_set_keymap('i', '<S-TAB>', 'coc#pum#visible() ? "<C-n>" : "<C-h>"', opts_silent_expr)
+
   api.nvim_set_keymap('i', '<CR>', 'pumvisible() ? coc#_select_confirm() : "<C-g>u<CR><C-r>=coc#on_enter()<CR>"', opts_silent_expr)
+
   api.nvim_set_keymap('i', '<c-spaces>', 'coc#refresh()', opts_silent_expr)
   api.nvim_set_keymap('n', leader .. 'c', ':<C-u>CocList commands<CR>', opts_silent)
   api.nvim_set_keymap('n', leader .. 'l', ":<C-u>CocList<CR>", opts_silent)
