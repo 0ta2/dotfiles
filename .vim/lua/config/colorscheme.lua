@@ -1,5 +1,12 @@
 local M = {}
 
+function M.onedarkpro()
+  require("onedarkpro").setup({
+    dark_theme = "onedark_dark", -- The default dark theme
+  })
+  vim.cmd [[ colorscheme onedarkpro ]]
+end
+
 function M.nvcode()
   vim.g.nvcode_termcolors = 256
   vim.cmd [[ colorscheme onedark ]]
@@ -36,7 +43,8 @@ function M.gruvboxMaterial()
 end
 
 function M.init()
-  M.nvcode()
+  M.onedarkpro()
+  -- M.nvcode()
   -- M.sonokai()
   -- M.moonfly()
   -- M.vim_gruvbox8()
