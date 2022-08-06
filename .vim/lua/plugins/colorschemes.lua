@@ -2,10 +2,17 @@ local use = require"packer".use
 
 local function init()
   use {
-    'christianchiarulli/nvcode-color-schemes.vim',
+    'olimorris/onedarkpro.nvim',
     config = function()
-      require"config.colorscheme".init()
+      require("config.colorscheme").init()
     end
+  }
+
+  use {
+    'christianchiarulli/nvcode-color-schemes.vim',
+    --config = function()
+    --  require"config.colorscheme".init()
+    --end
   }
 
   use {
