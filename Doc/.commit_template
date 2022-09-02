@@ -7,12 +7,27 @@
 # :bug: BG-128 Thanksメッセージは２通ではなく１通
 
 # ==== Emojis ====
-# 🎉  :tada: 初めてのコミット
-# ✨  :sparkles: 新機能
-# 🐛  :bug: バグ修正（Bugfix）
-# 🚀 :rocket: パフォーマンス改善
-# ♻️  :recycle: リファクタリング
-# 📚  :books: ドキュメント
-# 🔧  :wrench: ツール
-# 🗑️  :wastebasket: 削除
-# 🚧  :construction: WIP
+# ♻️ :recycle: リファクタリング
+# ✨ :sparkles:新機能追加
+# ⚡️ :zap: パフォーマンスを向上
+# 🔥 :fire コードやファイルを削除
+# 🐛 :bug: バグ修正
+# 🩹 :adhesive_bandage: 重要でない問題の簡単な修正
+# 📝 :memo: ドキュメントを追加・更新
+# 🎉 :tada: First commit
+# ✅ :white_check_mark: テスト追加、更新
+# 💚 :green_heart: CIビルドの修正
+# 👷 :construction_worker: CIビルドシステムを追加、更新
+# 🔒️ :lock: セキュリティに関する問題を修正
+# 🚧 :construction: wip
+# 🔧 :wrench: 設定ファイルを追加・更新
+# 🔨 :hammer: 開発用スクリプトの追加や更新
+# 💩 :poop: 改善すべき悪いコード
+# 👽️ :alien: 外部APIの変更に伴うコードの更新
+# 💡 :bulb: ソースコードにコメントを追加・更新
+# 🗃️ :card_file_box: データベース関連の変更
+# 🔊 :loud_sound: ログの追加や更新
+# 🔇 :mute: ログを削除
+# 🙈 :see_no_evil: .gitignoreファイルを追加または更新
+
+

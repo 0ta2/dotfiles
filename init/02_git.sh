@@ -16,7 +16,7 @@ GIT_CONFIGS=(
   "alias,gr,log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cd %Cblue%cn %Cred%d %Creset%s'"
   "alias,sw,switch"
   "push,default,simple"
-  "commit,template,${DOTFILES_PATH}/Doc/.commit_template"
+  "commit,template,${DOTFILES_PATH}/doc/.commit_template"
   "fetch,prune,true"
   "core,quotepath,false"
   "core,safecrlf,true"
