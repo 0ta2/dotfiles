@@ -198,6 +198,126 @@ return require('packer').startup(function(use)
     -- Snip
     use 'golang/vscode-go'
 
+    -- treesitter
+    use {
+      'nvim-treesitter/nvim-treesitter',
+      config = function()
+        require('nvim-treesitter.configs').setup {
+          ensure_installed = {
+            'lua'
+          },
+          highlight = {
+            enable = true,
+            disable = {}
+          },
+          indent = {
+            enable = true,
+          },
+        }
+      end
+    }
+
+    -- debug
+    use {
+      "rcarriga/nvim-dap-ui",
+      requires = {
+        "mfussenegger/nvim-dap",
+        "leoluz/nvim-dap-go",
+      },
+      config = function ()
+        require('dap-go').setup()
+        require('dapui').setup()
+
+        local opts = { silent = true }
+        vim.keymap.set('n', leader .. 'dc', [[:lua require ]dap'.continue()<CR>]], opts)
+        vim.keymap.set('n', leader .. 'dn', [[:lua require'dap'.step_over()<CR>]], opts)
+        vim.keymap.set('n', leader .. 'di', [[:lua require'dap'.step_into()<CR>]], opts)
+        vim.keymap.set('n', leader .. 'do', [[:lua require'dap'.step_out()<CR>]], opts)
+        vim.keymap.set('n', leader .. 'db', [[:lua require'dap'.toggle_breakpoint()<CR>]], opts)
+        vim.keymap.set('n', leader .. leader .. 'd', [[:lua require'dapui'.toggle()<CR>]], opts)
+        vim.keymap.set('n', leader .. leader .. 'df', [[:lua require'dapui'.eval()<CR>]], opts)
+
+        -- debug が開始したらdapui を起動
+        require 'dap'.listeners.before['event_initialized']['custom'] = function(session, body)
+          require("dapui").open()
+        end
+        -- debug が終了したらdapui を終了
+        require 'dap'.listeners.before['event_terminated']['custom'] = function(session, body)
+          require 'dapui'.close()
+        end
+
+        local dap = require("dap")
+        dap.adapters.go = function(callback, config)
+          local stdout = vim.loop.new_pipe(false)
+          local handle
+          local pid_or_err
+          local port = 38697
+          local opts = {
+            stdio = { nil, stdout },
+            args = { "dap", "-l", "127.0.0.1:" .. port },
+            detached = true
+          }
+          handle, pid_or_err = vim.loop.spawn("dlv", opts, function(code)
+            stdout:close()
+            handle:close()
+            if code ~= 0 then
+              print('dlv exited with code', code)
+            end
+          end)
+          assert(handle, 'Error running dlv: ' .. tostring(pid_or_err))
+          stdout:read_start(function(err, chunk)
+            assert(not err, err)
+            if chunk then
+              vim.schedule(function()
+                require('dap.repl').append(chunk)
+              end)
+            end
+          end)
+          -- Wait for delve to start
+          vim.defer_fn(
+            function()
+              callback({ type = "server", host = "127.0.0.1", port = port })
+            end,
+            100)
+        end
+        dap.configurations.go = {
+          {
+            type = "go",
+            name = "Debug",
+            request = "launch",
+            mode = "debug",
+            program = "${file}",
+          },
+          {
+            type = "go",
+            name = "Debug(args)",
+            request = "launch",
+            mode = "debug",
+            program = "${file}",
+            args = function()
+              local args_string = vim.fn.input('Arguments: ')
+              return vim.split(args_string, " +")
+            end;
+          }
+        }
+
+        dap.adapters.php = {
+          type = "executable",
+          command = "node",
+          args = {"~/ghq/github.com/xdebug/vscode-php-debug/out/phpDebug.js"}
+        }
+        dap.configurations.php = {
+          {
+            type = 'php',
+            request = 'launch',
+            name = 'Listen for Xdebug',
+            port = 9000
+          }
+        }
+      end,
+    }
+
+
     -- Search
     use {
       'nvim-telescope/telescope.nvim',
@@ -239,6 +359,10 @@ return require('packer').startup(function(use)
     -- git
     use 'tpope/vim-fugitive'
     use 'airblade/vim-gitgutter'
+    use {
+      'lambdalisue/gin.vim',
+      requires = { 'vim-denops/denops.vim' }
+    }
 
     -- Colorscheme
     use {
@@ -430,6 +554,28 @@ return require('packer').startup(function(use)
       }
     }
 
+    -- support
+    use {
+      'reireias/vim-cheatsheet',
+      config = function()
+        vim.g['cheatsheet#cheat_file'] = vim.env.DOTFILES_PATH .. '/Doc/cheetsheet.md'
+      end
+    }
+
+    -- database
+    use {
+      'tpope/vim-dadbod',
+      requires = {
+        {
+          'kristijanhusak/vim-dadbod-ui',
+          config = function()
+            vim.cmd([[ autocmd FileType dbui nmap <buffer> o <Plug>(DBUI_SelectLine) ]])
+            vim.g.dbs = {}
+          end
+        }
+      }
+    }
+
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if packer_bootstrap then
@@ -443,11 +589,3 @@ return require('packer').startup(function(use)
       augroup end
     ]])
 end)
-
---  require"plugins.support".init()
---  require"plugins.treesitter".init()
---  require"plugins.statusline".init()
---  --require"plugins.wilder".init()
---  require("plugins.denops").init()
---  require("plugins.db").init()
---  require("plugins.debug").init()
