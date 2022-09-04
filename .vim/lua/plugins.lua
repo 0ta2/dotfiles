@@ -250,6 +250,9 @@ return require('packer').startup(function(use)
         vim.cmd [[ colorscheme onedarkpro ]]
       end
     }
+    -- color
+    use 'gko/vim-coloresque'
+
     -- Filer plugin
     use {
       'lambdalisue/fern.vim',
@@ -374,6 +377,59 @@ return require('packer').startup(function(use)
       }
     }
 
+    -- moving
+    -- 括弧移動強化
+    use 'andymass/vim-matchup'
+    -- カーソル移動
+    use 'mg979/vim-visual-multi'
+    use {
+      'phaazon/hop.nvim',
+      config = function ()
+        require('hop').setup{}
+        local opts = { silent = true }
+        vim.keymap.set('n', 'fs', "<cmd>lua require'hop'.hint_char1()<cr>", opts)
+        vim.cmd([[ highlight default HopNextKey1 guifg=#fff200 gui=bold blend=0 ]])
+        vim.cmd([[ highlight default HopNextKey2 guifg=#ede8eb blend=0 ]])
+      end
+    }
+
+    -- statusline
+    use {
+      'hoob3rt/lualine.nvim',
+      config = function()
+        local lualine = require('lualine')
+          lualine.setup{
+            options = {
+              theme = 'codedark',
+              section_separators = {'', ''},
+              component_separators = {'', ''},
+              icons_enabled = true,
+            },
+            sections = {
+              lualine_a = { {'mode', upper = true} },
+              lualine_b = { {'branch', icon = ''} },
+              lualine_c = { {'filename', file_status = true} },
+              lualine_x = { 'encoding', 'fileformat', 'filetype' },
+              lualine_y = { 'progress' },
+              lualine_z = { 'location'  },
+            },
+            inactive_sections = {
+              lualine_a = {  },
+              lualine_b = {  },
+              lualine_c = { 'filename' },
+              lualine_x = { 'location' },
+              lualine_y = {  },
+              lualine_z = {   }
+            },
+            extensions = { 'fzf' }
+          }
+        end,
+      requires = {
+        'kyazdani42/nvim-web-devicons',
+        opt = true
+      }
+    }
+
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if packer_bootstrap then
@@ -388,9 +444,6 @@ return require('packer').startup(function(use)
     ]])
 end)
 
---  require"plugins.moving".init()
---  require"plugins.help".init()
---  require"plugins.color".init()
 --  require"plugins.support".init()
 --  require"plugins.treesitter".init()
 --  require"plugins.statusline".init()
