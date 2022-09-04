@@ -561,20 +561,22 @@ return require('packer').startup(function(use)
         vim.g['cheatsheet#cheat_file'] = vim.env.DOTFILES_PATH .. '/Doc/cheetsheet.md'
       end
     }
+  -- help の日本語化
+  use 'vim-jp/vimdoc-ja'
 
-    -- database
-    use {
-      'tpope/vim-dadbod',
-      requires = {
-        {
-          'kristijanhusak/vim-dadbod-ui',
-          config = function()
-            vim.cmd([[ autocmd FileType dbui nmap <buffer> o <Plug>(DBUI_SelectLine) ]])
-            vim.g.dbs = {}
-          end
-        }
+  -- database
+  use {
+    'tpope/vim-dadbod',
+    requires = {
+      {
+        'kristijanhusak/vim-dadbod-ui',
+        config = function()
+          vim.cmd([[ autocmd FileType dbui nmap <buffer> o <Plug>(DBUI_SelectLine) ]])
+          vim.g.dbs = {}
+        end
       }
     }
+  }
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
