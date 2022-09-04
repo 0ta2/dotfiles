@@ -1,62 +1,400 @@
--- install packer.nvim
-local execute = vim.api.nvim_command
 local fn = vim.fn
-
 local install_path = fn.stdpath('data')..'/site/pack/packer/opt/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
-	execute('!git clone https://github.com/wbthomason/packer.nvim '..install_path)
-  execute 'packadd packer.nvim'
+  packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
 end
 
-----Only required if you have packer in your `opt` pack
+-- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
--- Auto PackerCompile
-vim.cmd[[autocmd BufWritePost plugins.lua PackerCompile]]
+return require('packer').startup(function(use)
+    -- Package manager
+    use { 'wbthomason/packer.nvim', opt = true }
+    -- Configurations for Nvim LSP
+    use {
+      'neovim/nvim-lspconfig',
+      config = function()
+          local on_attach = function(client, bufnr)
+          -- Enable completion triggered by <c-x><c-o>
+          vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
-local packer = nil
-local function init()
-  if packer == nil then
-    packer = require('packer')
-    packer.init({
-      disabe_commands = false,
-      git = {
-        clone_timeout = 120
+          -- Mappings.
+          -- See `:help vim.lsp.*` for documentation on any of the below functions
+          local opts = { silent=true }
+          vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
+          vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
+          vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+          vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+          vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+          vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+          vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
+          vim.keymap.set('n', leader .. 'ca', vim.lsp.buf.code_action, opts)
+        end
+      end
+    }
+    -- Nvim Package manager
+    use {
+      'williamboman/mason.nvim',
+      config = function()
+        require('mason').setup({
+          ui = {
+            icons = {
+              package_installed = "✓",
+              package_pending = "➜",
+              package_uninstalled = "✗"
+            }
+          }
+        })
+      end
+    }
+    use {
+      'williamboman/mason-lspconfig.nvim',
+      config = function()
+        require('mason-lspconfig').setup({
+          ensure_installed = {
+            'sumneko_lua',
+            'bashls',
+            'denols',
+            'dockerls',
+            'gopls',
+            'jsonls',
+            'tsserver',
+            'intelephense'
+          }
+        })
+      end
+    }
+
+    -- Completion engine
+    use {
+      'hrsh7th/nvim-cmp',
+      requires = {
+        { 'hrsh7th/cmp-nvim-lsp' },
+        { 'hrsh7th/cmp-buffer', after = 'nvim-cmp' },
+        { 'hrsh7th/cmp-path', after = 'nvim-cmp' },
+        { 'hrsh7th/cmp-cmdline', after = 'nvim-cmp' },
+        { 'hrsh7th/cmp-vsnip', after = 'nvim-cmp', requires = 'hrsh7th/vim-vsnip' },
+        { 'petertriho/cmp-git', requires = 'nvim-lua/plenary.nvim' },
+      },
+      config = function()
+        -- Set up lspconfig.
+        local capabilities = vim.lsp.protocol.make_client_capabilities()
+        local capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+        local lspconfig = require('lspconfig')
+        local servers = {
+          'sumneko_lua',
+          'bashls',
+          'denols',
+          'dockerls',
+          'gopls',
+          'jsonls',
+          'tsserver',
+          'intelephense'
+        }
+        local lsp_flags = {
+          debounce_text_changes = 100,
+        }
+
+        for _, lsp in ipairs(servers) do
+          if lsp == 'sumneko_lua' then
+            lspconfig[lsp].setup {
+              flags = lsp_flags,
+              capabilities = capabilities,
+              settings = {
+                Lua = {
+                  diagnostics = {
+                    globals = {'vim'},
+                  }
+                }
+              }
+            }
+          else
+            lspconfig[lsp].setup {
+              flags = lsp_flags,
+              capabilities = capabilities,
+            }
+          end
+        end
+
+        local has_words_before = function()
+          local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+          return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+        end
+        local feedkey = function(key, mode)
+          vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
+        end
+
+        local cmp = require('cmp')
+          cmp.setup({
+            snippet = {
+              expand = function(args)
+                vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+              end,
+            },
+            window = {},
+            mapping = cmp.mapping.preset.insert({
+              ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+              ['<C-f>'] = cmp.mapping.scroll_docs(4),
+              ['<C-e>'] = cmp.mapping.abort(),
+              ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+
+              ["<Tab>"] = cmp.mapping(function(fallback)
+                if cmp.visible() then
+                  cmp.select_next_item()
+                elseif vim.fn["vsnip#available"](1) == 1 then
+                  feedkey("<Plug>(vsnip-expand-or-jump)", "")
+                elseif has_words_before() then
+                  cmp.complete()
+                else
+                  fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
+                end
+              end, { "i", "s" }),
+              ["<S-Tab>"] = cmp.mapping(function()
+                if cmp.visible() then
+                  cmp.select_prev_item()
+                elseif vim.fn["vsnip#jumpable"](-1) == 1 then
+                  feedkey("<Plug>(vsnip-jump-prev)", "")
+                end
+              end, { "i", "s" }),
+            }),
+            sources = cmp.config.sources({
+              { name = 'nvim_lsp' },
+              { name = 'vsnip' },
+              { name = 'buffer' },
+              { name = 'path' }
+            }, {
+              { name = 'buffer' },
+            })
+          })
+
+          -- Set configuration for specific filetype.
+          cmp.setup.filetype('gitcommit', {
+            sources = cmp.config.sources({
+              { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
+            }, {
+              { name = 'buffer' },
+            })
+          })
+
+          -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
+          cmp.setup.cmdline('/', {
+            mapping = cmp.mapping.preset.cmdline(),
+            sources = {
+              { name = 'buffer' }
+            }
+          })
+
+          -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+          cmp.setup.cmdline(':', {
+            mapping = cmp.mapping.preset.cmdline(),
+            sources = cmp.config.sources({
+              { name = 'path' }
+            }, {
+              { name = 'cmdline' }
+            })
+          })
+      end
+    }
+    -- Snip
+    use 'golang/vscode-go'
+
+    -- Search
+    use {
+      'nvim-telescope/telescope.nvim',
+      tag = '0.1.0',
+      requires = {
+        { 'nvim-lua/plenary.nvim' },
+        { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
+      },
+      config = function()
+        local telescope = require('telescope')
+        local telescopeConfig = require('telescope.config')
+        local actions = require('telescope.actions')
+
+        telescope.setup({
+        	defaults = {
+            mappings = {
+              i = {
+                ['<esc>'] = actions.close
+              },
+            },
+        	},
+        })
+        local opts = { silent = true }
+        vim.keymap.set('n', '<c-p>', [[<cmd>lua require('telescope.builtin').find_files({find_command = {'rg', '--files', '--hidden', '--glob', '!.git'}})<cr>]], opts)
+        vim.keymap.set('n', '<c-t>', [[<cmd>lua require('telescope.builtin').buffers()<cr>]], opts)
+        vim.keymap.set('n', '<c-g>', [[<cmd>lua require('telescope.builtin').live_grep()<cr>]], opts)
+        vim.keymap.set('n', leader .. 'c', [[<cmd>lua require('telescope.builtin').commands()<cr>]], opts)
+        vim.keymap.set('n', leader .. 'dig', [[<cmd>lua require('telescope.builtin').diagnostics()<cr>]], opts)
+        -- git
+        vim.keymap.set('n', leader .. 'gs', [[<cmd>lua require('telescope.builtin').git_status()<cr>]], opts)
+        -- lsp
+        vim.keymap.set('n', 'gr', [[<cmd>lua require('telescope.builtin').lsp_references()<cr>]], opts)
+      end
+    }
+    -- 置換のプレビュー
+    use 'markonm/traces.vim'
+    use 'kevinhwang91/nvim-hlslens'
+
+    -- git
+    use 'tpope/vim-fugitive'
+    use 'airblade/vim-gitgutter'
+
+    -- Colorscheme
+    use {
+      'olimorris/onedarkpro.nvim',
+      config = function()
+        require("onedarkpro").setup({
+        dark_theme = "onedark_dark", -- The default dark theme
+        })
+        vim.cmd [[ colorscheme onedarkpro ]]
+      end
+    }
+    -- Filer plugin
+    use {
+      'lambdalisue/fern.vim',
+      config = function()
+        local opts = { silent = true }
+        local exclude_files = {
+          [[\.DS_Store]],
+          [[\.git]],
+        }
+        vim.g["fern#default_exclude"] = [[^\%(]] .. table.concat(exclude_files, [[\|]]) .. [[\)$]]
+        vim.g['fern#default_hidden'] = 1
+        vim.keymap.set('n', leader .. 'e', [[:<C-u>Fern . -drawer -toggle -reveal=% <cr>]], opts)
+      end
+    }
+    -- 末尾の空白スペース可視化
+    use {
+      'bronson/vim-trailing-whitespace',
+      config = function()
+        vim.g.extra_whitespace_ignored_filetypes = {
+          'help',
+          'packer',
+          'lspsagafinder',
+          'TelescopePrompt'
+        }
+      end
+    }
+
+    -- tab
+    use {
+      'akinsho/bufferline.nvim',
+      config = function()
+        require('bufferline').setup{
+          options = {
+            view = "default",
+            numbers = "none",
+            buffer_close_icon= '',
+            modified_icon = '●',
+            close_icon = '',
+            left_trunc_marker = '',
+            right_trunc_marker = '',
+            max_name_length = 18,
+            max_prefix_length = 15,
+            tab_size = 18,
+            diagnostics = "nvim_lsp",
+            show_buffer_close_icons = false,
+            persist_buffer_sort = true,
+            separator_style = "thin",
+            enforce_regular_tabs = false,
+            always_show_bufferline = true,
+          }
       }
-    })
-  end
+      end,
+      requires = {
+        'kyazdani42/nvim-web-devicons'
+      }
+    }
 
-  local use = packer.use
-  packer.reset()
+    -- tmux
+    use {
+      'christoomey/vim-tmux-navigator',
+      cnfig = function()
+        local api = vim.api
+          vim.g.tmux_navigator_no_mappings = 1
+          vim.g.tmux_navigator_save_on_switch = 2
+          vim.g.tmux_navigator_no_mappings = 1
 
-  use {'wbthomason/packer.nvim', opt = true}
+          local opts = { silent = true }
+          vim.keymap.set('n', '<C-S-h>', [[:<C-u>TmuxNavigateLeft <CR>]], opts)
+          vim.keymap.set('n', '<C-S-j>', [[:<C-u>TmuxNavigateDown <CR>]], opts)
+          vim.keymap.set('n', '<C-S-k>', [[:<C-u>TmuxNavigateUp <CR>]], opts)
+          vim.keymap.set('n', '<C-S-l>', [[:<C-u>TmuxNavigateRight <CR>]], opts)
+          vim.keymap.set('n', '<C-S-\\>', [[:<C-u>TmuxNavigatePrevious <CR>]], opts)
+        end
+    }
 
-  require"plugins.colorschemes".init()
-  --require"plugins.completion".init()
-  require"plugins.lsp".init()
-  require"plugins.delimiters".init()
-  require"plugins.files".init()
-  require"plugins.editing".init()
-  require"plugins.language".init()
-  require"plugins.fuzzy-finder".init()
-  require"plugins.tab".init()
-  require"plugins.tmux".init()
-  require"plugins.window".init()
-  require"plugins.markdown".init()
-  require"plugins.git".init()
-  require"plugins.search".init()
-  require"plugins.moving".init()
-  require"plugins.help".init()
-  require"plugins.color".init()
-  require"plugins.support".init()
-  require"plugins.treesitter".init()
-  require"plugins.statusline".init()
-  --require"plugins.wilder".init()
-  require("plugins.denops").init()
-  require("plugins.db").init()
-  require("plugins.debug").init()
-end
+    -- Delibiters
+    -- カッコを自動的に閉じる
+    use 'jiangmiao/auto-pairs'
+    -- カッコの編集を便利するプラグイン
+    use 'tpope/vim-surround'
 
-return {
-  init = init,
-}
+    -- editing
+    use 'tpope/vim-commentary'
+
+    use {
+      'nathanaelkane/vim-indent-guides',
+      config = function()
+        vim.g.indent_guides_enable_on_vim_startup = 1
+        vim.g.indent_guides_start_level = 2
+        vim.g.indent_guides_guide_size = 1
+        vim.cmd('hi IndentGuidesOdd  ctermbg=black')
+        vim.cmd('hi IndentGuidesEven ctermbg=darkgrey')
+        vim.g.indent_guides_exclude_filetypes = {
+          'help',
+          'packer',
+          'lspsagafinder',
+          'TelescopePrompt',
+          'moving.lua',
+          'HopChar'
+        }
+      end
+    }
+
+    -- Window
+    use {
+      'simeji/winresizer',
+      cmd = 'WinResizerStartResize',
+      setup = function()
+        local opts = { silent = true }
+        vim.keymap.set('n', '<C-e>', ':WinResizerStartResize<CR>', opts)
+        vim.g.winresizer_vert_resize = 5
+        vim.g.winresizer_horiz_resize = 5
+      end
+    }
+
+    -- markdown
+    use {
+      'previm/previm',
+      ft = {'md', 'markdown'},
+      requires = {
+        'tyru/open-browser.vim'
+      }
+    }
+
+    -- Automatically set up your configuration after cloning packer.nvim
+    -- Put this at the end after all plugins
+    if packer_bootstrap then
+      require('packer').sync()
+    end
+
+    vim.cmd([[
+      augroup packer_user_config
+      autocmd!
+      autocmd BufWritePost plugins.lua source <afile> | PackerCompile
+      augroup end
+    ]])
+end)
+
+--  require"plugins.moving".init()
+--  require"plugins.help".init()
+--  require"plugins.color".init()
+--  require"plugins.support".init()
+--  require"plugins.treesitter".init()
+--  require"plugins.statusline".init()
+--  --require"plugins.wilder".init()
+--  require("plugins.denops").init()
+--  require("plugins.db").init()
+--  require("plugins.debug").init()

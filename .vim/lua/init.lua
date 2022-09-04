@@ -5,8 +5,8 @@ require"basic"
 require"keymap"
 
 -- Require plugins
-require"plugins".init()
+require"plugins"
 
 -- develop
 --vim.cmd([[ command! Format lua require'develop'.Format()]])
-vim.cmd([[ autocmd bufWritePost *.ts :Format ]])
+--vim.cmd([[ autocmd bufWritePost *.ts :Format ]])
