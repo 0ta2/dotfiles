@@ -29,6 +29,8 @@ return require('packer').startup(function(use)
           vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
           vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
           vim.keymap.set('n', leader .. 'a', vim.lsp.buf.code_action, opts)
+          vim.keymap.set('n', leader .. 'rn', vim.lsp.buf.rename, opts)
+          vim.keymap.set('n', leader .. 'f', vim.lsp.buf.formatting, opts)
         end
       end
     }
