@@ -331,6 +331,7 @@ return require('packer').startup(function(use)
       config = function()
         local telescope = require('telescope')
         local telescopeConfig = require('telescope.config')
+
         local actions = require('telescope.actions')
 
         telescope.setup({
@@ -368,12 +369,13 @@ return require('packer').startup(function(use)
 
     -- Colorscheme
     use {
-      'olimorris/onedarkpro.nvim',
+      --'olimorris/onedarkpro.nvim',
+      'sainnhe/gruvbox-material',
       config = function()
-        require("onedarkpro").setup({
-        dark_theme = "onedark_dark", -- The default dark theme
-        })
-        vim.cmd [[ colorscheme onedarkpro ]]
+        -- require("onedarkpro").setup({
+        --   dark_theme = "onedark_dark", -- The default dark theme
+        -- })
+        vim.cmd [[ colorscheme gruvbox-material ]]
       end
     }
     -- color
