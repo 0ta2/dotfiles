@@ -371,6 +371,7 @@ return require('packer').startup(function(use)
     'lambdalisue/gin.vim',
     requires = { 'vim-denops/denops.vim' }
   }
+  use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
 
   -- Colorscheme
   use {
