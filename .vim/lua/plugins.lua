@@ -38,7 +38,8 @@ return require('packer').startup(function(use)
         vim.keymap.set('n', 'gD', [[<cmd>:lua vim.lsp.buf.declaration()<cr>]], opts)
         vim.keymap.set('n', 'gd', [[<cmd>:lua vim.lsp.buf.definition()<cr>]], opts)
         vim.keymap.set('n', 'K', [[<cmd>:lua vim.lsp.buf.hover<cr>]], opts)
-        vim.keymap.set('n', 'gi', [[<cmd>:lua vim.lsp.buf.implementation()<cr>]], opts)
+        --vim.keymap.set('n', 'gr', [[<cmd>:lua vim.lsp.buf.references()<cr>]], opts)
+        --vim.keymap.set('n', 'gi', [[<cmd>:lua vim.lsp.buf.implementation()<cr>]], opts)
         vim.keymap.set('n', '<C-k>', [[<cmd>:lua vim.lsp.buf.signature_help()<cr>]], opts)
         vim.keymap.set('n', '<space>a', [[<cmd>:lua vim.lsp.buf.code_action()<cr>]], opns)
         vim.keymap.set('n', '<space>rn', [[<cmd>:lua vim.lsp.buf.rename()<cr>]], opts)
@@ -368,7 +369,8 @@ return require('packer').startup(function(use)
       -- git
       vim.keymap.set('n', leader .. 'gs', [[<cmd>lua require('telescope.builtin').git_status()<cr>]], opts)
       -- lsp
-      vim.keymap.set('n', 'gr', [[<cmd>lua require('telescope.builtin').lsp_references()<cr>]], opts)
+      vim.keymap.set('n', 'gr', [[<cmd>lua require('telescope.builtin').lsp_references({include_current_line=true})<cr>]], opts)
+      vim.keymap.set('n', 'gi', [[<cmd>lua require('telescope.builtin').lsp_implementations()<cr>]], opts)
     end
   }
   -- 置換のプレビュー
