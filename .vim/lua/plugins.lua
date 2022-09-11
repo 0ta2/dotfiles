@@ -541,7 +541,7 @@ return require('packer').startup(function(use)
       local lualine = require('lualine')
       lualine.setup {
         options = {
-          theme = 'codedark',
+          theme = 'gruvbox-material',
           section_separators = { '', '' },
           component_separators = { '', '' },
           icons_enabled = true,
