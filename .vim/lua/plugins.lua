@@ -5,6 +5,17 @@ if fn.empty(fn.glob(install_path)) > 0 then
     install_path })
 end
 
+disable_file_type = {
+  'help',
+  'packer',
+  'lspsagafinder',
+  'TelescopePrompt',
+  'moving.lua',
+  'HopChar',
+  'NeogitPopup',
+  'NeogitStatus'
+}
+
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
@@ -412,12 +423,7 @@ return require('packer').startup(function(use)
   use {
     'bronson/vim-trailing-whitespace',
     config = function()
-      vim.g.extra_whitespace_ignored_filetypes = {
-        'help',
-        'packer',
-        'lspsagafinder',
-        'TelescopePrompt'
-      }
+      vim.g.extra_whitespace_ignored_filetypes = disable_file_type
     end
   }
 
@@ -486,14 +492,7 @@ return require('packer').startup(function(use)
       vim.g.indent_guides_guide_size = 1
       vim.cmd('hi IndentGuidesOdd  ctermbg=black')
       vim.cmd('hi IndentGuidesEven ctermbg=darkgrey')
-      vim.g.indent_guides_exclude_filetypes = {
-        'help',
-        'packer',
-        'lspsagafinder',
-        'TelescopePrompt',
-        'moving.lua',
-        'HopChar'
-      }
+      vim.g.indent_guides_exclude_filetypes = disable_file_type
     end
   }
 
