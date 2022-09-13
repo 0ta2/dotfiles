@@ -7,8 +7,8 @@
 # :bug: BG-128 Thanksメッセージは２通ではなく１通
 
 # ==== Emojis ====
-# ♻️ :recycle: リファクタリング
-# ✨ :sparkles:新機能追加
+# ♻️  :recycle: リファクタリング
+# ✨ :sparkles: 新機能追加
 # ⚡️ :zap: パフォーマンスを向上
 # 🔥 :fire コードやファイルを削除
 # 🐛 :bug: バグ修正
@@ -29,5 +29,3 @@
 # 🔊 :loud_sound: ログの追加や更新
 # 🔇 :mute: ログを削除
 # 🙈 :see_no_evil: .gitignoreファイルを追加または更新
-
-
