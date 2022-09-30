@@ -7,14 +7,14 @@
 # :bug: BG-128 Thanksメッセージは２通ではなく１通
 
 # ==== Emojis ====
-# ♻️  :recycle: リファクタリング
+# ♻️ :recycle: リファクタリング
 # ✨ :sparkles: 新機能追加
 # ⚡️ :zap: パフォーマンスを向上
-# 🔥 :fire コードやファイルを削除
+# 🔥 :fire: コードやファイルを削除
 # 🐛 :bug: バグ修正
 # 🩹 :adhesive_bandage: 重要でない問題の簡単な修正
 # 📝 :memo: ドキュメントを追加・更新
-# 🎉 :tada: First commit
+# 🎉:tada: First commit
 # ✅ :white_check_mark: テスト追加、更新
 # 💚 :green_heart: CIビルドの修正
 # 👷 :construction_worker: CIビルドシステムを追加、更新
