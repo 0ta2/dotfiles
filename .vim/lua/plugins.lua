@@ -242,7 +242,15 @@ return require('packer').startup(function(use)
     config = function()
       require('nvim-treesitter.configs').setup {
         ensure_installed = {
-          'lua'
+          'lua',
+          'go',
+          'toml',
+          'php',
+          'phpdoc',
+          'json',
+          'javascript',
+          'html',
+          'css'
         },
         highlight = {
           enable = true,
