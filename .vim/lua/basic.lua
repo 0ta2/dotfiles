@@ -64,7 +64,8 @@ vim.o.softtabstop = 2
 vim.o.shiftwidth = 2
 
 -- The kind of folding used for the current window.
-vim.wo.foldmethod = 'manual'
+vim.wo.foldmethod = 'expr'
+vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
 
 -- Change regular expression to backtracking engine.
 vim.o.regexpengine = 2
