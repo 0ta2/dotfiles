@@ -46,8 +46,7 @@ return require('packer').startup(function(use)
         vim.keymap.set('n', leader .. 'f', [[<cmd>:lua vim.lsp.buf.formatting()<cr>]], opts)
       end
       -- Set up lspconfig.
-      local capabilities = vim.lsp.protocol.make_client_capabilities()
-      capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+      local capabilities = require("cmp_nvim_lsp").default_capabilities()
       local lspconfig = require('lspconfig')
       local servers = {
         'sumneko_lua',
