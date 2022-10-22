@@ -134,7 +134,6 @@ return require('packer').startup(function(use)
           'jsonls',
           'tsserver',
           'intelephense',
-          'textlint'
         }
       })
     end
