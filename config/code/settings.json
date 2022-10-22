@@ -259,5 +259,5 @@
     { "emoji": "🔊", "code": ":loud_sound:", "description": "ログの追加や更新", },
     { "emoji": "🔇", "code": ":mute:", "description": "ログを削除", },
     { "emoji": "🙈", "code": ":see_no_evil:", "description": ".gitignoreファイルを追加または更新", },
-  ],
+  ]
 }
