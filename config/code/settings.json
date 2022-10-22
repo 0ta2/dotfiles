@@ -234,6 +234,7 @@
   //----------------------------------------------------------
   // gitemoji 設定
   //----------------------------------------------------------
+  // デフォルト設定のものを使わない
   "gitmoji.onlyUseAdditionalEmojis": true,
   "gitmoji.additionalEmojis": [
     { "emoji": "♻", "code": ":recycle:", "description": "リファクタリング", },
