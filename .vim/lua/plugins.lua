@@ -396,13 +396,19 @@ return require('packer').startup(function(use)
       -- git
       vim.keymap.set('n', leader .. 'gs', [[<cmd>lua require('telescope.builtin').git_status()<cr>]], opts)
       -- lsp
-      vim.keymap.set('n', 'gr', [[<cmd>lua require('telescope.builtin').lsp_references({include_current_line=true})<cr>]], opts)
+      vim.keymap.set('n', 'gr', [[<cmd>lua require('telescope.builtin').lsp_references({include_current_line=true})<cr>]]
+        , opts)
       vim.keymap.set('n', 'gi', [[<cmd>lua require('telescope.builtin').lsp_implementations()<cr>]], opts)
     end
   }
   -- 置換のプレビュー
   use 'markonm/traces.vim'
-  use 'kevinhwang91/nvim-hlslens'
+  use {
+    'kevinhwang91/nvim-hlslens',
+    config = function()
+      require('hlslens').setup()
+    end
+  }
 
   -- git
   use 'tpope/vim-fugitive'
