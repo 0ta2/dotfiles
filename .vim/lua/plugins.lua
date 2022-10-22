@@ -98,6 +98,7 @@ return require('packer').startup(function(use)
           end
         end
       end
+
       vim.api.nvim_create_autocmd("BufWritePre", {
         pattern = "*.go",
         callback = function()
@@ -233,6 +234,15 @@ return require('packer').startup(function(use)
   }
   -- Snip
   use 'golang/vscode-go'
+
+  -- Go
+  use {
+    'ray-x/go.nvim',
+    config = function()
+      require('go').setup()
+    end
+
+  }
 
   -- treesitter
   use {
