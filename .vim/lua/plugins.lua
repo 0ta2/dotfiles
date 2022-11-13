@@ -16,6 +16,17 @@ disable_file_type = {
   'NeogitStatus'
 }
 
+lsp_servers = {
+  'sumneko_lua',
+  'bashls',
+  'denols',
+  'dockerls',
+  'gopls',
+  'jsonls',
+  'tsserver',
+  'intelephense'
+}
+
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
@@ -48,16 +59,7 @@ return require('packer').startup(function(use)
       -- Set up lspconfig.
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
       local lspconfig = require('lspconfig')
-      local servers = {
-        'sumneko_lua',
-        'bashls',
-        'denols',
-        'dockerls',
-        'gopls',
-        'jsonls',
-        'tsserver',
-        'intelephense'
-      }
+      local servers = lsp_servers
       local lsp_flags = {
         debounce_text_changes = 100,
       }
@@ -126,16 +128,7 @@ return require('packer').startup(function(use)
     'williamboman/mason-lspconfig.nvim',
     config = function()
       require('mason-lspconfig').setup({
-        ensure_installed = {
-          'sumneko_lua',
-          'bashls',
-          'denols',
-          'dockerls',
-          'gopls',
-          'jsonls',
-          'tsserver',
-          'intelephense',
-        }
+        ensure_installed = lsp_servers
       })
     end
   }
@@ -255,7 +248,6 @@ return require('packer').startup(function(use)
           'toml',
           'php',
           'phpdoc',
-          'json',
           'javascript',
           'html',
           'css'
