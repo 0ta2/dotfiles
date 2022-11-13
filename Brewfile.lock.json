@@ -5,13 +5,13 @@
         "revision": "5216bbdd9d47b1cb01c0d2cb656de32540ada95d"
       },
       "homebrew/core": {
-        "revision": "4680540791dcbdc7aa8efc52949b9316d9a49543"
+        "revision": "522d42deab7e61f770e75b03661e53ba08d5aca0"
       },
       "sanemat/font": {
         "revision": "b9c208d3a58c305764e8b311b45b65855629804c"
       },
       "homebrew/cask-fonts": {
-        "revision": "248224f07442e4cd74fa12cb88c9324168aa4069"
+        "revision": "9d132bd26dbbabf161aa29511c2f2358815d4f98"
       }
     },
     "brew": {
@@ -1511,6 +1511,12 @@
         "options": {
           "full_name": "visual-studio-code"
         }
+      },
+      "deepl": {
+        "version": "3.7.292629",
+        "options": {
+          "full_name": "deepl"
+        }
       }
     },
     "mas": {
@@ -1537,7 +1543,7 @@
       "ventura": {
         "HOMEBREW_VERSION": "3.6.10",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "4680540791dcbdc7aa8efc52949b9316d9a49543",
+        "Homebrew/homebrew-core": "522d42deab7e61f770e75b03661e53ba08d5aca0",
         "CLT": "14.1.0.0.1.1666437224",
         "Xcode": "14.1",
         "macOS": "13.0.1"
