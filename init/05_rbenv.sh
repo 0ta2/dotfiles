@@ -26,8 +26,8 @@ global_rbenv() {
 }
 
 main() {
-  install_rbenv_ruby 2.7.1
-  global_rbenv 2.7.1
+  install_rbenv_ruby 3.1.2
+  global_rbenv 3.1.2
 }
 
 main
