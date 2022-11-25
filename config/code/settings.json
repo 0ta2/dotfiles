@@ -6,7 +6,7 @@
   // タブやウィンドウからフォーカスを外れると保存される
   "files.autoSave": "onWindowChange",
   // Font
-  "editor.fontFamily": "HackGenNerd",
+  "editor.fontFamily": "HackGen",
   // フォントサイズ
   "editor.fontSize": 14,
   // エディターで空白文字を表示する方法を制御する｡
@@ -17,12 +17,12 @@
   "files.insertFinalNewline": true,
   // ファイル保存時に最終行の空白を削除
   "files.trimTrailingWhitespace": true,
-  // 文字コードの自動錦
+  // 文字コードの自動識別
   "files.autoGuessEncoding": true,
   // 常に新しいタブで開く
   "workbench.editor.enablePreview": false,
   // テーマの設定
-  "workbench.colorTheme": "Atom One Dark",
+  "workbench.colorTheme": "One Dark Pro Darker",
   // アイコンのテーマを指定
   "workbench.iconTheme": "material-icon-theme",
   //----------------------------------------------------------
@@ -104,8 +104,8 @@
       "commands": ["workbench.action.focusSideBar"]
     },
     {
-      "before": ["<leader>", "l"],
-      "commands": ["workbench.action.showCommands"]
+      "before": ["<leader>", "f"],
+      "commands": ["editor.action.formatDocument"]
     },
     {
       // highlightを解除
@@ -143,7 +143,7 @@
       "commands": ["editor.action.referenceSearch.trigger"]
     }
   ],
-  // visualモードのkeybindを書き換える
+  // visualモードのkeybindingを書き換える
   "vim.visualModeKeyBindings": [
     {
       "before": [";"],
@@ -164,7 +164,7 @@
       "commands": ["workbench.action.showCommands"]
     },
     {
-      "before": ["<leader>", "f", "f"],
+      "before": ["ctrl+p"],
       "commands": ["workbench.action.quickOpen"]
     }
   ],
@@ -188,12 +188,10 @@
   //----------------------------------------------------------
   // Terminal の設定
   //----------------------------------------------------------
-  // デフォルトシェルを指定
-  "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
   // テーミナルを iTerm に変更
   "terminal.external.osxExec": "iTerm.app",
   //  ターミナルのフォントを指定
-  "terminal.integrated.fontFamily": "Cica",
+  "terminal.integrated.fontFamily": "HackGen Console NF",
   // ターミナルのフォントサイズ
   "terminal.integrated.fontSize": 14,
   //----------------------------------------------------------
@@ -226,13 +224,40 @@
   "[dart]": {
     "editor.formatOnSave": true,
     "editor.formatOnType": true,
-    "editor.rulers": [
-      80
-    ],
+    "editor.rulers": [80],
     "editor.selectionHighlight": false,
     "editor.suggest.snippetsPreventQuickSuggestions": false,
     "editor.suggestSelection": "first",
     "editor.tabCompletion": "onlySnippets",
     "editor.wordBasedSuggestions": false
   },
+  //----------------------------------------------------------
+  // gitemoji 設定
+  //----------------------------------------------------------
+  // デフォルト設定のものを使わない
+  "gitmoji.onlyUseAdditionalEmojis": true,
+  "gitmoji.additionalEmojis": [
+    { "emoji": "♻", "code": ":recycle:", "description": "リファクタリング", },
+    { "emoji": "✨", "code": ":sparkles:", "description": "新機能追加", },
+    { "emoji": "⚡️", "code": ":zap:", "description": "パフォーマンスを向上", },
+    { "emoji": "🔥", "code": ":fire:", "description": "コードやファイルを削除", },
+    { "emoji": "🐛", "code": ":bug:", "description": "バグ修正", },
+    { "emoji": "🩹", "code": ":adhesive_bandage:", "description": "重要でない問題の簡単な修正", },
+    { "emoji": "📝", "code": ":memo:", "description": "ドキュメントを追加・更新", },
+    { "emoji": "🎉", "code": ":tada:", "description": "First commit", },
+    { "emoji": "✅", "code": ":white_check_mark:", "description": "テスト追加、更新", },
+    { "emoji": "💚", "code": ":green_heart:", "description": "CIビルドの修正", },
+    { "emoji": "👷", "code": ":construction_worker:", "description": "CIビルドシステムを追加、更新", },
+    { "emoji": "🔒️", "code": ":lock:", "description": "セキュリティに関する問題を修正", },
+    { "emoji": "🚧", "code": ":construction:", "description": "wip", },
+    { "emoji": "🔧", "code": ":wrench:", "description": "設定ファイルを追加・更新", },
+    { "emoji": "🔨", "code": ":hammer:", "description": "開発用スクリプトの追加や更新", },
+    { "emoji": "💩", "code": ":sparpoopkles:", "description": "改善すべき悪いコード", },
+    { "emoji": "👽️", "code": ":alien:", "description": "外部APIの変更に伴うコードの更新", },
+    { "emoji": "💡", "code": ":bulb:", "description": "ソースコードにコメントを追加・更新", },
+    { "emoji": "🗃️", "code": ":card_file_box:", "description": "データベース関連の変更", },
+    { "emoji": "🔊", "code": ":loud_sound:", "description": "ログの追加や更新", },
+    { "emoji": "🔇", "code": ":mute:", "description": "ログを削除", },
+    { "emoji": "🙈", "code": ":see_no_evil:", "description": ".gitignoreファイルを追加または更新", },
+  ]
 }

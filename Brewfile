@@ -6,6 +6,7 @@ tap "homebrew/cask-fonts"
 
 # programming
 brew "go"
+brew "golangci-lint"
 brew "efm-langserver"
 
 # env
@@ -42,29 +43,26 @@ brew "gh"
 brew "gawk"     # tmux-picker で必要
 brew "bat"
 cask "docker"   # Docker
-cask "vagrant"
 cask "font-inconsolata"
 brew "hashicorp/tap/terraform-ls"
+cask "raycast" # Launcher
 
 ## completion
-brew "docker-compose-completion"
 brew "docker-completion"
 
 # font
-cask "font-cica"
 cask "font-hackgen"
 cask "font-hackgen-nerd"
 
 ### application
 cask "google-chrome"
-cask "google-photos-backup-and-sync"
 cask "google-japanese-ime"
-cask "alfred"
 cask "dropbox"
 cask "vlc"
 cask "1password"
 cask "slack"
 cask "bettertouchtool"
+cask "deepl"
 
 ## terminal
 cask "iTerm2"
@@ -77,9 +75,7 @@ cask "visual-studio-code"
 brew "mas"
 
 ### for app store
-mas "PopClip", id: 445189367
 mas "Tweetbot", id: 1384080005
 mas "LINE", id: 539883307
 mas "Spark", id: 1176895641
-mas "Translate Tab", id: 458887729
 mas "Xcode", id: 497799835
