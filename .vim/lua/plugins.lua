@@ -13,7 +13,8 @@ disable_file_type = {
   'moving.lua',
   'HopChar',
   'NeogitPopup',
-  'NeogitStatus'
+  'NeogitStatus',
+  'mason',
 }
 
 lsp_servers = {
