@@ -6,6 +6,7 @@ tap "homebrew/cask-fonts"
 
 # programming
 brew "go"
+brew "golangci-lint"
 brew "efm-langserver"
 
 # env
