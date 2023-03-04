@@ -18,7 +18,7 @@ disable_file_type = {
 }
 
 lsp_servers = {
-  'sumneko_lua',
+  'lua_ls',
   'bashls',
   'denols',
   'dockerls',
@@ -66,7 +66,7 @@ return require('packer').startup(function(use)
       }
 
       for _, lsp in ipairs(servers) do
-        if lsp == 'sumneko_lua' then
+        if lsp == 'lua_ls' then
           lspconfig[lsp].setup {
             flags = lsp_flags,
             capabilities = capabilities,
