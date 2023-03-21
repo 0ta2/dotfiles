@@ -235,8 +235,8 @@
   // gitemoji 設定
   //----------------------------------------------------------
   // デフォルト設定のものを使わない
-  "gitmoji.onlyUseAdditionalEmojis": true,
-  "gitmoji.additionalEmojis": [
+  "gitmoji.onlyUseCustomEmoji": true,
+  "gitmoji.addCustomEmoji": [
     { "emoji": "♻", "code": ":recycle:", "description": "リファクタリング", },
     { "emoji": "✨", "code": ":sparkles:", "description": "新機能追加", },
     { "emoji": "⚡️", "code": ":zap:", "description": "パフォーマンスを向上", },
