@@ -46,6 +46,7 @@ cask "docker"   # Docker
 cask "font-inconsolata"
 brew "hashicorp/tap/terraform-ls"
 cask "raycast" # Launcher
+cask "karabiner-elements"
 
 ## completion
 brew "docker-completion"
