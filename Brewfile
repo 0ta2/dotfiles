@@ -64,6 +64,8 @@ cask "1password"
 cask "slack"
 cask "bettertouchtool"
 cask "deepl"
+cask "notion"
+cask "microsoft-edge"
 
 ## terminal
 cask "iTerm2"
@@ -76,7 +78,6 @@ cask "visual-studio-code"
 brew "mas"
 
 ### for app store
-mas "Tweetbot", id: 1384080005
 mas "LINE", id: 539883307
 mas "Spark", id: 1176895641
 mas "Xcode", id: 497799835
