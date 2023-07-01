@@ -110,6 +110,23 @@ return require('packer').startup(function(use)
       })
     end,
   }
+
+  -- linter/formatter
+  use {
+    'jose-elias-alvarez/null-ls.nvim',
+    config = function()
+      local null_ls = require("null-ls")
+      null_ls.setup({
+        -- lua
+        null_ls.builtins.formatting.stylua,
+        -- spell
+        null_ls.builtins.completion.spell,
+        -- shell
+        null_ls.builtins.diagnostics.shellcheck,
+      })
+    end
+  }
+
   -- Nvim Package manager
   use {
     'williamboman/mason.nvim',
@@ -402,6 +419,7 @@ return require('packer').startup(function(use)
       vim.keymap.set('n', 'gi', [[<cmd>lua require('telescope.builtin').lsp_implementations()<cr>]], opts)
     end
   }
+
   -- 置換のプレビュー
   use 'markonm/traces.vim'
   use {
