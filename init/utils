@@ -88,13 +88,3 @@ is_exists() {
   which "$1" >/dev/null 2>&1
   return "$?"
 }
-
-############################################################
-# return_value return false if not execution status.
-############################################################
-return_value() {
-  local ret=$1
-  if [ ! "${ret}" == "0" ]; then
-    return "$?"
-  fi
-}
