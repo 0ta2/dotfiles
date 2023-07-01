@@ -126,6 +126,9 @@ return require('packer').startup(function(use)
   -- Nvim Package manager
   use {
     'williamboman/mason.nvim',
+    reqruires = {
+      'williamboman/mason-lspconfig.nvim',
+    },
     config = function()
       require('mason').setup({
         ui = {
@@ -136,11 +139,7 @@ return require('packer').startup(function(use)
           }
         }
       })
-    end
-  }
-  use {
-    'williamboman/mason-lspconfig.nvim',
-    config = function()
+
       require('mason-lspconfig').setup({
         ensure_installed = lsp_servers
       })
