@@ -68,7 +68,7 @@ return require('packer').startup(function(use)
         vim.keymap.set('n', leader .. 'K', [[<cmd>:lua vim.lsp.buf.signature_help()<cr>]], opts)
         vim.keymap.set('n', leader .. 'a', [[<cmd>:lua vim.lsp.buf.code_action()<cr>]], opts)
         vim.keymap.set('n', leader .. 'rn', [[<cmd>:lua vim.lsp.buf.rename()<cr>]], opts)
-        vim.keymap.set('n', leader .. 'f', [[<cmd>:lua vim.lsp.buf.formatting()<cr>]], opts)
+        vim.keymap.set('n', leader .. 'f', [[<cmd>:lua vim.lsp.buf.format()<cr>]], opts)
       end
       -- Set up lspconfig.
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
