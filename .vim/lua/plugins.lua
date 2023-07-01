@@ -124,7 +124,8 @@ return require('packer').startup(function(use)
         -- shell
         null_ls.builtins.diagnostics.shellcheck,
       })
-    end
+    end,
+    requires = {"nvim-lua/plenary.nvim"}
   }
 
   -- Nvim Package manager
