@@ -126,7 +126,7 @@ return require('packer').startup(function(use)
   -- Nvim Package manager
   use {
     'williamboman/mason.nvim',
-    reqruires = {
+    requires = {
       'williamboman/mason-lspconfig.nvim',
     },
     config = function()
