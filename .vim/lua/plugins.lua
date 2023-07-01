@@ -28,19 +28,6 @@ lsp_servers = {
   'intelephense'
 }
 
-mason_lsp_servers = {
-  'lua-language-server',
-  'bash-language-server',
-  'denols',
-  'deno',
-  'dockerfile-language-server',
-  'gopls',
-  'json-lsp',
-  'typescript-language-server',
-  'intelephense'
-}
-
-
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
