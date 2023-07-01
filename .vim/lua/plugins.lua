@@ -151,14 +151,13 @@ return require('packer').startup(function(use)
     'hrsh7th/nvim-cmp',
     requires = {
       { 'hrsh7th/cmp-nvim-lsp' },
-      { 'hrsh7th/cmp-buffer', after = 'nvim-cmp' },
-      { 'hrsh7th/cmp-path', after = 'nvim-cmp' },
+      { 'hrsh7th/cmp-buffer',  after = 'nvim-cmp' },
+      { 'hrsh7th/cmp-path',    after = 'nvim-cmp' },
       { 'hrsh7th/cmp-cmdline', after = 'nvim-cmp' },
-      { 'hrsh7th/cmp-vsnip', after = 'nvim-cmp', requires = 'hrsh7th/vim-vsnip' },
-      { 'petertriho/cmp-git', requires = 'nvim-lua/plenary.nvim' },
+      { 'hrsh7th/cmp-vsnip',   after = 'nvim-cmp',                requires = 'hrsh7th/vim-vsnip' },
+      { 'petertriho/cmp-git',  requires = 'nvim-lua/plenary.nvim' },
     },
     config = function()
-
       local has_words_before = function()
         local line, col = unpack(vim.api.nvim_win_get_cursor(0))
         return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
@@ -356,7 +355,7 @@ return require('packer').startup(function(use)
           args = function()
             local args_string = vim.fn.input('Arguments: ')
             return vim.split(args_string, " +")
-          end;
+          end,
         }
       }
 
@@ -412,7 +411,7 @@ return require('packer').startup(function(use)
       vim.keymap.set('n', leader .. 'gs', [[<cmd>lua require('telescope.builtin').git_status()<cr>]], opts)
       -- lsp
       vim.keymap.set('n', 'gr', [[<cmd>lua require('telescope.builtin').lsp_references({include_current_line=true})<cr>]]
-        , opts)
+      , opts)
       vim.keymap.set('n', 'gi', [[<cmd>lua require('telescope.builtin').lsp_implementations()<cr>]], opts)
     end
   }
