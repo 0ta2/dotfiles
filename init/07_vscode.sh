@@ -13,7 +13,7 @@ pkglist=(
     ms-python.python
     rogalmic.bash-debug
     shardulm94.trailing-spaces
-    vscodevim.vim
+  vscodevim.vim
     vscoss.vscode-ansible
     waderyan.gitblame
     yzhang.markdown-all-in-one
