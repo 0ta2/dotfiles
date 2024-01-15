@@ -26,6 +26,7 @@ node_modules/*
 .vim/tmp/*
 .vim/yankring.txt
 .vim/plugin/packer_compiled.vim
+.vim/lazy-lock.json
 
 ### tmux
 .tmux/plugins/*

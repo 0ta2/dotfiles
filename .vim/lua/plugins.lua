@@ -1,10 +1,3 @@
-local fn = vim.fn
-local install_path = fn.stdpath('data') .. '/site/pack/packer/opt/packer.nvim'
-if fn.empty(fn.glob(install_path)) > 0 then
-  packer_bootstrap = fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim',
-    install_path })
-end
-
 disable_file_type = {
   'help',
   'packer',
@@ -28,14 +21,23 @@ lsp_servers = {
   'intelephense'
 }
 
--- Only required if you have packer configured as `opt`
-vim.cmd [[packadd packer.nvim]]
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
 
-return require('packer').startup(function(use)
-  -- Package manager
-  use { 'wbthomason/packer.nvim', opt = true }
+
+require("lazy").setup({
   -- Configurations for Nvim LSP
-  use {
+  {
     'neovim/nvim-lspconfig',
     config = function()
       local on_attach = function(client, bufnr)
@@ -109,10 +111,10 @@ return require('packer').startup(function(use)
         end
       })
     end,
-  }
+  },
 
   -- linter/formatter
-  use {
+  {
     'jose-elias-alvarez/null-ls.nvim',
     config = function()
       local null_ls = require("null-ls")
@@ -125,13 +127,13 @@ return require('packer').startup(function(use)
         null_ls.builtins.diagnostics.shellcheck,
       })
     end,
-    requires = {"nvim-lua/plenary.nvim"}
-  }
+    dependencies = { "nvim-lua/plenary.nvim" }
+  },
 
   -- Nvim Package manager
-  use {
+  {
     'williamboman/mason.nvim',
-    requires = {
+    dependencies = {
       'williamboman/mason-lspconfig.nvim',
     },
     config = function()
@@ -149,18 +151,18 @@ return require('packer').startup(function(use)
         ensure_installed = lsp_servers
       })
     end
-  }
+  },
 
   -- Completion engine
-  use {
+  {
     'hrsh7th/nvim-cmp',
-    requires = {
+    dependencies = {
       { 'hrsh7th/cmp-nvim-lsp' },
-      { 'hrsh7th/cmp-buffer',  after = 'nvim-cmp' },
-      { 'hrsh7th/cmp-path',    after = 'nvim-cmp' },
-      { 'hrsh7th/cmp-cmdline', after = 'nvim-cmp' },
-      { 'hrsh7th/cmp-vsnip',   after = 'nvim-cmp',                requires = 'hrsh7th/vim-vsnip' },
-      { 'petertriho/cmp-git',  requires = 'nvim-lua/plenary.nvim' },
+      { 'hrsh7th/cmp-buffer' },
+      { 'hrsh7th/cmp-path' },
+      { 'hrsh7th/cmp-cmdline' },
+      { 'hrsh7th/cmp-vsnip',   dependencies = 'hrsh7th/vim-vsnip' },
+      { 'petertriho/cmp-git',  dependencies = 'nvim-lua/plenary.nvim' },
     },
     config = function()
       local has_words_before = function()
@@ -241,21 +243,20 @@ return require('packer').startup(function(use)
         })
       })
     end
-  }
-  -- Snip
-  use 'golang/vscode-go'
+  },
+
+  { 'golang/vscode-go' },
 
   -- Go
-  use {
+  {
     'ray-x/go.nvim',
     config = function()
       require('go').setup()
     end
-
-  }
+  },
 
   -- treesitter
-  use {
+  {
     'nvim-treesitter/nvim-treesitter',
     config = function()
       require('nvim-treesitter.configs').setup {
@@ -278,12 +279,12 @@ return require('packer').startup(function(use)
         },
       }
     end
-  }
+  },
 
   -- debug
-  use {
+  {
     "rcarriga/nvim-dap-ui",
-    requires = {
+    dependencies = {
       "mfussenegger/nvim-dap",
       "leoluz/nvim-dap-go",
     },
@@ -378,14 +379,13 @@ return require('packer').startup(function(use)
         }
       }
     end,
-  }
-
+  },
 
   -- Search
-  use {
+  {
     'nvim-telescope/telescope.nvim',
-    tag = '0.1.0',
-    requires = {
+    tag = '0.1.4',
+    dependencies = {
       { 'nvim-lua/plenary.nvim' },
       { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
     },
@@ -419,35 +419,35 @@ return require('packer').startup(function(use)
       , opts)
       vim.keymap.set('n', 'gi', [[<cmd>lua require('telescope.builtin').lsp_implementations()<cr>]], opts)
     end
-  }
+  },
 
   -- 置換のプレビュー
-  use 'markonm/traces.vim'
-  use {
+  { 'markonm/traces.vim' },
+  {
     'kevinhwang91/nvim-hlslens',
     config = function()
       require('hlslens').setup()
     end
-  }
+  },
 
   -- git
-  use 'tpope/vim-fugitive'
-  use 'airblade/vim-gitgutter'
-  use {
+  { 'tpope/vim-fugitive' },
+  { 'airblade/vim-gitgutter' },
+  {
     'lambdalisue/gin.vim',
-    requires = { 'vim-denops/denops.vim' }
-  }
-  use {
+    dependencies = { 'vim-denops/denops.vim' }
+  },
+  {
     'TimUntersberger/neogit',
-    requires = 'nvim-lua/plenary.nvim',
+    dependencies = 'nvim-lua/plenary.nvim',
     config = function()
       local neogit = require('neogit')
       neogit.setup {}
     end
-  }
+  },
 
   -- Colorscheme
-  use {
+  {
     --'olimorris/onedarkpro.nvim',
     'sainnhe/gruvbox-material',
     config = function()
@@ -456,12 +456,12 @@ return require('packer').startup(function(use)
       -- })
       vim.cmd [[ colorscheme gruvbox-material ]]
     end
-  }
+  },
   -- color
-  use 'gko/vim-coloresque'
+  { 'gko/vim-coloresque' },
 
   -- Filer plugin
-  use {
+  {
     'lambdalisue/fern.vim',
     config = function()
       local opts = { silent = true }
@@ -473,17 +473,17 @@ return require('packer').startup(function(use)
       vim.g['fern#default_hidden'] = 1
       vim.keymap.set('n', leader .. 'e', [[:<C-u>Fern . -drawer -toggle -reveal=% <cr>]], opts)
     end
-  }
+  },
   -- 末尾の空白スペース可視化
-  use {
+  {
     'bronson/vim-trailing-whitespace',
     config = function()
       vim.g.extra_whitespace_ignored_filetypes = disable_file_type
     end
-  }
+  },
 
   -- tab
-  use {
+  {
     'akinsho/bufferline.nvim',
     config = function()
       require('bufferline').setup {
@@ -507,13 +507,13 @@ return require('packer').startup(function(use)
         }
       }
     end,
-    requires = {
+    dependencies = {
       'kyazdani42/nvim-web-devicons'
     }
-  }
+  },
 
   -- tmux
-  use {
+  {
     'christoomey/vim-tmux-navigator',
     cnfig = function()
       local api = vim.api
@@ -528,18 +528,18 @@ return require('packer').startup(function(use)
       vim.keymap.set('n', '<C-S-l>', [[:<C-u>TmuxNavigateRight <CR>]], opts)
       vim.keymap.set('n', '<C-S-\\>', [[:<C-u>TmuxNavigatePrevious <CR>]], opts)
     end
-  }
+  },
 
   -- Delibiters
   -- カッコを自動的に閉じる
-  use 'jiangmiao/auto-pairs'
+  { 'jiangmiao/auto-pairs' },
   -- カッコの編集を便利するプラグイン
-  use 'tpope/vim-surround'
+  { 'tpope/vim-surround' },
 
   -- editing
-  use 'tpope/vim-commentary'
+  { 'tpope/vim-commentary' },
 
-  use {
+  {
     'nathanaelkane/vim-indent-guides',
     config = function()
       vim.g.indent_guides_enable_on_vim_startup = 1
@@ -549,10 +549,10 @@ return require('packer').startup(function(use)
       vim.cmd('hi IndentGuidesEven ctermbg=darkgrey')
       vim.g.indent_guides_exclude_filetypes = disable_file_type
     end
-  }
+  },
 
   -- Window
-  use {
+  {
     'simeji/winresizer',
     cmd = 'WinResizerStartResize',
     setup = function()
@@ -561,23 +561,23 @@ return require('packer').startup(function(use)
       vim.g.winresizer_vert_resize = 5
       vim.g.winresizer_horiz_resize = 5
     end
-  }
+  },
 
   -- markdown
-  use {
+  {
     'previm/previm',
     ft = { 'md', 'markdown' },
-    requires = {
+    dependencies = {
       'tyru/open-browser.vim'
     }
-  }
+  },
 
   -- moving
   -- 括弧移動強化
-  use 'andymass/vim-matchup'
+  { 'andymass/vim-matchup' },
   -- カーソル移動
-  use 'mg979/vim-visual-multi'
-  use {
+  { 'mg979/vim-visual-multi' },
+  {
     'phaazon/hop.nvim',
     config = function()
       require('hop').setup {}
@@ -586,10 +586,10 @@ return require('packer').startup(function(use)
       vim.cmd([[ highlight default HopNextKey1 guifg=#fff200 gui=bold blend=0 ]])
       vim.cmd([[ highlight default HopNextKey2 guifg=#ede8eb blend=0 ]])
     end
-  }
+  },
 
   -- statusline
-  use {
+  {
     'hoob3rt/lualine.nvim',
     config = function()
       local lualine = require('lualine')
@@ -619,26 +619,27 @@ return require('packer').startup(function(use)
         extensions = { 'fzf' }
       }
     end,
-    requires = {
+    dependencies = {
       'kyazdani42/nvim-web-devicons',
-      opt = true
+      lazy = true
     }
-  }
+  },
 
   -- support
-  use {
+  {
     'reireias/vim-cheatsheet',
     config = function()
       vim.g['cheatsheet#cheat_file'] = vim.env.DOTFILES_PATH .. '/Doc/cheetsheet.md'
     end
-  }
+  },
+
   -- help の日本語化
-  use 'vim-jp/vimdoc-ja'
+  { 'vim-jp/vimdoc-ja' },
 
   -- database
-  use {
+  {
     'tpope/vim-dadbod',
-    requires = {
+    dependencies = {
       {
         'kristijanhusak/vim-dadbod-ui',
         config = function()
@@ -648,17 +649,4 @@ return require('packer').startup(function(use)
       }
     }
   }
-
-  -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
-  if packer_bootstrap then
-    require('packer').sync()
-  end
-
-  vim.cmd([[
-      augroup packer_user_config
-      autocmd!
-      autocmd BufWritePost plugins.lua source <afile> | PackerCompile
-      augroup end
-    ]])
-end)
+})
