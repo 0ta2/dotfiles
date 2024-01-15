@@ -6,6 +6,7 @@ tap "homebrew/cask-fonts"
 
 # programming
 brew "go"
+brew "deno"
 brew "golangci-lint"
 brew "efm-langserver"
 
@@ -73,6 +74,7 @@ cask "alacritty"
 
 ## editor
 cask "visual-studio-code"
+cask "craft"
 
 ### other
 brew "mas"
