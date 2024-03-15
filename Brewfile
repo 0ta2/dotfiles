@@ -67,6 +67,7 @@ cask "bettertouchtool"
 cask "deepl"
 cask "notion"
 cask "microsoft-edge"
+cask "kindle"
 
 ## terminal
 cask "iTerm2"
@@ -75,6 +76,7 @@ cask "alacritty"
 ## editor
 cask "visual-studio-code"
 cask "craft"
+cask "zed"
 
 ### other
 brew "mas"
