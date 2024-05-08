@@ -539,18 +539,25 @@ require("lazy").setup({
 
   -- editing
   { 'tpope/vim-commentary' },
-
   {
-    'nathanaelkane/vim-indent-guides',
+    "shellRaining/hlchunk.nvim",
+    event = { "UIEnter" },
     config = function()
-      vim.g.indent_guides_enable_on_vim_startup = 1
-      vim.g.indent_guides_start_level = 2
-      vim.g.indent_guides_guide_size = 1
-      vim.cmd('hi IndentGuidesOdd  ctermbg=black')
-      vim.cmd('hi IndentGuidesEven ctermbg=darkgrey')
-      vim.g.indent_guides_exclude_filetypes = disable_file_type
+      require("hlchunk").setup({})
     end
   },
+
+  --{
+  --  'nathanaelkane/vim-indent-guides',
+  --  config = function()
+  --    vim.g.indent_guides_enable_on_vim_startup = 1
+  --    vim.g.indent_guides_start_level = 2
+  --    vim.g.indent_guides_guide_size = 1
+  --    vim.cmd('hi IndentGuidesOdd  ctermbg=black')
+  --    vim.cmd('hi IndentGuidesEven ctermbg=darkgrey')
+  --    vim.g.indent_guides_exclude_filetypes = disable_file_type
+  --  end
+  --},
 
   -- Window
   {
@@ -633,6 +640,15 @@ require("lazy").setup({
       vim.g['cheatsheet#cheat_file'] = vim.env.DOTFILES_PATH .. '/Doc/cheetsheet.md'
     end
   },
+
+  {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    init = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+    end,
+   },
 
   -- help の日本語化
   { 'vim-jp/vimdoc-ja' },
