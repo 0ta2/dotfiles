@@ -2,6 +2,8 @@
 
 pkglist=(
   vscodevim.vim
+  vscode-language-pack-ja
+  golang.Go
 )
 
 for i in "${pkglist[@]}"; do
