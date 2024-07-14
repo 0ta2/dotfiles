@@ -26,8 +26,8 @@ global_nodenv() {
 }
 
 main() {
-  install_nodenv_nodejs 19.0.1
-  global_nodenv 19.0.1
+  install_nodenv_nodejs 22.4.1
+  global_nodenv 22.4.1
 }
 
 main
