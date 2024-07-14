@@ -392,8 +392,6 @@ require("lazy").setup({
     },
     config = function()
       local telescope = require('telescope')
-      local telescopeConfig = require('telescope.config')
-
       local actions = require('telescope.actions')
 
       telescope.setup({
