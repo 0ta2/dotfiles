@@ -2,7 +2,7 @@
 
 # Load utils
 # shellcheck source=/dev/null
-. "$(cd "$(dirname "$0")" && pwd)"/util
+. "$(cd "$(dirname "$0")" && pwd)"/utils
 
 install_zimfw() {
   print_title "Install zimfw"
