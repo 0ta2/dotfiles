@@ -31,9 +31,9 @@ create_virtualenv() {
  }
 
 main() {
-  install_pyenv_python 3.11.0
+  install_pyenv_python 3.12.4
   install_pyenv_python 2.7.18
-  create_virtualenv 3.11.0
+  create_virtualenv 3.12.4
   create_virtualenv 2.7.18
 }
 
