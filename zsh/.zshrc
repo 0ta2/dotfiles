@@ -124,6 +124,10 @@ do
   source $funcs
 done
 
+if [ -f ~/.zshrc.dev ]; then
+  source ~/.zshrc.dev
+fi
+
 ### 環境変数設定
 
 # 独自関数
