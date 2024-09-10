@@ -1,5 +1,5 @@
 function get_load_average_tmux() {
-  uptime | awk '{print $10,$11,$12}'
+  uptime | awk '{print $8,$9,$10}'
 }
 
 function main() {

@@ -83,6 +83,13 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 # Initialize modules
 # ------------------
 
+# コマンド補完を有効化
+if [ $(uname -m) = 'x86_64' ]; then
+  fpath=(/usr/local/share/zsh/site-functions $fpath)
+elif [ "$(uname -m)" = 'arm64' ]; then
+  fpath=(/opt/homebrew/share/zsh/site-functions/ $fpath)
+fi
+
 if [[ ${ZIM_HOME}/init.zsh -ot ${ZDOTDIR:-${HOME}}/.zimrc ]]; then
   # Update static initialization script if it's outdated, before sourcing it
   source ${ZIM_HOME}/zimfw.zsh init -q
@@ -143,14 +150,6 @@ export TERM=screen-256color
 export LANG=ja_JP.UTF-8
 
 ### PATH 設定
-
-# コマンド補完を有効化
-if [ $(uname -m) = 'x86_64' ]; then
-  fpath=(/usr/local/share/zsh/site-functions $fpath)
-elif [ "$(uname -m)" = 'arm64' ]; then
-  fpath=(/opt/homebrew/share/zsh/site-functions/ $fpath)
-fi
-
 # WSL を使っている場合の PATH 設定
 if [[ $(uname -a) =~ Linnux && $(uname -a) =~ Microsoft ]]; then
   export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS="1"

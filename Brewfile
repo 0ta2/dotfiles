@@ -48,6 +48,8 @@ cask "font-inconsolata"
 brew "hashicorp/tap/terraform-ls"
 cask "raycast" # Launcher
 cask "karabiner-elements"
+brew "kube-ps1"
+brew "kubectx"
 
 ## completion
 brew "docker-completion"
@@ -68,6 +70,7 @@ cask "deepl"
 cask "notion"
 cask "microsoft-edge"
 cask "kindle"
+cask "remnote"
 
 ## terminal
 cask "iTerm2"
