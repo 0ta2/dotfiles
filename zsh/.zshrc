@@ -57,6 +57,7 @@ WORDCHARS=${WORDCHARS//[\/]}
 # See http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html#Simple-Prompt-Escapes
 # If none is provided, the default '%n@%m: %~' is used.
 #zstyle ':zim:termtitle' format '%1~'
+zstyle ':zim:git-info:<context_name>' format '<new_format>' '$(kube_ps1)'
 
 #
 # zsh-autosuggestions
