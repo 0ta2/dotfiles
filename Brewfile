@@ -71,6 +71,7 @@ cask "notion"
 cask "microsoft-edge"
 cask "kindle"
 cask "remnote"
+cask "arc"
 
 ## terminal
 cask "iTerm2"
