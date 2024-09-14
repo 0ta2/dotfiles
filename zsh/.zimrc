@@ -17,8 +17,7 @@ zmodule utility
 # Exposes git repository status information to prompts.
 zmodule git-info
 # A customizable version of steeef's prompt theme.
-#zmodule s1ck94
-zmodule gitster
+zmodule magicmace
 # Formats the path to the current working directory to be used by prompts.
 zmodule prompt-pwd
 
