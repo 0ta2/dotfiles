@@ -150,22 +150,6 @@ export TERM=screen-256color
 export LANG=ja_JP.UTF-8
 
 ### PATH 設定
-# WSL を使っている場合の PATH 設定
-if [[ $(uname -a) =~ Linnux && $(uname -a) =~ Microsoft ]]; then
-  export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS="1"
-  export PATH="$PATH:/mnt/c/Program Files/Oracle/VirtualBox"
-fi
-
-# Alacritty の PATH 設定
-if [ -e /Applications/Alacritty.app/Contents/MacOS/alacritty ];then
-	export PATH=/Applications/Alacritty.app/Contents/MacOS:${PATH}
-fi
-
-# mysql-client
-if [ "`which mysql`" ]; then
-  export PATH="/usr/local/opt/mysql-client/bin:$PATH"
-fi
-
 # less コマンドの環境変数
 export LESS='--ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD'
 
@@ -190,8 +174,8 @@ fi
 path=(
   /usr/local/bin(N-/)
   /usr/local/sbin(N-/)
-  /usr/bin(N-/)
   /usr/local/go/bin(N-/)
+  /usr/bin(N-/)
   ${ZDOTDIR}/bin(N-/)
   $HOME/.fzf/bin(N-/)
   $HOME/.nodenv/shims(N-/)
@@ -200,9 +184,6 @@ path=(
 )
 
 ### Env系
-# macの場合は､ /etc/zprofile で上書きされてしまう｡
-# そのため､ $ZDOTDIR/.zprofile で上書きする必要がある｡
-
 # pyenv 設定
 if [ "`which pyenv`" ]; then
   export PYENV_ROOT="$HOME/.pyenv"
@@ -297,6 +278,3 @@ alias sed="gsed"
 
 # ls
 alias ls="gls --color=auto"
-
-# PHPstrom
-alias p="open -a PhpStorm ."
