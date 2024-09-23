@@ -17,7 +17,7 @@ lsp_servers = {
   'dockerls',
   'gopls',
   'jsonls',
-  'tsserver',
+  'ts_ls',
   'intelephense'
 }
 
