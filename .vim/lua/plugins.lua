@@ -433,10 +433,6 @@ require("lazy").setup({
   { 'tpope/vim-fugitive' },
   { 'airblade/vim-gitgutter' },
   {
-    'lambdalisue/gin.vim',
-    dependencies = { 'vim-denops/denops.vim' }
-  },
-  {
     'TimUntersberger/neogit',
     dependencies = {
       'nvim-lua/plenary.nvim',
