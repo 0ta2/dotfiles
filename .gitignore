@@ -1,3 +1,6 @@
+### Git
+!.gitkeep
+
 ### Mac OS
 .DS_Store
 
@@ -10,27 +13,23 @@ zsh/.zcompcache
 zsh/.zsh_history
 zsh/.zsh_sessions
 
-### vim
+### nvim
 .netrwhist
 *.swp
 *.swo
-.vim/plugged/*
-.vim/plugin/*
-viminfo.txt
+nvim/plugged/*
+nvim/plugin/*
+nviminfo.txt
+nvim/yankring.txt
+nvim/lazy-lock.json
+nvim/plugin/packer_compiled.vim
 tags
-!.gitkeep
 node_modules/*
 .bundle/*
 .venv/*
-.vim/sessions
-.vim/tmp/*
-.vim/yankring.txt
-.vim/plugin/packer_compiled.vim
-.vim/lazy-lock.json
 
 ### tmux
 .tmux/plugins/*
-!.gitkeep
 
 ### karabiner
 karabiner/automatic_backups/*

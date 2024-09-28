@@ -81,10 +81,11 @@ vim.o.termguicolors = true
 
 -- undofile
 vim.cmd [[ set undofile ]]
-vim.cmd [[ set undodir=~/.vim/tmp/undo ]]
+vim.cmd [[ set undodir=$XDG_STATE_HOME/nvim/undo ]]
+
 -- backupfile
 vim.cmd [[ set backup ]]
-vim.cmd [[ set backupdir=~/.vim/tmp/backup ]]
+vim.cmd [[ set backupdir=$XDG_STATE_HOME/nvim/backup ]]
 
 -- Set the behavior at completion.
 vim.o.completeopt = 'menu,menuone,noselect'

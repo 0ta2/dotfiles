@@ -229,7 +229,7 @@
     "editor.suggest.snippetsPreventQuickSuggestions": false,
     "editor.suggestSelection": "first",
     "editor.tabCompletion": "onlySnippets",
-    "editor.wordBasedSuggestions": false
+    "editor.wordBasedSuggestions": "off"
   },
   //----------------------------------------------------------
   // gitemoji 設定
@@ -259,5 +259,6 @@
     { "emoji": "🔊", "code": ":loud_sound:", "description": "ログの追加や更新", },
     { "emoji": "🔇", "code": ":mute:", "description": "ログを削除", },
     { "emoji": "🙈", "code": ":see_no_evil:", "description": ".gitignoreファイルを追加または更新", },
-  ]
+  ],
+  "explorer.confirmDelete": false
 }

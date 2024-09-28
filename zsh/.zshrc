@@ -5,30 +5,14 @@
 # -----------------
 # Zsh configuration
 # -----------------
-
-#
-# History
-#
-
-# Remove older command from the history if a duplicate is to be added.
-setopt HIST_IGNORE_ALL_DUPS
-
-#
-# Input/output
-#
-
 # Set editor default keymap to emacs (`-e`) or vi (`-v`)
 bindkey -e
-
-# Prompt for spelling correction of commands.
-#setopt CORRECT
 
 # Customize spelling correction prompt.
 #SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
 
 # Remove path separator from WORDCHARS.
 WORDCHARS=${WORDCHARS//[\/]}
-
 
 # --------------------
 # Module configuration
@@ -57,7 +41,6 @@ WORDCHARS=${WORDCHARS//[\/]}
 # See http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html#Simple-Prompt-Escapes
 # If none is provided, the default '%n@%m: %~' is used.
 #zstyle ':zim:termtitle' format '%1~'
-zstyle ':zim:git-info:<context_name>' format '<new_format>' '$(kube_ps1)'
 
 #
 # zsh-autosuggestions
@@ -91,10 +74,32 @@ elif [ "$(uname -m)" = 'arm64' ]; then
   fpath=(/opt/homebrew/share/zsh/site-functions/ $fpath)
 fi
 
-if [[ ${ZIM_HOME}/init.zsh -ot ${ZDOTDIR:-${HOME}}/.zimrc ]]; then
-  # Update static initialization script if it's outdated, before sourcing it
+# homebrew
+if [[ $(uname -m) == "arm64" ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
+# functionファイルを読み込む
+for funcs in ${ZDOTDIR}/functions/*
+do
+  source $funcs
+done
+
+if [ -f ~/.zshrc.dev ]; then
+  source ~/.zshrc.dev
+fi
+
+# Download zimfw plugin manager if missing.
+if [[ ! -e ${ZIM_HOME}/zimfw.zsh ]]; then
+  curl -fsSL --create-dirs -o ${ZIM_HOME}/zimfw.zsh \
+      https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
+fi
+
+# Install missing modules, and update ${ZIM_HOME}/init.zsh if missing or outdated.
+if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZDOTDIR:-${HOME}}/.zimrc ]]; then
   source ${ZIM_HOME}/zimfw.zsh init -q
 fi
+# Initialize modules.
 source ${ZIM_HOME}/init.zsh
 
 # ------------------------------
@@ -126,29 +131,9 @@ bindkey -M vicmd 'j' history-substring-search-down
 # Customization
 # -----------------
 
-# functionファイルを読み込む
-for funcs in ${ZDOTDIR}/functions/*
-do
-  source $funcs
-done
-
-if [ -f ~/.zshrc.dev ]; then
-  source ~/.zshrc.dev
-fi
-
-### 環境変数設定
-
-# 独自関数
-export DOTFILES_PATH="${HOME}/ghq/github.com/0ta2/dotfiles"
-
-### 環境変数設定
-export EDITOR=nvim
-
-#TERM設定
-export TERM=screen-256color
-
-# 文字コード指定
-export LANG=ja_JP.UTF-8
+#
+# 環境変数設定
+#
 
 ### PATH 設定
 # less コマンドの環境変数
@@ -161,28 +146,6 @@ if [ -f ~/.fzf.zsh ]; then
   export FZF_TMUX_HEIGHT=30
   export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 fi
-
-#   path=xxxx(N-/)
-#     (N-/): 存在しないディレクトリは登録しない
-#     パス(...): ...という条件にマッチするパスのみ残す
-#        N: NULL_GLOBオプションを設定。
-#           globがマッチしなかったり存在しないパスを無視する
-#        -: シンボリックリンク先のパスを評価
-#        /: ディレクトリのみ残す
-#        .: 通常のファイルのみ残す
-# 基本PATH設定
-# ${path} は､大文字の PATH と紐付いている
-path=(
-  /usr/local/bin(N-/)
-  /usr/local/sbin(N-/)
-  /usr/local/go/bin(N-/)
-  /usr/bin(N-/)
-  ${ZDOTDIR}/bin(N-/)
-  $HOME/.fzf/bin(N-/)
-  $HOME/.nodenv/shims(N-/)
-  $HOME/go/bin(N-/)
-  ${path}
-)
 
 ### Env系
 # pyenv 設定
@@ -213,7 +176,33 @@ if [ "`which nodenv`" ]; then
   eval "$(nodenv init -)"
 fi
 
-### Optin
+#   path=xxxx(N-/)
+#     (N-/): 存在しないディレクトリは登録しない
+#     パス(...): ...という条件にマッチするパスのみ残す
+#        N: NULL_GLOBオプションを設定。
+#           globがマッチしなかったり存在しないパスを無視する
+#        -: シンボリックリンク先のパスを評価
+#        /: ディレクトリのみ残す
+#        .: 通常のファイルのみ残す
+# 基本PATH設定
+# ${path} は､大文字の PATH と紐付いている
+path=(
+  /usr/local/bin(N-/)
+  /usr/local/sbin(N-/)
+  /usr/local/go/bin(N-/)
+  /usr/bin(N-/)
+  ${ZDOTDIR}/bin(N-/)
+  $HOME/.fzf/bin(N-/)
+  $HOME/go/bin(N-/)
+  ${path}
+)
+
+# -----------------
+# Zsh configuration
+# -----------------
+
+# 重複するコマンドを追加する場合は、履歴から古いコマンドを削除する。
+setopt HIST_IGNORE_ALL_DUPS
 
 # 隠しファイル補完候補に表示
 setopt globdots
