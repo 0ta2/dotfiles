@@ -147,6 +147,11 @@ if [ -f ~/.fzf.zsh ]; then
   export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 fi
 
+# GOPATH設定
+export GOPATH=$HOME/go
+export GOBIN="$GOPATH/bin"
+export PATH="$GOPATH/bin:${PATH}"
+
 ### Env系
 # pyenv 設定
 if [ "`which pyenv`" ]; then
