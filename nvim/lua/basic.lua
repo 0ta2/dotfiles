@@ -30,7 +30,7 @@ vim.o.cmdheight = 2
 vim.wo.number = true
 
 -- Show the line number relative to the line with the cursor in front of each line.
-vim.wo.relativenumber = true
+vim.wo.relativenumber = false
 
 -- Highlight the screen line of the cursor with CursorLine.
 vim.wo.cursorline = true
@@ -55,13 +55,13 @@ vim.wo.conceallevel = 0
 vim.o.expandtab = true
 
 -- Number of spaces that a <Tab> in the file counts for.
-vim.o.tabstop = 2
+vim.o.tabstop = 4
 
 -- Number of spaces that a <Tab> counts for while performing editing operations, like inserting a <Tab> or using <BS>.
-vim.o.softtabstop = 2
+vim.o.softtabstop = 4
 
 -- Number of spaces to use for each step of (auto)indent.
-vim.o.shiftwidth = 2
+vim.o.shiftwidth = 4
 
 -- The kind of folding used for the current window.
 vim.wo.foldmethod = 'manual'

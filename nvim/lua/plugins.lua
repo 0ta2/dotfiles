@@ -498,6 +498,7 @@ require("lazy").setup({
   -- tab
   {
     'akinsho/bufferline.nvim',
+    tag = "v4.7.0",
     config = function()
       require('bufferline').setup {
         options = {
