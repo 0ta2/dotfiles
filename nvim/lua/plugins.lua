@@ -8,6 +8,7 @@ disable_file_type = {
     'NeogitPopup',
     'NeogitStatus',
     'mason',
+    'alpha',
 }
 
 lsp_servers = {
@@ -405,7 +406,8 @@ require("lazy").setup({
         tag = '0.1.8',
         dependencies = {
             { 'nvim-lua/plenary.nvim' },
-            { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
+            { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+            { 'nvim-telescope/telescope-ghq.nvim' }
         },
         config = function()
             local telescope = require('telescope')
@@ -419,7 +421,17 @@ require("lazy").setup({
                         },
                     },
                 },
+                fzf = {
+                    fuzzy = true,                   -- false will only do exact matching
+                    override_generic_sorter = true, -- override the generic sorter
+                    override_file_sorter = true,    -- override the file sorter
+                },
             })
+
+            telescope.load_extension('fzf')
+            telescope.load_extension('ghq')
+
+
             local opts = { silent = true }
             vim.keymap.set('n', '<c-p>',
                 [[<cmd>lua require('telescope.builtin').find_files({find_command = {'rg', '--files', '--hidden', '--glob', '!.git'}})<cr>]]
@@ -565,43 +577,43 @@ require("lazy").setup({
 
     -- indent
     {
-      "lukas-reineke/indent-blankline.nvim",
-      lazy = false,
-      enabled = true,
-      main = "ibl",
-      config = function()
-        local highlight = {
-          "RainbowRed",
-          "RainbowYellow",
-          "RainbowBlue",
-          "RainbowOrange",
-          "RainbowGreen",
-          "RainbowViolet",
-          "RainbowCyan",
-        }
+        "lukas-reineke/indent-blankline.nvim",
+        lazy = false,
+        enabled = true,
+        main = "ibl",
+        config = function()
+            local highlight = {
+                "RainbowRed",
+                "RainbowYellow",
+                "RainbowBlue",
+                "RainbowOrange",
+                "RainbowGreen",
+                "RainbowViolet",
+                "RainbowCyan",
+            }
 
-        local hooks = require "ibl.hooks"
-        -- create the highlight groups in the highlight setup hook, so they are reset
-        -- every time the colorscheme changes
-        hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
-          vim.api.nvim_set_hl(0, "RainbowRed", { fg = "#E06C75" })
-          vim.api.nvim_set_hl(0, "RainbowYellow", { fg = "#E5C07B" })
-          vim.api.nvim_set_hl(0, "RainbowBlue", { fg = "#61AFEF" })
-          vim.api.nvim_set_hl(0, "RainbowOrange", { fg = "#D19A66" })
-          vim.api.nvim_set_hl(0, "RainbowGreen", { fg = "#98C379" })
-          vim.api.nvim_set_hl(0, "RainbowViolet", { fg = "#C678DD" })
-          vim.api.nvim_set_hl(0, "RainbowCyan", { fg = "#56B6C2" })
-        end)
+            local hooks = require "ibl.hooks"
+            -- create the highlight groups in the highlight setup hook, so they are reset
+            -- every time the colorscheme changes
+            hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
+                vim.api.nvim_set_hl(0, "RainbowRed", { fg = "#E06C75" })
+                vim.api.nvim_set_hl(0, "RainbowYellow", { fg = "#E5C07B" })
+                vim.api.nvim_set_hl(0, "RainbowBlue", { fg = "#61AFEF" })
+                vim.api.nvim_set_hl(0, "RainbowOrange", { fg = "#D19A66" })
+                vim.api.nvim_set_hl(0, "RainbowGreen", { fg = "#98C379" })
+                vim.api.nvim_set_hl(0, "RainbowViolet", { fg = "#C678DD" })
+                vim.api.nvim_set_hl(0, "RainbowCyan", { fg = "#56B6C2" })
+            end)
 
-        vim.g.rainbow_delimiters = { highlight = highlight }
-        require("ibl").setup {
-          scope = {
-            highlight = highlight
-          },
-        }
+            vim.g.rainbow_delimiters = { highlight = highlight }
+            require("ibl").setup {
+                scope = {
+                    highlight = highlight
+                },
+            }
 
-        hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
-      end,
+            hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
+        end,
     },
 
     -- Window
@@ -697,6 +709,41 @@ require("lazy").setup({
 
     -- help の日本語化
     { 'vim-jp/vimdoc-ja' },
+
+    -- Dashboard
+    {
+        'goolord/alpha-nvim',
+        dependencies = { 'echasnovski/mini.icons' },
+        config = function()
+            local alpha = require("alpha")
+            local dashboard = require("alpha.themes.dashboard")
+
+            -- Set header
+            dashboard.section.header.val = {
+                "                                                     ",
+                "  ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗ ",
+                "  ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║ ",
+                "  ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║ ",
+                "  ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║ ",
+                "  ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║ ",
+                "  ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ ",
+                "                                                     ",
+            }
+
+            -- Set menu
+            dashboard.section.buttons.val = {
+                dashboard.button("e", "  > New file", ":ene <BAR> startinsert <CR>"),
+                dashboard.button("f", "  > プロジェクト", ":Telescope ghq<CR>"),
+                dashboard.button("q", "  > Quit", ":qa<CR>"),
+            }
+
+            -- Send config to alpha
+            alpha.setup(dashboard.opts)
+
+            -- Disable folding on alpha buffer
+            vim.cmd([[autocmd FileType alpha setlocal nofoldenable]])
+        end
+    },
 
     -- database
     {
