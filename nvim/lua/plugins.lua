@@ -614,8 +614,7 @@ require("lazy").setup({
 
     -- statusline
     {
-        'hoob3rt/lualine.nvim',
-        tag = "v4.7.0",
+        'nvim-lualine/lualine.nvim',
         config = function()
             local lualine = require('lualine')
             lualine.setup {
