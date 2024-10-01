@@ -732,9 +732,19 @@ require("lazy").setup({
 
             -- Set menu
             dashboard.section.buttons.val = {
-                dashboard.button("e", "  > New file", ":ene <BAR> startinsert <CR>"),
-                dashboard.button("f", "  > プロジェクト", ":Telescope ghq<CR>"),
-                dashboard.button("q", "  > Quit", ":qa<CR>"),
+                dashboard.button("e", " " .. " New file", ":ene <BAR> startinsert <CR>"),
+                dashboard.button("f", " " .. " Project", ":Telescope ghq<CR>"),
+                dashboard.button("l", "󰒲 " .. " Lazy", ":Lazy<CR>"),
+                dashboard.button("s", " " .. " Mason", ":Mason<CR>"),
+                dashboard.button("q", " " .. " Quit", ":qa<CR>"),
+            }
+
+
+            -- Set footer
+            local version = vim.version()
+            dashboard.section.footer.val = {
+                os.date(" %Y-%m-%d   %H:%M:%S") ..
+                "  v" .. version.major .. "." .. version.minor .. "." .. version.patch
             }
 
             -- Send config to alpha
