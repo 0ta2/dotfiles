@@ -169,7 +169,7 @@ require("lazy").setup({
             local has_words_before = function()
                 local line, col = unpack(vim.api.nvim_win_get_cursor(0))
                 return col ~= 0 and
-                vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+                    vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
             end
             local feedkey = function(key, mode)
                 vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
@@ -250,10 +250,10 @@ require("lazy").setup({
                 formatting = {
                     format = lspkind.cmp_format({
                         mode = 'symbol', -- show only symbol annotations
-                        maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+                        maxwidth = 50,   -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
                         -- can also be a function to dynamically calculate max width such as
                         -- maxwidth = function() return math.floor(0.45 * vim.o.columns) end,
-                        ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
+                        ellipsis_char = '...',    -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
                         show_labelDetails = true, -- show labelDetails in menu. Disabled by default
                     })
                 }
@@ -563,17 +563,17 @@ require("lazy").setup({
         end
     },
 
-    --{
-    --  'nathanaelkane/vim-indent-guides',
-    --  config = function()
-    --    vim.g.indent_guides_enable_on_vim_startup = 1
-    --    vim.g.indent_guides_start_level = 2
-    --    vim.g.indent_guides_guide_size = 1
-    --    vim.cmd('hi IndentGuidesOdd  ctermbg=black')
-    --    vim.cmd('hi IndentGuidesEven ctermbg=darkgrey')
-    --    vim.g.indent_guides_exclude_filetypes = disable_file_type
-    --  end
-    --},
+    {
+        'nathanaelkane/vim-indent-guides',
+        config = function()
+            vim.g.indent_guides_enable_on_vim_startup = 1
+            vim.g.indent_guides_start_level = 2
+            vim.g.indent_guides_guide_size = 1
+            vim.cmd('hi IndentGuidesOdd  ctermbg=black')
+            vim.cmd('hi IndentGuidesEven ctermbg=darkgrey')
+            vim.g.indent_guides_exclude_filetypes = disable_file_type
+        end
+    },
 
     -- Window
     {
