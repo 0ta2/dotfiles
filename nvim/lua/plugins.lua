@@ -563,16 +563,45 @@ require("lazy").setup({
         end
     },
 
+    -- indent
     {
-        'nathanaelkane/vim-indent-guides',
-        config = function()
-            vim.g.indent_guides_enable_on_vim_startup = 1
-            vim.g.indent_guides_start_level = 2
-            vim.g.indent_guides_guide_size = 1
-            vim.cmd('hi IndentGuidesOdd  ctermbg=black')
-            vim.cmd('hi IndentGuidesEven ctermbg=darkgrey')
-            vim.g.indent_guides_exclude_filetypes = disable_file_type
-        end
+      "lukas-reineke/indent-blankline.nvim",
+      lazy = false,
+      enabled = true,
+      main = "ibl",
+      config = function()
+        local highlight = {
+          "RainbowRed",
+          "RainbowYellow",
+          "RainbowBlue",
+          "RainbowOrange",
+          "RainbowGreen",
+          "RainbowViolet",
+          "RainbowCyan",
+        }
+
+        local hooks = require "ibl.hooks"
+        -- create the highlight groups in the highlight setup hook, so they are reset
+        -- every time the colorscheme changes
+        hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
+          vim.api.nvim_set_hl(0, "RainbowRed", { fg = "#E06C75" })
+          vim.api.nvim_set_hl(0, "RainbowYellow", { fg = "#E5C07B" })
+          vim.api.nvim_set_hl(0, "RainbowBlue", { fg = "#61AFEF" })
+          vim.api.nvim_set_hl(0, "RainbowOrange", { fg = "#D19A66" })
+          vim.api.nvim_set_hl(0, "RainbowGreen", { fg = "#98C379" })
+          vim.api.nvim_set_hl(0, "RainbowViolet", { fg = "#C678DD" })
+          vim.api.nvim_set_hl(0, "RainbowCyan", { fg = "#56B6C2" })
+        end)
+
+        vim.g.rainbow_delimiters = { highlight = highlight }
+        require("ibl").setup {
+          scope = {
+            highlight = highlight
+          },
+        }
+
+        hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
+      end,
     },
 
     -- Window
