@@ -767,5 +767,13 @@ require("lazy").setup({
                 end
             }
         }
+    },
+
+
+    {
+        "folke/trouble.nvim",
+        opts = {},
+        cmd = "Trouble",
+        keys = {},
     }
 })
