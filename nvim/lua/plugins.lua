@@ -550,7 +550,7 @@ require("lazy").setup({
 
     {
         'SmiteshP/nvim-navic',
-        config = function ()
+        config = function()
             vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
         end
 
@@ -683,7 +683,19 @@ require("lazy").setup({
                 sections = {
                     lualine_a = { { 'mode', upper = true } },
                     lualine_b = { { 'branch', icon = '' } },
-                    lualine_c = { { 'filename', file_status = true } },
+                    lualine_c = {
+                        {
+                            'filename',
+                            file_status = true,
+                            path = 3,
+                        },
+                        {
+                            'diagnostics',
+                            sources = {
+                                'nvim_lsp',
+                            },
+                        }
+                    },
                     lualine_x = { 'encoding', 'fileformat', 'filetype' },
                     lualine_y = { 'progress' },
                     lualine_z = { 'location' },
@@ -696,7 +708,10 @@ require("lazy").setup({
                     lualine_y = {},
                     lualine_z = {}
                 },
-                extensions = { 'fzf' }
+                extensions = {
+                    'fzf',
+                    'trouble'
+                }
             }
         end,
         dependencies = {
