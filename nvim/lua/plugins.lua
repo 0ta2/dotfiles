@@ -541,6 +541,15 @@ require("lazy").setup({
         }
     },
 
+    {
+        'SmiteshP/nvim-navic',
+        config = function ()
+            local navic = require("nvim-navic")
+            vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
+        end
+
+    },
+
     -- tmux
     {
         'christoomey/vim-tmux-navigator',
