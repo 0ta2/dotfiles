@@ -59,6 +59,10 @@ require("lazy").setup({
                 vim.keymap.set('n', leader .. 'a', [[<cmd>:lua vim.lsp.buf.code_action()<cr>]], opts)
                 vim.keymap.set('n', leader .. 'rn', [[<cmd>:lua vim.lsp.buf.rename()<cr>]], opts)
                 vim.keymap.set('n', leader .. 'f', [[<cmd>:lua vim.lsp.buf.format()<cr>]], opts)
+                if client.server_capabilities.documentSymbolProvider then
+                    local navic = require("nvim-navic")
+                    navic.attach(client, bufnr)
+                end
             end
             -- Set up lspconfig.
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -544,7 +548,6 @@ require("lazy").setup({
     {
         'SmiteshP/nvim-navic',
         config = function ()
-            local navic = require("nvim-navic")
             vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
         end
 
