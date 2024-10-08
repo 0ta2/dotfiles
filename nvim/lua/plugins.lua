@@ -439,18 +439,19 @@ require("lazy").setup({
             telescope.load_extension('ghq')
 
             local opts = { silent = true }
-            local builtin =require('telescope.builtin')
-            local find_file_opts = {
-                find_command = {
-                    'rg',
-                    '--files',
-                    '--hidden',
-                    '--glob',
-                    '!.git',
-                }
-            }
+            local builtin = require('telescope.builtin')
 
-            vim.keymap.set('n', '<c-p>', function() builtin.find_files(find_file_opts) end, opts)
+            vim.keymap.set('n', '<c-p>', function()
+                builtin.find_files({
+                    find_command = {
+                        'rg',
+                        '--files',
+                        '--hidden',
+                        '--glob',
+                        '!.git',
+                    }
+                })
+            end, opts)
             vim.keymap.set('n', '<c-t>', builtin.buffers, opts)
             vim.keymap.set('n', '<c-g>', builtin.live_grep, opts)
             vim.keymap.set('n', leader .. 'c', builtin.commands, opts)
