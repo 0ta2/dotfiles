@@ -63,10 +63,6 @@ vim.o.softtabstop = 4
 -- Number of spaces to use for each step of (auto)indent.
 vim.o.shiftwidth = 4
 
--- The kind of folding used for the current window.
-vim.wo.foldmethod = 'manual'
-vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
-
 -- Change regular expression to backtracking engine.
 vim.o.regexpengine = 2
 

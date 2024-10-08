@@ -302,7 +302,7 @@ require("lazy").setup({
             }
             vim.wo.foldmethod = 'expr'
             vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-            vim.wo.foldlevel = 3
+            vim.wo.foldlevel = 99
         end
     },
 
@@ -438,22 +438,30 @@ require("lazy").setup({
             telescope.load_extension('fzf')
             telescope.load_extension('ghq')
 
-
             local opts = { silent = true }
-            vim.keymap.set('n', '<c-p>',
-                [[<cmd>lua require('telescope.builtin').find_files({find_command = {'rg', '--files', '--hidden', '--glob', '!.git'}})<cr>]]
-                , opts)
-            vim.keymap.set('n', '<c-t>', [[<cmd>lua require('telescope.builtin').buffers()<cr>]], opts)
-            vim.keymap.set('n', '<c-g>', [[<cmd>lua require('telescope.builtin').live_grep()<cr>]], opts)
-            vim.keymap.set('n', leader .. 'c', [[<cmd>lua require('telescope.builtin').commands()<cr>]], opts)
-            vim.keymap.set('n', leader .. 'dig', [[<cmd>lua require('telescope.builtin').diagnostics()<cr>]], opts)
+            local builtin =require('telescope.builtin')
+            local find_file_opts = {
+                find_command = {
+                    'rg',
+                    '--files',
+                    '--hidden',
+                    '--glob',
+                    '!.git',
+                }
+            }
+
+            vim.keymap.set('n', '<c-p>', function() builtin.find_files(find_file_opts) end, opts)
+            vim.keymap.set('n', '<c-t>', builtin.buffers, opts)
+            vim.keymap.set('n', '<c-g>', builtin.live_grep, opts)
+            vim.keymap.set('n', leader .. 'c', builtin.commands, opts)
+            vim.keymap.set('n', leader .. 'dig', builtin.diagnostics, opts)
             -- git
-            vim.keymap.set('n', leader .. 'gs', [[<cmd>lua require('telescope.builtin').git_status()<cr>]], opts)
+            vim.keymap.set('n', leader .. 'gs', builtin.git_status, opts)
             -- lsp
             vim.keymap.set('n', 'gr',
                 [[<cmd>lua require('telescope.builtin').lsp_references({include_current_line=true})<cr>]]
                 , opts)
-            vim.keymap.set('n', 'gi', [[<cmd>lua require('telescope.builtin').lsp_implementations()<cr>]], opts)
+            vim.keymap.set('n', 'gi', builtin.lsp_implementations, opts)
         end
     },
 
