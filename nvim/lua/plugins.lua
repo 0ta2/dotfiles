@@ -459,9 +459,11 @@ require("lazy").setup({
             -- git
             vim.keymap.set('n', leader .. 'gs', builtin.git_status, opts)
             -- lsp
-            vim.keymap.set('n', 'gr',
-                [[<cmd>lua require('telescope.builtin').lsp_references({include_current_line=true})<cr>]]
-                , opts)
+            vim.keymap.set('n', 'gr', function()
+                builtin.lsp_references({
+                    include_current_line = true
+                })
+            end, opts)
             vim.keymap.set('n', 'gi', builtin.lsp_implementations, opts)
         end
     },
