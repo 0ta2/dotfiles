@@ -19,7 +19,8 @@ lsp_servers = {
     'gopls',
     'jsonls',
     'ts_ls',
-    'intelephense'
+    'intelephense',
+    'rust_analyzer',
 }
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -490,6 +491,12 @@ require("lazy").setup({
             local neogit = require('neogit')
             neogit.setup {}
         end
+    },
+    {
+        'tyru/open-browser-github.vim',
+        dependencies = {
+            'tyru/open-browser.vim'
+        }
     },
 
     -- Colorscheme
