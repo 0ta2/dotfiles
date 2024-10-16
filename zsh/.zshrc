@@ -273,3 +273,6 @@ alias sed="gsed"
 
 # ls
 alias ls="gls --color=auto"
+
+# clear
+alias c="clear"
