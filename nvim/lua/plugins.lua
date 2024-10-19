@@ -676,7 +676,8 @@ require("lazy").setup({
     -- カーソル移動
     { 'mg979/vim-visual-multi' },
     {
-        'phaazon/hop.nvim',
+        'smoka7/hop.nvim',
+        version = "*",
         config = function()
             require('hop').setup {}
             local opts = { silent = true }
