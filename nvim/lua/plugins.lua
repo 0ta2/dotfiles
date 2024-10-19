@@ -416,11 +416,16 @@ require("lazy").setup({
         dependencies = {
             { 'nvim-lua/plenary.nvim' },
             { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
-            { 'nvim-telescope/telescope-ghq.nvim' }
+            { 'nvim-telescope/telescope-ghq.nvim' },
+            {
+                "nvim-telescope/telescope-live-grep-args.nvim",
+                version = "^1.0.0",
+            },
         },
         config = function()
             local telescope = require('telescope')
             local actions = require('telescope.actions')
+            local lga_actions = require("telescope-live-grep-args.actions")
 
             telescope.setup({
                 defaults = {
@@ -435,6 +440,16 @@ require("lazy").setup({
                     override_generic_sorter = true, -- override the generic sorter
                     override_file_sorter = true,    -- override the file sorter
                 },
+                extensions = {
+                    live_grep_args = {
+                        mappings = { -- extend mappings
+                            i = {
+                                ["<C-k>"] = lga_actions.quote_prompt(),
+                                ["<C-space>"] = actions.to_fuzzy_refine,
+                            },
+                        },
+                    }
+                }
             })
 
             telescope.load_extension('fzf')
@@ -455,7 +470,7 @@ require("lazy").setup({
                 })
             end, opts)
             vim.keymap.set('n', '<c-t>', builtin.buffers, opts)
-            vim.keymap.set('n', '<c-g>', builtin.live_grep, opts)
+            -- vim.keymap.set('n', '<c-g>', builtin.live_grep, opts)
             vim.keymap.set('n', leader .. 'c', builtin.commands, opts)
             vim.keymap.set('n', leader .. 'dig', builtin.diagnostics, opts)
             -- git
@@ -467,6 +482,8 @@ require("lazy").setup({
                 })
             end, opts)
             vim.keymap.set('n', 'gi', builtin.lsp_implementations, opts)
+
+            vim.keymap.set("n", "<c-g>", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
         end
     },
 
