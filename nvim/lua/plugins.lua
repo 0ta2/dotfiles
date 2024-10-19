@@ -282,6 +282,7 @@ require("lazy").setup({
         'nvim-treesitter/nvim-treesitter',
         config = function()
             require('nvim-treesitter.configs').setup {
+                sync_install = false,
                 ensure_installed = {
                     'lua',
                     'go',
