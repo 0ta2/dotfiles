@@ -23,20 +23,6 @@ lsp_servers = {
     'rust_analyzer',
 }
 
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-    vim.fn.system({
-        "git",
-        "clone",
-        "--filter=blob:none",
-        "https://github.com/folke/lazy.nvim.git",
-        "--branch=stable", -- latest stable release
-        lazypath,
-    })
-end
-vim.opt.rtp:prepend(lazypath)
-
-
 require("lazy").setup({
     -- Configurations for Nvim LSP
     {
@@ -411,17 +397,6 @@ require("lazy").setup({
 
     -- Search
     {
-        'nvim-telescope/telescope.nvim',
-        tag = '0.1.8',
-        dependencies = {
-            { 'nvim-lua/plenary.nvim' },
-            { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
-            { 'nvim-telescope/telescope-ghq.nvim' },
-            {
-                "nvim-telescope/telescope-live-grep-args.nvim",
-                version = "^1.0.0",
-            },
-        },
         config = function()
             local telescope = require('telescope')
             local actions = require('telescope.actions')
@@ -433,7 +408,7 @@ require("lazy").setup({
                         i = {
                             ['<esc>'] = actions.close
                         },
-                    },
+                    }, e e
                 },
                 fzf = {
                     fuzzy = true,                   -- false will only do exact matching
@@ -773,9 +748,6 @@ require("lazy").setup({
             vim.o.timeoutlen = 300
         end,
     },
-
-    -- help の日本語化
-    { 'vim-jp/vimdoc-ja' },
 
     -- Dashboard
     {
