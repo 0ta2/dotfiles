@@ -405,18 +405,6 @@ require("lazy").setup({
         end
     },
 
-    -- git
-    {
-        'TimUntersberger/neogit',
-        dependencies = {
-            'nvim-lua/plenary.nvim',
-            "sindrets/diffview.nvim",
-        },
-        config = function()
-            local neogit = require('neogit')
-            neogit.setup {}
-        end
-    },
     {
         'tyru/open-browser-github.vim',
         dependencies = {
