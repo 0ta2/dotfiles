@@ -10,7 +10,6 @@ return {
     {
         'nvim-telescope/telescope.nvim',
         tag = '0.1.8',
-        cmd = { "Telescope" },
 
         config = function() 
             local telescope = require("telescope")
@@ -48,18 +47,15 @@ return {
         keys = {
             -- telescope
             vim.keymap.set('n', '<c-p>', function() require('telescope.builtin').find_files({ find_command = { 'rg', '--files', '--hidden', '--glob', '!.git', }}) end, opts),
-            vim.keymap.set("n", "<c-g>", "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>", opts),
-            vim.keymap.set('n', '<c-t>', require('telescope.builtin').buffers, opts),
-            vim.keymap.set('n', leader .. 'c', require("telescope.builtin").commands, opts),
+            vim.keymap.set("n", "<c-g>", function() require("telescope").extensions.live_grep_args.live_grep_args() end, opts),
+            vim.keymap.set('n', '<c-t>', function() require("telescope.builtin").buffers() end, opts),
+            vim.keymap.set('n', leader .. 'c', function() require("telescope.builtin").commands() end, opts),
             -- git
-            vim.keymap.set('n', leader .. 'gs', require("telescope.builtin").git_status, opts),
+            vim.keymap.set('n', leader .. 'gs', function() require("telescope.builtin").git_status() end, opts),
             -- lsp
-            vim.keymap.set('n', leader .. 'dig', require("telescope.builtin").diagnostics, opts),
+            vim.keymap.set('n', leader .. 'dig', function() require("telescope.builtin").diagnostics() end, opts),
             vim.keymap.set('n', 'gr', function() require("telescope.builtin").lsp_references({ include_current_line = true }) end, opts),
-            vim.keymap.set('n', 'gi', require("telescope.builtin").lsp_implementations, opts),
+            vim.keymap.set('n', 'gi', function() require("telescope.builtin").lsp_implementations() end, opts),
         },
     },
 }
-
-
-

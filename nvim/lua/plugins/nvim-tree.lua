@@ -4,9 +4,9 @@ return {
     {
         'nvim-tree/nvim-tree.lua',
         config = true,
+        opts = {},
         keys = {
             {leader .. "e", "<cmd>NvimTreeToggle<CR>", desc = "toggle nvim-tree"},
         },
-        opts = {},
     }
 }
