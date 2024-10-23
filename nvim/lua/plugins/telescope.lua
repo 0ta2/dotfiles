@@ -32,7 +32,7 @@ return {
                         mappings = {
                             i = {
                                 ["<C-k>"] = require("telescope-live-grep-args.actions").quote_prompt(),
-                                ["<C-space>"] = require('telescope.actions').to_fuzzy_refine,
+                                ["<C-f>"] = require('telescope.actions').to_fuzzy_refine,
                             },
                         },
                     },
