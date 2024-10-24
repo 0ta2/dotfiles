@@ -253,46 +253,6 @@ require("lazy").setup({
         end
     },
 
-    { 'golang/vscode-go' },
-
-    -- Go
-    {
-        'ray-x/go.nvim',
-        config = function()
-            require('go').setup()
-        end
-    },
-
-    -- treesitter
-    {
-        'nvim-treesitter/nvim-treesitter',
-        config = function()
-            require('nvim-treesitter.configs').setup {
-                sync_install = false,
-                ensure_installed = {
-                    'lua',
-                    'go',
-                    'toml',
-                    'php',
-                    'phpdoc',
-                    'javascript',
-                    'html',
-                    'css',
-                    'terraform',
-                },
-                highlight = {
-                    enable = true,
-                    disable = {}
-                },
-                indent = {
-                    enable = true,
-                },
-            }
-            vim.wo.foldmethod = 'expr'
-            vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-            vim.wo.foldlevel = 99
-        end
-    },
 
     -- debug
     {
@@ -670,49 +630,6 @@ require("lazy").setup({
     },
 
     -- Dashboard
-    {
-        'goolord/alpha-nvim',
-        dependencies = { 'echasnovski/mini.icons' },
-        config = function()
-            local alpha = require("alpha")
-            local dashboard = require("alpha.themes.dashboard")
-
-            -- Set header
-            dashboard.section.header.val = {
-                "                                                     ",
-                "  ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗ ",
-                "  ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║ ",
-                "  ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║ ",
-                "  ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║ ",
-                "  ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║ ",
-                "  ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ ",
-                "                                                     ",
-            }
-
-            -- Set menu
-            dashboard.section.buttons.val = {
-                dashboard.button("e", " " .. " New file", ":ene <BAR> startinsert <CR>"),
-                dashboard.button("f", " " .. " Project", ":Telescope ghq<CR>"),
-                dashboard.button("l", "󰒲 " .. " Lazy", ":Lazy<CR>"),
-                dashboard.button("s", " " .. " Mason", ":Mason<CR>"),
-                dashboard.button("q", " " .. " Quit", ":qa<CR>"),
-            }
-
-
-            -- Set footer
-            local version = vim.version()
-            dashboard.section.footer.val = {
-                os.date(" %Y-%m-%d   %H:%M:%S") ..
-                "  v" .. version.major .. "." .. version.minor .. "." .. version.patch
-            }
-
-            -- Send config to alpha
-            alpha.setup(dashboard.opts)
-
-            -- Disable folding on alpha buffer
-            vim.cmd([[autocmd FileType alpha setlocal nofoldenable]])
-        end
-    },
 
     -- database
     {
