@@ -58,30 +58,6 @@ require("lazy").setup({
             local lsp_flags = {
                 debounce_text_changes = 100,
             }
-
-            for _, lsp in ipairs(servers) do
-                if lsp == 'lua_ls' then
-                    lspconfig[lsp].setup {
-                        flags = lsp_flags,
-                        capabilities = capabilities,
-                        on_attach = on_attach,
-                        settings = {
-                            Lua = {
-                                diagnostics = {
-                                    globals = { 'vim' },
-                                }
-                            }
-                        }
-                    }
-                else
-                    lspconfig[lsp].setup {
-                        flags = lsp_flags,
-                        capabilities = capabilities,
-                        on_attach = on_attach,
-                    }
-                end
-            end
-
             local function go_org_imports(wait_ms)
                 local params = vim.lsp.util.make_range_params()
                 params.context = { only = { "source.organizeImports" } }

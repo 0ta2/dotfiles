@@ -23,13 +23,11 @@ return {
             }
 
             for _, lsp in ipairs(lsp_servers) do
-                local file = io.open("lsp." .. lsp .. ".lua", "r")
-                if file then
-                    file:close()
-                    handlers[lsp] = function()
-                        local settings = require("lsp." .. lsp)
-                        require("lspconfig")[lsp].setup(settings)
-                    end
+                local ok, handler = pcall(require, "lsp." .. lsp)
+                if ok then
+                    handlers[lsp] = handler
+                else
+                    print("エラー: ", lsp, "の設定ファイルはありません")
                 end
             end
 
