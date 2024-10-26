@@ -1,37 +1,28 @@
+local lsp_servers = {
+    "lua_ls",
+    "gopls",
+}
+
 return {
-    -- lazy
+    { "neovim/nvim-lspconfig" },
+
+    { "williamboman/mason.nvim", config = true},
+
     {
         "williamboman/mason-lspconfig.nvim",
-        lazy = true,
         opts = {
-            ensure_installed = {
-                "lua_ls",
-            },
+            ensure_installed = lsp_servers
         },
-    },
+        config = function()
+            local handlers = {}
+            for _, lsp in ipairs(lsp_servers) do
+                handlers[lsp] = function()
+                    local settings = require("lsp." .. lsp)
+                    require("lspconfig")[lsp].setup(settings)
+                end
+            end
 
-    {
-        "williamboman/mason.nvim",
-        opts = {
-            ui = {
-                icons = {
-                    package_installed = "✓",
-                    package_pending = "➜",
-                    package_uninstalled = "✗"
-                },
-            },
-        },
-        cmd = {
-            "Mason",
-            "MasonUpdate",
-            "MasonInstall",
-            "MasonUninstall",
-            "MasonUninstallAll",
-            "MasonLog",
-        },
-    },
-
-    {
-        'neovim/nvim-lspconfig',
-    },
+          require("mason-lspconfig").setup_handlers(handlers)
+        end,
+    }
 }
