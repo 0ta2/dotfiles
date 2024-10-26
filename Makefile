@@ -50,6 +50,7 @@ deploy: ## Create symlink to home directory
 	@$(call print_success, `ln -sfnv $(DOTPATH)/nvim/.ideavimrc ~/.ideavimrc`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/tmux ~/.config/tmux`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/config/efm-langserver ~/.config/efm-langserver`)
+	@$(call print_success, `ln -sfnv $(DOTPATH)/config/alacritty ~/.config/alacritty`)
 
 clean: ## Remove the dot files and this repo
 	@$(call print_title, Remove dot files in your home directory...)

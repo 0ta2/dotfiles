@@ -30,10 +30,10 @@ foreground = "#ffffff"
 size = 15.0
 
 [font.bold]
-family = "HackGen35 Console NF"
+family = "HackGen Console NF"
 
 [font.normal]
-family = "HackGen35 Console NF"
+family = "HackGen Console NF"
 
 [scrolling]
 history = 100000

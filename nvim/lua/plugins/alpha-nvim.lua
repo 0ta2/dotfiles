@@ -26,9 +26,9 @@ return {
                     dashboard.button("f", " " .. " Project", ":Telescope ghq<CR>"),
                     dashboard.button("l", "󰒲 " .. " Lazy", ":Lazy<CR>"),
                     dashboard.button("s", " " .. " Mason", ":Mason<CR>"),
+                    dashboard.button("g", "󰊢" ..  " Neogit", ":Neogit<CR>"),
                     dashboard.button("q", " " .. " Quit", ":qa<CR>"),
                 }
-
 
                 -- Set footer
                 local version = vim.version()

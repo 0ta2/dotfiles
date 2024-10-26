@@ -53,9 +53,9 @@ return {
             -- git
             vim.keymap.set('n', leader .. 'gs', function() require("telescope.builtin").git_status() end, opts),
             -- lsp
-            vim.keymap.set('n', leader .. 'dig', function() require("telescope.builtin").diagnostics() end, opts),
-            vim.keymap.set('n', 'gr', function() require("telescope.builtin").lsp_references({ include_current_line = true }) end, opts),
-            vim.keymap.set('n', 'gi', function() require("telescope.builtin").lsp_implementations() end, opts),
+            -- vim.keymap.set('n', leader .. 'dig', function() require("telescope.builtin").diagnostics() end, opts),
+            -- vim.keymap.set('n', 'gr', function() require("telescope.builtin").lsp_references({ include_current_line = true }) end, opts),
+            -- vim.keymap.set('n', 'gi', function() require("telescope.builtin").lsp_implementations() end, opts),
         },
     },
 }
