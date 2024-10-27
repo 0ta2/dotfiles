@@ -4,6 +4,20 @@ local lsp_servers = {
 }
 
 return {
+    {
+        "nvimdev/lspsaga.nvim",
+        opts = {
+            symbol_in_winbar = {
+                separator = "  ",
+            },
+        },
+        dependencies = {
+            "nvim-treesitter/nvim-treesitter",
+            "nvim-tree/nvim-web-devicons",
+        },
+        event = { "BufRead", "BufNewFile" },
+    },
+
     { "neovim/nvim-lspconfig" },
 
     { "williamboman/mason.nvim", config = true},
@@ -37,7 +51,7 @@ return {
                 group = vim.api.nvim_create_augroup("LspConfig", {}),
                 callback = function(ev)
                     vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
-                 end,
+                end,
             })
         end,
     }
