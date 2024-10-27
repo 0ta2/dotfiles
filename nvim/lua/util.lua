@@ -1,22 +1,16 @@
-_G.dump = function(...)
-    local objects = vim.tbl_map(vim.inspect, {...})
-    print(unpack(objects))
-end
+local M = {}
 
-_G.check_back_space = function()
-    local col = vim.fn.col('.') - 1
-    if col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
-        return true
-    else
-        return false
+function M.ex_opts(desc, buffer)
+    local opts = { noremap = true, silent = true }
+    local final_opts = vim.tbl_extend("force", opts, {})
+    if desc then
+        final_opts.desc = desc
+    end
+
+    if buffer then
+        final_opts.buffer = buffer
     end
 end
 
-_G.pconcat = function(tab, del)
-    local ctab, n = {}, 1
-    for _, v in pairs(tab) do
-        ctab[n] = v
-        n = n + 1
-    end
-    return table.concat(ctab, del)
-end
+
+return M
