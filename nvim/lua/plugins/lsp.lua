@@ -32,6 +32,13 @@ return {
             end
 
             require("mason-lspconfig").setup_handlers(handlers)
+
+            vim.api.nvim_create_autocmd("LspAttach", {
+                group = vim.api.nvim_create_augroup("LspConfig", {}),
+                callback = function(ev)
+                    vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
+                 end,
+            })
         end,
     }
 }
