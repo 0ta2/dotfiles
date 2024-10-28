@@ -580,32 +580,6 @@ require("lazy").setup({
     },
 
     {
-        "folke/which-key.nvim",
-        event = "VeryLazy",
-        init = function()
-            vim.o.timeout = true
-            vim.o.timeoutlen = 300
-        end,
-    },
-
-    -- Dashboard
-
-    -- database
-    {
-        'tpope/vim-dadbod',
-        dependencies = {
-            {
-                'kristijanhusak/vim-dadbod-ui',
-                config = function()
-                    vim.cmd([[ autocmd FileType dbui nmap <buffer> o <Plug>(DBUI_SelectLine) ]])
-                    vim.g.dbs = {}
-                end
-            }
-        }
-    },
-
-
-    {
         "folke/trouble.nvim",
         opts = {},
         cmd = "Trouble",
