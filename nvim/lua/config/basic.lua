@@ -75,6 +75,10 @@ vim.o.redrawtime = 1000
 -- 24-bit color support
 vim.o.termguicolors = true
 
+-- lspsaga.nvim で表示のチラツキ防止の為
+-- NOTE: https://stackoverflow.com/questions/78364323/im-having-trouble-with-flickering-in-lspsaga-nvim
+vim.opt.signcolumn = "yes"
+
 -- undofile
 vim.cmd [[ set undofile ]]
 vim.cmd [[ set undodir=$XDG_STATE_HOME/nvim/undo ]]

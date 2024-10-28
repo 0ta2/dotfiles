@@ -1,6 +1,7 @@
 local lsp_servers = {
     "lua_ls",
     "gopls",
+    "terraformls",
 }
 
 return {
@@ -15,7 +16,7 @@ return {
             "nvim-treesitter/nvim-treesitter",
             "nvim-tree/nvim-web-devicons",
         },
-        event = { "BufRead", "BufNewFile" },
+        event = { "LspAttach" },
     },
 
     { "neovim/nvim-lspconfig" },
@@ -41,7 +42,7 @@ return {
                 if ok then
                     handlers[lsp] = handler
                 else
-                    print("エラー: ", lsp, "の設定ファイルはありません")
+                    print("Warning: ", lsp, "の設定ファイルはありません")
                 end
             end
 
