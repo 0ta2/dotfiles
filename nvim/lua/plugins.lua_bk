@@ -481,18 +481,6 @@ require("lazy").setup({
         end,
     },
 
-    -- Window
-    {
-        'simeji/winresizer',
-        cmd = 'WinResizerStartResize',
-        setup = function()
-            local opts = { silent = true }
-            vim.keymap.set('n', '<C-e>', ':WinResizerStartResize<CR>', opts)
-            vim.g.winresizer_vert_resize = 5
-            vim.g.winresizer_horiz_resize = 5
-        end
-    },
-
     -- markdown
     {
         'previm/previm',
@@ -517,58 +505,6 @@ require("lazy").setup({
             vim.cmd([[ highlight default HopNextKey1 guifg=#fff200 gui=bold blend=0 ]])
             vim.cmd([[ highlight default HopNextKey2 guifg=#ede8eb blend=0 ]])
         end
-    },
-
-    -- statusline
-    {
-        'nvim-lualine/lualine.nvim',
-        config = function()
-            local lualine = require('lualine')
-            lualine.setup {
-                options = {
-                    theme = 'gruvbox-material',
-                    section_separators = { '', '' },
-                    component_separators = { '', '' },
-                    icons_enabled = true,
-                },
-                sections = {
-                    lualine_a = { { 'mode', upper = true } },
-                    lualine_b = { { 'branch', icon = '' } },
-                    lualine_c = {
-                        {
-                            'filename',
-                            file_status = true,
-                            path = 3,
-                        },
-                        {
-                            'diagnostics',
-                            sources = {
-                                'nvim_lsp',
-                            },
-                        }
-                    },
-                    lualine_x = { 'encoding', 'fileformat', 'filetype' },
-                    lualine_y = { 'progress' },
-                    lualine_z = { 'location' },
-                },
-                inactive_sections = {
-                    lualine_a = {},
-                    lualine_b = {},
-                    lualine_c = { 'filename' },
-                    lualine_x = { 'location' },
-                    lualine_y = {},
-                    lualine_z = {}
-                },
-                extensions = {
-                    'fzf',
-                    'trouble'
-                }
-            }
-        end,
-        dependencies = {
-            'kyazdani42/nvim-web-devicons',
-            lazy = true
-        }
     },
 
     -- support
