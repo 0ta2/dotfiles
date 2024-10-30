@@ -316,7 +316,6 @@ require("lazy").setup({
 
 
     -- 置換のプレビュー
-    { 'markonm/traces.vim' },
     {
         'kevinhwang91/nvim-hlslens',
         config = function()
@@ -345,21 +344,7 @@ require("lazy").setup({
     -- color
     { 'gko/vim-coloresque' },
 
-    -- Filer plugin
-    {
-        'lambdalisue/fern.vim',
-        config = function()
-            local opts = { silent = true }
-            local exclude_files = {
-                [[\.DS_Store]],
-                [[\.git]],
-            }
-            vim.g["fern#default_exclude"] = [[^\%(]] .. table.concat(exclude_files, [[\|]]) .. [[\)$]]
-            vim.g['fern#default_hidden'] = 1
-            vim.keymap.set('n', leader .. 'e', [[:<C-u>Fern . -drawer -toggle -reveal=% <cr>]], opts)
-        end
-    },
-    -- 末尾の空白スペース可視化
+     -- 末尾の空白スペース可視化
     {
         'bronson/vim-trailing-whitespace',
         config = function()
@@ -367,78 +352,11 @@ require("lazy").setup({
         end
     },
 
-    -- tab
-    {
-        'akinsho/bufferline.nvim',
-        version = "*",
-        config = function()
-            require('bufferline').setup {
-                options = {
-                    view = "default",
-                    numbers = "none",
-                    buffer_close_icon = '',
-                    modified_icon = '●',
-                    close_icon = '',
-                    left_trunc_marker = '',
-                    right_trunc_marker = '',
-                    max_name_length = 18,
-                    max_prefix_length = 15,
-                    tab_size = 18,
-                    diagnostics = "nvim_lsp",
-                    show_buffer_close_icons = false,
-                    persist_buffer_sort = true,
-                    separator_style = "thin",
-                    enforce_regular_tabs = false,
-                    always_show_bufferline = true,
-                }
-            }
-        end,
-        dependencies = {
-            'kyazdani42/nvim-web-devicons'
-        }
-    },
-
-    {
-        'SmiteshP/nvim-navic',
-        config = function()
-            vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
-        end
-
-    },
-
-    -- tmux
-    {
-        'christoomey/vim-tmux-navigator',
-        cnfig = function()
-            local api = vim.api
-            vim.g.tmux_navigator_no_mappings = 1
-            vim.g.tmux_navigator_save_on_switch = 2
-            vim.g.tmux_navigator_no_mappings = 1
-
-            local opts = { silent = true }
-            vim.keymap.set('n', '<C-S-h>', [[:<C-u>TmuxNavigateLeft <CR>]], opts)
-            vim.keymap.set('n', '<C-S-j>', [[:<C-u>TmuxNavigateDown <CR>]], opts)
-            vim.keymap.set('n', '<C-S-k>', [[:<C-u>TmuxNavigateUp <CR>]], opts)
-            vim.keymap.set('n', '<C-S-l>', [[:<C-u>TmuxNavigateRight <CR>]], opts)
-            vim.keymap.set('n', '<C-S-\\>', [[:<C-u>TmuxNavigatePrevious <CR>]], opts)
-        end
-    },
-
+  
     -- Delibiters
-    -- カッコを自動的に閉じる
-    { 'jiangmiao/auto-pairs' },
     -- カッコの編集を便利するプラグイン
     { 'tpope/vim-surround' },
 
-    -- editing
-    { 'tpope/vim-commentary' },
-    {
-        "shellRaining/hlchunk.nvim",
-        event = { "UIEnter" },
-        config = function()
-            require("hlchunk").setup({})
-        end
-    },
 
     -- indent
     {
