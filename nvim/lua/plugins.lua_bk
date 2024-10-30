@@ -183,14 +183,6 @@ require("lazy").setup({
     },
 
 
-    {
-        'kevinhwang91/nvim-hlslens',
-        config = function()
-            require('hlslens').setup()
-        end
-    },
-
-
     -- Colorscheme
     {
         --'olimorris/onedarkpro.nvim',
@@ -202,8 +194,6 @@ require("lazy").setup({
             vim.cmd [[ colorscheme gruvbox-material ]]
         end
     },
-    -- color
-    { 'gko/vim-coloresque' },
 
      -- 末尾の空白スペース可視化
     {
