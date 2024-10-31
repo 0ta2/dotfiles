@@ -30,13 +30,7 @@ return {
                 ensure_installed = lsp_servers
             }
 
-            local handlers = {
-                -- default handler
-                function (server_name)
-                    require("lspconfig")[server_name].setup {}
-                end
-            }
-
+            local handlers = {}
             for _, lsp in ipairs(lsp_servers) do
                 local ok, handler = pcall(require, "lsp." .. lsp)
                 if ok then
