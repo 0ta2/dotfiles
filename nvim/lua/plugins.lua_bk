@@ -24,63 +24,6 @@ lsp_servers = {
 }
 
 require("lazy").setup({
-    -- Configurations for Nvim LSP
-    {
-        'neovim/nvim-lspconfig',
-        config = function()
-            local on_attach = function(client, bufnr)
-                if client.server_capabilities.documentSymbolProvider then
-                    local navic = require("nvim-navic")
-                    navic.attach(client, bufnr)
-                end
-            end
-            -- Set up lspconfig.
-            local capabilities = require("cmp_nvim_lsp").default_capabilities()
-            local lspconfig = require('lspconfig')
-            local servers = lsp_servers
-            local lsp_flags = {
-                debounce_text_changes = 100,
-            }
-            local function go_org_imports(wait_ms)
-                local params = vim.lsp.util.make_range_params()
-                params.context = { only = { "source.organizeImports" } }
-                local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params, wait_ms)
-                for cid, res in pairs(result or {}) do
-                    for _, r in pairs(res.result or {}) do
-                        if r.edit then
-                            local enc = (vim.lsp.get_client_by_id(cid) or {}).offset_encoding or "utf-16"
-                            vim.lsp.util.apply_workspace_edit(r.edit, enc)
-                        end
-                    end
-                end
-            end
-
-            vim.api.nvim_create_autocmd("BufWritePre", {
-                pattern = "*.go",
-                callback = function()
-                    go_org_imports()
-                end
-            })
-        end,
-    },
-
-    -- linter/formatter
-    {
-        'jose-elias-alvarez/null-ls.nvim',
-        config = function()
-            local null_ls = require("null-ls")
-            null_ls.setup({
-                -- lua
-                null_ls.builtins.formatting.stylua,
-                -- spell
-                null_ls.builtins.completion.spell,
-                -- shell
-                null_ls.builtins.diagnostics.shellcheck,
-            })
-        end,
-        dependencies = { "nvim-lua/plenary.nvim" }
-    },
-
     -- debug
     {
         "rcarriga/nvim-dap-ui",
@@ -182,18 +125,6 @@ require("lazy").setup({
         end,
     },
 
-
-    -- Colorscheme
-    {
-        --'olimorris/onedarkpro.nvim',
-        'sainnhe/gruvbox-material',
-        config = function()
-            -- require("onedarkpro").setup({
-            --   dark_theme = "onedark_dark", -- The default dark theme
-            -- })
-            vim.cmd [[ colorscheme gruvbox-material ]]
-        end
-    },
 
      -- 末尾の空白スペース可視化
     {
