@@ -40,8 +40,6 @@ return {
                 local ok, handler = pcall(require, "lsp." .. lsp)
                 if ok then
                     handlers[lsp] = handler
-                else
-                    print("Warning: ", lsp, "の設定ファイルはありません")
                 end
             end
 
