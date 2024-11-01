@@ -2,6 +2,7 @@ local lsp_servers = {
     "lua_ls",
     "gopls",
     "pylsp",
+    "rust_analyzer",
     "terraformls",
 }
 

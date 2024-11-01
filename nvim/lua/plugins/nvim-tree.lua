@@ -6,7 +6,7 @@ return {
         config = true,
         opts = {},
         keys = {
-            {leader .. "e", "<cmd>NvimTreeToggle<CR>", desc = "toggle nvim-tree"},
+            {leader .. "e", "<cmd>NvimTreeFindFileToggle<CR>", desc = "toggle nvim-tree"},
         },
     }
 }
