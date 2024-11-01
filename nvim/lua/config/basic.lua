@@ -79,6 +79,10 @@ vim.o.termguicolors = true
 -- NOTE: https://stackoverflow.com/questions/78364323/im-having-trouble-with-flickering-in-lspsaga-nvim
 vim.opt.signcolumn = "yes"
 
+-- 蒸し文字列の可視化
+vim.opt.list = true
+vim.opt.listchars = { tab = '>>', trail = '-', nbsp = '+' }
+
 -- undofile
 vim.cmd [[ set undofile ]]
 vim.cmd [[ set undodir=$XDG_STATE_HOME/nvim/undo ]]

@@ -55,16 +55,17 @@ return {
                     local keymap = vim.keymap.set
 
                     -- vim.lsp
-                    -- keymap("n", "gd", vim.lsp.buf.definition, util.ex_opts("Go to definition", ev.buf))
-                    -- keymap('n', leader .. 'a', vim.lsp.buf.code_action, util.ex_opts("Code Action"), ev.buf)
-                    -- keymap('n', 'gr', vim.lsp.buf.references, util.ex_opts('Go to references', ev.buf))
+                    keymap("n", "gd", vim.lsp.buf.definition,   util.ex_opts("Go to definition", ev.buf))
+                    keymap('n', 'gD', vim.lsp.buf.declaration,  util.ex_opts("Go to declaration", ev.buf))
+                    keymap('n', 'gr', vim.lsp.buf.references,   util.ex_opts('Go to references', ev.buf))
+                    keymap('n', leader .. 'a', vim.lsp.buf.code_action, util.ex_opts("Code Action"), ev.buf)
+
 
                     -- Lspsaga
-                    keymap("n", "gd", "<cmd>Lspsaga goto_definition<CR>", util.ex_opts("Go to definition"), ev.buf)
-                    keymap("n", "gp", "<cmd>Lspsaga peek_definition<CR>", util.ex_opts("Peek definition"), ev.buf)
-                    keymap('n', leader .. 'a', "<cmd>Lspsage code_action", util.ex_opts("Code Action"), ev.buf)
+                    -- keymap("n", "gd", "<cmd>Lspsaga goto_definition<CR>", util.ex_opts("Go to definition"), ev.buf)
+                    -- keymap("n", "gp", "<cmd>Lspsaga peek_definition<CR>", util.ex_opts("Peek definition"), ev.buf)
+                    -- keymap('n', leader .. 'a', "<cmd>Lspsage code_action", util.ex_opts("Code Action"), ev.buf)
 
-                    -- keymap('n', 'gD', vim.lsp.buf.declaration, util.ex_opts("Go to declaration", ev.buf))
                     --vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
                     --vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
                     --vim.keymap.set('n', 'K', [[<cmd>:lua vim.lsp.buf.hover()<cr>]], opts)
@@ -72,7 +73,6 @@ return {
                     --vim.keymap.set('n', leader .. 'K', [[<cmd>:lua vim.lsp.buf.signature_help()<cr>]], opts)
                     --vim.keymap.set('n', leader .. 'rn', [[<cmd>:lua vim.lsp.buf.rename()<cr>]], opts)
                     --vim.keymap.set('n', leader .. 'f', [[<cmd>:lua vim.lsp.buf.format()<cr>]], opts)
-
                 end,
             })
         end,
