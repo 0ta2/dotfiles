@@ -125,15 +125,6 @@ require("lazy").setup({
         end,
     },
 
-
-     -- 末尾の空白スペース可視化
-    {
-        'bronson/vim-trailing-whitespace',
-        config = function()
-            vim.g.extra_whitespace_ignored_filetypes = disable_file_type
-        end
-    },
-
   
     -- Delibiters
     -- カッコの編集を便利するプラグイン
