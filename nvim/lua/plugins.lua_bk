@@ -125,6 +125,7 @@ require("lazy").setup({
         end,
     },
 
+
   
     -- Delibiters
     -- カッコの編集を便利するプラグイン
@@ -136,17 +137,6 @@ require("lazy").setup({
     { 'andymass/vim-matchup' },
     -- カーソル移動
     { 'mg979/vim-visual-multi' },
-    {
-        'smoka7/hop.nvim',
-        version = "*",
-        config = function()
-            require('hop').setup {}
-            local opts = { silent = true }
-            vim.keymap.set('n', 'fs', "<cmd>lua require'hop'.hint_char1()<cr>", opts)
-            vim.cmd([[ highlight default HopNextKey1 guifg=#fff200 gui=bold blend=0 ]])
-            vim.cmd([[ highlight default HopNextKey2 guifg=#ede8eb blend=0 ]])
-        end
-    },
 
     -- support
     {

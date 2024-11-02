@@ -8,7 +8,7 @@ return {
             multi_windows = true,
         },
         keys = {
-            {"fs", "<cmd>HopChar1<CR>", desc = "Go to HopChar1"}
-        }
+            {"fs", function() require("hop").hint_char1() end, desc = "Go to HopChar1"}
+        },
     }
 }
