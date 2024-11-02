@@ -17,6 +17,14 @@ return {
                 'alpha',
             }
         end
-    }
+    },
+
+   {
+       'reireias/vim-cheatsheet',
+       config = function()
+           vim.g['cheatsheet#cheat_file'] = vim.env.DOTFILES_PATH .. '/Doc/cheetsheet.md'
+           vim.g["cheatsheet#float_window"] = 1
+       end
+   },
 
 }
