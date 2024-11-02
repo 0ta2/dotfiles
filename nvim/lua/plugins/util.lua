@@ -10,14 +10,12 @@ return {
                 'help',
                 'lspsagafinder',
                 'TelescopePrompt',
-                'moving.lua',
                 'HopChar',
                 'NeogitPopup',
                 'NeogitStatus',
                 'mason',
                 'alpha',
-
-            },
+            }
         end
     }
 
