@@ -9,6 +9,22 @@ return {
     { 'nvim-lua/plenary.nvim',                        lazy = true },
 
     {
+        -- よく使うコマンドの登録プラグイン
+        "DanWlker/toolbox.nvim",
+        lazy = true,
+        config = true,
+        opts = {
+            commands = {
+                {
+                    name = 'git blame',
+                    execute = "Gitsigns blame"
+                },
+            },
+        },
+        keys = { { leader .. "c", function() require("toolbox").show_picker() end, desc = "Search Toolbox", mode = { "n", "v" } } },
+    },
+
+    {
         'nvim-telescope/telescope.nvim',
         tag = '0.1.8',
 
@@ -57,7 +73,7 @@ return {
             vim.keymap.set("n", "<c-g>", function() require("telescope").extensions.live_grep_args.live_grep_args() end,
                 opts),
             vim.keymap.set('n', '<c-t>', function() require("telescope.builtin").buffers() end, opts),
-            vim.keymap.set('n', leader .. 'c', function() require("telescope.builtin").commands() end, opts),
+            -- vim.keymap.set('n', leader .. 'c', function() require("telescope.builtin").commands() end, opts),
             -- git
             vim.keymap.set('n', leader .. 'gs', function() require("telescope.builtin").git_status() end, opts),
         },

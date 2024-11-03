@@ -1,8 +1,8 @@
 -- Basic Settings
-require("config.basic")
+require("core.basic")
 
 -- Basic Key Mapping
-require("config.keymap")
+require("core.keymap")
 
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
