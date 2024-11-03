@@ -14,6 +14,9 @@ return {
             symbol_in_winbar = {
                 separator = "  ",
             },
+            code_action = {
+                extend_gitsigns = true,
+            },
         },
         dependencies = {
             "nvim-treesitter/nvim-treesitter",
@@ -61,7 +64,7 @@ return {
                     keymap('n', 'gD', vim.lsp.buf.declaration, util.ex_opts("Go to declaration", ev.buf))
                     -- keymap('n', 'gr', vim.lsp.buf.references, util.ex_opts('Go to references', ev.buf))
                     -- keymap('n', 'gi', vim.lsp.buf.implementation, util.ex_opts("Go to implementation", ev.buf))
-                    keymap('n', leader .. 'a', vim.lsp.buf.code_action, util.ex_opts("Code Action", ev.buf))
+                    -- keymap('n', leader .. 'a', vim.lsp.buf.code_action, util.ex_opts("Code Action", ev.buf))
                     keymap('n', 'K', vim.lsp.buf.hover, util.ex_opts("Hover", ev.buf))
                     keymap('n', leader .. 'K', vim.lsp.buf.signature_help, util.ex_opts("Signature help", ev.buf))
                     -- keymap('n', leader .. 'rn', vim.lsp.buf.rename, util.ex_opts("Rename", ev.buf))
@@ -74,7 +77,7 @@ return {
                     -- Lspsaga
                     --keymap("n", "gd", "<cmd>Lspsaga goto_definition<CR>", util.ex_opts("Go to definition"), ev.buf)
                     --keymap("n", "gp", "<cmd>Lspsaga peek_definition<CR>", util.ex_opts("Peek definition"), ev.buf)
-                    -- keymap('n', leader .. 'a', "<cmd>Lspsaga code_action<CR>", util.ex_opts("Code Action"), ev.buf)
+                    keymap('n', leader .. 'a', "<cmd>Lspsaga code_action<CR>", util.ex_opts("Code Action"), ev.buf)
                     -- keymap('n', 'K', "<cmd>Lspsaga hover_doc<CR>", util.ex_opts("Hover", ev.buf))
                     keymap('n', leader .. 'rn', "<cmd>Lspsage rename<CR>", util.ex_opts("Rename"), ev.buf)
                     --keymap('n', '[d', "<cmd>Lspsage diagnostic_jump_next<CR>", util.ex_opts("Go to next diagnostic"), ev.buf)
