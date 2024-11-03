@@ -23,6 +23,9 @@ return {
                     },
                 },
                 extensions = {
+                    ["ui-select"] = {
+                        require("telescope.themes").get_dropdown {},
+                    },
                     fzf = {
                         fuzzy = true,
                         override_generic_sorter = true,
@@ -37,12 +40,13 @@ return {
                             },
                         },
                     },
-                },
+                }
             }
 
             telescope.load_extension("fzf")
             telescope.load_extension("ghq")
             telescope.load_extension("live_grep_args")
+            telescope.load_extension("ui-select")
         end,
 
         keys = {
