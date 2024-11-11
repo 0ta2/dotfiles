@@ -80,8 +80,8 @@ vim.o.termguicolors = true
 vim.opt.signcolumn = "yes"
 
 -- 蒸し文字列の可視化
-vim.opt.list = true
-vim.opt.listchars = { tab = '>>', trail = '-', nbsp = '+' }
+-- vim.opt.list = true
+-- vim.opt.listchars = { tab = '>>', trail = '-', nbsp = '+' }
 
 -- undofile
 vim.cmd [[ set undofile ]]
