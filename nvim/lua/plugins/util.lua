@@ -1,4 +1,11 @@
 return {
+
+    -- いろんなプラグインで使うライブラリツール
+    { "nvim-lua/plenary.nvim", lazy = true },
+
+
+
+
     -- 画面上のカラーコードを可視化
     { "gko/vim-coloresque" },
 
