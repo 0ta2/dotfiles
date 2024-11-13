@@ -79,7 +79,7 @@ return {
                     --keymap("n", "gp", "<cmd>Lspsaga peek_definition<CR>", util.ex_opts("Peek definition"), ev.buf)
                     keymap('n', leader .. 'a', "<cmd>Lspsaga code_action<CR>", util.ex_opts("Code Action"), ev.buf)
                     -- keymap('n', 'K', "<cmd>Lspsaga hover_doc<CR>", util.ex_opts("Hover", ev.buf))
-                    keymap('n', leader .. 'rn', "<cmd>Lspsage rename<CR>", util.ex_opts("Rename"), ev.buf)
+                    keymap('n', leader .. 'rn', "<cmd>Lspsaga rename<CR>", util.ex_opts("Rename"), ev.buf)
                     --keymap('n', '[d', "<cmd>Lspsage diagnostic_jump_next<CR>", util.ex_opts("Go to next diagnostic"), ev.buf)
                     --keymap('n', '[d', "<cmd>Lspsage diagnostic_jump_prev<CR>", util.ex_opts("Go to prev diagnostic"), ev.buf)
 
