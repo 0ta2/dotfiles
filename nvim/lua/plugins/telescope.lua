@@ -19,6 +19,19 @@ return {
                     name = 'git blame',
                     execute = "Gitsigns blame"
                 },
+                {
+                    name = "全文検索置換",
+                    execute = function()
+                        local grug = require("grug-far")
+                        local ext = vim.bo.buftype == "" and vim.fn.expand("%:e")
+                        grug.open({
+                            transient = true,
+                            prefills = {
+                                filesFilter = ext and ext ~= "" and "*." .. ext or nil,
+                            },
+                        })
+                    end
+                }
             },
         },
         keys = { { leader .. "c", function() require("toolbox").show_picker() end, desc = "Search Toolbox", mode = { "n", "v" } } },

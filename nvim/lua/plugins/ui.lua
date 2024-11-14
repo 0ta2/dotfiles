@@ -1,6 +1,15 @@
 return {
+    -- bufferline
+    {
+        'akinsho/bufferline.nvim',
+        event = "VeryLazy",
+        version = "*",
+        config = true,
+        opts = {},
+    },
+
     -- UIのコンポーネントライブラリー
-    { "MunifTanjim/nui.nvim", lazy = true },
+    { "MunifTanjim/nui.nvim",        lazy = true },
 
     -- icons
     {

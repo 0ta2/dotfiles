@@ -53,6 +53,7 @@ return {
             }
         },
     },
+
     -- search/replace in multiple files
     {
         "MagicDuck/grug-far.nvim",
@@ -61,6 +62,7 @@ return {
         keys = {
             {
                 leader .. "sr",
+                -- TODO: toolboxの処理と同じなので、処理を切り出して共通化する。
                 function()
                     local grug = require("grug-far")
                     local ext = vim.bo.buftype == "" and vim.fn.expand("%:e")
