@@ -1,6 +1,7 @@
 local lsp_servers = {
     "lua_ls",
     "gopls",
+    "json-lsp",
     "pylsp",
     "rust_analyzer",
     "java_language_server",
