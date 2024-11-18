@@ -9,7 +9,7 @@ return {
     },
 
     -- UIのコンポーネントライブラリー
-    { "MunifTanjim/nui.nvim",        lazy = true },
+    { "MunifTanjim/nui.nvim", lazy = true },
 
     -- icons
     {
@@ -23,4 +23,22 @@ return {
             end
         end,
     },
+
+    -- statusline
+    {
+        "nvim-lualine/lualine.nvim",
+        event = "VeryLazy",
+        opts = {
+            options = {
+                theme = "auto",
+            },
+            extensions = {
+                -- "trouble",
+                "fzf",
+                "nvim-tree",
+                "mason",
+            }
+
+        }
+    }
 }
