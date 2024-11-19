@@ -13,16 +13,7 @@ return {
         -- 末尾の無駄なスペースの可視化
         "bronson/vim-trailing-whitespace",
         config = function ()
-            vim.g.extra_whitespace_ignored_filetypes = {
-                'help',
-                'lspsagafinder',
-                'TelescopePrompt',
-                'HopChar',
-                'NeogitPopup',
-                'NeogitStatus',
-                'mason',
-                'alpha',
-            }
+            vim.g.extra_whitespace_ignored_filetypes = require("utils.disable_filetype")
         end
     },
 

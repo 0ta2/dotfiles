@@ -3,6 +3,7 @@ local lsp_servers = {
     "gopls",
     "jsonls",
     "pylsp",
+    "ts_ls",
     "rust_analyzer",
     "java_language_server",
     "terraformls",

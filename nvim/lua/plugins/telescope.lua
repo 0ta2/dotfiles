@@ -31,6 +31,10 @@ return {
                             },
                         })
                     end
+                },
+                {
+                    name = "filetype変更",
+                    execute = "Telescope filetypes"
                 }
             },
         },
