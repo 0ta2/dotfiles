@@ -20,7 +20,7 @@ return {
                     execute = "Gitsigns blame"
                 },
                 {
-                    name = "全文検索置換",
+                    name = "full text search",
                     execute = function()
                         local grug = require("grug-far")
                         local ext = vim.bo.buftype == "" and vim.fn.expand("%:e")
@@ -33,9 +33,13 @@ return {
                     end
                 },
                 {
-                    name = "filetype変更",
+                    name = "change filetype",
                     execute = "Telescope filetypes"
-                }
+                },
+                {
+                    name = "test summary toggle",
+                    execute = 'lua require("neotest").summary.toggle()'
+                },
             },
         },
         keys = { { leader .. "c", function() require("toolbox").show_picker() end, desc = "Search Toolbox", mode = { "n", "v" } } },
