@@ -1,7 +1,6 @@
 return {
     {
         'saghen/blink.cmp',
-        lazy = false,
         version = 'v0.*',
         event = 'InsertEnter',
         dependencies = 'rafamadriz/friendly-snippets',
@@ -9,14 +8,25 @@ return {
         ---@module 'blink.cmp'
         ---@type blink.cmp.Config
         opts = {
-            keymap = "super-tab",
-            highlight = {
+            keymap = { preset = 'super-tab' },
+
+            appearance = {
                 use_nvim_cmp_as_default = true,
             },
-            nerd_font_variant = 'normal',
-            accept = { auto_brackets = { enabled = true } },
-            trigger = { signature_help = { enabled = true } }
+
+            sources = {
+                completion = {
+                    enabled_providers = { 'lsp', 'path', 'snippets', 'buffer' },
+                },
+            },
+
+            -- experimental auto-brackets support
+            completion = { accept = { auto_brackets = { enabled = true } } },
+
+            -- experimental signature help support
+            signature = { enabled = true },
         },
+
         opts_extend = { "sources.completion.enabled_providers" }
     },
 
