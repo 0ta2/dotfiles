@@ -19,6 +19,27 @@ return {
                     name = 'git blame',
                     execute = "Gitsigns blame"
                 },
+                {
+                    name = "full text search",
+                    execute = function()
+                        local grug = require("grug-far")
+                        local ext = vim.bo.buftype == "" and vim.fn.expand("%:e")
+                        grug.open({
+                            transient = true,
+                            prefills = {
+                                filesFilter = ext and ext ~= "" and "*." .. ext or nil,
+                            },
+                        })
+                    end
+                },
+                {
+                    name = "change filetype",
+                    execute = "Telescope filetypes"
+                },
+                {
+                    name = "test summary toggle",
+                    execute = 'lua require("neotest").summary.toggle()'
+                },
             },
         },
         keys = { { leader .. "c", function() require("toolbox").show_picker() end, desc = "Search Toolbox", mode = { "n", "v" } } },

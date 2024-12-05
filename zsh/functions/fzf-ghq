@@ -1,14 +1,15 @@
-function fghq() {
+function fzf-ghq() {
   local selected_dir=$(ghq list | fzf --query="$LBUFFER")
 
   if [ -n "$selected_dir" ]; then
     tmux rename-window $(basename $selected_dir)
     BUFFER="cd $(ghq root)/${selected_dir}"
     zle accept-line
+    zle reset-prompt
   fi
 
   zle reset-prompt
 }
 
-zle -N fghq
-bindkey "^]" fghq
+zle -N fzf-ghq
+bindkey "^]" fzf-ghq

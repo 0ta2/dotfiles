@@ -3,6 +3,7 @@ local api = vim.api
 
 -- mapleader を指定
 _G.leader = ' '
+vim.g.maplocalleader = ','
 
 -- 検索後の強調表示をの解除
 api.nvim_set_keymap('n', '<Esc><Esc>', ':nohlsearch<CR>', opts)
