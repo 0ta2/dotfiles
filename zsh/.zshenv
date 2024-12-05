@@ -26,6 +26,9 @@ export TERM=screen-256color
 # 文字コード指定
 export LANG=ja_JP.UTF-8
 
+# chronoship の環境変数
+export EXCLUDE_WIDGETS_REGEX="fzf"
+
 # typeset
 #   -U 重複パスを登録しない
 #   -x export も同時に行う
