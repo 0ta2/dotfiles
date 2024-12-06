@@ -12,6 +12,12 @@ return {
         build = "make tiktoken",
         opts = {
             debug = true,
+            mappings = {
+                reset = {
+                    normal = '',
+                    insert = '',
+                },
+            },
             prompts = {
                 Explain = {
                     prompt = "/COPILOT_EXPLAIN コードを日本語で説明してください",
