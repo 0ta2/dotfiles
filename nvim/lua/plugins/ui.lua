@@ -5,7 +5,17 @@ return {
         event = "VeryLazy",
         version = "*",
         config = true,
-        opts = {},
+        opts = {
+            options = {
+                diagnostics = "nvim_lsp",
+                offsets = {
+                    filetype = "neo-tree",
+                    text = "Neo-tree",
+                    highlight = "Directory",
+                    text_align = "left",
+                },
+            },
+        },
     },
 
     -- UIのコンポーネントライブラリー

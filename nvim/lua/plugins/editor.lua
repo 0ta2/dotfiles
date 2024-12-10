@@ -11,13 +11,6 @@ return {
                 end,
                 desc = "Explorer NeoTree",
             },
-            {
-                leader .. "b",
-                function()
-                    require("neo-tree.command").execute({ source = "buffers", toggle = true })
-                end,
-                desc = "Buffer Explorer",
-            },
         },
         opts = {
             sources = { "filesystem", "buffers", "git_status" },

@@ -46,7 +46,7 @@ return {
                 end,
             }
             for _, lsp in ipairs(lsp_servers) do
-                local ok, handler = pcall(require, "lsp." .. lsp)
+                local ok, handler = pcall(require, "lsps." .. lsp)
                 if ok then
                     handlers[lsp] = handler
                 end
