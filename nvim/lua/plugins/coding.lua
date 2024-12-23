@@ -1,9 +1,10 @@
 return {
     {
         'saghen/blink.cmp',
-        version = 'v0.*',
-        event = 'InsertEnter',
         dependencies = 'rafamadriz/friendly-snippets',
+
+        version = '*',
+        event = 'InsertEnter',
 
         ---@module 'blink.cmp'
         ---@type blink.cmp.Config
@@ -12,22 +13,15 @@ return {
 
             appearance = {
                 use_nvim_cmp_as_default = true,
+                nerd_font_variant = "mono"
             },
 
             sources = {
-                completion = {
-                    enabled_providers = { 'lsp', 'path', 'snippets', 'buffer' },
-                },
+                default = { 'lsp', 'path', 'snippets', 'buffer' },
             },
-
-            -- experimental auto-brackets support
-            completion = { accept = { auto_brackets = { enabled = true } } },
-
-            -- experimental signature help support
-            signature = { enabled = true },
         },
 
-        opts_extend = { "sources.completion.enabled_providers" }
+        opts_extend = { "sources.default" }
     },
 
     {
