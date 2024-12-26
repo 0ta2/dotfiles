@@ -88,9 +88,9 @@ return {
 
         keys = {
             -- telescope
-            vim.keymap.set('n', '<c-p>',
-                function() require('telescope.builtin').find_files({ find_command = { 'rg', '--files', '--hidden', '--glob', '!.git', } }) end,
-                opts),
+            -- vim.keymap.set('n', '<c-p>',
+            --     function() require('telescope.builtin').find_files({ find_command = { 'rg', '--files', '--hidden', '--glob', '!.git', } }) end,
+            --     opts),
             vim.keymap.set("n", "<c-g>", function() require("telescope").extensions.live_grep_args.live_grep_args() end,
                 opts),
             vim.keymap.set('n', '<c-t>', function() require("telescope.builtin").buffers() end, opts),
