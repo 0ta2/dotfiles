@@ -51,17 +51,19 @@ deploy: ## Create symlink to home directory
 	@$(call print_success, `ln -sfnv $(DOTPATH)/tmux ~/.config/tmux`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/alacritty ~/.config/alacritty`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/zed/settings.json ~/.config/zed/settings.json`)
-	@$(call print_success, `ln -sfnv $(DOTPATH)/config/efm-langserver ~/.config/efm-langserver`)
+	@$(call print_success, `ln -sfnv $(DOTPATH)/efm-langserver ~/.config/efm-langserver`)
+	@$(call print_success, `ln -sfnv $(DOTPATH)/karabiner ~/.config/karabiner`)
 
 clean: ## Remove the dot files and this repo
 	@$(call print_title, Remove dot files in your home directory...)
-	@-$(call print_success, `rm -fr $(HOME)/.config/nvim`)
-	@-$(call print_success, `rm -fr $(HOME)/.config/zsh`)
 	@-$(call print_success, `rm -fr $(HOME)/.zshenv`)
-	@-$(call print_success, `rm -fr $(HOME)/.tmux.conf`)
+	@-$(call print_success, `rm -fr $(HOME)/.config/zsh`)
+	@-$(call print_success, `rm -fr $(HOME)/.config/nvim`)
+	@-$(call print_success, `rm -fr $(HOME)/.config/tmux`)
 	@-$(call print_success, `rm -fr $(HOME)/.config/alacritty`)
-	@-$(call print_success, `rm -fr $(HOME)/.config/zed/settings.json`)
-	@-$(call print_success, `rm -fr $(HOME)/com.googlecode.iterm2.plist`)
+	@-$(call print_success, `rm -fr $(HOME)/.config/zed`)
+	@-$(call print_success, `rm -fr $(HOME)/.config/efm-langserver`)
+	@-$(call print_success, `rm -fr $(HOME)/.config/karabiner`)
 
 help: ## Self-documented Makefile
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) \

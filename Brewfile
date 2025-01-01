@@ -1,53 +1,35 @@
-# tap
-tap "homebrew/bundle"
-tap "homebrew/core"
-tap "sanemat/font"
-tap "homebrew/cask-fonts"
+# editor
+brew "neovim"
+cask "visual-studio-code"
+cask "zed"
+cask "heptabase"
 
 # programming
 brew "go"
-brew "deno"
 brew "golangci-lint"
 brew "efm-langserver"
 
 # env
-brew "pyenv"
-brew "pipenv"
-brew "rbenv"
-brew "nodenv"
-brew "pyenv-virtualenv"
-brew "readline" # pyenv の依存関係で必要
-brew "xz"       # pyenv の依存関係で必要
 
 # tools
-brew "coreutils"
 brew "fzf"
 brew "ghq"
-brew "git"
+brew "ripgrep"      # Rust製のgrep置き換えコマンド
+brew "gh"           # GitHub Cli
+brew "bat"          # Rust製のcut置き換えコマンド
+brew "gnu-sed"      # gnu版のsed
+brew "gawk"         # gnu版のawk
 brew "jq"
-brew "mercurial"
-brew "ripgrep"
-brew "tmux"
-brew "packer"
-brew "reattach-to-user-namespace"
-brew "ssh-copy-id"
 brew "tree"
-brew "neovim"
 brew "wget"
-brew "zsh"
-brew "grep"
-brew "composer"
-brew "global"
-brew "gnu-sed"  # gnu版のsed
-brew "yarn"
-brew "gh"
-brew "gawk"     # tmux-picker で必要
-brew "bat"
-cask "docker"   # Docker
-cask "font-inconsolata"
-brew "hashicorp/tap/terraform-ls"
-cask "raycast" # Launcher
-cask "karabiner-elements"
+brew "coreutils"
+brew "git"
+brew "tmux"
+brew "ssh-copy-id"
+brew "mise"         # 開発ツール管理
+
+# docker・kubernetes
+cask "docker"   # Docker Desktop
 brew "kube-ps1"
 brew "kubectx"
 
@@ -59,28 +41,19 @@ cask "font-hackgen"
 cask "font-hackgen-nerd"
 
 ### application
-cask "google-chrome"
 cask "google-japanese-ime"
 cask "dropbox"
-cask "vlc"
 cask "1password"
 cask "slack"
-cask "bettertouchtool"
 cask "deepl"
-cask "notion"
 cask "microsoft-edge"
+cask "raycast"
+cask "karabiner-elements"
 cask "kindle"
-cask "remnote"
-cask "arc"
+cask "kobo"
 
 ## terminal
-cask "iTerm2"
 cask "alacritty"
-
-## editor
-cask "visual-studio-code"
-cask "craft"
-cask "zed"
 
 ### other
 brew "mas"
