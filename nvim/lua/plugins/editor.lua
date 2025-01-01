@@ -71,6 +71,35 @@ return {
                 desc = "Search and Replace",
             },
         },
-    }
+    },
 
+
+    {
+        -- Gitの変更状態を表示
+        "lewis6991/gitsigns.nvim",
+        config = true,
+        opts = {
+            current_line_blame = true,
+        }
+    },
+
+    {
+        -- Gitの操作
+        "NeogitOrg/neogit",
+        dependencies = {
+            "sindrets/diffview.nvim", lazy = true,
+        },
+        config       = true,
+        opts         = {
+            integrations = {
+                diffview = true,
+                fzf_lua = true,
+            },
+        },
+        cmd          = {
+            "Neogit",
+            "NeogitLogCurrent",
+            "NeogitCommit",
+        }
+    },
 }

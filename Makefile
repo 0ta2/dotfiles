@@ -53,6 +53,7 @@ deploy: ## Create symlink to home directory
 	@$(call print_success, `ln -sfnv $(DOTPATH)/zed/settings.json ~/.config/zed/settings.json`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/efm-langserver ~/.config/efm-langserver`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/karabiner ~/.config/karabiner`)
+	@$(call print_success, `ln -sfnv $(DOTPATH)/zellij ~/.config/zellij`)
 
 clean: ## Remove the dot files and this repo
 	@$(call print_title, Remove dot files in your home directory...)
@@ -64,6 +65,7 @@ clean: ## Remove the dot files and this repo
 	@-$(call print_success, `rm -fr $(HOME)/.config/zed`)
 	@-$(call print_success, `rm -fr $(HOME)/.config/efm-langserver`)
 	@-$(call print_success, `rm -fr $(HOME)/.config/karabiner`)
+	@-$(call print_success, `rm -fr $(HOME)/.config/zellij`)
 
 help: ## Self-documented Makefile
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) \

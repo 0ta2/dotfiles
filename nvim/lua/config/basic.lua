@@ -79,7 +79,7 @@ vim.o.termguicolors = true
 -- NOTE: https://stackoverflow.com/questions/78364323/im-having-trouble-with-flickering-in-lspsaga-nvim
 vim.opt.signcolumn = "yes"
 
--- 蒸し文字列の可視化
+-- 無視文字列の可視化
 -- vim.opt.list = true
 -- vim.opt.listchars = { tab = '>>', trail = '-', nbsp = '+' }
 
@@ -93,11 +93,3 @@ vim.cmd [[ set backupdir=$XDG_STATE_HOME/nvim/backup ]]
 
 -- Set the behavior at completion.
 vim.o.completeopt = 'menu,menuone,noselect'
-
--- Settings python.
-vim.g.python_host_prog = vim.env.HOME .. '/.pyenv/versions/py2pynvim/bin/python'
-vim.g.python3_host_prog = vim.env.HOME ..  '/.pyenv/versions/py3pynvim/bin/python'
--- Settings ruby.
-vim.g.ruby_host_prog = vim.env.HOME .. '/.rbenv/versions/2.7.1/bin/neovim-ruby-host'
--- Settings node.
-vim.g.node_host_prog = vim.env.HOME .. '/.nodenv/versions/16.6.0/bin/neovim-node-host'

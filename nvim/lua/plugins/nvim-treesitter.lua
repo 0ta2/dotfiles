@@ -24,7 +24,6 @@ return {
             local configs = require("nvim-treesitter.configs")
             configs.setup({
                 sync_install = false,
-
                 ensure_installed = {
                     "lua",
                     "go",
@@ -35,6 +34,8 @@ return {
                     "html",
                     "css",
                     "terraform",
+                    "diff",
+                    "kdl"
                 },
                 highlight = {
                     enable = true,

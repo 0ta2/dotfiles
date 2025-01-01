@@ -27,6 +27,8 @@ brew "git"
 brew "tmux"
 brew "ssh-copy-id"
 brew "mise"         # 開発ツール管理
+brew "lynx"
+brew "luarocks"     # lazy.nvim の依存関係
 
 # docker・kubernetes
 cask "docker"   # Docker Desktop

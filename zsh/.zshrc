@@ -153,32 +153,8 @@ export GOBIN="$GOPATH/bin"
 export PATH="$GOPATH/bin:${PATH}"
 
 ### Env系
-# pyenv 設定
-if [ "`which pyenv`" ]; then
-  export PYENV_ROOT="$HOME/.pyenv"
-  export PATH="$PYENV_ROOT/bin:$PATH"
-  eval "$(pyenv init --path)"
-  eval "$(pyenv init -)"
-fi
-
-# pyenv-virtualenv 設定
-if [ "`which pyenv-virtualenvs`" ]; then
-  eval "$(pyenv virtualenv-init -)"
-fi
-
-# pipenv の補完有効化
-if [ "`which pipenv`" ];then
-  eval "$(_PIPENV_COMPLETE=zsh_source pipenv)"
-fi
-
-# rbenv 設定
-if [ "`which rbenv`" ]; then
-  eval "$(rbenv init -)"
-fi
-
-# nodenv 設定
-if [ "`which nodenv`" ]; then
-  eval "$(nodenv init -)"
+if [ "`which mise`" ]; then
+    eval "$(/usr/local/bin/mise activate zsh)"
 fi
 
 #   path=xxxx(N-/)
