@@ -87,19 +87,19 @@ return {
         -- Gitの操作
         "NeogitOrg/neogit",
         dependencies = {
-            "sindrets/diffview.nvim", lazy = true,
+            "sindrets/diffview.nvim",
         },
-        config       = true,
-        opts         = {
-            integrations = {
-                diffview = true,
-                fzf_lua = true,
-            },
-        },
-        cmd          = {
-            "Neogit",
-            "NeogitLogCurrent",
-            "NeogitCommit",
-        }
+        -- config       = true,
+        -- opts         = {
+        --     integrations = {
+        --         diffview = true,
+        --         fzf_lua = true,
+        --     },
+        -- },
+        -- cmd          = {
+        --     "Neogit",
+        --     "NeogitLogCurrent",
+        --     "NeogitCommit",
+        -- }
     },
 }
