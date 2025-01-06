@@ -154,7 +154,11 @@ export PATH="$GOPATH/bin:${PATH}"
 
 ### Env系
 if [ "`which mise`" ]; then
-    eval "$(/usr/local/bin/mise activate zsh)"
+    if [[ $(uname -m) == "arm64" ]]; then
+        eval "$(/opt/homebrew/bin/mise activate zsh)"
+    else
+        eval "$(/usr/local/bin/mise activate zsh)"
+    fi
 fi
 
 #   path=xxxx(N-/)

@@ -29,6 +29,7 @@ brew "ssh-copy-id"
 brew "mise"         # 開発ツール管理
 brew "lynx"
 brew "luarocks"     # lazy.nvim の依存関係
+brew "gh"
 
 # docker・kubernetes
 cask "docker"   # Docker Desktop
