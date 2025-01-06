@@ -54,6 +54,7 @@ deploy: ## Create symlink to home directory
 	@$(call print_success, `ln -sfnv $(DOTPATH)/efm-langserver ~/.config/efm-langserver`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/karabiner ~/.config/karabiner`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/zellij ~/.config/zellij`)
+	@$(call print_success, `ln -sfnv $(DOTPATH)/mise ~/.config/mise`)
 
 clean: ## Remove the dot files and this repo
 	@$(call print_title, Remove dot files in your home directory...)
