@@ -55,6 +55,7 @@ deploy: ## Create symlink to home directory
 	@$(call print_success, `ln -sfnv $(DOTPATH)/karabiner ~/.config/karabiner`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/zellij ~/.config/zellij`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/mise ~/.config/mise`)
+	@$(call print_success, `ln -sfnv $(DOTPATH)/.gitignore_global ~/.gitignore_global`)
 
 clean: ## Remove the dot files and this repo
 	@$(call print_title, Remove dot files in your home directory...)
@@ -67,6 +68,7 @@ clean: ## Remove the dot files and this repo
 	@-$(call print_success, `rm -fr $(HOME)/.config/efm-langserver`)
 	@-$(call print_success, `rm -fr $(HOME)/.config/karabiner`)
 	@-$(call print_success, `rm -fr $(HOME)/.config/zellij`)
+	@-$(call print_success, `rm -fr $(HOME)/.gitignore_global`)
 
 help: ## Self-documented Makefile
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) \

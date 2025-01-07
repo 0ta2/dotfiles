@@ -9,6 +9,7 @@ return {
             vim.cmd([[colorscheme catppuccin]])
         end,
         opts = {
+            flavour = "mocha",
             integrations = {
                 aerial = true,
                 alpha = true,
@@ -43,6 +44,7 @@ return {
                 treesitter = true,
                 treesitter_context = true,
                 which_key = true,
+                fzf = true,
             },
         },
     },
