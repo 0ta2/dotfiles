@@ -8,10 +8,19 @@ keybinds clear-defaults=true {
         bind "-" { NewPane "down"; SwitchToMode "normal"; }
         bind "|" { NewPane "right"; SwitchToMode "normal"; }
         bind "n" { NewTab; SwitchToMode "normal"; }
-    }
+        bind "[" { SwitchToMode "Scroll"; }
+        }
     shared_except "locked" "entersearch" "renametab" "renamepane" "prompt" "tmux" {
         bind "Ctrl Space" { SwitchToMode "locked"; }
     }
+
+    scroll {
+        bind "j" "Down" { ScrollDown; }
+        bind "k" "Up" { ScrollUp; }
+
+        bind "Esc" { SwitchToMode "normal"; }
+    }
+
 
     //pane {
     //    bind "left" { MoveFocus "left"; }
@@ -94,11 +103,6 @@ keybinds clear-defaults=true {
     //    bind "n" { MovePane; }
     //    bind "p" { MovePaneBackwards; }
     //    bind "tab" { MovePane; }
-    //}
-    //scroll {
-    //    bind "e" { EditScrollback; SwitchToMode "normal"; }
-    //    bind "s" { SwitchToMode "entersearch"; SearchInput 0; }
-    //    bind "Ctrl Super s" { SwitchToMode "normal"; }
     //}
     //search {
     //    bind "c" { SearchToggleOption "CaseSensitivity"; }
