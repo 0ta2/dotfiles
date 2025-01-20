@@ -1,0 +1,16 @@
+[
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "H": "vim::FirstNonWhitespace",
+      "L": "vim::EndOfLine",
+      ";": "command_palette::Toggle",
+      "space n": "pane::ActivateNextItem",
+      "space p": "pane::ActivatePrevItem",
+      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
+      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
+      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"]
+    }
+  }
+]

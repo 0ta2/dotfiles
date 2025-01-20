@@ -51,10 +51,12 @@ deploy: ## Create symlink to home directory
 	@$(call print_success, `ln -sfnv $(DOTPATH)/tmux ~/.config/tmux`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/alacritty ~/.config/alacritty`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/zed/settings.json ~/.config/zed/settings.json`)
+	@$(call print_success, `ln -sfnv $(DOTPATH)/zed/keymap.json ~/.config/zed/keymap.json`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/efm-langserver ~/.config/efm-langserver`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/karabiner ~/.config/karabiner`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/zellij ~/.config/zellij`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/mise ~/.config/mise`)
+	@$(call print_success, `ln -sfnv $(DOTPATH)/ghostty ~/.config/ghostty`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/.gitignore_global ~/.gitignore_global`)
 
 clean: ## Remove the dot files and this repo
@@ -68,6 +70,7 @@ clean: ## Remove the dot files and this repo
 	@-$(call print_success, `rm -fr $(HOME)/.config/efm-langserver`)
 	@-$(call print_success, `rm -fr $(HOME)/.config/karabiner`)
 	@-$(call print_success, `rm -fr $(HOME)/.config/zellij`)
+	@-$(call print_success, `rm -fr $(HOME)/.config/ghostty`)
 	@-$(call print_success, `rm -fr $(HOME)/.gitignore_global`)
 
 help: ## Self-documented Makefile
