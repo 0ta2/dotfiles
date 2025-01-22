@@ -29,7 +29,7 @@ node_modules/*
 .venv/*
 
 ### tmux
-.tmux/plugins/*
+tmux/plugins/*
 
 ### karabiner
 karabiner/automatic_backups/*
