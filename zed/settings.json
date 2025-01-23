@@ -7,10 +7,18 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "assistant": {
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-4o"
+    },
+    "version": "2"
+  },
   "vim_mode": true,
   "ui_font_size": 16,
   "buffer_font_size": 16,
   "buffer_font_family": "HackGen35",
+  "format_on_save": "off",
   "theme": {
     "mode": "system",
     "light": "One Light",
@@ -29,6 +37,20 @@
           "functionTypeParameters": true,
           "parameterNames": true,
           "rangeVariableTypes": true
+        }
+      }
+    },
+    "rust-analyzer": {
+      "initialization_options": {
+        "inlayHints": {
+          "maxLength": null,
+          "lifetimeElisionHints": {
+            "enable": "skip_trivial",
+            "useParameterNames": true
+          },
+          "closureReturnTypeHints": {
+            "enable": "always"
+          }
         }
       }
     }

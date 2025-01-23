@@ -7,6 +7,7 @@
       ";": "command_palette::Toggle",
       "space n": "pane::ActivateNextItem",
       "space p": "pane::ActivatePrevItem",
+      "ctrl-p": "file_finder::Toggle",
       "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
       "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
       "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
