@@ -189,7 +189,7 @@
   // Terminal の設定
   //----------------------------------------------------------
   // テーミナルを iTerm に変更
-  "terminal.external.osxExec": "iTerm.app",
+  "terminal.external.osxExec": "Ghostty.app",
   //  ターミナルのフォントを指定
   "terminal.integrated.fontFamily": "HackGen Console NF",
   // ターミナルのフォントサイズ
@@ -204,61 +204,6 @@
   "workbench.startupEditor": "newUntitledFile",
   // Gitリポジトリと同期する前に確認させない
   "git.confirmSync": false,
-  //----------------------------------------------------------
-  // PHP 設定
-  //----------------------------------------------------------
-  "php.validate.enable": false,
-  "php.suggest.basic": false,
-  "blade.format.enable": true,
-  //----------------------------------------------------------
-  // Todoツリーの設定
-  //----------------------------------------------------------
-  // Todo Tree のツリービューのヘッダーにボタンを表示して、現在のファイル、開いているファイル、またはワークスペース全体のスキャンを切り替える
-  "todo-tree.tree.showScanModeButton": false,
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  //----------------------------------------------------------
-  // dart 設定
-  //----------------------------------------------------------
-  "[dart]": {
-    "editor.formatOnSave": true,
-    "editor.formatOnType": true,
-    "editor.rulers": [80],
-    "editor.selectionHighlight": false,
-    "editor.suggest.snippetsPreventQuickSuggestions": false,
-    "editor.suggestSelection": "first",
-    "editor.tabCompletion": "onlySnippets",
-    "editor.wordBasedSuggestions": "off"
-  },
-  //----------------------------------------------------------
-  // gitemoji 設定
-  //----------------------------------------------------------
-  // デフォルト設定のものを使わない
-  "gitmoji.onlyUseCustomEmoji": true,
-  "gitmoji.addCustomEmoji": [
-    { "emoji": "♻", "code": ":recycle:", "description": "リファクタリング", },
-    { "emoji": "✨", "code": ":sparkles:", "description": "新機能追加", },
-    { "emoji": "⚡️", "code": ":zap:", "description": "パフォーマンスを向上", },
-    { "emoji": "🔥", "code": ":fire:", "description": "コードやファイルを削除", },
-    { "emoji": "🐛", "code": ":bug:", "description": "バグ修正", },
-    { "emoji": "🩹", "code": ":adhesive_bandage:", "description": "重要でない問題の簡単な修正", },
-    { "emoji": "📝", "code": ":memo:", "description": "ドキュメントを追加・更新", },
-    { "emoji": "🎉", "code": ":tada:", "description": "First commit", },
-    { "emoji": "✅", "code": ":white_check_mark:", "description": "テスト追加、更新", },
-    { "emoji": "💚", "code": ":green_heart:", "description": "CIビルドの修正", },
-    { "emoji": "👷", "code": ":construction_worker:", "description": "CIビルドシステムを追加、更新", },
-    { "emoji": "🔒️", "code": ":lock:", "description": "セキュリティに関する問題を修正", },
-    { "emoji": "🚧", "code": ":construction:", "description": "wip", },
-    { "emoji": "🔧", "code": ":wrench:", "description": "設定ファイルを追加・更新", },
-    { "emoji": "🔨", "code": ":hammer:", "description": "開発用スクリプトの追加や更新", },
-    { "emoji": "💩", "code": ":sparpoopkles:", "description": "改善すべき悪いコード", },
-    { "emoji": "👽️", "code": ":alien:", "description": "外部APIの変更に伴うコードの更新", },
-    { "emoji": "💡", "code": ":bulb:", "description": "ソースコードにコメントを追加・更新", },
-    { "emoji": "🗃️", "code": ":card_file_box:", "description": "データベース関連の変更", },
-    { "emoji": "🔊", "code": ":loud_sound:", "description": "ログの追加や更新", },
-    { "emoji": "🔇", "code": ":mute:", "description": "ログを削除", },
-    { "emoji": "🙈", "code": ":see_no_evil:", "description": ".gitignoreファイルを追加または更新", },
-  ],
-  "explorer.confirmDelete": false
+  // アクティビティバーを上に設定
+  "workbench.activityBar.location": "top"
 }

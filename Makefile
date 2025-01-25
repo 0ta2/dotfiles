@@ -24,40 +24,34 @@ endef
 
 all:
 
-init: ## Setup environment settings
-	@$(call print_title, Start to init dotofiles)
-	@$(foreach val, $(wildcard ./init/*.sh), bash $(val);)
-
-update: ## Fetch changes for this repo
-	@$(call print_title, Start to update dotfiles)
-	git pull origin main
-	git submodule update --init --recursive
-	git submodule foreach git pull origin master
-
-install: update deploy init ## Run make update, deploy, init
+init: update install deploy ## Environment setup for dotfiles
 	@exec $$SHELL
 
-vs-install: ## Installing the vscode extension.
-	@$(call print_title, Start to vscode extension)
-	sh $(DOTPATH)/init/07_vscode.sh
+update: ## Update dotfiles
+	@$(call print_title, Start to update dotfiles)
+	git pull origin main
+
+install: ## Run make update, deploy, init
+	@$(call print_title, Start to install dotfiles)
+	@$(call print_success, `brew bundle`)
 
 deploy: ## Create symlink to home directory
 	@$(call print_title, Start to deploy dotfiles to home directory)
 	@mkdir -p $(HOME)/.config
 	@$(call print_success, `ln -sfnv $(DOTPATH)/zsh/.zshenv ~/.zshenv`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/zsh ~/.config/zsh`)
+	@$(call print_success, `ln -sfnv $(DOTPATH)/mise ~/.config/mise`)
+	@$(call print_success, `ln -sfnv $(DOTPATH)/.gitignore_global ~/.gitignore_global`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/nvim ~/.config/nvim`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/nvim/.ideavimrc ~/.ideavimrc`)
-	@$(call print_success, `ln -sfnv $(DOTPATH)/tmux ~/.config/tmux`)
-	@$(call print_success, `ln -sfnv $(DOTPATH)/alacritty ~/.config/alacritty`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/zed/settings.json ~/.config/zed/settings.json`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/zed/keymap.json ~/.config/zed/keymap.json`)
+	@$(call print_success, `ln -sfnv $(DOTPATH)/code/settings.json ~/Library/Application\ Support/Code/User/settings.json`)
+	@$(call print_success, `ln -sfnv $(DOTPATH)/zellij ~/.config/zellij`)
+	@$(call print_success, `ln -sfnv $(DOTPATH)/tmux ~/.config/tmux`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/efm-langserver ~/.config/efm-langserver`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/karabiner ~/.config/karabiner`)
-	@$(call print_success, `ln -sfnv $(DOTPATH)/zellij ~/.config/zellij`)
-	@$(call print_success, `ln -sfnv $(DOTPATH)/mise ~/.config/mise`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/ghostty ~/.config/ghostty`)
-	@$(call print_success, `ln -sfnv $(DOTPATH)/.gitignore_global ~/.gitignore_global`)
 
 clean: ## Remove the dot files and this repo
 	@$(call print_title, Remove dot files in your home directory...)
@@ -72,6 +66,7 @@ clean: ## Remove the dot files and this repo
 	@-$(call print_success, `rm -fr $(HOME)/.config/zellij`)
 	@-$(call print_success, `rm -fr $(HOME)/.config/ghostty`)
 	@-$(call print_success, `rm -fr $(HOME)/.gitignore_global`)
+	@-$(call print_success, `rm -fr $(HOME)/Library/Application\ Support/Code/User/settings.json`)
 
 help: ## Self-documented Makefile
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) \

@@ -2,7 +2,6 @@
 brew "neovim"
 cask "visual-studio-code"
 cask "zed"
-cask "heptabase"
 
 # programming
 brew "go"
@@ -10,6 +9,7 @@ brew "golangci-lint"
 brew "efm-langserver"
 
 # env
+brew "mise"         # 開発ツール管理
 
 # tools
 brew "fzf"
@@ -26,7 +26,6 @@ brew "coreutils"
 brew "git"
 brew "tmux"
 brew "ssh-copy-id"
-brew "mise"         # 開発ツール管理
 brew "lynx"
 brew "luarocks"     # lazy.nvim の依存関係
 brew "gh"
@@ -49,14 +48,14 @@ cask "dropbox"
 cask "1password"
 cask "slack"
 cask "deepl"
-cask "microsoft-edge"
 cask "raycast"
 cask "karabiner-elements"
 cask "kindle"
 cask "kobo"
+cask "heptabase"
 
 ## terminal
-cask "alacritty"
+cask "ghostty"
 
 ### other
 brew "mas"
@@ -65,3 +64,7 @@ brew "mas"
 mas "LINE", id: 539883307
 mas "Spark", id: 1176895641
 mas "Xcode", id: 497799835
+
+
+vscode "MS-CEINTL.vscode-language-pack-ja"
+vscode "golang.Go"
