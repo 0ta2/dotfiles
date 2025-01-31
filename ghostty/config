@@ -1,6 +1,2 @@
 font-family = "HackGen Console NF"
 font-size = 15
-
-
-# タイトロルバーの非表示
-macos-titlebar-style = hidden
