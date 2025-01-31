@@ -16,8 +16,10 @@ return {
     },
     {
         "buoto/gotests-vim",
-        config = function ()
+        ft = "go",
+        config = function()
             vim.g.gotests_bin = vim.env.GOBIN .. "/gotest"
-        end
+            vim.g.gotests_template = ''
+        end,
     }
 }
