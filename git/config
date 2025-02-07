@@ -1,0 +1,25 @@
+[alias]
+	st = status
+	cm = commit
+	ch = checkout
+	br = branch
+	gr = log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cd %Cblue%cn %Cred%d %Creset%s'
+	sw = switch
+[push]
+	default = simple
+[commit]
+	template = ~/.config/git/commit_template
+[fetch]
+	prune = true
+[core]
+	quotepath = false
+	safecrlf = true
+	autocrlf = false
+	editor = nvim
+	excludesFile = ~/.config/git/gitignore
+[color]
+	ui = auto
+[pull]
+	rebase = false
+[include]
+    path = ~/.include.conf
