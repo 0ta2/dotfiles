@@ -21,6 +21,5 @@
 	ui = auto
 [pull]
 	rebase = false
-[user]
-	name = 0ta2
-	email = mangamania5643+github@gmail.com
+[include]
+    path = ~/.include.conf

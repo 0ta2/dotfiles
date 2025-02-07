@@ -16,7 +16,7 @@
   },
   "vim_mode": true,
   "ui_font_size": 16,
-  "buffer_font_size": 16,
+  "buffer_font_size": 30.0,
   "buffer_font_family": "HackGen35",
   "format_on_save": "off",
   "theme": {
@@ -51,6 +51,13 @@
           "closureReturnTypeHints": {
             "enable": "always"
           }
+        }
+      }
+    },
+    "terraform-ls": {
+      "initialization_options": {
+        "experimentalFeatures": {
+          "prefillRequiredFields": true
         }
       }
     }
