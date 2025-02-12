@@ -68,3 +68,6 @@ mas "Xcode", id: 497799835
 
 vscode "MS-CEINTL.vscode-language-pack-ja"
 vscode "golang.Go"
+vscode "sumneko.lua"
+vscode "GitHub.copilot"
+vscode "GitHub.copilot-chat"

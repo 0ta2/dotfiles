@@ -46,6 +46,7 @@ deploy: ## Create symlink to home directory
 	@$(call print_success, `ln -sfnv $(DOTPATH)/zed/settings.json ~/.config/zed/settings.json`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/zed/keymap.json ~/.config/zed/keymap.json`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/code/settings.json ~/Library/Application\ Support/Code/User/settings.json`)
+	@$(call print_success, `ln -sfnv $(DOTPATH)/code/settings.json ~/Library/Application\ Support/Code/User/keybindings.json`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/zellij ~/.config/zellij`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/tmux ~/.config/tmux`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/efm-langserver ~/.config/efm-langserver`)
@@ -67,6 +68,7 @@ clean: ## Remove the dot files and this repo
 	@-$(call print_success, `rm -fr $(HOME)/.config/ghostty`)
 	@-$(call print_success, `rm -fr $(HOME)/.config/git`)
 	@-$(call print_success, `rm -fr $(HOME)/Library/Application\ Support/Code/User/settings.json`)
+	@-$(call print_success, `rm -fr $(HOME)/Library/Application\ Support/Code/User/keybindings.json`)
 
 help: ## Self-documented Makefile
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) \
