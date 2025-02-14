@@ -36,3 +36,7 @@ karabiner/automatic_backups/*
 
 ### phpstorm
 .idea
+
+### homebrew
+Brewfile.work
+Brewfile.lock.json

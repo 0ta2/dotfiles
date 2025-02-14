@@ -29,6 +29,11 @@ export LANG=ja_JP.UTF-8
 # chronoship の環境変数
 export EXCLUDE_WIDGETS_REGEX="fzf"
 
+export WORKSTATION="private"
+if [[ $USER != "0ta2" ]]; then
+    export WORKSTATION="work"
+fi
+
 # typeset
 #   -U 重複パスを登録しない
 #   -x export も同時に行う

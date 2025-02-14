@@ -166,6 +166,10 @@
     {
       "before": ["ctrl+p"],
       "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": ["x"],
+      "after": ["\"", "_", "x"]
     }
   ],
   // インサートモードの設定

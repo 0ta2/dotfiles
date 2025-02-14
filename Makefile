@@ -31,9 +31,12 @@ update: ## Update dotfiles
 	@$(call print_title, Start to update dotfiles)
 	git pull origin main
 
+test:
+	@$(call print_success, `echo ${WORKSTATION}`)
+
 install: ## Run make update, deploy, init
 	@$(call print_title, Start to install dotfiles)
-	@$(call print_success, `brew bundle`)
+	@$(call print_success, `cat ./homebrew//Brewfile.all ./homebrew/Brewfile.${WORKSTATION} | brew bundle --file=-`)
 
 deploy: ## Create symlink to home directory
 	@$(call print_title, Start to deploy dotfiles to home directory)
