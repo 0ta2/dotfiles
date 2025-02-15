@@ -38,6 +38,10 @@ install: ## Run make update, deploy, init
 	@$(call print_title, Start to install dotfiles)
 	@$(call print_success, `cat ./homebrew//Brewfile.all ./homebrew/Brewfile.${WORKSTATION} | brew bundle --file=-`)
 
+brew-sync: ## brewでインストールされているものを同期します。(Brewfileにないファイルは削除されます)
+	@$(call print_title, Start to brew sync)
+	@$(call print_success, `cat ./homebrew//Brewfile.all ./homebrew/Brewfile.${WORKSTATION} | brew bundle --cleanup --file=-`)
+
 deploy: ## Create symlink to home directory
 	@$(call print_title, Start to deploy dotfiles to home directory)
 	@mkdir -p $(HOME)/.config

@@ -1,0 +1,49 @@
+# editor
+brew "neovim"
+cask "visual-studio-code"
+cask "zed"
+
+# tools
+brew "fzf"
+brew "ghq"
+brew "ripgrep"      # Rust製のgrep置き換えコマンド
+brew "gh"           # GitHub Cli
+brew "bat"          # Rust製のcut置き換えコマンド
+brew "gnu-sed"      # gnu版のsed
+brew "gawk"         # gnu版のawk
+brew "jq"
+brew "tree"
+brew "wget"
+brew "coreutils"
+brew "git"
+brew "tmux"
+brew "ssh-copy-id"
+brew "lynx"
+brew "luarocks"     # lazy.nvim の依存関係
+
+# docker・kubernetes
+cask "docker"   # Docker Desktop
+brew "kube-ps1"
+brew "kubectx"
+
+## completion
+brew "docker-completion"
+
+# font
+cask "font-hackgen"
+cask "font-hackgen-nerd"
+
+### application
+cask "google-japanese-ime"
+cask "google-chrome"
+cask "karabiner-elements"
+
+## terminal
+cask "ghostty"
+
+# vscode
+vscode "MS-CEINTL.vscode-language-pack-ja"
+vscode "golang.Go"
+vscode "sumneko.lua"
+vscode "GitHub.copilot"
+vscode "GitHub.copilot-chat"
