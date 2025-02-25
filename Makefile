@@ -31,12 +31,10 @@ update: ## Update dotfiles
 	@$(call print_title, Start to update dotfiles)
 	git pull origin main
 
-test:
-	@$(call print_success, `echo ${WORKSTATION}`)
-
 install: ## Run make update, deploy, init
 	@$(call print_title, Start to install dotfiles)
 	@$(call print_success, `cat ./homebrew//Brewfile.all ./homebrew/Brewfile.${WORKSTATION} | brew bundle --file=-`)
+	@$(call print_success, `mise install`)
 
 brew-sync: ## brewでインストールされているものを同期します。(Brewfileにないファイルは削除されます)
 	@$(call print_title, Start to brew sync)
@@ -48,6 +46,7 @@ deploy: ## Create symlink to home directory
 	@$(call print_success, `ln -sfnv $(DOTPATH)/zsh/.zshenv ~/.zshenv`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/zsh ~/.config/zsh`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/mise ~/.config/mise`)
+	@$(call print_success, `ln -sfnv $(DOTPATH)/.default-go-packages ~/.default-go-packages`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/nvim ~/.config/nvim`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/nvim/.ideavimrc ~/.ideavimrc`)
 	@$(call print_success, `ln -sfnv $(DOTPATH)/zed/settings.json ~/.config/zed/settings.json`)
