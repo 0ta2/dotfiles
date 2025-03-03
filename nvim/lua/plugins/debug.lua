@@ -15,8 +15,8 @@ return {
         }
     },
     keys = {
-        { leader .. "du", function() require("dapui").toggle() end,          desc = "toggle dapui" },
-        { leader .. "dd", function() require("dap").continue() end,          desc = "debug start/continue" },
+        { leader .. "du", function() require("dapui").toggle() end,          desc = "Debug: toggle dapui" },
+        { leader .. "dd", function() require("dap").continue() end,          desc = "Debug: start/continue" },
         { leader .. "db", function() require("dap").toggle_breakpoint() end, desc = "Debug: toggle break(mark)", },
     },
     dependencies = {
