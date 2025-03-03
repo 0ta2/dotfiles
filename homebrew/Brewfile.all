@@ -23,6 +23,7 @@ brew "luarocks"     # lazy.nvim の依存関係
 
 # docker・kubernetes
 cask "docker"   # Docker Desktop
+brew "docker"
 brew "kube-ps1"
 brew "kubectx"
 

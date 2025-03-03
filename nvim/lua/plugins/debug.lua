@@ -14,6 +14,11 @@ return {
             },
         }
     },
+    keys = {
+        { leader .. "du", function() require("dapui").toggle() end,          desc = "toggle dapui" },
+        { leader .. "dd", function() require("dap").continue() end,          desc = "debug start/continue" },
+        { leader .. "db", function() require("dap").toggle_breakpoint() end, desc = "Debug: toggle break(mark)", },
+    },
     dependencies = {
         "mfussenegger/nvim-dap",
         {
